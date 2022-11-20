@@ -12,9 +12,13 @@ export default class Card {
     this.badges = [];
   }
 
-  public changeTheme = (theme: Theme): void => {
+  public getTheme = (): Theme => this.theme;
+
+  public setTheme = (theme: Theme): void => {
     this.theme = theme;
   };
+
+  public getTitle = (): string => this.title;
 
   public setTitle = (title: string): void => {
     this.title = title;
