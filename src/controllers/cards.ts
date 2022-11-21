@@ -15,6 +15,24 @@ const cardController = (req: Request, res: Response) => {
   const theme = req.query.theme;
   card.setTheme(getThemeByName(theme?.toString() || ""));
 
+  // card.addBadge({
+  //   label: "React",
+  //   logoColor: "#61DAFB",
+  //   logoName: "react",
+  // });
+
+  // card.addBadge({
+  //   label: "Tailwind",
+  //   logoColor: "#61DAFB",
+  //   logoName: "tailwindcss",
+  // });
+
+  // card.addBadge({
+  //   label: "Spring",
+  //   logoColor: "#61DAFB",
+  //   logoName: "spring",
+  // });
+
   res.setHeader("Content-Type", "image/svg+xml");
   res.send(new SvgGenerator(card).toString());
 };

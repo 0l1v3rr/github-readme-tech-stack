@@ -32,6 +32,8 @@ export default class Card {
     this.title = title;
   };
 
+  public getBadges = (): Badge[] => this.badges;
+
   public addBadge = (badge: Badge): void => {
     this.badges.push(badge);
   };

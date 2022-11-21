@@ -1,5 +1,7 @@
 import Card from "../cards/card";
 import { Badge } from "../cards/types";
+import { badgeWidth } from "../utils/badge-width";
+import { formatHexColor } from "../utils/hex-color";
 
 export default class SvgGenerator {
   private width: number;
@@ -47,6 +49,8 @@ export default class SvgGenerator {
           <text x="0" y="0" class="header">${this.card.getTitle()}</text>
         </g>
 
+        ${this.createLine(this.card.getBadges())}
+
         <style>
           .header {
             font: 600 18px 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -56,24 +60,32 @@ export default class SvgGenerator {
       </svg>`;
   };
 
-  private createLine = (): string => {
-    return `
-      <g transform="translate(25, 35)">
-      </g>
-    `;
+  private createLine = (badges: Badge[]): string => {
+    let line: string = `<g transform="translate(25, 35)">`;
+    let leftPadding = 0;
+
+    for (const badge of badges) {
+      line += this.createBadge(badge, leftPadding);
+      leftPadding += 10 + badgeWidth(badge.label);
+    }
+
+    line += "</g>";
+    return line;
   };
 
-  private createBadge = (badge: Badge): string => {
+  private createBadge = (badge: Badge, leftPadding: number): string => {
+    const badgeColor: string = formatHexColor(this.card.getTheme().badgeColor);
+
     return `
       <image 
         x="0" 
         y="15" 
-        transform="translate(0, 0)"
-        xlink:href="https://img.shields.io/badge/${badge.logoName}-%23${
-      this.card.getTheme().badgeColor
-    }.svg?style=for-the-badge&amp;logo=${badge.logoName}&amp;logoColor=%23${
-      badge.logoColor
-    }&amp;logoWidth=16" 
+        transform="translate(${leftPadding}, 0)"
+        xlink:href="https://img.shields.io/badge/${
+          badge.label
+        }-${badgeColor}.svg?style=for-the-badge&amp;logo=${
+      badge.logoName
+    }&amp;logoColor=${formatHexColor(badge.logoColor)}&amp;logoWidth=16" 
       />
     `;
   };
