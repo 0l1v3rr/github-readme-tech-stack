@@ -2,7 +2,7 @@
   "name": "github-readme-tech-stack",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/app.js",
   "scripts": {
     "build": "tsc -p .",
     "start": "node dist/app.js",
