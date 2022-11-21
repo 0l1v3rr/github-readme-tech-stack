@@ -1,10 +1,15 @@
 import Card from "../cards/card";
+import { Badge } from "../cards/types";
 
 export default class SvgGenerator {
+  private width: number;
+  private height: number;
   private card: Card;
 
   public constructor(card: Card) {
     this.card = card;
+    this.width = 495;
+    this.height = 100;
   }
 
   /**
@@ -16,11 +21,12 @@ export default class SvgGenerator {
   public toString = (): string => {
     return `
       <svg
-        width="495"
-        height="195"
-        viewBox="0 0 495 195"
+        width="${this.width}"
+        height="${this.height}"
+        viewBox="0 0 ${this.width} ${this.height}"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
         role="img"
         aria-label="My Tech Stack"
       >
@@ -30,9 +36,9 @@ export default class SvgGenerator {
           x="0.5"
           y="0.5"
           rx="4.5"
-          height="99%"
+          height="${this.height - 1}"
           stroke="${this.card.getTheme().borderColor}"
-          width="494"
+          width="${this.width - 1}"
           fill="${this.card.getTheme().backgroundColor}"
           stroke-opacity="1"
         />
@@ -43,10 +49,32 @@ export default class SvgGenerator {
 
         <style>
           .header {
-            font: 600 20px 'Segoe UI', Ubuntu, Sans-Serif;
+            font: 600 18px 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             fill: ${this.card.getTheme().titleColor};
           }
         </style>
       </svg>`;
+  };
+
+  private createLine = (): string => {
+    return `
+      <g transform="translate(25, 35)">
+      </g>
+    `;
+  };
+
+  private createBadge = (badge: Badge): string => {
+    return `
+      <image 
+        x="0" 
+        y="15" 
+        transform="translate(0, 0)"
+        xlink:href="https://img.shields.io/badge/${badge.logoName}-%23${
+      this.card.getTheme().badgeColor
+    }.svg?style=for-the-badge&amp;logo=${badge.logoName}&amp;logoColor=%23${
+      badge.logoColor
+    }&amp;logoWidth=16" 
+      />
+    `;
   };
 }
