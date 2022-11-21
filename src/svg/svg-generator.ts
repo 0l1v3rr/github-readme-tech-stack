@@ -7,6 +7,12 @@ export default class SvgGenerator {
     this.card = card;
   }
 
+  /**
+   * Generates the SVG card from the Card
+   * variable passed in the constructor.
+   *
+   * @returns {string} The generated raw SVG.
+   */
   public toString = (): string => {
     return `
       <svg
