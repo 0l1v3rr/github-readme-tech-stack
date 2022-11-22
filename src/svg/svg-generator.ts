@@ -31,7 +31,6 @@ export default class SvgGenerator {
         viewBox="0 0 ${this.width} ${this.height}"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
         role="img"
         aria-label="My Tech Stack"
       >
@@ -98,7 +97,7 @@ export default class SvgGenerator {
         x="0" 
         y="15" 
         transform="translate(${leftPadding}, 0)"
-        xlink:href="https://img.shields.io/badge/${
+        href="https://img.shields.io/badge/${
           badge.label
         }-${badgeColor}.svg?style=for-the-badge&amp;logo=${
       badge.logoName
