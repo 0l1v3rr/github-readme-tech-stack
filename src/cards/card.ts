@@ -1,4 +1,4 @@
-import { themes } from "./themes";
+import { getThemeByName, themes } from "./themes";
 import { Badge, Theme } from "./types";
 
 export default class Card {
@@ -10,7 +10,7 @@ export default class Card {
 
   public constructor() {
     this.title = "My Tech Stack";
-    this.theme = themes.github;
+    this.theme = getThemeByName("github");
 
     this.lineCount = 1;
     this.lines = new Map<number, Badge[]>();
