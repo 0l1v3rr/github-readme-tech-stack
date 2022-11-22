@@ -2,5 +2,17 @@
   "version": 2,
   "github": {
     "silent": true
-  }
+  },
+  "builds": [
+    {
+      "src": "./dist/app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
 }
