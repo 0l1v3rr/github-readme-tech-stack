@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/app.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "build": "tsc -p .",
     "start": "node dist/app.js",
