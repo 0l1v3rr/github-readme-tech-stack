@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import Card from "../cards/card";
 import { getThemeByName } from "../cards/themes";
 import SvgGenerator from "../svg/svg-generator";
-import { validateLineCount } from "../utils/validator";
+import { validateLine, validateLineCount } from "../utils/validator";
 
 const cardController = (req: Request, res: Response) => {
   // an empty card
@@ -20,41 +20,13 @@ const cardController = (req: Request, res: Response) => {
   const lineCount = req.query.lineCount?.toString() || "1";
   card.setLineCount(validateLineCount(lineCount));
 
-  // card.addBadge(1, {
-  //   label: "React",
-  //   logoColor: "#61DAFB",
-  //   logoName: "react",
-  // });
+  // run a loop card.getLineCount() times
+  for (let i = 1; i <= card.getLineCount(); i++) {
+    // get the dynamic query param (line + i)
+    const lineValue = req.query[`line${i}`]?.toString() || "";
 
-  // card.addBadge(1, {
-  //   label: "Tailwind",
-  //   logoColor: "#61DAFB",
-  //   logoName: "tailwindcss",
-  // });
-
-  // card.addBadge(2, {
-  //   label: "Spring",
-  //   logoColor: "#61DAFB",
-  //   logoName: "spring",
-  // });
-
-  // card.addBadge(2, {
-  //   label: "Express",
-  //   logoColor: "#61DAFB",
-  //   logoName: "express",
-  // });
-
-  // card.addBadge(3, {
-  //   label: "Go",
-  //   logoColor: "#61DAFB",
-  //   logoName: "go",
-  // });
-
-  // card.addBadge(3, {
-  //   label: "TypeScript",
-  //   logoColor: "#61DAFB",
-  //   logoName: "typescript",
-  // });
+    [...validateLine(lineValue)].forEach((b) => card.addBadge(i, b));
+  }
 
   res.setHeader("Content-Type", "image/svg+xml");
   res.send(new SvgGenerator(card).toString());
