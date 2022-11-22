@@ -14,7 +14,7 @@ export default class SvgGenerator {
 
     // the base (line == 1) height is 100
     // each additional line increases the height by 35
-    this.height = 100 + (card.getLines() - 1) * 35;
+    this.height = 100 + (card.getLineCount() - 1) * 35;
   }
 
   /**
@@ -52,7 +52,7 @@ export default class SvgGenerator {
           <text x="0" y="0" class="header">${this.card.getTitle()}</text>
         </g>
 
-        ${this.createLine(this.card.getBadges(), 1)}
+        ${this.generateLines()}
 
         <style>
           .header {
@@ -63,10 +63,20 @@ export default class SvgGenerator {
       </svg>`;
   };
 
+  private generateLines = (): string => {
+    let res: string = "";
+
+    for (const line of this.card.getLinesMap()) {
+      res += this.createLine(line[1], line[0]);
+    }
+
+    return res;
+  };
+
   private createLine = (badges: Badge[], lineNumber: number): string => {
     // the first line is 35
     // each additional line increases this by 35
-    const translateY = 35 + (this.card.getLines() - 1) * 35;
+    const translateY = 35 + (lineNumber - 1) * 35;
     let line: string = `<g transform="translate(25, ${translateY})">`;
 
     let leftPadding = 0;

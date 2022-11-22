@@ -3,21 +3,30 @@ import { Badge, Theme } from "./types";
 
 export default class Card {
   private title: string;
+  private lineCount: number;
   private theme: Theme;
-  private badges: Badge[];
-  private lines: number;
+
+  private lines: Map<number, Badge[]>;
 
   public constructor() {
     this.title = "My Tech Stack";
     this.theme = themes.github;
-    this.badges = [];
-    this.lines = 1;
+
+    this.lineCount = 1;
+    this.lines = new Map<number, Badge[]>();
+    this.lines.set(1, []);
   }
 
-  public getLines = (): number => this.lines;
+  public getLineCount = (): number => this.lineCount;
 
-  public setLines = (lines: number): void => {
-    this.lines = lines;
+  public setLineCount = (lineCount: number): void => {
+    this.lineCount = lineCount;
+
+    for (let i = 1; i <= lineCount; i++) {
+      if (!this.lines.has(i)) {
+        this.lines.set(i, []);
+      }
+    }
   };
 
   public getTheme = (): Theme => this.theme;
@@ -32,9 +41,15 @@ export default class Card {
     this.title = title;
   };
 
-  public getBadges = (): Badge[] => this.badges;
+  public getLinesMap = (): Map<number, Badge[]> => this.lines;
 
-  public addBadge = (badge: Badge): void => {
-    this.badges.push(badge);
+  public getLineBadges = (lineCount: number): Badge[] =>
+    this.lines.get(lineCount) || [];
+
+  public addBadge = (lineCount: number, badge: Badge): void => {
+    const lineValue = this.lines.get(lineCount) || [];
+    lineValue.push(badge);
+
+    this.lines.set(lineCount, lineValue);
   };
 }

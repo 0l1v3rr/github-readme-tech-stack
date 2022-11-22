@@ -18,24 +18,42 @@ const cardController = (req: Request, res: Response) => {
 
   // if the user doesn't specify a line, we use 1
   const lineCount = req.query.lineCount?.toString() || "1";
-  card.setLines(validateLineCount(lineCount));
+  card.setLineCount(validateLineCount(lineCount));
 
-  // card.addBadge({
+  // card.addBadge(1, {
   //   label: "React",
   //   logoColor: "#61DAFB",
   //   logoName: "react",
   // });
 
-  // card.addBadge({
+  // card.addBadge(1, {
   //   label: "Tailwind",
   //   logoColor: "#61DAFB",
   //   logoName: "tailwindcss",
   // });
 
-  // card.addBadge({
+  // card.addBadge(2, {
   //   label: "Spring",
   //   logoColor: "#61DAFB",
   //   logoName: "spring",
+  // });
+
+  // card.addBadge(2, {
+  //   label: "Express",
+  //   logoColor: "#61DAFB",
+  //   logoName: "express",
+  // });
+
+  // card.addBadge(3, {
+  //   label: "Go",
+  //   logoColor: "#61DAFB",
+  //   logoName: "go",
+  // });
+
+  // card.addBadge(3, {
+  //   label: "TypeScript",
+  //   logoColor: "#61DAFB",
+  //   logoName: "typescript",
   // });
 
   res.setHeader("Content-Type", "image/svg+xml");

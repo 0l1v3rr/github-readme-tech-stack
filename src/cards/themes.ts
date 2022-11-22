@@ -16,7 +16,7 @@ export const themes: Record<themeNames, Theme> = {
     borderColor: "#D8DEE4",
     textColor: "#24292F",
     titleColor: "#0969DA",
-    badgeColor: "#FAFAFA",
+    badgeColor: "#F3F3F3",
   },
   github_dark: {
     backgroundColor: "#0D1117",
