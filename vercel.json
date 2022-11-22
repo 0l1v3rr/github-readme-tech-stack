@@ -3,16 +3,25 @@
   "github": {
     "silent": true
   },
+  "public": true,
   "builds": [
     {
-      "src": "index.js",
+      "src": "src/app.ts",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
+      "src": "/robots.txt",
+      "status": 204
+    },
+    {
+      "src": "/favicon.ico",
+      "status": 204
+    },
+    {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "/src/app.ts"
     }
   ]
 }
