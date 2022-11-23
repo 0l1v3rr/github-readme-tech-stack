@@ -28,6 +28,8 @@ const cardController = (req: Request, res: Response) => {
     [...validateLine(lineValue)].forEach((b) => card.addBadge(i, b));
   }
 
+  //res.setHeader("Content-Security-Policy", "img-src https://*.shields.io");
+  res.setHeader("Content-Security-Policy", "img-src * 'self' data: https:");
   res.setHeader("Content-Type", "image/svg+xml");
   res.send(new SvgGenerator(card).toString());
 };

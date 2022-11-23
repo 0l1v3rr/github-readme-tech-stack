@@ -6,7 +6,7 @@
   This project is currently under development, but a beta version is available. <br/>
   Dynamically generated, customizable technologies cards for your GitHub README.
 </div>
-
+<br>
 <div align="center">
   <img src="https://img.shields.io/github/contributors/0l1v3rr/github-readme-tech-stack" alt="Contributors">
   <img src="https://img.shields.io/github/issues-raw/0l1v3rr/github-readme-tech-stack" alt="Open Issues">
@@ -35,7 +35,7 @@ It's pretty simple, just copy and paste this line of markdown:
 ```md
 [![My Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards)](https://github-readme-tech-stack.vercel.app/api/cards)
 ```
-> **Note**
+> **Note**  
 > This will create an empty card. You can customize this as you want. [Here](#️-customize-the-card) are the available options.
 
 <hr>
@@ -68,6 +68,9 @@ Congrats, you have successfully created your line of badges. Here is an example:
 ```
 https://github-readme-tech-stack.vercel.app/api/cards?lineCount=1&line1=node.js,node.js,539E43;typescript,typescript,2D79C7;express,express.js,61DAFB
 ```
+
+> **Note**  
+> These cards use [shields.io](https://shields.io/) badges under the hood.
 
 <hr>
 
@@ -102,7 +105,7 @@ themes.set("theme_name", {
   badgeColor: "#ffffff",      // the background color of the badges
 });
 ```
-> **Note**
+> **Note**  
 > Adding the theme to the README is not necessary.
 
 <hr>
@@ -147,7 +150,7 @@ You can find a contributing guideline [here](CONTRIBUTING.md).
 <hr>
 
 ## 💡 Inspiration
-I was inspired by dozens of other project, check 'em out as well!
+I was inspired by dozens of other projects, check 'em out as well!
 - [github-readme-streak-stats](https://github.com/DenverCoder1/github-readme-streak-stats)
 - [github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
 - [github-profile-summary-cards](https://github.com/vn7n24fzkq/github-profile-summary-cards)
