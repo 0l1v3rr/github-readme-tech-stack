@@ -1,6 +1,7 @@
 import Card from "../cards/card";
 import { Badge } from "../cards/types";
 import { badgeWidth } from "../utils/badge-width";
+import { fetchBadge } from "../utils/fetch-badge";
 import { formatHexColor } from "../utils/hex-color";
 
 export default class SvgGenerator {
@@ -92,16 +93,20 @@ export default class SvgGenerator {
   private createBadge = (badge: Badge, leftPadding: number): string => {
     const badgeColor: string = formatHexColor(this.card.getTheme().badgeColor);
 
-    return `
-      <image 
-        x="0" 
-        y="15" 
-        transform="translate(${leftPadding}, 0)"
-        href="https://img.shields.io/badge/${
-          badge.label
-        }-${badgeColor}.svg?style=for-the-badge&amp;logo=${
+    const url = `https://img.shields.io/badge/${
+      badge.label
+    }-${badgeColor}.svg?style=for-the-badge&logo=${
       badge.logoName
-    }&amp;logoColor=${formatHexColor(badge.logoColor)}&amp;logoWidth=16" 
+    }&logoColor=${formatHexColor(badge.logoColor)}&logoWidth=16`;
+
+    fetchBadge(url);
+
+    return `
+      <image
+        x="0"
+        y="15"
+        transform="translate(${leftPadding}, 0)"
+        href="${url.replace(/[&]/g, "&amp;")}"
       />
     `;
   };
