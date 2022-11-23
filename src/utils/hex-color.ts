@@ -7,6 +7,10 @@
  * @returns {string} The formatted color.
  */
 export const formatHexColor = (color: string): string => {
+  if (color.startsWith("%23")) {
+    return color;
+  }
+
   if (!color.startsWith("#")) {
     color = `#${color}`;
   }
