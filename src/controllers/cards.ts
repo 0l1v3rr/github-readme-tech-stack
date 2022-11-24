@@ -28,7 +28,7 @@ const cardController = (req: Request, res: Response) => {
     [...validateLine(lineValue)].forEach((b) => card.addBadge(i, b));
   }
 
-  res.setHeader("Content-Security-Policy", "img-src *");
+  res.setHeader("Content-Security-Policy", "img-src * data: *");
   res.setHeader("Content-Type", "image/svg+xml");
   res.send(new SvgGenerator(card).toString());
 };

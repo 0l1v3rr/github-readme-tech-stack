@@ -99,7 +99,9 @@ export default class SvgGenerator {
       badge.logoName
     }&logoColor=${formatHexColor(badge.logoColor)}&logoWidth=16`;
 
-    fetchBadge(url);
+    let r: string = "";
+    fetchBadge(url).then((res) => console.log(res));
+    console.log(r);
 
     return `
       <image

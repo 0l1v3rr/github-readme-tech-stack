@@ -1,5 +1,6 @@
-import axios, { AxiosResponse } from "axios";
+import fetch from "cross-fetch";
 
-export const fetchBadge = (url: string): string => {
-  return "";
+export const fetchBadge = async (url: string): Promise<string> => {
+  const res = await fetch(url);
+  return await res.text();
 };
