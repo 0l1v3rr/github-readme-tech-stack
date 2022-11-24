@@ -1,9 +1,8 @@
 <div align="center">
-  <h2>🪄 GitHub Readme Tech Stack</h2>
+  <h2>🪄 GitHub Readme Tech Stack 🪄</h2>
 </div>
 
 <div align="center">
-  This project is currently under development, but a beta version is available. <br/>
   Dynamically generated, customizable technologies cards for your GitHub README.
 </div>
 
@@ -99,24 +98,7 @@ Here are the themes spread in a table. The card title is the name of the theme.
 </table>
 
 ### 📚 Adding a new theme
-Would you like to add a new theme to the list? You're lucky, every new theme is welcomed!  
-It's actually pretty easy to add a new theme. 
-
-After following our contributing guidelines, you should have your own fork cloned locally. If so, search for the [themes.ts](https://github.com/0l1v3rr/github-readme-tech-stack/blob/master/src/cards/themes.ts) file. Please follow the code structure you see there.
-
-You only have to specify a `set` method:
-```ts
-// the theme name should be snake_case
-themes.set("theme_name", {
-  backgroundColor: "#ffffff", // the background color of the card
-  borderColor: "#ffffff",     // the border color of the card
-  textColor: "#ffffff",       // the text color inside the badge
-  titleColor: "#ffffff",      // the title color
-  badgeColor: "#ffffff",      // the background color of the badges
-});
-```
-> **Note**  
-> Adding the theme to the README is not necessary.
+Would you like to add a new theme to the list? Check this [issue](https://github.com/0l1v3rr/github-readme-tech-stack/issues/2), please. **Thanks!**
 
 <hr>
 
