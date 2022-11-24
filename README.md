@@ -6,12 +6,22 @@
   This project is currently under development, but a beta version is available. <br/>
   Dynamically generated, customizable technologies cards for your GitHub README.
 </div>
+
 <br>
+
 <div align="center">
   <img src="https://img.shields.io/github/contributors/0l1v3rr/github-readme-tech-stack" alt="Contributors">
   <img src="https://img.shields.io/github/issues-raw/0l1v3rr/github-readme-tech-stack" alt="Open Issues">
   <img src="https://img.shields.io/github/issues-pr/0l1v3rr/github-readme-tech-stack" alt="Open PRs">
   <img src="https://img.shields.io/github/package-json/v/0l1v3rr/github-readme-tech-stack" alt="Version">
+</div>
+
+<br>
+
+<div align="center">
+  <a href="https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark&lineCount=2&line1=node.js,node.js,0;typescript,typescript,0;express,express,0&line2=html5,html,0;react,react,0;tailwindcss,tailwind,0&title=This%20Project%27s%20Tech%20Stack">
+    <img  src="https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark&lineCount=2&line1=node.js,node.js,0;typescript,typescript,0;express,express,0&line2=html5,html,0;react,react,0;tailwindcss,tailwind,0&title=This%20Project%27s%20Tech%20Stack" title="Tech Stack">
+  </a>
 </div>
 
 <hr>
@@ -132,7 +142,10 @@ cd github-readme-tech-stack
 # 2. Install the dependencies:
 npm i
 
-# 3. Run the application:
+# 3. Install husky (optional, but recommended)
+npm run prepare
+
+# 4. Run the application:
 npm run dev
 ```
 
