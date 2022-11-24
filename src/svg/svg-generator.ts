@@ -24,7 +24,7 @@ export default class SvgGenerator {
    *
    * @returns {string} The generated raw SVG.
    */
-  public toString = (): string => {
+  public toString = async (): Promise<string> => {
     return `
       <svg
         width="${this.width}"
@@ -52,7 +52,7 @@ export default class SvgGenerator {
           <text x="0" y="0" class="header">${this.card.getTitle()}</text>
         </g>
 
-        ${this.generateLines()}
+        ${await this.generateLines()}
 
         <style>
           .header {
@@ -63,17 +63,20 @@ export default class SvgGenerator {
       </svg>`;
   };
 
-  private generateLines = (): string => {
+  private generateLines = async (): Promise<string> => {
     let res: string = "";
 
     for (const line of this.card.getLinesMap()) {
-      res += this.createLine(line[1], line[0]);
+      res += await this.createLine(line[1], line[0]);
     }
 
     return res;
   };
 
-  private createLine = (badges: Badge[], lineNumber: number): string => {
+  private createLine = async (
+    badges: Badge[],
+    lineNumber: number
+  ): Promise<string> => {
     // the first line is 35
     // each additional line increases this by 35
     const translateY = 35 + (lineNumber - 1) * 35;
@@ -82,7 +85,7 @@ export default class SvgGenerator {
     let leftPadding = 0;
 
     for (const badge of badges) {
-      line += this.createBadge(badge, leftPadding);
+      line += await this.createBadge(badge, leftPadding);
       leftPadding += 10 + badgeWidth(badge.label);
     }
 
@@ -90,7 +93,10 @@ export default class SvgGenerator {
     return line;
   };
 
-  private createBadge = (badge: Badge, leftPadding: number): string => {
+  private createBadge = async (
+    badge: Badge,
+    leftPadding: number
+  ): Promise<string> => {
     const badgeColor: string = formatHexColor(this.card.getTheme().badgeColor);
 
     const url = `https://img.shields.io/badge/${
@@ -99,17 +105,21 @@ export default class SvgGenerator {
       badge.logoName
     }&logoColor=${formatHexColor(badge.logoColor)}&logoWidth=16`;
 
-    let r: string = "";
-    fetchBadge(url).then((res) => console.log(res));
-    console.log(r);
+    const svg = await fetchBadge(url);
+
+    // return `
+    //   <image
+    //     x="0"
+    //     y="15"
+    //     transform="translate(${leftPadding}, 0)"
+    //     href="${url.replace(/[&]/g, "&amp;")}"
+    //   />
+    // `;
 
     return `
-      <image
-        x="0"
-        y="15"
-        transform="translate(${leftPadding}, 0)"
-        href="${url.replace(/[&]/g, "&amp;")}"
-      />
+      <g transform="translate(${leftPadding}, 15)">
+        ${svg}
+      </g>
     `;
   };
 }
