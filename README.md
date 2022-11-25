@@ -89,10 +89,55 @@ Here are the themes spread in a table. The card title is the name of the theme.
 <table>
   <tr>
     <td>
-      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=github&title=github&lineCount=1&line1=node.js,node.js,539E43;typescript,typescript,2D79C7;express,express.js,61DAFB">
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=github&title=github&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
     </td>
     <td>
-      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark&title=github_dark&lineCount=1&line1=node.js,node.js,539E43;typescript,typescript,2D79C7;express,express.js,61DAFB">
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark&title=github_dark&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=react&title=react&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=vue&title=vue&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=angular&title=angular&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=node&title=node&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=one_dark&title=one_dark&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=dracula&title=dracula&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=monokai&title=monokai&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=material&title=material&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=night_owl&title=night_owl&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=ayu&title=ayu&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
     </td>
   </tr>
 </table>
