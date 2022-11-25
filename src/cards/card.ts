@@ -1,4 +1,4 @@
-import { getThemeByName, themes } from "./themes";
+import { getThemeByName } from "./themes";
 import { Badge, Theme } from "./types";
 
 export default class Card {

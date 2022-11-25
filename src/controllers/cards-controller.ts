@@ -4,7 +4,7 @@ import { getThemeByName } from "../cards/themes";
 import SvgGenerator from "../svg/svg-generator";
 import { validateLine, validateLineCount } from "../utils/validator";
 
-const cardController = async (req: Request, res: Response) => {
+export const getCard = async (req: Request, res: Response) => {
   // an empty card
   const card = new Card();
 
@@ -32,5 +32,3 @@ const cardController = async (req: Request, res: Response) => {
   res.setHeader("Content-Type", "image/svg+xml");
   res.send(await new SvgGenerator(card).toString());
 };
-
-export default cardController;

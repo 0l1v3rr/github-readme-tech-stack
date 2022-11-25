@@ -64,7 +64,7 @@ export default class SvgGenerator {
   };
 
   private generateLines = async (): Promise<string> => {
-    let res: string = "";
+    let res = "";
 
     for (const line of this.card.getLinesMap()) {
       res += await this.createLine(line[1], line[0]);
@@ -80,7 +80,7 @@ export default class SvgGenerator {
     // the first line is 35
     // each additional line increases this by 35
     const translateY = 35 + (lineNumber - 1) * 35;
-    let line: string = `<g transform="translate(25, ${translateY})">`;
+    let line = `<g transform="translate(25, ${translateY})">`;
 
     let leftPadding = 0;
 
