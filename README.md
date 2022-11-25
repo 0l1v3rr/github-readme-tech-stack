@@ -70,6 +70,9 @@ Every badge is built like this: `{logoName},{logoTitle},{logoColor}` (e.g `types
 The `logoColor` has to be a hexadecimal color code, without the `#` symbol.  
 We need to separate the values with commas. (`,`)
 
+> **Note**  
+> If you set the `logoColor` to `auto`, it will use the default color of the SVG logo.
+
 Now that we know how to create badges, we can move on to creating a line.  
 We just simply put badges next to each other separated by semicolons. (`{badge};{another one};{another one}`)
 

@@ -50,10 +50,13 @@ export const validateLine = (line: string): Badge[] => {
       continue;
     }
 
+    const logoColor =
+      splitByComma[2] === "auto" ? "" : formatHexColor(splitByComma[2]);
+
     badges.push({
       logoName: splitByComma[0],
       label: splitByComma[1],
-      logoColor: formatHexColor(splitByComma[2]),
+      logoColor: logoColor,
     });
   }
 
