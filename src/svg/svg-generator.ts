@@ -80,17 +80,25 @@ export default class SvgGenerator {
     // the first line is 35
     // each additional line increases this by 35
     const translateY = 35 + (lineNumber - 1) * 35;
-    let line = `<g transform="translate(25, ${translateY})">`;
 
+    let icons = "";
     let leftPadding = 0;
 
     for (const badge of badges) {
-      line += await this.createBadge(badge, leftPadding);
+      icons += await this.createBadge(badge, leftPadding);
       leftPadding += 10 + badgeWidth(badge.label);
     }
 
-    line += "</g>";
-    return line;
+    // align: left   ==> x = 25
+    // align: center ==> x = 495/2 - leftPadding/2
+    // align: right ==> x = 495 - 25 - leftPadding
+
+    const x = 25;
+    return `
+      <g transform="translate(${x}, ${translateY})">
+        ${icons}
+      </g>
+    `;
   };
 
   private createBadge = async (
