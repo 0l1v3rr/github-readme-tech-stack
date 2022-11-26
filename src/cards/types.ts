@@ -10,3 +10,5 @@ export interface Badge {
   label: string;
   logoColor: string;
 }
+
+export type BadgeAlign = "left" | "center" | "right";

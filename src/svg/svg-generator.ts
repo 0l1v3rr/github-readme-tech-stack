@@ -92,8 +92,20 @@ export default class SvgGenerator {
     // align: left   ==> x = 25
     // align: center ==> x = 495/2 - leftPadding/2
     // align: right ==> x = 495 - 25 - leftPadding
+    let x = 25;
 
-    const x = 25;
+    switch (this.card.getBadgeAlign()) {
+      case "left":
+        x = 25;
+        break;
+      case "center":
+        x = 495 / 2 - leftPadding / 2;
+        break;
+      case "right":
+        x = 495 - 25 - leftPadding;
+        break;
+    }
+
     return `
       <g transform="translate(${x}, ${translateY})">
         ${icons}

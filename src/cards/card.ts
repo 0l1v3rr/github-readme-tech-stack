@@ -1,16 +1,18 @@
 import { getThemeByName } from "./themes";
-import { Badge, Theme } from "./types";
+import { Badge, BadgeAlign, Theme } from "./types";
 
 export default class Card {
   private title: string;
   private lineCount: number;
   private theme: Theme;
+  private badgeAlign: BadgeAlign;
 
   private lines: Map<number, Badge[]>;
 
   public constructor() {
     this.title = "My Tech Stack";
     this.theme = getThemeByName("github");
+    this.badgeAlign = "left";
 
     this.lineCount = 1;
     this.lines = new Map<number, Badge[]>();
@@ -51,5 +53,11 @@ export default class Card {
     lineValue.push(badge);
 
     this.lines.set(lineCount, lineValue);
+  };
+
+  public getBadgeAlign = (): BadgeAlign => this.badgeAlign;
+
+  public setBadgeAlign = (badgeAlign: BadgeAlign): void => {
+    this.badgeAlign = badgeAlign;
   };
 }

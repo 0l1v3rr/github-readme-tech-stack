@@ -1,4 +1,4 @@
-import { Badge } from "../cards/types";
+import { Badge, BadgeAlign } from "../cards/types";
 import { formatHexColor } from "./hex-color";
 
 /**
@@ -19,6 +19,25 @@ export const validateLineCount = (lineCount: string): number => {
 
   // it's less than one
   return lineNum < 1 ? 1 : lineNum;
+};
+
+/**
+ * Validates the given align.
+ *
+ * @param {string} align The alignment
+ * @returns {BadgeAlign} A valid BadgeAlign
+ */
+export const validateAlign = (align: string): BadgeAlign => {
+  switch (align) {
+    case "left":
+      return "left";
+    case "center" || "middle":
+      return "center";
+    case "right":
+      return "right";
+    default:
+      return "left";
+  }
 };
 
 /**
