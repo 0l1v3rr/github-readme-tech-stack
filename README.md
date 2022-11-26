@@ -143,6 +143,69 @@ Here are the themes spread in a table. The card title is the name of the theme.
       <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=ayu&title=ayu&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
     </td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=radical&title=radical&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=merko&title=merko&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=tokyonight&title=tokyonight&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=darcula&title=darcula&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=gotham&title=gotham&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=chess.com&title=chess.com&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=blood&title=blood&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=blood_dark&title=blood_dark&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=hacker&title=hacker&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=android&title=android&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=windows&title=windows&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=java&title=java&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=halloween&title=halloween&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=christmas&title=christmas&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+  </tr>
 </table>
 
 ### 📚 Adding a new theme

@@ -78,6 +78,90 @@ themes.set("ayu", {
   titleColor: "#FFA42F",
   badgeColor: "#151B26",
 });
+themes.set("radical", {
+  backgroundColor: "#0C0B1B",
+  borderColor: "#14132E",
+  titleColor: "#FE408F",
+  badgeColor: "#14132E",
+});
+themes.set("merko", {
+  backgroundColor: "#030603",
+  borderColor: "#0B170B",
+  titleColor: "#ACD300",
+  badgeColor: "#0B170B",
+});
+themes.set("tokyonight", {
+  backgroundColor: "#131422",
+  borderColor: "#1D1E33",
+  titleColor: "#70A6FD",
+  badgeColor: "#1D1E33",
+});
+themes.set("darcula", {
+  backgroundColor: "#1F1F1F",
+  borderColor: "#303030",
+  titleColor: "#BB5F10",
+  badgeColor: "#303030",
+});
+themes.set("gotham", {
+  backgroundColor: "#04070C",
+  borderColor: "#0B1321",
+  titleColor: "#25A98A",
+  badgeColor: "#0B1321",
+});
+themes.set("chess.com", {
+  backgroundColor: "#2C2B29",
+  borderColor: "#403E3B",
+  titleColor: "#69923E",
+  badgeColor: "#403E3B",
+});
+themes.set("blood", {
+  backgroundColor: "#FFFFFF",
+  borderColor: "#EBEBEB",
+  titleColor: "#FF5F5F",
+  badgeColor: "#EBEBEB",
+});
+themes.set("blood_dark", {
+  backgroundColor: "#0C2734",
+  borderColor: "#0F3242",
+  titleColor: "#FF5F5F",
+  badgeColor: "#0F3242",
+});
+themes.set("hacker", {
+  backgroundColor: "#000000",
+  borderColor: "#1DDB07",
+  titleColor: "#1DDB07",
+  badgeColor: "#0F0F0F",
+});
+themes.set("android", {
+  backgroundColor: "#000000",
+  borderColor: "#3ADD85",
+  titleColor: "#3ADD85",
+  badgeColor: "#0F0F0F",
+});
+themes.set("windows", {
+  backgroundColor: "#000000",
+  borderColor: "#00A3EE",
+  titleColor: "#00A3EE",
+  badgeColor: "#0F0F0F",
+});
+themes.set("java", {
+  backgroundColor: "#000000",
+  borderColor: "#3383A3",
+  titleColor: "#3383A3",
+  badgeColor: "#0F0F0F",
+});
+themes.set("halloween", {
+  backgroundColor: "#1C1A2B",
+  borderColor: "#FFC400",
+  titleColor: "#FCEE48",
+  badgeColor: "#28253D",
+});
+themes.set("christmas", {
+  backgroundColor: "#01241F",
+  borderColor: "#ED0101",
+  titleColor: "#ED0101",
+  badgeColor: "#02362F",
+});
 
 /**
  * Searches for the specified theme in the themes map.
