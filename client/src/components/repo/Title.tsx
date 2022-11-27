@@ -8,7 +8,7 @@ interface TitleProps {
 
 const Title: FC<TitleProps> = (props) => {
   return (
-    <div className="flex items-center gap-2 text-xl">
+    <div className="flex items-center gap-2 text-2xl">
       <div className="fill-gh-text-secondary">
         <svg
           aria-hidden="true"
