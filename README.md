@@ -32,6 +32,7 @@
   - [📚 Adding a new theme](#-adding-a-new-theme)
 - [🧠 Tips](#-tips)
   - [🪢 Align the card in the markdown](#-align-the-card-in-the-markdown)
+  - [🎭 Adding custom SVG logo](#-adding-custom-svg-logo)
 - [⚒️ Building from source](#️-building-from-source)
 - [📝 License](#-license)
 - [🧑‍🤝‍🧑 Contributing](#-contributing)
@@ -221,6 +222,16 @@ If you're using markdown, you may want to align your cards. There's an easy way 
 ```html
 <img align="center" src="https://github-readme-tech-stack.vercel.app/api/cards" alt="My Tech Stack" />
 ```
+
+### 🎭 Adding custom SVG logo
+Let's assume that you have a [line created](#-how-to-customize-a-line) and want to use your own SVGs. We support that using [Base64](https://en.wikipedia.org/wiki/Base64) format.  
+**[\*](https://stackoverflow.com/questions/38985050/how-do-i-use-the-logo-option-in-shields-io-badges) Here's an easy 3-step guide:**
+1. Download the image and use one of the many online tools, e.g. [http://b64.io/](http://b64.io/), to encode it.
+2. Encode the Base64 string in [percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding). Take the Base64 string and use one of the many online tools, e.g. [http://meyerweb.com/eric/tools/dencoder/](http://meyerweb.com/eric/tools/dencoder/), to encode the string.
+3. Finally, replace the first element of the badge (the `logoName`) with this string. (e.g `<Base64>,typescript,2D79C7;`)
+
+>> **Note**  
+>> Sometimes the encoded string, of either step 2 or 3, may be too long to be used. You should then try to reduce the size (total pixels) of the image and try again.
 
 <hr>
 
