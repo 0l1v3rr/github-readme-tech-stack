@@ -6,6 +6,9 @@
 /.pnp
 .pnp.js
 
+### Production ###
+/dist
+
 ### Misc ###
 .DS_Store
 .env

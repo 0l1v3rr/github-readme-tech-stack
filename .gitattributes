@@ -33,5 +33,6 @@ package.json      text eol=lf
 package-lock.json text -diff
 Makefile          text
 
-# Dist
-dist/** -diff linguist-generated=true
+# Other
+dist/**           -diff linguist-generated=true
+client/build/**   -diff linguist-generated=true
