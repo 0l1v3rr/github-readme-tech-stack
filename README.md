@@ -230,8 +230,8 @@ Let's assume that you have a [line created](#-how-to-customize-a-line) and want 
 2. Encode the Base64 string in [percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding). Take the Base64 string and use one of the many online tools, e.g. [http://meyerweb.com/eric/tools/dencoder/](http://meyerweb.com/eric/tools/dencoder/), to encode the string.
 3. Finally, replace the first element of the badge (the `logoName`) with this string. (e.g `<Base64>,typescript,2D79C7;`)
 
->> **Note**  
->> Sometimes the encoded string, of either step 2 or 3, may be too long to be used. You should then try to reduce the size (total pixels) of the image and try again.
+> **Note**  
+> Sometimes the encoded string, of either step 2 or 3, may be too long to be used. You should then try to reduce the size (total pixels) of the image and try again.
 
 <hr>
 
