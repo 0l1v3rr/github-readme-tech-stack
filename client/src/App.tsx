@@ -3,7 +3,7 @@ import Options from "./sections/Options";
 
 const App = () => {
   return (
-    <div className="bg-gh-bg w-screen min-h-screen overflow-x-hidden">
+    <div className="bg-gh-bg w-screen min-h-screen overflow-x-hidden select-none">
       <Header />
 
       <div className="flex mx-48 mt-6">

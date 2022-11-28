@@ -5,17 +5,25 @@ import Input from "../components/input/Input";
 import SelectInput from "../components/input/SelectInput";
 import GreenButton from "../components/buttons/GreenButton";
 import { useRecoilState } from "recoil";
-import { alignState, lineCountState, themeState, titleState } from "../atoms";
-import { useEffect, useState } from "react";
+import {
+  alignState,
+  lineCountState,
+  linesState,
+  themeState,
+  titleState,
+} from "../atoms";
+import { useCallback, useEffect, useState } from "react";
 import LineInput from "../components/input/LineInput";
+import { Line } from "../types/line";
 
 const Options = () => {
+  const [lineChars, setLineChars] = useState(["1"]);
+
   const [title, setTitle] = useRecoilState<string>(titleState);
   const [lineCount, setLineCount] = useRecoilState<string>(lineCountState);
   const [theme, setTheme] = useRecoilState(themeState);
   const [align, setAlign] = useRecoilState(alignState);
-
-  const [lineChars, setLineChars] = useState(["1"]);
+  const [, setLines] = useRecoilState(linesState);
 
   useEffect(() => {
     // validate the lineCount so it only has numbers in it
@@ -30,9 +38,36 @@ const Options = () => {
     const res: string[] = [];
     for (let i = 1; i <= Number(lineCount); i++) {
       res.push(`${i}`);
+      setLines((prev) => [
+        ...prev,
+        {
+          badges: [],
+          lineNumber: `${i}`,
+        },
+      ]);
     }
     setLineChars(res);
-  }, [lineCount, setLineCount]);
+  }, [lineCount, setLineCount, setLines]);
+
+  const updateLine = useCallback(
+    (line: Line) => {
+      setLines((prev) => {
+        const res = [...prev];
+
+        let index = 0;
+        res.forEach((l, i) => {
+          if (l.lineNumber === line.lineNumber) {
+            index = i;
+          }
+        });
+
+        res[index] = line;
+
+        return res;
+      });
+    },
+    [setLines]
+  );
 
   return (
     <section className="border border-solid border-gh-border rounded-md w-[40%]">
@@ -67,8 +102,10 @@ const Options = () => {
           setValue={setAlign}
         />
 
+        <div className="w-[92%] h-[.8px] bg-gh-border mx-auto" />
+
         {lineChars.map((line) => (
-          <LineInput line={line} />
+          <LineInput line={line} updateLine={updateLine} />
         ))}
 
         <GreenButton

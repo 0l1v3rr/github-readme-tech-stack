@@ -1,32 +1,36 @@
-import { FC, useId } from "react";
+import { FC, useState } from "react";
+import { Badge, Line } from "../../types/line";
+import { FaRegEdit } from "react-icons/fa";
 
 interface InputProps {
   line: string;
-  // value: string;
-  // setValue: Dispatch<SetStateAction<any>>;
+  updateLine: (line: Line) => void;
 }
 
 const LineInput: FC<InputProps> = (props) => {
-  const id = `line-${props.line}-${useId()}`;
+  const [badges] = useState<Badge[]>([]);
 
   return (
     <div className="flex items-center gap-2 mx-4">
-      <label htmlFor={id} className="text-gh-text-secondary whitespace-nowrap">
-        Line #{props.line}:
-      </label>
+      <span className="text-gh-text-secondary whitespace-nowrap font-semibold">
+        Line {props.line}:
+      </span>
 
-      <input
-        name={id}
-        id={id}
-        // value={props.value}
-        // onChange={(e) => props.setValue(e.target.value)}
-        autoComplete="off"
-        type="text"
+      <div
         className="w-[72%] ml-auto text-base bg-gh-bg border border-solid border-gh-border 
-          rounded-md px-2 py-1 leading-none placeholder:text-gh-text-secondary text-gh-text
-          outline-none focus:border-gh-blue-dark active:border-gh-blue-dark transition-all 
-          duration-150"
-      />
+          rounded-md px-3 py-2 leading-none text-gh-text flex items-center gap-2"
+      >
+        <span>Badges: {badges.length}</span>
+
+        <button
+          type="button"
+          title="Edit Line"
+          className="cursor-pointer ml-auto text-gh-text-secondary 
+            hover:text-gh-blue transition-all duration-150"
+        >
+          <FaRegEdit />
+        </button>
+      </div>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { atom } from "recoil";
+import { Line } from "./types/line";
 
 export const titleState = atom({
   key: "title",
@@ -18,4 +19,9 @@ export const themeState = atom({
 export const alignState = atom({
   key: "align",
   default: "left",
+});
+
+export const linesState = atom({
+  key: "lines",
+  default: [] as Line[],
 });

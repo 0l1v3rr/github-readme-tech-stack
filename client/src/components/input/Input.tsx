@@ -12,7 +12,10 @@ const Input: FC<InputProps> = (props) => {
 
   return (
     <div className="flex items-center gap-2 mx-4">
-      <label htmlFor={id} className="text-gh-text-secondary whitespace-nowrap">
+      <label
+        htmlFor={id}
+        className="text-gh-text-secondary whitespace-nowrap font-semibold"
+      >
         {props.label}:
       </label>
 
