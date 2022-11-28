@@ -4,7 +4,7 @@ interface SelectInputProps {
   label: string;
   setValue: Dispatch<SetStateAction<any>>;
   options: string[];
-  selectedIndex: number;
+  value: string;
 }
 
 const SelectInput: FC<SelectInputProps> = (props) => {
@@ -19,6 +19,7 @@ const SelectInput: FC<SelectInputProps> = (props) => {
       <select
         name={id}
         id={id}
+        defaultValue={props.value}
         autoComplete="off"
         onChange={(e) => props.setValue(e.target.value)}
         className="w-[72%] ml-auto text-base bg-gh-bg border border-solid border-gh-border 
@@ -28,7 +29,7 @@ const SelectInput: FC<SelectInputProps> = (props) => {
       >
         {props.options.map((option, index) => {
           return (
-            <option value={option} selected={index === props.selectedIndex}>
+            <option value={option} key={`${option}-${index}`}>
               {option}
             </option>
           );

@@ -1,27 +1,25 @@
-import { Dispatch, FC, SetStateAction, useId } from "react";
+import { FC, useId } from "react";
 
 interface InputProps {
-  label: string;
-  value: string;
-  setValue: Dispatch<SetStateAction<any>>;
-  placeholder: string;
+  line: string;
+  // value: string;
+  // setValue: Dispatch<SetStateAction<any>>;
 }
 
-const Input: FC<InputProps> = (props) => {
-  const id = `${props.label}-${useId()}`;
+const LineInput: FC<InputProps> = (props) => {
+  const id = `line-${props.line}-${useId()}`;
 
   return (
     <div className="flex items-center gap-2 mx-4">
       <label htmlFor={id} className="text-gh-text-secondary whitespace-nowrap">
-        {props.label}:
+        Line #{props.line}:
       </label>
 
       <input
         name={id}
         id={id}
-        value={props.value}
-        placeholder={props.placeholder}
-        onChange={(e) => props.setValue(e.target.value)}
+        // value={props.value}
+        // onChange={(e) => props.setValue(e.target.value)}
         autoComplete="off"
         type="text"
         className="w-[72%] ml-auto text-base bg-gh-bg border border-solid border-gh-border 
@@ -33,4 +31,4 @@ const Input: FC<InputProps> = (props) => {
   );
 };
 
-export default Input;
+export default LineInput;
