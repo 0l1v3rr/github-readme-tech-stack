@@ -14,12 +14,12 @@ const LineInput: FC<InputProps> = (props) => {
   const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
 
   const addBadge = (badge: Badge) => {
-    setBadges((prev) => [...prev, badge]);
-
     props.updateLine({
-      badges: badges,
+      badges: [...badges, badge],
       lineNumber: props.line,
     });
+
+    setBadges((prev) => [...prev, badge]);
   };
 
   return (

@@ -12,18 +12,29 @@ import {
   themeState,
   titleState,
 } from "../atoms";
-import { useCallback, useEffect, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import LineInput from "../components/input/LineInput";
 import { Line } from "../types/line";
 
-const Options = () => {
+interface OptionsProps {
+  generateLink: (
+    title: string,
+    lineCount: string,
+    theme: string,
+    align: string,
+    lines: Line[]
+  ) => string;
+  setLink: (link: string) => void;
+}
+
+const Options: FC<OptionsProps> = (props) => {
   const [lineChars, setLineChars] = useState(["1"]);
 
   const [title, setTitle] = useRecoilState<string>(titleState);
   const [lineCount, setLineCount] = useRecoilState<string>(lineCountState);
   const [theme, setTheme] = useRecoilState(themeState);
   const [align, setAlign] = useRecoilState(alignState);
-  const [, setLines] = useRecoilState(linesState);
+  const [lines, setLines] = useRecoilState(linesState);
 
   useEffect(() => {
     // validate the lineCount so it only has numbers in it
@@ -52,16 +63,16 @@ const Options = () => {
   const updateLine = useCallback(
     (line: Line) => {
       setLines((prev) => {
-        const res = [...prev];
+        const res: Line[] = [];
 
-        let index = 0;
-        res.forEach((l, i) => {
+        for (const l of [...prev]) {
           if (l.lineNumber === line.lineNumber) {
-            index = i;
+            res.push(line);
+            continue;
           }
-        });
 
-        res[index] = line;
+          res.push(l);
+        }
 
         return res;
       });
@@ -110,7 +121,11 @@ const Options = () => {
 
         <GreenButton
           icon={IoHammerOutline}
-          onClick={() => {}}
+          onClick={() => {
+            props.setLink(
+              props.generateLink(title, lineCount, theme, align, lines)
+            );
+          }}
           text="Generate"
         />
       </div>
