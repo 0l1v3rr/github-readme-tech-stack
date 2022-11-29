@@ -18,9 +18,14 @@ const Preview: FC<PreviewProps> = (props) => {
     <section className="border border-solid border-gh-border rounded-md w-full lg:w-[60%] pb-2">
       <SectionTitle icon={BsEmojiHeartEyes} title="Preview" />
 
-      <div className="flex items-center justify-center px-4 mt-2">
+      <a
+        href={props.link}
+        target="_blank"
+        rel="noreferrer"
+        className="flex items-center justify-center px-4 mt-2"
+      >
         <img src={props.link} alt="Preview" />
-      </div>
+      </a>
 
       <div className="w-[95%] h-[.8px] bg-gh-border mx-auto my-2" />
 

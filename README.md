@@ -1,5 +1,5 @@
 <div align="center">
-  <h2>🪄 GitHub Readme Tech Stack 🪄</h2>
+  <h2><a href="https://github-readme-tech-stack.vercel.app">🪄 GitHub Readme Tech Stack 🪄</a></h2>
 </div>
 
 <div align="center">
@@ -51,8 +51,7 @@ It's pretty simple, just copy and paste this line of markdown:
 <hr>
 
 ## 🕹️ Customize the card
-We are planning on building a generator website to generate these cards more easily and conveniently.  
-Here are all the currently available query parameters.
+Instead of building your card manually, please, use our [website](https://github-readme-tech-stack.vercel.app).
 
 | Parameter | Example | Default value | Description|
 |---------- |---------|---------------|------------|
