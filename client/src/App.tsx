@@ -6,7 +6,7 @@ const App = () => {
     <div className="bg-gh-bg w-screen min-h-screen overflow-x-hidden select-none">
       <Header />
 
-      <div className="flex mx-48 mt-6">
+      <div className="flex mx-10 md:mx-48 mt-6">
         <Options />
       </div>
     </div>

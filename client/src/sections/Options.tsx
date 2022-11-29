@@ -70,7 +70,7 @@ const Options = () => {
   );
 
   return (
-    <section className="border border-solid border-gh-border rounded-md w-[40%]">
+    <section className="border border-solid border-gh-border rounded-md w-full lg:w-[40%]">
       <SectionTitle icon={VscSettings} title="Options" />
 
       <div className="my-4 flex flex-col gap-4">
@@ -105,7 +105,7 @@ const Options = () => {
         <div className="w-[92%] h-[.8px] bg-gh-border mx-auto" />
 
         {lineChars.map((line) => (
-          <LineInput line={line} updateLine={updateLine} />
+          <LineInput line={line} updateLine={updateLine} key={line} />
         ))}
 
         <GreenButton

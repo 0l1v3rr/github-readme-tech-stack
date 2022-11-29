@@ -23,5 +23,9 @@
       "src": "/(.*)",
       "dest": "/src/app.ts"
     }
+  ],
+  "redirects": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/demo", "destination": "/index.html" }
   ]
 }

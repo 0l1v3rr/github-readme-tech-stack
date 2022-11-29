@@ -1,6 +1,8 @@
 import { FC, useState } from "react";
 import { Badge, Line } from "../../types/line";
-import { FaRegEdit } from "react-icons/fa";
+import { AiOutlinePlusCircle } from "react-icons/ai";
+import BlurOverlay from "../popups/BlurOverlay";
+import LinePopup from "../popups/LinePopup";
 
 interface InputProps {
   line: string;
@@ -8,12 +10,35 @@ interface InputProps {
 }
 
 const LineInput: FC<InputProps> = (props) => {
-  const [badges] = useState<Badge[]>([]);
+  const [badges, setBadges] = useState<Badge[]>([]);
+  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
+
+  const addBadge = (badge: Badge) => {
+    setBadges((prev) => [...prev, badge]);
+
+    props.updateLine({
+      badges: badges,
+      lineNumber: props.line,
+    });
+  };
 
   return (
     <div className="flex items-center gap-2 mx-4">
+      <BlurOverlay
+        isActive={isPopupOpen}
+        closePopup={() => setIsPopupOpen(false)}
+      />
+
+      <LinePopup
+        badges={badges}
+        addBadge={addBadge}
+        isActive={isPopupOpen}
+        lineNumber={props.line}
+        closePopup={() => setIsPopupOpen(false)}
+      />
+
       <span className="text-gh-text-secondary whitespace-nowrap font-semibold">
-        Line {props.line}:
+        Line #{props.line}:
       </span>
 
       <div
@@ -27,8 +52,9 @@ const LineInput: FC<InputProps> = (props) => {
           title="Edit Line"
           className="cursor-pointer ml-auto text-gh-text-secondary 
             hover:text-gh-blue transition-all duration-150"
+          onClick={() => setIsPopupOpen(true)}
         >
-          <FaRegEdit />
+          <AiOutlinePlusCircle />
         </button>
       </div>
     </div>
