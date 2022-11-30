@@ -25,7 +25,8 @@ const App = () => {
 
       let line = `&line${l.lineNumber}=`;
       for (const b of l.badges) {
-        line += `${b.iconName},${b.label},${b.color};`;
+        const color = b.color.replace("#", "");
+        line += `${b.iconName},${b.label},${color};`;
       }
 
       res += line;

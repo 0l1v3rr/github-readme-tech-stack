@@ -15,6 +15,7 @@ import {
 import { FC, useCallback, useEffect, useState } from "react";
 import LineInput from "../components/input/LineInput";
 import { Line } from "../types/line";
+import axios from "axios";
 
 interface OptionsProps {
   generateLink: (
@@ -28,6 +29,14 @@ interface OptionsProps {
 }
 
 const Options: FC<OptionsProps> = (props) => {
+  const [themes, setThemes] = useState<string[]>([]);
+
+  useEffect(() => {
+    axios
+      .get("https://github-readme-tech-stack.vercel.app/api/themes")
+      .then((res) => setThemes(res.data));
+  }, []);
+
   const [lineChars, setLineChars] = useState(["1"]);
 
   const [title, setTitle] = useRecoilState<string>(titleState);
@@ -101,7 +110,7 @@ const Options: FC<OptionsProps> = (props) => {
 
         <SelectInput
           label="Theme"
-          options={["github", "github_dark"]}
+          options={themes}
           value={theme}
           setValue={setTheme}
         />
