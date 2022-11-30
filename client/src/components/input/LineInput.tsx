@@ -3,6 +3,7 @@ import { Badge, Line } from "../../types/line";
 import { AiOutlinePlus } from "react-icons/ai";
 import BlurOverlay from "../popups/BlurOverlay";
 import LinePopup from "../popups/LinePopup";
+import HoverText from "../hover/HoverText";
 
 interface InputProps {
   line: string;
@@ -47,14 +48,16 @@ const LineInput: FC<InputProps> = (props) => {
       >
         <span>Badges: {badges.length}</span>
 
-        <button
-          type="button"
-          className="cursor-pointer ml-auto text-gh-text-secondary 
-            hover:text-gh-blue transition-all duration-150"
-          onClick={() => setIsPopupOpen(true)}
-        >
-          <AiOutlinePlus />
-        </button>
+        <HoverText label="Add badge" className="ml-auto">
+          <button
+            type="button"
+            className="cursor-pointer text-gh-text-secondary 
+              hover:text-gh-blue transition-all duration-150"
+            onClick={() => setIsPopupOpen(true)}
+          >
+            <AiOutlinePlus />
+          </button>
+        </HoverText>
       </div>
     </div>
   );
