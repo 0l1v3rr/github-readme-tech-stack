@@ -16,20 +16,14 @@ import { FC, useCallback, useEffect, useState } from "react";
 import LineInput from "../components/input/LineInput";
 import { Line } from "../types/line";
 import axios from "axios";
+import { generateLink } from "../utils/generate";
 
 interface OptionsProps {
-  generateLink: (
-    title: string,
-    lineCount: string,
-    theme: string,
-    align: string,
-    lines: Line[]
-  ) => string;
   setLink: (link: string) => void;
 }
 
 const Options: FC<OptionsProps> = (props) => {
-  const [themes, setThemes] = useState<string[]>([]);
+  const [themes, setThemes] = useState<string[]>(["github", "github_dark"]);
 
   useEffect(() => {
     axios
@@ -131,9 +125,7 @@ const Options: FC<OptionsProps> = (props) => {
         <GreenButton
           icon={IoHammerOutline}
           onClick={() => {
-            props.setLink(
-              props.generateLink(title, lineCount, theme, align, lines)
-            );
+            props.setLink(generateLink(title, lineCount, theme, align, lines));
           }}
           text="Generate"
         />

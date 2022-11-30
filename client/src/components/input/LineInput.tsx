@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { Badge, Line } from "../../types/line";
-import { AiOutlinePlusCircle } from "react-icons/ai";
+import { AiOutlinePlus } from "react-icons/ai";
 import BlurOverlay from "../popups/BlurOverlay";
 import LinePopup from "../popups/LinePopup";
 
@@ -49,12 +49,11 @@ const LineInput: FC<InputProps> = (props) => {
 
         <button
           type="button"
-          title="Edit Line"
           className="cursor-pointer ml-auto text-gh-text-secondary 
             hover:text-gh-blue transition-all duration-150"
           onClick={() => setIsPopupOpen(true)}
         >
-          <AiOutlinePlusCircle />
+          <AiOutlinePlus />
         </button>
       </div>
     </div>
