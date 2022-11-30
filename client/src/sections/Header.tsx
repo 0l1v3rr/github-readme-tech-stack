@@ -2,8 +2,11 @@ import ButtonLink from "../components/buttons/ButtonLink";
 import Title from "../components/repo/Title";
 import { AiOutlineStar, AiOutlineGithub } from "react-icons/ai";
 import { BiGitRepoForked } from "react-icons/bi";
+import { useFetchGitHub } from "../hooks/useFetchGitHub";
 
 const Header = () => {
+  const ghStats = useFetchGitHub();
+
   return (
     <header className="flex flex-col justify-center items-center w-full mt-5">
       <Title repoName="github-readme-tech-stack" username="0l1v3rr" />
@@ -19,14 +22,14 @@ const Header = () => {
         <ButtonLink
           link="https://github.com/0l1v3rr/github-readme-tech-stack/network/members"
           icon={BiGitRepoForked}
-          num={6}
+          num={Number(ghStats.forks)}
           text="Fork"
         />
 
         <ButtonLink
           link="https://github.com/0l1v3rr/github-readme-tech-stack/stargazers"
           icon={AiOutlineStar}
-          num={37}
+          num={Number(ghStats.stargazers)}
           text="Star"
         />
       </div>
