@@ -169,6 +169,13 @@ themes.set("levike", {
   badgeColor: "393E46",
 });
 
+themes.set("tokyo-night", {
+  backgroundColor: "#24283b",
+  borderColor: "#000000",
+  titleColor: "#747ae4",
+  badgeColor: "#4073d2",
+});
+
 /**
  * Searches for the specified theme in the themes map.
  * If the theme is not present in the map, then the default
