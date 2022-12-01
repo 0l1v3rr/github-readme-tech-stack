@@ -7,7 +7,6 @@ import { FiSave } from "react-icons/fi";
 
 interface LinePopupProps {
   isActive: boolean;
-  badges: Badge[];
   addBadge: (badge: Badge) => void;
   lineNumber: string;
   closePopup: () => void;
