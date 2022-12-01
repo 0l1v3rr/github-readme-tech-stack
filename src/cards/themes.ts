@@ -162,6 +162,12 @@ themes.set("christmas", {
   titleColor: "#ED0101",
   badgeColor: "#02362F",
 });
+themes.set("levike", {
+  backgroundColor: "#222831",
+  borderColor: "#eeeeee",
+  titleColor: "#fd7014",
+  badgeColor: "393E46",
+});
 
 /**
  * Searches for the specified theme in the themes map.
