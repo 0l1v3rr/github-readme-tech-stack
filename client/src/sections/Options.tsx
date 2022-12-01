@@ -15,22 +15,15 @@ import {
 import { FC, useCallback, useEffect, useState } from "react";
 import LineInput from "../components/input/LineInput";
 import { Line } from "../types/line";
-import axios from "axios";
 import { generateLink } from "../utils/generate";
+import { useFetchThemes } from "../hooks/useFetchThemes";
 
 interface OptionsProps {
   setLink: (link: string) => void;
 }
 
 const Options: FC<OptionsProps> = (props) => {
-  const [themes, setThemes] = useState<string[]>(["github", "github_dark"]);
-
-  useEffect(() => {
-    axios
-      .get("https://github-readme-tech-stack.vercel.app/api/themes")
-      .then((res) => setThemes(res.data));
-  }, []);
-
+  const themes = useFetchThemes();
   const [lineChars, setLineChars] = useState(["1"]);
 
   const [title, setTitle] = useRecoilState<string>(titleState);
