@@ -169,11 +169,11 @@ themes.set("levike", {
   badgeColor: "393E46",
 });
 
-themes.set("tokyo-night", {
-  backgroundColor: "#24283b",
+themes.set("cyberpunk", {
+  backgroundColor: "#ae0640",
   borderColor: "#000000",
-  titleColor: "#747ae4",
-  badgeColor: "#4073d2",
+  titleColor: "#de6a8d",
+  badgeColor: "#9a437b",
 });
 
 /**
