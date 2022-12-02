@@ -168,7 +168,6 @@ themes.set("levike", {
   titleColor: "#fd7014",
   badgeColor: "393E46",
 });
-
 themes.set("cyberpunk", {
   backgroundColor: "#ae0640",
   borderColor: "#000000",

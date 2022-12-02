@@ -4,6 +4,8 @@ import GreenButton from "../buttons/GreenButton";
 import Input from "../input/Input";
 import SingleCodeblock from "../text/SingleCodeblock";
 import { FiSave } from "react-icons/fi";
+import { AiOutlineCloseCircle } from "react-icons/ai";
+import SecondaryButton from "../buttons/SecondaryButton";
 
 interface LinePopupProps {
   isActive: boolean;
@@ -98,7 +100,10 @@ const LinePopup: FC<LinePopupProps> = (props) => {
 
         <div className="w-[95%] h-[.8px] bg-gh-border mx-auto" />
 
-        <GreenButton icon={FiSave} onClick={handleSave} text="Save" />
+        <div className="flex items-stretch">
+          <GreenButton icon={FiSave} onClick={handleSave} text="Save" />
+          <SecondaryButton onClick={props.closePopup} text="Cancel" />
+        </div>
       </div>
     </div>
   );

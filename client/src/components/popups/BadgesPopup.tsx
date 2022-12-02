@@ -13,16 +13,6 @@ interface LinePopupProps {
 }
 
 const BadgesPopup: FC<LinePopupProps> = (props) => {
-  const handleSave = () => {
-    // props.addBadge({
-    //   color: color,
-    //   iconName: icon,
-    //   label: label,
-    // });
-
-    props.closePopup();
-  };
-
   const activeClasses = "opacity-100 pointer-events-auto scale-100";
   const inactiveClasses = "opacity-0 pointer-events-none scale-0";
 
@@ -99,7 +89,7 @@ const BadgesPopup: FC<LinePopupProps> = (props) => {
         >
           <GreenButton
             icon={MdLibraryAddCheck}
-            onClick={handleSave}
+            onClick={() => props.closePopup()}
             text="Apply"
           />
         </div>
