@@ -120,6 +120,7 @@ const Options: FC<OptionsProps> = (props) => {
           onClick={() => {
             props.setLink(generateLink(title, lineCount, theme, align, lines));
           }}
+          disabled={false}
           text="Generate"
         />
       </div>

@@ -4,7 +4,6 @@ import GreenButton from "../buttons/GreenButton";
 import Input from "../input/Input";
 import SingleCodeblock from "../text/SingleCodeblock";
 import { FiSave } from "react-icons/fi";
-import { AiOutlineCloseCircle } from "react-icons/ai";
 import SecondaryButton from "../buttons/SecondaryButton";
 
 interface LinePopupProps {
@@ -28,6 +27,13 @@ const LinePopup: FC<LinePopupProps> = (props) => {
 
     props.closePopup();
 
+    setIcon("");
+    setLabel("");
+    setColor("");
+  };
+
+  const handleCancel = () => {
+    props.closePopup();
     setIcon("");
     setLabel("");
     setColor("");
@@ -101,8 +107,20 @@ const LinePopup: FC<LinePopupProps> = (props) => {
         <div className="w-[95%] h-[.8px] bg-gh-border mx-auto" />
 
         <div className="flex items-stretch">
-          <GreenButton icon={FiSave} onClick={handleSave} text="Save" />
-          <SecondaryButton onClick={props.closePopup} text="Cancel" />
+          <GreenButton
+            icon={FiSave}
+            onClick={handleSave}
+            text="Save"
+            disabled={
+              !(
+                color.trim().length > 3 &&
+                label.trim().length > 3 &&
+                icon.trim().length > 3
+              )
+            }
+          />
+
+          <SecondaryButton onClick={handleCancel} text="Cancel" />
         </div>
       </div>
     </div>

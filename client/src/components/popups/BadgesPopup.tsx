@@ -90,7 +90,8 @@ const BadgesPopup: FC<LinePopupProps> = (props) => {
           <GreenButton
             icon={MdLibraryAddCheck}
             onClick={() => props.closePopup()}
-            text="Apply"
+            text="OK"
+            disabled={false}
           />
         </div>
       </div>

@@ -5,6 +5,7 @@ interface GreenButtonProps {
   text: string;
   icon: IconType;
   onClick: () => void;
+  disabled: boolean;
 }
 
 const GreenButton: FC<GreenButtonProps> = (props) => {
@@ -12,10 +13,15 @@ const GreenButton: FC<GreenButtonProps> = (props) => {
     <button
       onClick={props.onClick}
       type="button"
-      className="leading-none flex items-center gap-2 w-fit text-white
-        bg-gh-green border border-solid border-gh-green-active rounded-md
-        px-3 py-2 text-sm font-semibold mx-4 transition-all duration-150 
-        hover:bg-gh-green-active"
+      disabled={props.disabled}
+      className={`leading-none flex items-center gap-2 w-fit 
+        bg-gh-green border border-solid rounded-md duration-150
+        px-3 py-2 text-sm font-semibold mx-4 transition-all  
+        ${
+          props.disabled
+            ? "text-gh-text border-gh-green"
+            : "hover:bg-gh-green-active text-white border-gh-green-active"
+        }`}
     >
       {<props.icon />}
       {props.text}
