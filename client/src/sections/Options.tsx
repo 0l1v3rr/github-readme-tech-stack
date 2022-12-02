@@ -17,6 +17,7 @@ import LineInput from "../components/input/LineInput";
 import { Line } from "../types/line";
 import { generateLink } from "../utils/generate";
 import { useFetchThemes } from "../hooks/useFetchThemes";
+import NumberInput from "../components/input/NumberInput";
 
 interface OptionsProps {
   setLink: (link: string) => void;
@@ -88,11 +89,12 @@ const Options: FC<OptionsProps> = (props) => {
           setValue={setTitle}
         />
 
-        <Input
+        <NumberInput
           label="Line count"
-          placeholder="1"
           value={lineCount}
           setValue={setLineCount}
+          minValue={1}
+          maxValue={5}
         />
 
         <SelectInput
