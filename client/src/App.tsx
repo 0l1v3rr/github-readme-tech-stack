@@ -12,7 +12,7 @@ const App = () => {
     <div className="bg-gh-bg w-screen min-h-screen overflow-x-hidden select-none pb-5">
       <Header />
 
-      <div className="flex gap-4 mx-10 md:mx-48 mt-6 flex-col lg:flex-row">
+      <div className="flex gap-4 mx-10 md:mx-48 mt-6 flex-col lg:flex-row overflow-x-hidden">
         <Options setLink={(link: string) => setLink(link)} />
         <Preview link={link} />
       </div>

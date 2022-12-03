@@ -40,47 +40,74 @@ const BadgesPopup: FC<LinePopupProps> = (props) => {
         )}
 
         {props.badges.length > 0 && (
-          <div className="flex flex-col gap-2 mx-4">
-            {props.badges.map((badge, index) => {
-              return (
-                <div
-                  key={`${badge.label}-${index}`}
-                  className="border border-solid border-gh-border px-4 py-2 
-                    rounded-md flex items-center justify-center gap-3 w-fit"
+          <table className="mx-4">
+            <thead className="border-b border-solid border-gh-border">
+              <tr>
+                <th
+                  scope="col"
+                  className="text-sm text-gh-text font-semibold px-4 py-2 text-left uppercase"
                 >
-                  <span className="text-sm text-gh-text-secondary">
-                    <span className="font-semibold">Icon:</span>{" "}
-                    {badge.iconName}
-                  </span>
-
-                  <div className="w-[1.2px] h-6 bg-gh-border" />
-
-                  <span className="text-sm text-gh-text-secondary">
-                    <span className="font-semibold">Label:</span> {badge.label}
-                  </span>
-
-                  <div className="w-[1.2px] h-6 bg-gh-border" />
-
-                  <span className="text-sm text-gh-text-secondary">
-                    <span className="font-semibold">Color:</span> {badge.color}
-                  </span>
-
-                  <div className="w-[1.2px] h-6 bg-gh-border" />
-
-                  <HoverText label="Remove badge">
-                    <button
-                      type="button"
-                      onClick={() => props.removeBadge(badge)}
-                      className="text-base text-gh-text-secondary leading-none 
+                  #
+                </th>
+                <th
+                  scope="col"
+                  className="text-sm text-gh-text font-semibold px-4 py-2 text-left uppercase"
+                >
+                  Icon
+                </th>
+                <th
+                  scope="col"
+                  className="text-sm text-gh-text font-semibold px-4 py-2 text-left uppercase"
+                >
+                  Label
+                </th>
+                <th
+                  scope="col"
+                  className="text-sm text-gh-text font-semibold px-4 py-2 text-left uppercase"
+                >
+                  Color
+                </th>
+                <th
+                  scope="col"
+                  className="text-sm text-gh-text font-semibold px-4 py-2 text-center uppercase"
+                >
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {props.badges.map((badge, index) => {
+                return (
+                  <tr className="border-b border-solid border-gh-border">
+                    <td className="whitespace-nowrap text-gh-text-secondary text-sm px-4 py-2 text-left">
+                      {index + 1}
+                    </td>
+                    <td className="whitespace-nowrap text-gh-text-secondary text-sm px-4 py-2 text-left">
+                      {badge.iconName}
+                    </td>
+                    <td className="whitespace-nowrap text-gh-text-secondary text-sm px-4 py-2 text-left">
+                      {badge.label}
+                    </td>
+                    <td className="whitespace-nowrap text-gh-text-secondary text-sm px-4 py-2 text-left">
+                      {badge.color}
+                    </td>
+                    <td>
+                      <HoverText label="Remove badge" className="text-center">
+                        <button
+                          type="button"
+                          onClick={() => props.removeBadge(badge)}
+                          className="text-base text-gh-text-secondary leading-none 
                         transition-all duration-200 hover:text-gh-red hover:scale-105"
-                    >
-                      <MdDeleteOutline />
-                    </button>
-                  </HoverText>
-                </div>
-              );
-            })}
-          </div>
+                        >
+                          <MdDeleteOutline />
+                        </button>
+                      </HoverText>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         )}
 
         <div

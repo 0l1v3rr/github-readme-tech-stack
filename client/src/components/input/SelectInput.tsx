@@ -25,9 +25,9 @@ const SelectInput: FC<SelectInputProps> = (props) => {
         defaultValue={props.value}
         autoComplete="off"
         onChange={(e) => props.setValue(e.target.value)}
-        className="w-[72%] ml-auto text-base bg-gh-bg border border-solid border-gh-border 
+        className="w-[72%] ml-auto text-base bg-gh-bg border border-solid border-gh-border
           rounded-md px-2 py-1 leading-none placeholder:text-gh-text-secondary text-gh-text
-          outline-none focus:border-gh-blue-dark active:border-gh-blue-dark transition-all 
+          outline-none focus:border-gh-blue-dark active:border-gh-blue-dark transition-all
           duration-150"
       >
         {props.options.map((option, index) => {
