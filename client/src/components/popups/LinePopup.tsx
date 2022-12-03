@@ -73,6 +73,7 @@ const LinePopup: FC<LinePopupProps> = (props) => {
               target="_blank"
               rel="noreferrer"
               className="text-gh-blue hover:underline"
+              tabIndex={4}
             >
               here
             </a>
