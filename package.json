@@ -29,7 +29,7 @@
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
     "@vercel/node": "2.6.4",
-    "eslint": "^8.28.0",
+    "eslint": "^8.29.0",
     "husky": "^8.0.2",
     "nodemon": "^2.0.20",
     "prettier": "^2.8.0",
