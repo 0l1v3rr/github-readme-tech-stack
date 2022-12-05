@@ -174,6 +174,30 @@ themes.set("cyberpunk", {
   titleColor: "#de6a8d",
   badgeColor: "#9a437b",
 });
+themes.set("catppuccin_latte", {
+  backgroundColor: "#eff1f5",
+  borderColor: "#9ca0b0",
+  badgeColor: "#8839ef",
+  titleColor: "#179299",
+});
+themes.set("catppuccin_frappe", {
+  backgroundColor: "#303446",
+  borderColor: "#737994",
+  badgeColor: "#ca9ee6",
+  titleColor: "#81c8be",
+});
+themes.set("catppuccin_macchiato", {
+  backgroundColor: "#24273a",
+  borderColor: "#6e738d",
+  badgeColor: "#c6a0f6",
+  titleColor: "#8bd5ca",
+});
+themes.set("catppuccin_mocha", {
+  backgroundColor: "#1e1e2e",
+  borderColor: "#6c7086",
+  badgeColor: "#cba6f7",
+  titleColor: "#94e2d5",
+});
 
 /**
  * Searches for the specified theme in the themes map.
