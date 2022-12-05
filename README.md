@@ -207,6 +207,24 @@ Here are the themes spread in a table. The card title is the name of the theme.
       <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=christmas&title=christmas&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
     </td>
   </tr>
+
+  <tr>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=catppuccin_latte&title=catppuccin_latte&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=catppuccin_frappe&title=catppuccin_frappe&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=catppuccin_macchiato&title=catppuccin_macchiato&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=catppuccin_mocha&title=catppuccin_mocha&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+  </tr>
 </table>
 
 ### 📚 Adding a new theme
