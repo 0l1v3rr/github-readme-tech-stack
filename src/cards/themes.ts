@@ -177,25 +177,25 @@ themes.set("cyberpunk", {
 themes.set("catppuccin_latte", {
   backgroundColor: "#eff1f5",
   borderColor: "#9ca0b0",
-  badgeColor: "#8839ef",
+  badgeColor: "#e6e9ef",
   titleColor: "#179299",
 });
 themes.set("catppuccin_frappe", {
   backgroundColor: "#303446",
   borderColor: "#737994",
-  badgeColor: "#ca9ee6",
+  badgeColor: "#292c3c",
   titleColor: "#81c8be",
 });
 themes.set("catppuccin_macchiato", {
   backgroundColor: "#24273a",
   borderColor: "#6e738d",
-  badgeColor: "#c6a0f6",
+  badgeColor: "#1e2030",
   titleColor: "#8bd5ca",
 });
 themes.set("catppuccin_mocha", {
   backgroundColor: "#1e1e2e",
   borderColor: "#6c7086",
-  badgeColor: "#cba6f7",
+  badgeColor: "#181825",
   titleColor: "#94e2d5",
 });
 
