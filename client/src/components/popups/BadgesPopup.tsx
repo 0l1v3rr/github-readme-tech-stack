@@ -91,13 +91,16 @@ const BadgesPopup: FC<LinePopupProps> = (props) => {
                     <td className="whitespace-nowrap text-gh-text-secondary text-sm px-4 py-2 text-left">
                       {badge.color}
                     </td>
-                    <td>
-                      <HoverText label="Remove badge" className="text-center">
+                    <td className="flex items-center justify-center">
+                      <HoverText
+                        label="Remove badge"
+                        className="text-center w-fit mt-1.5"
+                      >
                         <button
                           type="button"
                           onClick={() => props.removeBadge(badge)}
                           className="text-base text-gh-text-secondary leading-none 
-                        transition-all duration-200 hover:text-gh-red hover:scale-105"
+                            transition-all duration-200 hover:text-gh-red hover:scale-105"
                         >
                           <MdDeleteOutline />
                         </button>
