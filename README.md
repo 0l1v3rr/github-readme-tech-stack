@@ -25,9 +25,8 @@
 
 <hr>
 
-- [❓How do I use the card?](#how-do-i-use-the-card)
-- [🕹️ Customize the card](#️-customize-the-card)
-- [🔨 How to customize a line](#-how-to-customize-a-line)
+- [❓How do I create a card?](#how-do-i-create-a-card)
+- [🔨 Query parameters](#-query-parameters)
 - [🪁 Themes](#-themes)
   - [📚 Adding a new theme](#-adding-a-new-theme)
 - [🧠 Tips](#-tips)
@@ -40,18 +39,16 @@
 
 <hr>
 
-## ❓How do I use the card?
-It's pretty simple, just copy and paste this line of markdown:
-```md
-[![My Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards)](https://github-readme-tech-stack.vercel.app/api/cards)
-```
+## ❓How do I create a card?
+Use [this](https://github-readme-tech-stack.vercel.app) website to customize a card for yourself. It's pretty straightforward.
+
 > **Note**  
-> This will create an empty card. You can customize this as you want. [Here](#️-customize-the-card) are the available options.
+> These cards use [shields.io](https://shields.io/) badges under the hood.
 
 <hr>
 
-## 🕹️ Customize the card
-Instead of building your card manually, please, use our [website](https://github-readme-tech-stack.vercel.app).
+## 🔨 Query parameters
+We suggest not editing the query parameters manually, use [our website](https://github-readme-tech-stack.vercel.app) instead.  
 
 | Parameter | Example | Default value | Description|
 |---------- |---------|---------------|------------|
@@ -60,30 +57,6 @@ Instead of building your card manually, please, use our [website](https://github
 | **align** | `?align=center` | left | The alignment of the badges. (`left`, `center`, `right`) |
 | **lineCount** | `?lineCount=2` | 1 | The number of lines you want to add to your card. |
 | **line{n}** | `?line1=typescript,typescript,2D79C7` | - | The current line of the badge, where {n} is a number. *`(1 <= n <= lineCount)`* Learn how to create a line like this [here](#-how-to-customize-a-line). |
-
-<hr>
-
-## 🔨 How to customize a line
-Creating a line seems complicated, but it's very easy.  
-
-Lines are created of **badges**.  
-Every badge is built like this: `{logoName},{logoTitle},{logoColor}` (e.g `typescript,typescript,2D79C7`).  
-The `logoColor` has to be a hexadecimal color code, without the `#` symbol.  
-We need to separate the values with commas. (`,`)
-
-> **Note**  
-> If you set the `logoColor` to `auto`, it will use the default color of the SVG logo.
-
-Now that we know how to create badges, we can move on to creating a line.  
-We just simply put badges next to each other separated by semicolons. (`{badge};{another one};{another one}`)
-
-Congrats, you have successfully created your line of badges. Here is an example:
-```
-https://github-readme-tech-stack.vercel.app/api/cards?lineCount=1&line1=node.js,node.js,539E43;typescript,typescript,2D79C7;express,express.js,61DAFB
-```
-
-> **Note**  
-> These cards use [shields.io](https://shields.io/) badges under the hood.
 
 <hr>
 
@@ -241,11 +214,11 @@ If you're using markdown, you may want to align your cards. There's an easy way 
 ```
 
 ### 🎭 Adding custom SVG logo
-Let's assume that you have a [line created](#-how-to-customize-a-line) and want to use your own SVGs. We support that using [Base64](https://en.wikipedia.org/wiki/Base64) format.  
+We support this using [Base64](https://en.wikipedia.org/wiki/Base64) format.  
 **[\*](https://stackoverflow.com/questions/38985050/how-do-i-use-the-logo-option-in-shields-io-badges) Here's an easy 3-step guide:**
 1. Download the image and use one of the many online tools, e.g. [http://b64.io/](http://b64.io/), to encode it.
 2. Encode the Base64 string in [percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding). Take the Base64 string and use one of the many online tools, e.g. [http://meyerweb.com/eric/tools/dencoder/](http://meyerweb.com/eric/tools/dencoder/), to encode the string.
-3. Finally, replace the first element of the badge (the `logoName`) with this string. (e.g `<Base64>,typescript,2D79C7;`)
+3. Finally, replace the first element of the badge (the `logoName`) with this string inside the URL. (e.g `<Base64>,typescript,2D79C7;`)
 
 > **Note**  
 > Sometimes the encoded string, of either step 2 or 3, may be too long to be used. You should then try to reduce the size (total pixels) of the image and try again.
@@ -257,18 +230,27 @@ If you don't have NodeJS, [download and install it](https://nodejs.org/en/).
 Then open a terminal and type these commands:
 
 ```sh
-# 1. Clone the project:
+# Clone the project:
 git clone https://github.com/0l1v3rr/github-readme-tech-stack.git
 cd github-readme-tech-stack
 
-# 2. Install the dependencies:
+# Install the dependencies:
 npm i
 
-# 3. Install husky (optional, but recommended)
+# Install husky (optional, but recommended)
 npm run prepare
 
-# 4. Run the application:
+# Run the application:
 npm run dev
+
+# -- Frontend:
+cd client
+
+# Install the dependencies:
+npm i
+
+# Run the application:
+npm start
 ```
 
 <hr>
