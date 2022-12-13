@@ -114,9 +114,9 @@ const LinePopup: FC<LinePopupProps> = (props) => {
             text="Save"
             disabled={
               !(
-                color.trim().length > 3 &&
-                label.trim().length > 3 &&
-                icon.trim().length > 3
+                color.trim().length >= 3 &&
+                label.trim().length >= 3 &&
+                icon.trim().length >= 3
               )
             }
           />
