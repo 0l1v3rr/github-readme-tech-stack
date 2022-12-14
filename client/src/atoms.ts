@@ -21,6 +21,11 @@ export const alignState = atom({
   default: "left",
 });
 
+export const borderState = atom({
+  key: "border",
+  default: true,
+});
+
 export const linesState = atom({
   key: "lines",
   default: [] as Line[],

@@ -7,6 +7,7 @@ import GreenButton from "../components/buttons/GreenButton";
 import { useRecoilState } from "recoil";
 import {
   alignState,
+  borderState,
   lineCountState,
   linesState,
   themeState,
@@ -18,6 +19,7 @@ import { Line } from "../types/line";
 import { generateLink } from "../utils/generate";
 import { useFetchThemes } from "../hooks/useFetchThemes";
 import NumberInput from "../components/input/NumberInput";
+import TrueFalseInput from "../components/input/TrueFalseInput";
 
 interface OptionsProps {
   setLink: (link: string) => void;
@@ -32,16 +34,9 @@ const Options: FC<OptionsProps> = (props) => {
   const [theme, setTheme] = useRecoilState(themeState);
   const [align, setAlign] = useRecoilState(alignState);
   const [lines, setLines] = useRecoilState(linesState);
+  const [showBorder, setShowBorder] = useRecoilState(borderState);
 
   useEffect(() => {
-    // validate the lineCount so it only has numbers in it
-    setLineCount((prev) =>
-      prev
-        .split("")
-        .filter((l) => "0123456789".includes(l))
-        .join("")
-    );
-
     // create an array with the numbers of lineCount to 1
     const res: string[] = [];
     for (let i = 1; i <= Number(lineCount); i++) {
@@ -90,7 +85,7 @@ const Options: FC<OptionsProps> = (props) => {
         />
 
         <NumberInput
-          label="Line count"
+          label="Lines"
           value={lineCount}
           setValue={setLineCount}
           minValue={1}
@@ -111,6 +106,12 @@ const Options: FC<OptionsProps> = (props) => {
           setValue={setAlign}
         />
 
+        <TrueFalseInput
+          label="Border"
+          setValue={setShowBorder}
+          value={showBorder}
+        />
+
         <div className="w-[92%] h-[.8px] bg-gh-border mx-auto" />
 
         {lineChars.map((line) => (
@@ -120,7 +121,9 @@ const Options: FC<OptionsProps> = (props) => {
         <GreenButton
           icon={IoHammerOutline}
           onClick={() => {
-            props.setLink(generateLink(title, lineCount, theme, align, lines));
+            props.setLink(
+              generateLink(title, lineCount, theme, align, lines, showBorder)
+            );
           }}
           disabled={false}
           text="Generate"

@@ -5,12 +5,13 @@ export const generateLink = (
   lineCount: string,
   theme: string,
   align: string,
-  lines: Line[]
+  lines: Line[],
+  showBorder: boolean
 ): string => {
   // replace every space with %20
   title = title.replace(/[ ]/g, "%20");
 
-  let res = `https://github-readme-tech-stack.vercel.app/api/cards?title=${title}&lineCount=${lineCount}&theme=${theme}&align=${align}`;
+  let res = `https://github-readme-tech-stack.vercel.app/api/cards?title=${title}&lineCount=${lineCount}&theme=${theme}&align=${align}&showBorder=${showBorder}`;
 
   for (const l of lines) {
     // if the line doesn't contain badges
