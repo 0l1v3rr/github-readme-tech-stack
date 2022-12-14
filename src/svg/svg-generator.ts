@@ -33,19 +33,19 @@ export default class SvgGenerator {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         role="img"
-        aria-label="My Tech Stack"
+        aria-label="${this.card.getTitle()}"
       >
         <title>${this.card.getTitle()}</title>
 
         <rect
-          x="0.5"
-          y="0.5"
+          x="${this.card.getShowBorder() ? 0.5 : 0}"
+          y="${this.card.getShowBorder() ? 0.5 : 0}"
           rx="4.5"
-          height="${this.height - 1}"
+          height="${this.height - (this.card.getShowBorder() ? 1 : 0)}"
           stroke="${this.card.getTheme().borderColor}"
-          width="${this.width - 1}"
+          width="${this.width - (this.card.getShowBorder() ? 1 : 0)}"
           fill="${this.card.getTheme().backgroundColor}"
-          stroke-opacity="1"
+          stroke-opacity="${this.card.getShowBorder() ? 1 : 0}"
         />
 
         <g transform="translate(25, 35)">

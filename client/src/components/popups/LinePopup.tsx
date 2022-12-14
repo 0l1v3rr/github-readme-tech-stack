@@ -152,4 +152,3 @@ const LinePopup: FC<LinePopupProps> = (props) => {
 };
 
 export default LinePopup;
-

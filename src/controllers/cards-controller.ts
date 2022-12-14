@@ -15,11 +15,13 @@ export const getCard = async (req: Request, res: Response) => {
   const theme = req.query.theme?.toString() || "";
   const lineCount = req.query.lineCount?.toString() || "1";
   const align = req.query.align?.toString() || "left";
+  const showBorder = req.query.showBorder?.toString() || "true";
 
   card.setTitle(title);
   card.setTheme(getThemeByName(theme));
   card.setLineCount(validateLineCount(lineCount));
   card.setBadgeAlign(validateAlign(align));
+  card.setShowBorder(showBorder !== "false");
 
   // run a loop card.getLineCount() times
   for (let i = 1; i <= card.getLineCount(); i++) {

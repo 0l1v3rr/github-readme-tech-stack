@@ -6,6 +6,7 @@ export default class Card {
   private lineCount: number;
   private theme: Theme;
   private badgeAlign: BadgeAlign;
+  private showBorder: boolean;
 
   private lines: Map<number, Badge[]>;
 
@@ -13,6 +14,7 @@ export default class Card {
     this.title = "My Tech Stack";
     this.theme = getThemeByName("github");
     this.badgeAlign = "left";
+    this.showBorder = true;
 
     this.lineCount = 1;
     this.lines = new Map<number, Badge[]>();
@@ -59,5 +61,11 @@ export default class Card {
 
   public setBadgeAlign = (badgeAlign: BadgeAlign): void => {
     this.badgeAlign = badgeAlign;
+  };
+
+  public getShowBorder = (): boolean => this.showBorder;
+
+  public setShowBorder = (showBorder: boolean): void => {
+    this.showBorder = showBorder;
   };
 }
