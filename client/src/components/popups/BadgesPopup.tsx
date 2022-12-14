@@ -78,7 +78,10 @@ const BadgesPopup: FC<LinePopupProps> = (props) => {
             <tbody>
               {props.badges.map((badge, index) => {
                 return (
-                  <tr className="border-b border-solid border-gh-border">
+                  <tr
+                    className="border-b border-solid border-gh-border"
+                    key={index}
+                  >
                     <td className="whitespace-nowrap text-gh-text-secondary text-sm px-4 py-2 text-left">
                       {index + 1}
                     </td>

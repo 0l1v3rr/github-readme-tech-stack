@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Badge } from "../../types/line";
 import GreenButton from "../buttons/GreenButton";
 import Input from "../input/Input";
@@ -18,6 +18,29 @@ const LinePopup: FC<LinePopupProps> = (props) => {
   const [label, setLabel] = useState<string>("");
   const [color, setColor] = useState<string>("");
 
+  const [errorMsg, setErrorMsg] = useState<string | undefined>(
+    "Please fill in all fields."
+  );
+
+  useEffect(() => {
+    if (icon.trim().length < 3) {
+      setErrorMsg("The icon name should be greater than 2 characters.");
+      return;
+    }
+
+    if (label.trim().length < 3) {
+      setErrorMsg("The label name should be greater than 2 characters.");
+      return;
+    }
+
+    if (color.trim().length < 4) {
+      setErrorMsg("Please provide a color.");
+      return;
+    }
+
+    setErrorMsg(undefined);
+  }, [icon, label, color]);
+
   const handleSave = () => {
     props.addBadge({
       color: color,
@@ -25,11 +48,7 @@ const LinePopup: FC<LinePopupProps> = (props) => {
       label: label,
     });
 
-    props.closePopup();
-
-    setIcon("");
-    setLabel("");
-    setColor("");
+    handleCancel();
   };
 
   const handleCancel = () => {
@@ -107,18 +126,22 @@ const LinePopup: FC<LinePopupProps> = (props) => {
 
         <div className="w-[95%] h-[.8px] bg-gh-border mx-auto" />
 
+        {errorMsg !== undefined ? (
+          <div className="text-red-400  text-sm italic mx-4">-- {errorMsg}</div>
+        ) : (
+          <div className="text-green-500  text-sm italic mx-4">
+            -- Looks good!
+          </div>
+        )}
+
+        <div className="w-[95%] h-[.8px] bg-gh-border mx-auto" />
+
         <div className="flex items-stretch">
           <GreenButton
             icon={FiSave}
             onClick={handleSave}
             text="Save"
-            disabled={
-              !(
-                color.trim().length >= 3 &&
-                label.trim().length >= 3 &&
-                icon.trim().length >= 3
-              )
-            }
+            disabled={errorMsg !== undefined}
           />
 
           <SecondaryButton onClick={handleCancel} text="Cancel" />
@@ -129,3 +152,4 @@ const LinePopup: FC<LinePopupProps> = (props) => {
 };
 
 export default LinePopup;
+
