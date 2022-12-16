@@ -1,7 +1,6 @@
 import SectionTitle from "../components/text/SectionTitle";
 import { VscSettings } from "react-icons/vsc";
 import { IoHammerOutline } from "react-icons/io5";
-import Input from "../components/input/Input";
 import SelectInput from "../components/input/SelectInput";
 import GreenButton from "../components/buttons/GreenButton";
 import { useRecoilState } from "recoil";
@@ -21,6 +20,7 @@ import { generateLink } from "../utils/generate";
 import { useFetchThemes } from "../hooks/useFetchThemes";
 import NumberInput from "../components/input/NumberInput";
 import TrueFalseInput from "../components/input/TrueFalseInput";
+import Input from "../components/input/Input";
 
 interface OptionsProps {
   setLink: (link: string) => void;
@@ -83,7 +83,8 @@ const Options: FC<OptionsProps> = (props) => {
           label="Title"
           placeholder="My Tech Stack"
           value={title}
-          setValue={setTitle}
+          setValue={(val) => setTitle(val)}
+          validate={() => ""}
         />
 
         <NumberInput
@@ -115,10 +116,26 @@ const Options: FC<OptionsProps> = (props) => {
         />
 
         <Input
-          label="Border radius"
+          label="Border Radius"
           placeholder="4.5"
           value={borderRadius}
-          setValue={setBorderRadius}
+          setValue={(val) => setBorderRadius(val)}
+          helperText="A number between 0 and 50."
+          validate={(val) => {
+            const num = parseInt(val);
+
+            if (val.trim() === "") {
+              return "Please provide a border radius!";
+            }
+
+            if (isNaN(num)) {
+              return "Please provide a number!";
+            }
+
+            return num > 50 || num < 0
+              ? "Please provide a value between 0 and 50"
+              : "";
+          }}
         />
 
         <div className="w-[92%] h-[.8px] bg-gh-border mx-auto" />

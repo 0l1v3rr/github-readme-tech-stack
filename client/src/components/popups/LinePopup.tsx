@@ -1,10 +1,9 @@
 import { FC, useEffect, useState } from "react";
 import { Badge } from "../../types/line";
 import GreenButton from "../buttons/GreenButton";
-import Input from "../input/Input";
-import SingleCodeblock from "../text/SingleCodeblock";
 import { FiSave } from "react-icons/fi";
 import SecondaryButton from "../buttons/SecondaryButton";
+import Input from "../input/Input";
 
 interface LinePopupProps {
   isActive: boolean;
@@ -77,75 +76,48 @@ const LinePopup: FC<LinePopupProps> = (props) => {
         Line #{props.lineNumber}: Add badge
       </div>
 
-      <div className="flex flex-col gap-3 my-3">
-        <div>
-          <Input
-            label="Icon"
-            placeholder="react"
-            setValue={setIcon}
-            value={icon}
-          />
-          <div className="italic text-gh-text-secondary text-sm mx-4">
-            -- You can browse between the icons{" "}
-            <a
-              href="https://simpleicons.org/"
-              target="_blank"
-              rel="noreferrer"
-              className="text-gh-blue hover:underline"
-              tabIndex={4}
-            >
-              here
-            </a>
-            .
-          </div>
-        </div>
+      <div className="flex flex-col gap-3 my-3 px-6">
+        <Input
+          label="Icon"
+          placeholder="react"
+          value={icon}
+          setValue={(val: string) => setIcon(val)}
+          validate={() => ""}
+          helperText="You can browse between the icons here: https://simpleicons.org/"
+        />
 
         <div className="w-[95%] h-[.8px] bg-gh-border mx-auto" />
 
         <Input
           label="Badge label"
           placeholder="react"
-          setValue={setLabel}
           value={label}
+          setValue={(val: string) => setLabel(val)}
+          validate={() => ""}
         />
 
         <div className="w-[95%] h-[.8px] bg-gh-border mx-auto" />
 
-        <div>
-          <Input
-            label="Badge color"
-            placeholder="#3498db"
-            setValue={setColor}
-            value={color}
-          />
-          <div className="italic text-gh-text-secondary text-sm mx-4">
-            -- The badge color is either a hexadecimal color code or the value{" "}
-            <SingleCodeblock code="auto" />.
-          </div>
-        </div>
+        <Input
+          label="Badge color"
+          placeholder="#3498db"
+          value={color}
+          setValue={(val: string) => setColor(val)}
+          validate={() => ""}
+          helperText="The badge color is either a hexadecimal color code or the value auto."
+        />
+      </div>
+      <div className="w-[95%] h-[.8px] bg-gh-border mx-auto" />
 
-        <div className="w-[95%] h-[.8px] bg-gh-border mx-auto" />
+      <div className="flex items-stretch py-4">
+        <GreenButton
+          icon={FiSave}
+          onClick={handleSave}
+          text="Save"
+          disabled={errorMsg !== undefined}
+        />
 
-        {errorMsg !== undefined ? (
-          <div className="text-red-400  text-sm italic mx-4">-- {errorMsg}</div>
-        ) : (
-          <div className="text-green-500  text-sm italic mx-4">
-            -- Looks good!
-          </div>
-        )}
-
-        <div className="w-[95%] h-[.8px] bg-gh-border mx-auto" />
-
-        <div className="flex items-stretch">
-          <GreenButton
-            icon={FiSave}
-            onClick={handleSave}
-            text="Save"
-            disabled={errorMsg !== undefined}
-          />
-
-          <SecondaryButton onClick={handleCancel} text="Cancel" />
-        </div>
+        <SecondaryButton onClick={handleCancel} text="Cancel" />
       </div>
     </div>
   );
