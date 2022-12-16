@@ -4,6 +4,7 @@ import { getThemeByName } from "../cards/themes";
 import SvgGenerator from "../svg/svg-generator";
 import {
   validateAlign,
+  validateBorderRadius,
   validateLine,
   validateLineCount,
 } from "../utils/validator";
@@ -16,12 +17,14 @@ export const getCard = async (req: Request, res: Response) => {
   const lineCount = req.query.lineCount?.toString() || "1";
   const align = req.query.align?.toString() || "left";
   const showBorder = req.query.showBorder?.toString() || "true";
+  const borderRadius = req.query.borderRadius?.toString() || "4.5";
 
   card.setTitle(title);
   card.setTheme(getThemeByName(theme));
   card.setLineCount(validateLineCount(lineCount));
   card.setBadgeAlign(validateAlign(align));
   card.setShowBorder(showBorder !== "false");
+  card.setBorderRadius(validateBorderRadius(borderRadius));
 
   // run a loop card.getLineCount() times
   for (let i = 1; i <= card.getLineCount(); i++) {
@@ -34,3 +37,4 @@ export const getCard = async (req: Request, res: Response) => {
   res.setHeader("Content-Type", "image/svg+xml");
   res.send(await new SvgGenerator(card).toString());
 };
+

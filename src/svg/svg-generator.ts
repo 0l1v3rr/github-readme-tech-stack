@@ -40,7 +40,7 @@ export default class SvgGenerator {
         <rect
           x="${this.card.getShowBorder() ? 0.5 : 0}"
           y="${this.card.getShowBorder() ? 0.5 : 0}"
-          rx="4.5"
+          rx="${this.card.getBorderRadius()}"
           height="${this.height - (this.card.getShowBorder() ? 1 : 0)}"
           stroke="${this.card.getTheme().borderColor}"
           width="${this.width - (this.card.getShowBorder() ? 1 : 0)}"
@@ -143,3 +143,4 @@ export default class SvgGenerator {
     `;
   };
 }
+

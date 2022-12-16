@@ -7,6 +7,7 @@ export default class Card {
   private theme: Theme;
   private badgeAlign: BadgeAlign;
   private showBorder: boolean;
+  private borderRadius: number;
 
   private lines: Map<number, Badge[]>;
 
@@ -15,6 +16,7 @@ export default class Card {
     this.theme = getThemeByName("github");
     this.badgeAlign = "left";
     this.showBorder = true;
+    this.borderRadius = 4.5;
 
     this.lineCount = 1;
     this.lines = new Map<number, Badge[]>();
@@ -68,4 +70,11 @@ export default class Card {
   public setShowBorder = (showBorder: boolean): void => {
     this.showBorder = showBorder;
   };
+
+  public getBorderRadius = (): number => this.borderRadius;
+
+  public setBorderRadius = (borderRadius: number): void => {
+    this.borderRadius = borderRadius;
+  };
 }
+

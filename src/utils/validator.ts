@@ -22,6 +22,25 @@ export const validateLineCount = (lineCount: string): number => {
 };
 
 /**
+ * Validates the border-radius.
+ * If the border-radius is not valid, it returns 4.5.
+ * The border-radius is invalid when it's not a number, less than 0 or greater than 50.
+ *
+ * @param {number} borderRadius The raw border radius
+ * @returns {number} A valid borderRadius.
+ */
+export const validateBorderRadius = (lineCount: string): number => {
+  const num = parseInt(lineCount);
+
+  // it's not a number
+  if (isNaN(num)) {
+    return 4.5;
+  }
+
+  return num > 50 || num < 0 ? 4.5 : num;
+};
+
+/**
  * Validates the given align.
  *
  * @param {string} align The alignment
@@ -88,3 +107,4 @@ export const validateLine = (line: string): Badge[] => {
 
   return badges;
 };
+
