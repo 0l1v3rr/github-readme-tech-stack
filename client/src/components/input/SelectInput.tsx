@@ -1,22 +1,23 @@
-import { Dispatch, FC, SetStateAction, useId } from "react";
+import { FC, useId } from "react";
 
 interface SelectInputProps {
   label: string;
-  setValue: Dispatch<SetStateAction<any>>;
+  setValue: (value: string) => void;
   options: string[];
   value: string;
+  className?: string;
 }
 
 const SelectInput: FC<SelectInputProps> = (props) => {
   const id = `${props.label}-${useId()}`;
 
   return (
-    <div className="flex items-center gap-2 mx-4">
+    <div className={`${props.className} w-full flex flex-col gap-1`}>
       <label
         htmlFor={id}
-        className="text-gh-text-secondary whitespace-nowrap font-semibold"
+        className="text-sm text-gh-text-secondary font-semibold w-fit"
       >
-        {props.label}:
+        {props.label}
       </label>
 
       <select
@@ -25,10 +26,10 @@ const SelectInput: FC<SelectInputProps> = (props) => {
         defaultValue={props.value}
         autoComplete="off"
         onChange={(e) => props.setValue(e.target.value)}
-        className="w-[72%] ml-auto text-base bg-gh-bg border border-solid border-gh-border
+        className="ml-auto text-base bg-gh-bg border border-solid border-gh-border
           rounded-md px-2 py-1 leading-none placeholder:text-gh-text-secondary text-gh-text
           outline-none focus:border-gh-blue-dark active:border-gh-blue-dark transition-all
-          duration-150"
+          duration-150 w-full"
       >
         {props.options.map((option, index) => {
           return (
@@ -43,3 +44,4 @@ const SelectInput: FC<SelectInputProps> = (props) => {
 };
 
 export default SelectInput;
+

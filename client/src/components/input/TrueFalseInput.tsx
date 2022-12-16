@@ -1,20 +1,21 @@
-import { Dispatch, FC, SetStateAction } from "react";
+import { FC } from "react";
 
 interface TrueFalseInputProps {
   label: string;
   value: boolean;
-  setValue: Dispatch<SetStateAction<boolean>>;
+  setValue: (value: boolean) => void;
+  className?: string;
 }
 
 const TrueFalseInput: FC<TrueFalseInputProps> = (props) => {
   return (
-    <div className="flex items-center gap-2 mx-4">
-      <label className="text-gh-text-secondary whitespace-nowrap font-semibold">
-        {props.label}:
+    <div className={`${props.className} w-full flex flex-col gap-1`}>
+      <label className="text-sm text-gh-text-secondary font-semibold whitespace-normal w-fit">
+        {props.label}
       </label>
 
       <div
-        className="w-[72%] ml-auto text-base bg-gh-bg border border-solid border-gh-border 
+        className="w-full ml-auto text-base bg-gh-bg border border-solid border-gh-border 
           rounded-md py-1 leading-none text-gh-text outline-none flex items-center 
           justify-evenly"
       >
@@ -45,3 +46,4 @@ const TrueFalseInput: FC<TrueFalseInputProps> = (props) => {
 };
 
 export default TrueFalseInput;
+

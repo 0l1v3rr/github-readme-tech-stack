@@ -78,7 +78,7 @@ const Options: FC<OptionsProps> = (props) => {
     <section className="border border-solid border-gh-border rounded-md w-full lg:w-[40%]">
       <SectionTitle icon={VscSettings} title="Options" />
 
-      <div className="my-4 flex flex-col gap-4">
+      <div className="m-4 flex flex-col gap-4">
         <Input
           label="Title"
           placeholder="My Tech Stack"
@@ -87,33 +87,37 @@ const Options: FC<OptionsProps> = (props) => {
           validate={() => ""}
         />
 
-        <NumberInput
-          label="Lines"
-          value={lineCount}
-          setValue={setLineCount}
-          minValue={1}
-          maxValue={5}
-        />
+        <div className="flex items-center gap-4">
+          <SelectInput
+            label="Theme"
+            options={themes}
+            value={theme}
+            setValue={setTheme}
+          />
 
-        <SelectInput
-          label="Theme"
-          options={themes}
-          value={theme}
-          setValue={setTheme}
-        />
+          <SelectInput
+            label="Align"
+            options={["left", "center", "right"]}
+            value={align}
+            setValue={(val) => setAlign(val)}
+          />
+        </div>
 
-        <SelectInput
-          label="Align"
-          options={["left", "center", "right"]}
-          value={align}
-          setValue={setAlign}
-        />
+        <div className="flex items-start gap-4">
+          <TrueFalseInput
+            label="Border"
+            setValue={(val) => setShowBorder(val)}
+            value={showBorder}
+          />
 
-        <TrueFalseInput
-          label="Border"
-          setValue={setShowBorder}
-          value={showBorder}
-        />
+          <NumberInput
+            label="Lines"
+            value={lineCount}
+            setValue={(val) => setLineCount(val)}
+            minValue={1}
+            maxValue={5}
+          />
+        </div>
 
         <Input
           label="Border Radius"
@@ -137,7 +141,9 @@ const Options: FC<OptionsProps> = (props) => {
               : "";
           }}
         />
+      </div>
 
+      <div className="my-4 flex flex-col gap-4">
         <div className="w-[92%] h-[.8px] bg-gh-border mx-auto" />
 
         {lineChars.map((line) => (
@@ -168,3 +174,4 @@ const Options: FC<OptionsProps> = (props) => {
 };
 
 export default Options;
+

@@ -25,8 +25,19 @@
 
 <hr>
 
-- [❓How do I create a card?](#how-do-i-create-a-card)
-- [🔨 Query parameters](#-query-parameters)
+## 🖼️ Demo Website
+With this site, you can customize your card.  
+[https://github-readme-tech-stack.vercel.app](https://github-readme-tech-stack.vercel.app)
+
+<img src="./screenshots/demo-site.png" alt="">
+
+> **Warning**  
+> If the site doesn't load and displays a full white screen, try it in incognito mode.
+
+<hr>
+
+- [🖼️ Demo Website](#️-demo-website)
+- [🔧 Query parameters](#-query-parameters)
 - [🪁 Themes](#-themes)
   - [📚 Adding a new theme](#-adding-a-new-theme)
 - [🧠 Tips](#-tips)
@@ -39,20 +50,7 @@
 
 <hr>
 
-## ❓How do I create a card?
-Use [this](https://github-readme-tech-stack.vercel.app) website to customize a card for yourself. It's pretty straightforward.
-
-> **Note**  
-> These cards use [shields.io](https://shields.io/) badges under the hood.
-
-> **Warning**  
-> If the site doesn't load and displays a full white screen, try it in incognito mode.
-
-<hr>
-
-## 🔨 Query parameters
-We suggest not editing the query parameters manually, use [our website](https://github-readme-tech-stack.vercel.app) instead.  
-
+## 🔧 Query parameters
 | Parameter | Example | Default value | Description|
 |---------- |---------|---------------|------------|
 | **title** | `?title=My%20Custom%20Title` | My Tech Stack | The title of the card. %20 can be used as a space. |
@@ -156,33 +154,6 @@ Here are the themes spread in a table. The card title is the name of the theme.
     </td>
     <td>
       <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=blood_dark&title=blood_dark&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
-    </td>
-  </tr>
-
-  <tr>
-    <td>
-      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=hacker&title=hacker&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
-    </td>
-    <td>
-      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=android&title=android&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
-    </td>
-  </tr>
-
-  <tr>
-    <td>
-      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=windows&title=windows&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
-    </td>
-    <td>
-      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=java&title=java&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
-    </td>
-  </tr>
-
-  <tr>
-    <td>
-      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=halloween&title=halloween&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
-    </td>
-    <td>
-      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=christmas&title=christmas&lineCount=1&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
     </td>
   </tr>
 

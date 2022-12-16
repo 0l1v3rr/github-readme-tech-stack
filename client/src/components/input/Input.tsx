@@ -20,7 +20,7 @@ const Input: FC<InputProps> = (props) => {
     <div className={`${props.className} w-full flex flex-col gap-1`}>
       <label
         htmlFor={id}
-        className="text-sm text-gh-text-secondary font-semibold"
+        className="text-sm text-gh-text-secondary font-semibold w-fit"
       >
         {props.label}
       </label>
