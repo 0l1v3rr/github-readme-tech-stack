@@ -77,4 +77,3 @@ export default class Card {
     this.borderRadius = borderRadius;
   };
 }
-

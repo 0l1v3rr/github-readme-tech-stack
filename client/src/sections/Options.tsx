@@ -7,6 +7,7 @@ import GreenButton from "../components/buttons/GreenButton";
 import { useRecoilState } from "recoil";
 import {
   alignState,
+  borderRadiusState,
   borderState,
   lineCountState,
   linesState,
@@ -35,6 +36,7 @@ const Options: FC<OptionsProps> = (props) => {
   const [align, setAlign] = useRecoilState(alignState);
   const [lines, setLines] = useRecoilState(linesState);
   const [showBorder, setShowBorder] = useRecoilState(borderState);
+  const [borderRadius, setBorderRadius] = useRecoilState(borderRadiusState);
 
   useEffect(() => {
     // create an array with the numbers of lineCount to 1
@@ -112,6 +114,13 @@ const Options: FC<OptionsProps> = (props) => {
           value={showBorder}
         />
 
+        <Input
+          label="Border radius"
+          placeholder="4.5"
+          value={borderRadius}
+          setValue={setBorderRadius}
+        />
+
         <div className="w-[92%] h-[.8px] bg-gh-border mx-auto" />
 
         {lineChars.map((line) => (
@@ -122,7 +131,15 @@ const Options: FC<OptionsProps> = (props) => {
           icon={IoHammerOutline}
           onClick={() => {
             props.setLink(
-              generateLink(title, lineCount, theme, align, lines, showBorder)
+              generateLink(
+                title,
+                lineCount,
+                theme,
+                align,
+                lines,
+                showBorder,
+                borderRadius
+              )
             );
           }}
           disabled={false}

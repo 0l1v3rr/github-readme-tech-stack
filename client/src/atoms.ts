@@ -30,3 +30,8 @@ export const linesState = atom({
   key: "lines",
   default: [] as Line[],
 });
+
+export const borderRadiusState = atom({
+  key: "borderRadius",
+  default: "4.5",
+});

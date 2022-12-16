@@ -59,6 +59,7 @@ We suggest not editing the query parameters manually, use [our website](https://
 | **theme** | `?theme=github_dark` | github | The theme of the card. You can browse between the themes [here](#-themes). |
 | **align** | `?align=center` | left | The alignment of the badges. (`left`, `center`, `right`) |
 | **showBorder** | `?showBorder=false` | true | Display the border around the card or not. (`true`, `false`) |
+| **borderRadius** | `?borderRadius=12.5` | 4.5 | Value between 0 and 50. |
 | **lineCount** | `?lineCount=2` | 1 | The number of lines you want to add to your card. |
 | **line{n}** | `?line1=typescript,typescript,2D79C7` | - | The current line of the badge, where {n} is a number. *`(1 <= n <= lineCount)`* |
 

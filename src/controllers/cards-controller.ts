@@ -37,4 +37,3 @@ export const getCard = async (req: Request, res: Response) => {
   res.setHeader("Content-Type", "image/svg+xml");
   res.send(await new SvgGenerator(card).toString());
 };
-

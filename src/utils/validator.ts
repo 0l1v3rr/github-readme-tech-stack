@@ -107,4 +107,3 @@ export const validateLine = (line: string): Badge[] => {
 
   return badges;
 };
-

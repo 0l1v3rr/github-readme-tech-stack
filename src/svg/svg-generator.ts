@@ -143,4 +143,3 @@ export default class SvgGenerator {
     `;
   };
 }
-
