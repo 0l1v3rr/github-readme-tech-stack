@@ -38,7 +38,7 @@ const Input: FC<InputProps> = (props) => {
           outline-none transition-all duration-150 ${
             isError
               ? "border-red-500"
-              : "focus:border-gh-blue-dark active:border-gh-blue-dark border-gh-border"
+              : "focus:border-gh-blue active:border-gh-blue border-gh-border"
           }`}
       />
 

@@ -23,6 +23,7 @@ import { useFetchThemes } from "../hooks/useFetchThemes";
 import NumberInput from "../components/input/NumberInput";
 import TrueFalseInput from "../components/input/TrueFalseInput";
 import Input from "../components/input/Input";
+import SecondaryButton from "../components/buttons/SecondaryButton";
 
 interface OptionsProps {
   setLink: (link: string) => void;
@@ -57,6 +58,18 @@ const Options: FC<OptionsProps> = (props) => {
     }
     setLineChars(res);
   }, [lineCount, setLineCount, setLines]);
+
+  const reset = () => {
+    setTitle("My Tech Stack");
+    setLineCount("1");
+    setTheme("github");
+    setAlign("left");
+    setShowBorder(true);
+    setLines([]);
+    setBorderRadius("4.5");
+    setFontSize("18");
+    setFontWeight("semibold");
+  };
 
   const updateLine = useCallback(
     (line: Line) => {
@@ -171,26 +184,30 @@ const Options: FC<OptionsProps> = (props) => {
           <LineInput line={line} updateLine={updateLine} key={line} />
         ))}
 
-        <GreenButton
-          icon={IoHammerOutline}
-          onClick={() => {
-            props.setLink(
-              generateLink(
-                title,
-                lineCount,
-                theme,
-                align,
-                lines,
-                showBorder,
-                borderRadius,
-                fontWeight,
-                fontSize
-              )
-            );
-          }}
-          disabled={false}
-          text="Generate"
-        />
+        <div className="flex items-stretch">
+          <GreenButton
+            icon={IoHammerOutline}
+            onClick={() => {
+              props.setLink(
+                generateLink(
+                  title,
+                  lineCount,
+                  theme,
+                  align,
+                  lines,
+                  showBorder,
+                  borderRadius,
+                  fontWeight,
+                  fontSize
+                )
+              );
+            }}
+            disabled={false}
+            text="Generate"
+          />
+
+          <SecondaryButton onClick={() => reset()} text="Reset" />
+        </div>
       </div>
     </section>
   );
