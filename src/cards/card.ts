@@ -1,5 +1,5 @@
 import { getThemeByName } from "./themes";
-import { Badge, BadgeAlign, Theme } from "./types";
+import { Badge, BadgeAlign, FontWeight, Theme } from "./types";
 
 export default class Card {
   private title: string;
@@ -8,6 +8,7 @@ export default class Card {
   private badgeAlign: BadgeAlign;
   private showBorder: boolean;
   private borderRadius: number;
+  private fontWeight: FontWeight;
 
   private lines: Map<number, Badge[]>;
 
@@ -17,6 +18,7 @@ export default class Card {
     this.badgeAlign = "left";
     this.showBorder = true;
     this.borderRadius = 4.5;
+    this.fontWeight = FontWeight.SEMIBOLD;
 
     this.lineCount = 1;
     this.lines = new Map<number, Badge[]>();
@@ -75,5 +77,21 @@ export default class Card {
 
   public setBorderRadius = (borderRadius: number): void => {
     this.borderRadius = borderRadius;
+  };
+
+  public getFontWeight = (): FontWeight => this.fontWeight;
+
+  public setFontWeight = (weight: string): void => {
+    switch (weight.toLowerCase().trim()) {
+      case "thin":
+        this.fontWeight = FontWeight.THIN;
+        break;
+      case "bold":
+        this.fontWeight = FontWeight.BOLD;
+        break;
+      case "normal":
+        this.fontWeight = FontWeight.NORMAL;
+        break;
+    }
   };
 }

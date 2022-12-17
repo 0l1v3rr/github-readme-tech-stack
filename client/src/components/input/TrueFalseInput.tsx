@@ -46,4 +46,3 @@ const TrueFalseInput: FC<TrueFalseInputProps> = (props) => {
 };
 
 export default TrueFalseInput;
-

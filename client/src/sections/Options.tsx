@@ -174,4 +174,3 @@ const Options: FC<OptionsProps> = (props) => {
 };
 
 export default Options;
-

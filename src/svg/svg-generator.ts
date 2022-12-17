@@ -56,7 +56,9 @@ export default class SvgGenerator {
 
         <style>
           .header {
-            font: 600 18px 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font: ${this.card
+              .getFontWeight()
+              .valueOf()} 18px 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             fill: ${this.card.getTheme().titleColor};
           }
         </style>

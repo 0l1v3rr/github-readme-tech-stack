@@ -44,4 +44,3 @@ const SelectInput: FC<SelectInputProps> = (props) => {
 };
 
 export default SelectInput;
-

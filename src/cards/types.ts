@@ -12,3 +12,10 @@ export interface Badge {
 }
 
 export type BadgeAlign = "left" | "center" | "right";
+
+export const enum FontWeight {
+  THIN = 200,
+  NORMAL = 400,
+  SEMIBOLD = 600,
+  BOLD = 800,
+}

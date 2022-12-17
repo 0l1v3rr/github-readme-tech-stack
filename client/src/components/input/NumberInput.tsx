@@ -69,4 +69,3 @@ const NumberInput: FC<InputProps> = (props) => {
 };
 
 export default NumberInput;
-
