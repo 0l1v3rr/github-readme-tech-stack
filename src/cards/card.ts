@@ -9,6 +9,7 @@ export default class Card {
   private showBorder: boolean;
   private borderRadius: number;
   private fontWeight: FontWeight;
+  private fontSize: number;
 
   private lines: Map<number, Badge[]>;
 
@@ -19,6 +20,7 @@ export default class Card {
     this.showBorder = true;
     this.borderRadius = 4.5;
     this.fontWeight = FontWeight.SEMIBOLD;
+    this.fontSize = 18;
 
     this.lineCount = 1;
     this.lines = new Map<number, Badge[]>();
@@ -93,5 +95,11 @@ export default class Card {
         this.fontWeight = FontWeight.NORMAL;
         break;
     }
+  };
+
+  public getFontSize = (): number => this.fontSize;
+
+  public setFontSize = (fontSize: number): void => {
+    this.fontSize = fontSize;
   };
 }

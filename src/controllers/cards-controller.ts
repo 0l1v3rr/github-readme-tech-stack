@@ -5,6 +5,7 @@ import SvgGenerator from "../svg/svg-generator";
 import {
   validateAlign,
   validateBorderRadius,
+  validateFontSize,
   validateLine,
   validateLineCount,
 } from "../utils/validator";
@@ -19,6 +20,7 @@ export const getCard = async (req: Request, res: Response) => {
   const showBorder = req.query.showBorder?.toString() || "true";
   const borderRadius = req.query.borderRadius?.toString() || "4.5";
   const fontWeight = req.query.fontWeight?.toString() || "semibold";
+  const fontSize = req.query.fontSize?.toString() || "18";
 
   card.setTitle(title);
   card.setTheme(getThemeByName(theme));
@@ -27,6 +29,7 @@ export const getCard = async (req: Request, res: Response) => {
   card.setShowBorder(showBorder !== "false");
   card.setBorderRadius(validateBorderRadius(borderRadius));
   card.setFontWeight(fontWeight);
+  card.setFontSize(validateFontSize(fontSize));
 
   // run a loop card.getLineCount() times
   for (let i = 1; i <= card.getLineCount(); i++) {

@@ -41,6 +41,23 @@ export const validateBorderRadius = (lineCount: string): number => {
 };
 
 /**
+ * Validates the font size.
+ *
+ * @param {number} fontSize The raw fontSize.
+ * @returns {number} A valid fontSize.
+ */
+export const validateFontSize = (fontSize: string): number => {
+  const num = parseInt(fontSize);
+
+  // it's not a number
+  if (isNaN(num)) {
+    return 18;
+  }
+
+  return num > 30 || num < 15 ? 18 : num;
+};
+
+/**
  * Validates the given align.
  *
  * @param {string} align The alignment

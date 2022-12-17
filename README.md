@@ -18,8 +18,8 @@
 <br>
 
 <div align="center">
-  <a href="https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark&lineCount=2&line1=node.js,node.js,0;typescript,typescript,0;express,express,0&line2=html5,html,0;react,react,0;tailwindcss,tailwind,0&title=This%20Project%27s%20Tech%20Stack">
-    <img  src="https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark&lineCount=2&line1=node.js,node.js,0;typescript,typescript,0;express,express,0&line2=html5,html,0;react,react,0;tailwindcss,tailwind,0&title=This%20Project%27s%20Tech%20Stack" title="Tech Stack">
+  <a href="https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark&lineCount=2&line1=node.js,node.js,0;typescript,typescript,0;express,express,61DAFB&line2=html5,html,0;react,react,0;tailwindcss,tailwind,0&title=This%20Project%27s%20Tech%20Stack">
+    <img  src="https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark&lineCount=2&line1=node.js,node.js,0;typescript,typescript,0;express,express,61DAFB&line2=html5,html,0;react,react,0;tailwindcss,tailwind,0&title=This%20Project%27s%20Tech%20Stack" title="Tech Stack">
   </a>
 </div>
 
@@ -58,6 +58,7 @@ With this site, you can customize your card.
 | **align** | `?align=center` | left | The alignment of the badges. (`left`, `center`, `right`) |
 | **showBorder** | `?showBorder=false` | true | Display the border around the card or not. (`true`, `false`) |
 | **borderRadius** | `?borderRadius=12.5` | 4.5 | Value between 0 and 50. |
+| **fontSize** | `?fontSize=20` | 18 | The size of the title. Accepts a value between 15 and 30. |
 | **fontWeight** | `?fontWeight=normal` | semibold | The thickness of the title. (`thin`, `normal`, `semibold`, `bold`) |
 | **lineCount** | `?lineCount=2` | 1 | The number of lines you want to add to your card. |
 | **line{n}** | `?line1=typescript,typescript,2D79C7` | - | The current line of the badge, where {n} is a number. *`(1 <= n <= lineCount)`* |
