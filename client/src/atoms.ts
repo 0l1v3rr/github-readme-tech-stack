@@ -35,3 +35,13 @@ export const borderRadiusState = atom({
   key: "borderRadius",
   default: "4.5",
 });
+
+export const fontSizeState = atom({
+  key: "fontSize",
+  default: "18",
+});
+
+export const fontWeightState = atom({
+  key: "fontWeight",
+  default: "semibold",
+});

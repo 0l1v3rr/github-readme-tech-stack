@@ -53,7 +53,7 @@ With this site, you can customize your card.
 ## 🔧 Query parameters
 | Parameter | Example | Default value | Description|
 |---------- |---------|---------------|------------|
-| **title** | `?title=My%20Custom%20Title` | My Tech Stack | The title of the card. %20 can be used as a space. |
+| **title** | `?title=My%20Title` | My Tech Stack | The title of the card. %20 can be used as a space. |
 | **theme** | `?theme=github_dark` | github | The theme of the card. You can browse between the themes [here](#-themes). |
 | **align** | `?align=center` | left | The alignment of the badges. (`left`, `center`, `right`) |
 | **showBorder** | `?showBorder=false` | true | Display the border around the card or not. (`true`, `false`) |
@@ -61,7 +61,7 @@ With this site, you can customize your card.
 | **fontSize** | `?fontSize=20` | 18 | The size of the title. Accepts a value between 15 and 30. |
 | **fontWeight** | `?fontWeight=normal` | semibold | The thickness of the title. (`thin`, `normal`, `semibold`, `bold`) |
 | **lineCount** | `?lineCount=2` | 1 | The number of lines you want to add to your card. |
-| **line{n}** | `?line1=typescript,typescript,2D79C7` | - | The current line of the badge, where {n} is a number. *`(1 <= n <= lineCount)`* |
+| **line{n}** | `?line1=html5,html5,auto` | - | The current line of the badge, where {n} is a number. *`(1 <= n <= lineCount)`* |
 
 <hr>
 

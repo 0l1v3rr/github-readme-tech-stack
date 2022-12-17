@@ -22,9 +22,10 @@ const TrueFalseInput: FC<TrueFalseInputProps> = (props) => {
         <div
           onClick={() => props.setValue(true)}
           className={`py-1 px-4 border border-solid border-gh-border rounded-md 
-            cursor-pointer transition-all duration-150 hover:text-green-400 
-            hover:border-gh-button-border-active hover:bg-gh-button ${
-              props.value ? "text-green-400 bg-gh-button" : ""
+            cursor-pointer transition-all duration-150 hover:text-green-400 hover:bg-gh-button ${
+              props.value
+                ? "text-green-400 bg-gh-button"
+                : "hover:border-gh-button-border-active"
             }`}
         >
           True
@@ -33,9 +34,10 @@ const TrueFalseInput: FC<TrueFalseInputProps> = (props) => {
         <div
           onClick={() => props.setValue(false)}
           className={`py-1 px-4 border border-solid border-gh-border rounded-md 
-            cursor-pointer transition-all duration-150 hover:text-red-400 
-            hover:border-gh-button-border-active hover:bg-gh-button ${
-              !props.value ? "text-red-400 bg-gh-button" : ""
+            cursor-pointer transition-all duration-150 hover:text-red-400 hover:bg-gh-button ${
+              !props.value
+                ? "text-red-400 bg-gh-button"
+                : "hover:border-gh-button-border-active"
             }`}
         >
           False

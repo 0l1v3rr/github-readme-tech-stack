@@ -8,6 +8,8 @@ import {
   alignState,
   borderRadiusState,
   borderState,
+  fontSizeState,
+  fontWeightState,
   lineCountState,
   linesState,
   themeState,
@@ -37,6 +39,8 @@ const Options: FC<OptionsProps> = (props) => {
   const [lines, setLines] = useRecoilState(linesState);
   const [showBorder, setShowBorder] = useRecoilState(borderState);
   const [borderRadius, setBorderRadius] = useRecoilState(borderRadiusState);
+  const [fontWeight, setFontWeight] = useRecoilState(fontWeightState);
+  const [fontSize, setFontSize] = useRecoilState(fontSizeState);
 
   useEffect(() => {
     // create an array with the numbers of lineCount to 1
@@ -141,6 +145,23 @@ const Options: FC<OptionsProps> = (props) => {
               : "";
           }}
         />
+
+        <div className="flex items-start gap-4">
+          <SelectInput
+            label="Font Weight"
+            options={["thin", "normal", "semibold", "bold"]}
+            value={fontWeight}
+            setValue={(val) => setFontWeight(val)}
+          />
+
+          <NumberInput
+            label="Font Size"
+            value={fontSize}
+            setValue={(val) => setFontSize(val)}
+            minValue={15}
+            maxValue={30}
+          />
+        </div>
       </div>
 
       <div className="my-4 flex flex-col gap-4">
@@ -161,7 +182,9 @@ const Options: FC<OptionsProps> = (props) => {
                 align,
                 lines,
                 showBorder,
-                borderRadius
+                borderRadius,
+                fontWeight,
+                fontSize
               )
             );
           }}
