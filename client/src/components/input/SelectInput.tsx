@@ -23,7 +23,7 @@ const SelectInput: FC<SelectInputProps> = (props) => {
       <select
         name={id}
         id={id}
-        defaultValue={props.value}
+        value={props.value}
         autoComplete="off"
         onChange={(e) => props.setValue(e.target.value)}
         className="ml-auto text-base bg-gh-bg border border-solid border-gh-border

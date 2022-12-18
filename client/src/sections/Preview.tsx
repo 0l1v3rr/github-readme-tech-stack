@@ -38,6 +38,12 @@ const Preview: FC<PreviewProps> = (props) => {
       <div className="mx-4 text-gh-text font-semibold my-2">URL</div>
 
       <Codeblock code={props.link} />
+
+      <div className="w-[95%] h-[.8px] bg-gh-border mx-auto my-4" />
+
+      <div className="mx-4 text-gh-text font-semibold my-2">HTML</div>
+
+      <Codeblock code={`<img src="${props.link}" alt="My Tech Stack" />`} />
     </section>
   );
 };

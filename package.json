@@ -1,7 +1,7 @@
 {
   "name": "github-readme-tech-stack",
   "version": "1.2.3",
-  "description": "",
+  "description": "Dynamically generated, customizable technologies cards for your GitHub README.",
   "main": "src/app.ts",
   "scripts": {
     "build": "tsc -p .",
