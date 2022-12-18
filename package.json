@@ -34,6 +34,7 @@
     "@vitest/coverage-c8": "^0.25.8",
     "eslint": "^8.29.0",
     "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
     "nodemon": "^2.0.20",
     "prettier": "^2.8.1",
     "ts-node": "^10.9.1",
@@ -47,5 +48,5 @@
   "bugs": {
     "url": "https://github.com/0l1v3rr/github-readme-tech-stack/issues"
   },
-  "homepage": "https://github.com/0l1v3rr/github-readme-tech-stack"
+  "homepage": "https://github-readme-tech-stack.vercel.app"
 }
