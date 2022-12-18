@@ -29,7 +29,7 @@
 With this site, you can customize your card.  
 [https://github-readme-tech-stack.vercel.app](https://github-readme-tech-stack.vercel.app)
 
-<img src="./screenshots/demo-site.png" alt="">
+<img src="./docs/demo-site.png" alt="">
 
 > **Warning**  
 > If the site doesn't load and displays a full white screen, try it in incognito mode.

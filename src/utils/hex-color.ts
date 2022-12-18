@@ -12,7 +12,7 @@ export const formatHexColor = (color: string): string => {
   }
 
   if (!color.startsWith("#")) {
-    color = `#${color}`;
+    return `%23${color}`;
   }
 
   return color.replace("#", "%23");
