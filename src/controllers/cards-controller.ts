@@ -1,43 +1,38 @@
 import { Request, Response } from "express";
-import Card from "../cards/card";
-import { getThemeByName } from "../cards/themes";
+import CardBuilder from "../cards/card-builder";
 import SvgGenerator from "../svg/svg-generator";
-import {
-  validateAlign,
-  validateBorderRadius,
-  validateFontSize,
-  validateLine,
-  validateLineCount,
-} from "../utils/validator";
+import { validateLine } from "../utils/validator";
 
 export const getCard = async (req: Request, res: Response) => {
-  const card = new Card();
+  const {
+    title,
+    lineCount,
+    align,
+    showBorder,
+    borderRadius,
+    fontWeight,
+    fontSize,
+    theme,
+  } = req.query;
 
-  const title = req.query.title?.toString() || "My Tech Stack";
-  const theme = req.query.theme?.toString() || "";
-  const lineCount = req.query.lineCount?.toString() || "1";
-  const align = req.query.align?.toString() || "left";
-  const showBorder = req.query.showBorder?.toString() || "true";
-  const borderRadius = req.query.borderRadius?.toString() || "4.5";
-  const fontWeight = req.query.fontWeight?.toString() || "semibold";
-  const fontSize = req.query.fontSize?.toString() || "18";
-
-  card.setTitle(title);
-  card.setTheme(getThemeByName(theme));
-  card.setLineCount(validateLineCount(lineCount));
-  card.setBadgeAlign(validateAlign(align));
-  card.setShowBorder(showBorder !== "false");
-  card.setBorderRadius(validateBorderRadius(borderRadius));
-  card.setFontWeight(fontWeight);
-  card.setFontSize(validateFontSize(fontSize));
-
-  // run a loop card.getLineCount() times
-  for (let i = 1; i <= card.getLineCount(); i++) {
-    // get the dynamic query param (line + i)
-    const lineValue = req.query[`line${i}`]?.toString() || "";
-
-    [...validateLine(lineValue)].forEach((b) => card.addBadge(i, b));
-  }
+  const card = new CardBuilder()
+    .title(title?.toString())
+    .lineCount(lineCount?.toString())
+    .align(align?.toString())
+    .border(showBorder?.toString())
+    .borderRadius(borderRadius?.toString())
+    .fontWeight(fontWeight?.toString())
+    .fontSize(fontSize?.toString())
+    .theme(theme?.toString())
+    .lines((line, addBadge) => {
+      // get the line query param based on the `line` argument (example: line1)
+      // validate the line
+      // iterate through it, then append every badge
+      validateLine(req.query[`line${line}`]?.toString() || "").forEach((b) =>
+        addBadge(b)
+      );
+    })
+    .build();
 
   res.setHeader("Content-Type", "image/svg+xml");
   res.send(await new SvgGenerator(card).toString());
