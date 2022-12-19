@@ -9,10 +9,18 @@
 <br>
 
 <div align="center">
-  <img src="https://img.shields.io/github/contributors/0l1v3rr/github-readme-tech-stack" alt="Contributors">
-  <img src="https://img.shields.io/github/issues-raw/0l1v3rr/github-readme-tech-stack" alt="Open Issues">
-  <img src="https://img.shields.io/github/issues-pr/0l1v3rr/github-readme-tech-stack" alt="Open PRs">
-  <img src="https://img.shields.io/github/package-json/v/0l1v3rr/github-readme-tech-stack" alt="Version">
+  <a href="https://github.com/0l1v3rr/github-readme-tech-stack/graphs/contributors" target="_blank">
+    <img src="https://img.shields.io/github/contributors/0l1v3rr/github-readme-tech-stack" alt="Contributors">
+  </a>
+  <a href="https://github.com/0l1v3rr/github-readme-tech-stack/issues" target="_blank">
+    <img src="https://img.shields.io/github/issues-raw/0l1v3rr/github-readme-tech-stack" alt="Open Issues">
+  </a>
+  <a href="https://github.com/0l1v3rr/github-readme-tech-stack/pulls" target="_blank">
+    <img src="https://img.shields.io/github/issues-pr/0l1v3rr/github-readme-tech-stack" alt="Open PRs">
+  </a>
+  <a href="https://github.com/0l1v3rr/github-readme-tech-stack/releases" target="_blank">
+    <img src="https://img.shields.io/github/package-json/v/0l1v3rr/github-readme-tech-stack" alt="Version">
+  </a>
 </div>
 
 <br>
@@ -30,9 +38,6 @@ With this site, you can customize your card.
 [https://github-readme-tech-stack.vercel.app](https://github-readme-tech-stack.vercel.app)
 
 <img src="./docs/demo-site.png" alt="">
-
-> **Warning**  
-> If the site doesn't load and displays a full white screen, try it in incognito mode.
 
 <hr>
 
@@ -215,7 +220,7 @@ cd github-readme-tech-stack
 # Install the dependencies:
 npm i
 
-# Install husky (optional, but recommended)
+# Install husky
 npm run prepare
 
 # Run the application:
@@ -245,7 +250,6 @@ You can find a contributing guideline [here](CONTRIBUTING.md).
 <hr>
 
 ## 💡 Inspiration
-I was inspired by dozens of other projects, check 'em out as well!
 - [github-readme-streak-stats](https://github.com/DenverCoder1/github-readme-streak-stats)
 - [github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
 - [github-profile-summary-cards](https://github.com/vn7n24fzkq/github-profile-summary-cards)
