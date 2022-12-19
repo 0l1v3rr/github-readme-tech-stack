@@ -15,4 +15,8 @@
     @apply bg-gh-button-border rounded-md transition-all border-[3px] 
       border-solid border-transparent bg-clip-content;
   }
+
+  body {
+    @apply bg-gh-bg;
+  }
 }

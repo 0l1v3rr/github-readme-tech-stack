@@ -92,7 +92,10 @@ const Options: FC<OptionsProps> = (props) => {
   );
 
   return (
-    <section className="border border-solid border-gh-border rounded-md w-full lg:w-[40%]">
+    <section
+      className="border border-solid border-gh-border rounded-md 
+        w-full lg:w-[40%] overflow-hidden"
+    >
       <SectionTitle icon={VscSettings} title="Options" />
 
       <div className="m-4 flex flex-col gap-4">
@@ -110,6 +113,7 @@ const Options: FC<OptionsProps> = (props) => {
             options={themes}
             value={theme}
             setValue={setTheme}
+            searchField={true}
           />
 
           <SelectInput
@@ -121,18 +125,19 @@ const Options: FC<OptionsProps> = (props) => {
         </div>
 
         <div className="flex items-start gap-4">
-          <TrueFalseInput
-            label="Border"
-            setValue={(val) => setShowBorder(val)}
-            value={showBorder}
+          <SelectInput
+            label="Font Weight"
+            options={["thin", "normal", "semibold", "bold"]}
+            value={fontWeight}
+            setValue={(val) => setFontWeight(val)}
           />
 
           <NumberInput
-            label="Lines"
-            value={lineCount}
-            setValue={(val) => setLineCount(val)}
-            minValue={1}
-            maxValue={5}
+            label="Font Size"
+            value={fontSize}
+            setValue={(val) => setFontSize(val)}
+            minValue={15}
+            maxValue={30}
           />
         </div>
 
@@ -160,19 +165,18 @@ const Options: FC<OptionsProps> = (props) => {
         />
 
         <div className="flex items-start gap-4">
-          <SelectInput
-            label="Font Weight"
-            options={["thin", "normal", "semibold", "bold"]}
-            value={fontWeight}
-            setValue={(val) => setFontWeight(val)}
+          <TrueFalseInput
+            label="Border"
+            setValue={(val) => setShowBorder(val)}
+            value={showBorder}
           />
 
           <NumberInput
-            label="Font Size"
-            value={fontSize}
-            setValue={(val) => setFontSize(val)}
-            minValue={15}
-            maxValue={30}
+            label="Lines"
+            value={lineCount}
+            setValue={(val) => setLineCount(val)}
+            minValue={1}
+            maxValue={5}
           />
         </div>
       </div>
