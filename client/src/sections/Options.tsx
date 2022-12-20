@@ -117,7 +117,7 @@ const Options: FC<OptionsProps> = (props) => {
           />
 
           <SelectInput
-            label="Align"
+            label="Badge Align"
             options={["left", "center", "right"]}
             value={align}
             setValue={(val) => setAlign(val)}
@@ -154,7 +154,7 @@ const Options: FC<OptionsProps> = (props) => {
               return "Please provide a border radius!";
             }
 
-            if (isNaN(num)) {
+            if (!val.split("").every((x) => "0123456789.".includes(x))) {
               return "Please provide a number!";
             }
 

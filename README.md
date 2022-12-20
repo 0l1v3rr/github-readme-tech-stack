@@ -39,6 +39,9 @@ With this site, you can customize your card.
 
 <img src="./docs/demo-site.png" alt="">
 
+> **Warning**  
+> If the site doesn't load and displays a full white screen, try it in incognito mode.
+
 <hr>
 
 - [🖼️ Demo Website](#️-demo-website)

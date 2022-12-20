@@ -1,6 +1,12 @@
 import { FC, useState } from "react";
 import { MdContentCopy, MdCheck } from "react-icons/md";
 
+import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
+import xml from "react-syntax-highlighter/dist/esm/languages/hljs/xml";
+import theme from "react-syntax-highlighter/dist/esm/styles/hljs/vs2015";
+
+SyntaxHighlighter.registerLanguage("xml", xml);
+
 interface CodeblockProps {
   code: string;
 }
@@ -35,11 +41,28 @@ const Codeblock: FC<CodeblockProps> = (props) => {
       <div
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="font-mono bg-gh-bg-secondary rounded-md px-2 py-3 text-gh-text 
-        mx-4 text-sm overflow-x-auto whitespace-nowrap select-text relative 
-        overflow-y-hidden"
+        className="font-mono bg-gh-bg-secondary rounded-md text-gh-text 
+          mx-4 text-sm overflow-x-auto whitespace-nowrap select-text relative 
+          overflow-y-hidden"
       >
-        {props.code}
+        <SyntaxHighlighter
+          language="xml"
+          style={theme}
+          showLineNumbers={false}
+          wrapLongLines={false}
+          customStyle={{
+            margin: 0,
+            padding: 0,
+            background: "#161B22",
+            paddingLeft: "0.5rem",
+            paddingRight: "0.5rem",
+            paddingTop: "0.75rem",
+            paddingBottom: "0.75rem",
+          }}
+        >
+          {props.code}
+        </SyntaxHighlighter>
+        {/* {props.code} */}
       </div>
     </div>
   );
