@@ -15,7 +15,7 @@ const Preview: FC<PreviewProps> = (props) => {
   }, [props.link]);
 
   return (
-    <section className="border border-solid border-gh-border rounded-md w-full lg:w-[60%] pb-2">
+    <section className="border border-solid border-gh-border rounded-md w-full lg:w-[55%] pb-2">
       <SectionTitle icon={BsEmojiHeartEyes} title="Preview" />
 
       <a

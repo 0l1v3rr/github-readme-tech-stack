@@ -26,6 +26,9 @@ module.exports = {
       boxShadow: {
         "3xl": "0 0 14px 0 rgba(0, 0, 0, 0.6)",
       },
+      fontFamily: {
+        dejavu: ["DejaVu Sans", "sans-serif"],
+      },
     },
   },
   plugins: [],

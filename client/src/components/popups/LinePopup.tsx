@@ -109,7 +109,7 @@ const LinePopup: FC<LinePopupProps> = (props) => {
       </div>
       <div className="w-[95%] h-[.8px] bg-gh-border mx-auto" />
 
-      <div className="flex items-stretch py-4">
+      <div className="flex items-stretch py-4 mx-4 gap-4">
         <GreenButton
           icon={FiSave}
           onClick={handleSave}

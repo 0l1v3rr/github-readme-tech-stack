@@ -94,7 +94,7 @@ const Options: FC<OptionsProps> = (props) => {
   return (
     <section
       className="border border-solid border-gh-border rounded-md 
-        w-full lg:w-[40%] overflow-hidden"
+        w-full lg:w-[45%]"
     >
       <SectionTitle icon={VscSettings} title="Options" />
 
@@ -181,14 +181,16 @@ const Options: FC<OptionsProps> = (props) => {
         </div>
       </div>
 
-      <div className="my-4 flex flex-col gap-4">
-        <div className="w-[92%] h-[.8px] bg-gh-border mx-auto" />
+      <div className="my-4 flex flex-col gap-4 px-4">
+        <div className="w-full h-[.8px] bg-gh-border mx-auto" />
 
         {lineChars.map((line) => (
           <LineInput line={line} updateLine={updateLine} key={line} />
         ))}
 
-        <div className="flex items-stretch">
+        <div className="w-full h-[.8px] bg-gh-border mx-auto" />
+
+        <div className="flex items-stretch gap-2">
           <GreenButton
             icon={IoHammerOutline}
             onClick={() => {

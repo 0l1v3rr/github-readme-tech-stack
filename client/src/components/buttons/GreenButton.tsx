@@ -16,7 +16,7 @@ const GreenButton: FC<GreenButtonProps> = (props) => {
       disabled={props.disabled}
       className={`leading-none flex items-center gap-2 w-fit 
         bg-gh-green border border-solid rounded-md duration-150
-        px-3 py-2 text-sm font-semibold mx-4 transition-all  
+        px-3 py-2 text-sm font-semibold transition-all  
         ${
           props.disabled
             ? "text-gh-text border-gh-green"

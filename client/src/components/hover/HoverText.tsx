@@ -12,7 +12,7 @@ const HoverText: FC<HoverTextProps> = (props) => {
       <div
         className="absolute whitespace-nowrap left-1/2 -translate-x-1/2 -top-7 
           text-[.8rem] bg-gh-bg-secondary border border-solid border-gh-border pointer-events-none
-          px-2 py-1 leading-none rounded-md shadow-xl text-gh-text-secondary z-[5]
+          px-2 py-1 leading-none rounded-md shadow-xl text-gh-text-secondary z-50
           before:content-[''] before:w-2 before:h-2 before:bg-gh-bg-secondary
           before:absolute before:top-full before:left-1/2 before:-translate-x-1/2
           before:rotate-45 before:-translate-y-1/2 before:border-solid before:border-gh-border

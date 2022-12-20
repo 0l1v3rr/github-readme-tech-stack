@@ -7,7 +7,13 @@ const app: Application = express();
 
 const PORT = process.env.PORT || 8080;
 
-app.use("/", express.static(path.join(__dirname, "..", "client", "build")));
+app.use(
+  "/",
+  express.static(path.join(__dirname, "..", "client", "build")),
+  (_, res) => {
+    res.setHeader("Cache-Control", "no-store, no-cache");
+  }
+);
 
 app.get("/api/cards", getCard);
 app.get("/api/themes", cors(), getThemes);
