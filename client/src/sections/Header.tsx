@@ -24,6 +24,7 @@ const Header = () => {
           icon={BiGitRepoForked}
           num={Number(ghStats.forks)}
           text="Fork"
+          className="hidden md:flex"
         />
 
         <ButtonLink
