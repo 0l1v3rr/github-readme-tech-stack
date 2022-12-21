@@ -41,9 +41,13 @@ const NumberInput: FC<InputProps> = (props) => {
         <button
           type="button"
           onClick={decrement}
-          className="rounded-tl-md rounded-bl-md border border-solid text-gh-text-secondary
-            border-gh-border px-2 transition-all duration-150 hover:bg-gh-red hover:text-white
-            text-sm"
+          className={`rounded-tl-md rounded-bl-md border border-solid text-gh-text-secondary
+            border-gh-border px-2 transition-all duration-150 text-sm 
+            ${
+              props.value === `${props.minValue}`
+                ? "cursor-default text-gh-border"
+                : "hover:bg-gh-red hover:text-white text-gh-text-secondary"
+            }`}
         >
           <AiOutlineMinus />
         </button>
@@ -57,9 +61,13 @@ const NumberInput: FC<InputProps> = (props) => {
         <button
           type="button"
           onClick={increment}
-          className="rounded-tr-md rounded-br-md border border-solid text-gh-text-secondary
-            border-gh-border px-2 transition-all duration-150 hover:bg-gh-green-active
-            hover:text-white text-sm"
+          className={`rounded-tr-md rounded-br-md border border-solid 
+            border-gh-border px-2 transition-all duration-150 text-sm
+            ${
+              props.value === `${props.maxValue}`
+                ? "cursor-default text-gh-border"
+                : "hover:bg-gh-green-active hover:text-white text-gh-text-secondary"
+            }`}
         >
           <AiOutlinePlus />
         </button>
