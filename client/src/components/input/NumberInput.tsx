@@ -41,6 +41,7 @@ const NumberInput: FC<InputProps> = (props) => {
         <button
           type="button"
           onClick={decrement}
+          aria-label="Minus"
           className={`rounded-tl-md rounded-bl-md border border-solid text-gh-text-secondary
             border-gh-border px-2 transition-all duration-150 text-sm 
             ${
@@ -61,6 +62,7 @@ const NumberInput: FC<InputProps> = (props) => {
         <button
           type="button"
           onClick={increment}
+          aria-label="Plus"
           className={`rounded-tr-md rounded-br-md border border-solid 
             border-gh-border px-2 transition-all duration-150 text-sm
             ${

@@ -90,6 +90,7 @@ const LineInput: FC<InputProps> = (props) => {
           <HoverText label="Add badge">
             <button
               type="button"
+              aria-label="Add badge"
               className="cursor-pointer text-gh-text-secondary 
                 hover:text-gh-blue transition-all duration-150"
               onClick={() => setIsPopupOpen(true)}

@@ -51,6 +51,7 @@ const ColorInput: FC<ColorInputProps> = (props) => {
 
         <button
           type="button"
+          aria-label="Regenerate Color"
           onClick={() => props.setValue(generateHex())}
           className="border border-solid border-gh-button-border 
             bg-gh-button transition-all duration-150 hover:border-gh-button-border-active

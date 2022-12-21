@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://github-readme-tech-stack.vercel.app/",
+  "serviceWorker": "false",
   "dependencies": {
     "@types/node": "^16.18.3",
     "@types/react": "^18.0.25",
@@ -18,7 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build --env.NO_CACHE=true"
   },
   "eslintConfig": {
     "extends": [

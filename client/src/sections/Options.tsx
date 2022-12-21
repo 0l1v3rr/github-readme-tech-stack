@@ -31,7 +31,6 @@ interface OptionsProps {
 
 const Options: FC<OptionsProps> = (props) => {
   const themes = useFetchThemes();
-  const [isGenerateBtnActive, setIsGenerateBtnActive] = useState<boolean>(true);
   const [lineChars, setLineChars] = useState(["1"]);
 
   const [title, setTitle] = useRecoilState<string>(titleState);
@@ -92,6 +91,24 @@ const Options: FC<OptionsProps> = (props) => {
     [setLines]
   );
 
+  const validateBorderRadius = (val: string): string => {
+    const num = parseInt(val);
+
+    if (val.trim() === "") {
+      return "Please provide a border radius!";
+    }
+
+    if (!val.split("").every((x) => "0123456789.".includes(x))) {
+      return "Please provide a valid number!";
+    }
+
+    if (num > 50 || num < 0) {
+      return "Please provide a value between 0 and 50";
+    }
+
+    return "";
+  };
+
   return (
     <section
       className="border border-solid border-gh-border rounded-md 
@@ -148,27 +165,7 @@ const Options: FC<OptionsProps> = (props) => {
           value={borderRadius}
           setValue={(val) => setBorderRadius(val)}
           helperText="A number between 0 and 50."
-          validate={(val) => {
-            const num = parseInt(val);
-
-            if (val.trim() === "") {
-              setIsGenerateBtnActive(false);
-              return "Please provide a border radius!";
-            }
-
-            if (!val.split("").every((x) => "0123456789.".includes(x))) {
-              setIsGenerateBtnActive(false);
-              return "Please provide a valid number!";
-            }
-
-            if (num > 50 || num < 0) {
-              setIsGenerateBtnActive(false);
-              return "Please provide a value between 0 and 50";
-            }
-
-            setIsGenerateBtnActive(true);
-            return "";
-          }}
+          validate={(val) => validateBorderRadius(val)}
         />
 
         <div className="flex items-start gap-4">
@@ -215,7 +212,7 @@ const Options: FC<OptionsProps> = (props) => {
                 )
               );
             }}
-            disabled={!isGenerateBtnActive}
+            disabled={validateBorderRadius(borderRadius) !== ""}
             text="Generate"
           />
 

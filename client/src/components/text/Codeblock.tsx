@@ -24,6 +24,7 @@ const Codeblock: FC<CodeblockProps> = (props) => {
           navigator.clipboard.writeText(props.code);
           setClicked(true);
         }}
+        aria-label="Copy"
         onMouseLeave={() => setClicked(false)}
         className={`absolute top-1/2 right-5 bg-gh-bg-secondary
           border border-solid cursor-pointer -translate-y-1/2 text-base rounded-md
