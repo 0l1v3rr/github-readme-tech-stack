@@ -52,7 +52,10 @@ const LineInput: FC<InputProps> = (props) => {
 
   return (
     <div className={`${props.className} w-full flex flex-col gap-1 text-sm`}>
-      <BlurOverlay isActive={isPopupOpen} />
+      <BlurOverlay
+        isActive={isPopupOpen}
+        closePopup={() => setIsPopupOpen(false)}
+      />
 
       <LinePopup
         addBadge={addBadge}
@@ -62,7 +65,7 @@ const LineInput: FC<InputProps> = (props) => {
       />
 
       <span className="text-sm text-gh-text-secondary font-semibold w-fit">
-        Line {props.line}:
+        Line {props.line}
       </span>
 
       <div
@@ -114,7 +117,6 @@ const LineInput: FC<InputProps> = (props) => {
                     hover:border-gh-red transition-all duration-150"
                 >
                   <div className="text-gh-text-secondary">
-                    {/* <FaGithub /> */}
                     <img
                       className="w-4 h-4"
                       src={`https://cdn.simpleicons.org/${badge.iconName}/${
@@ -122,7 +124,7 @@ const LineInput: FC<InputProps> = (props) => {
                           ? ""
                           : badge.color.replace("#", "")
                       }`}
-                      alt="alt"
+                      alt=""
                     />
                   </div>
 

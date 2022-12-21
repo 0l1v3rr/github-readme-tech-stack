@@ -19,6 +19,7 @@ module.exports = {
         "gh-red-active": "#F78166",
         "gh-green": "#238636",
         "gh-green-active": "#2EA043",
+        "gh-green-dark": "#1b752b",
         "gh-border": "#30363D",
         white: "#fff",
         black: "#000",

@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { Badge } from "../../types/line";
 import GreenButton from "../buttons/GreenButton";
 import { FiSave } from "react-icons/fi";
@@ -13,32 +13,34 @@ interface LinePopupProps {
 }
 
 const LinePopup: FC<LinePopupProps> = (props) => {
-  const [icon, setIcon] = useState<string>("");
-  const [label, setLabel] = useState<string>("");
-  const [color, setColor] = useState<string>("");
+  const [icon, setIcon] = useState<string>("react");
+  const [label, setLabel] = useState<string>("react");
+  const [color, setColor] = useState<string>("#3498db");
 
-  const [errorMsg, setErrorMsg] = useState<string | undefined>(
-    "Please fill in all fields."
-  );
-
-  useEffect(() => {
-    if (icon.trim().length < 3) {
-      setErrorMsg("The icon name should be greater than 2 characters.");
-      return;
+  const validateIconAndLabel = (
+    val: string,
+    iorl: "icon" | "label"
+  ): string => {
+    if (val.length < 3 || val.length > 32) {
+      return `The ${iorl} should be between 2 and 32 characters.`;
     }
 
-    if (label.trim().length < 3) {
-      setErrorMsg("The label name should be greater than 2 characters.");
-      return;
+    return "";
+  };
+
+  const validateHex = (val: string): string => {
+    if (val === "auto") {
+      return "";
     }
 
-    if (color.trim().length < 4) {
-      setErrorMsg("Please provide a color.");
-      return;
+    // starts with #, 3 or 6 characters long, contains only hexadecimal values
+    const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+    if (!hexColorRegex.test(val)) {
+      return "The color should be a valid hexadecimal color or the value auto.";
     }
 
-    setErrorMsg(undefined);
-  }, [icon, label, color]);
+    return "";
+  };
 
   const handleSave = () => {
     props.addBadge({
@@ -52,9 +54,9 @@ const LinePopup: FC<LinePopupProps> = (props) => {
 
   const handleCancel = () => {
     props.closePopup();
-    setIcon("");
-    setLabel("");
-    setColor("");
+    setIcon("react");
+    setLabel("react");
+    setColor("#3498db");
   };
 
   const activeClasses = "opacity-100 pointer-events-auto scale-100";
@@ -63,7 +65,7 @@ const LinePopup: FC<LinePopupProps> = (props) => {
   return (
     <div
       className={`border border-solid border-gh-border rounded-md bg-gh-bg-secondary
-        shadow-lg left-1/2 z-30 -translate-x-1/2 -translate-y-1/2 
+        shadow-3xl left-1/2 z-30 -translate-x-1/2 -translate-y-1/2 
         transition-all duration-150 fixed top-1/2 max-h-[95vh] overflow-y-auto w-[95%] 
         sm:w-[60%] md:w-[50%] lg:w-[40%] ${
           props.isActive ? activeClasses : inactiveClasses
@@ -73,7 +75,7 @@ const LinePopup: FC<LinePopupProps> = (props) => {
         className="border-b border-solid border-gh-border px-4 
           py-2 font-semibold text-lg text-gh-text"
       >
-        Line #{props.lineNumber}: Add badge
+        Line {props.lineNumber}: Add badge
       </div>
 
       <div className="flex flex-col gap-3 my-3 px-6">
@@ -82,7 +84,7 @@ const LinePopup: FC<LinePopupProps> = (props) => {
           placeholder="react"
           value={icon}
           setValue={(val: string) => setIcon(val)}
-          validate={() => ""}
+          validate={(val) => validateIconAndLabel(val, "icon")}
           helperText="You can browse between the icons here: https://simpleicons.org/"
         />
 
@@ -93,7 +95,7 @@ const LinePopup: FC<LinePopupProps> = (props) => {
           placeholder="react"
           value={label}
           setValue={(val: string) => setLabel(val)}
-          validate={() => ""}
+          validate={(val) => validateIconAndLabel(val, "label")}
         />
 
         <div className="w-[95%] h-[.8px] bg-gh-border mx-auto" />
@@ -103,7 +105,7 @@ const LinePopup: FC<LinePopupProps> = (props) => {
           placeholder="#3498db"
           value={color}
           setValue={(val: string) => setColor(val)}
-          validate={() => ""}
+          validate={(val) => validateHex(val)}
           helperText="The badge color is either a hexadecimal color code or the value auto."
         />
       </div>
@@ -114,7 +116,13 @@ const LinePopup: FC<LinePopupProps> = (props) => {
           icon={FiSave}
           onClick={handleSave}
           text="Save"
-          disabled={errorMsg !== undefined}
+          disabled={
+            !(
+              validateHex(color) === "" &&
+              validateIconAndLabel(icon, "icon") === "" &&
+              validateIconAndLabel(label, "label") === ""
+            )
+          }
         />
 
         <SecondaryButton onClick={handleCancel} text="Cancel" />

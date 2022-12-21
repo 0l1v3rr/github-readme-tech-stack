@@ -19,7 +19,7 @@ const GreenButton: FC<GreenButtonProps> = (props) => {
         px-3 py-2 text-sm font-semibold transition-all  
         ${
           props.disabled
-            ? "text-gh-text border-gh-green"
+            ? "text-gh-text border-gh-green-dark bg-gh-green-dark"
             : "hover:bg-gh-green-active text-white border-gh-green-active"
         }`}
     >
