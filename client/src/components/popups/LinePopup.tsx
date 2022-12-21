@@ -4,6 +4,7 @@ import GreenButton from "../buttons/GreenButton";
 import { FiSave } from "react-icons/fi";
 import SecondaryButton from "../buttons/SecondaryButton";
 import Input from "../input/Input";
+import ColorInput from "../input/ColorInput";
 
 interface LinePopupProps {
   isActive: boolean;
@@ -88,7 +89,7 @@ const LinePopup: FC<LinePopupProps> = (props) => {
           helperText="You can browse between the icons here: https://simpleicons.org/"
         />
 
-        <div className="w-[95%] h-[.8px] bg-gh-border mx-auto" />
+        <div className="w-full h-[.8px] bg-gh-border mx-auto" />
 
         <Input
           label="Badge label"
@@ -98,9 +99,9 @@ const LinePopup: FC<LinePopupProps> = (props) => {
           validate={(val) => validateIconAndLabel(val, "label")}
         />
 
-        <div className="w-[95%] h-[.8px] bg-gh-border mx-auto" />
+        <div className="w-full h-[.8px] bg-gh-border mx-auto" />
 
-        <Input
+        <ColorInput
           label="Badge color"
           placeholder="#3498db"
           value={color}
@@ -109,9 +110,11 @@ const LinePopup: FC<LinePopupProps> = (props) => {
           helperText="The badge color is either a hexadecimal color code or the value auto."
         />
       </div>
-      <div className="w-[95%] h-[.8px] bg-gh-border mx-auto" />
 
-      <div className="flex items-stretch py-4 mx-4 gap-4">
+      <div
+        className="flex items-stretch py-4 px-4 gap-4 
+          border-t border-solid border-gh-border"
+      >
         <GreenButton
           icon={FiSave}
           onClick={handleSave}
