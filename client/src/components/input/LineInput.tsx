@@ -5,7 +5,6 @@ import BlurOverlay from "../popups/BlurOverlay";
 import LinePopup from "../popups/LinePopup";
 import HoverText from "../hover/HoverText";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
-import { FaGithub } from "react-icons/fa";
 
 interface InputProps {
   line: string;
@@ -108,21 +107,26 @@ const LineInput: FC<InputProps> = (props) => {
             {badges.map((badge) => {
               return (
                 <div
+                  key={`${badge.iconName}-${Math.random()}`}
                   onClick={() => removeBadge(badge)}
                   className="flex items-center gap-3 py-[.45rem] px-3 bg-gh-bg-secondary 
                     cursor-pointer border border-solid border-gh-bg-secondary 
                     hover:border-gh-red transition-all duration-150"
                 >
-                  <div
-                    className="text-gh-text-secondary"
-                    style={{
-                      color: badge.color,
-                    }}
-                  >
-                    <FaGithub />
+                  <div className="text-gh-text-secondary">
+                    {/* <FaGithub /> */}
+                    <img
+                      className="w-4 h-4"
+                      src={`https://cdn.simpleicons.org/${badge.iconName}/${
+                        badge.color === "auto"
+                          ? ""
+                          : badge.color.replace("#", "")
+                      }`}
+                      alt="alt"
+                    />
                   </div>
 
-                  <div className="font-semibold text-white font-dejavu text-[.75rem]">
+                  <div className="font-semibold text-white font-dejavu text-[.7rem] tracking-wider">
                     {badge.label.toUpperCase()}
                   </div>
                 </div>
