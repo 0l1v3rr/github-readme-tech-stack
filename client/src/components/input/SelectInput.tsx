@@ -107,7 +107,7 @@ const SelectInput: FC<SelectInputProps> = (props) => {
                 onClick={() => selectValue(option)}
                 className={`flex items-center gap-4 py-1 px-2 transition-all duration-150 
                   hover:bg-gh-button cursor-pointer text-gh-text min-w-[10rem] ${
-                    i === 0 ? "" : "border-t border-solid border-gh-border"
+                    i === 0 ? "" : "border-t border-solid border-gh-border-dark"
                   }`}
               >
                 {isSelected && (

@@ -31,6 +31,7 @@ interface OptionsProps {
 
 const Options: FC<OptionsProps> = (props) => {
   const themes = useFetchThemes();
+  const [isGenerateBtnActive, setIsGenerateBtnActive] = useState<boolean>(true);
   const [lineChars, setLineChars] = useState(["1"]);
 
   const [title, setTitle] = useRecoilState<string>(titleState);
@@ -151,16 +152,22 @@ const Options: FC<OptionsProps> = (props) => {
             const num = parseInt(val);
 
             if (val.trim() === "") {
+              setIsGenerateBtnActive(false);
               return "Please provide a border radius!";
             }
 
             if (!val.split("").every((x) => "0123456789.".includes(x))) {
-              return "Please provide a number!";
+              setIsGenerateBtnActive(false);
+              return "Please provide a valid number!";
             }
 
-            return num > 50 || num < 0
-              ? "Please provide a value between 0 and 50"
-              : "";
+            if (num > 50 || num < 0) {
+              setIsGenerateBtnActive(false);
+              return "Please provide a value between 0 and 50";
+            }
+
+            setIsGenerateBtnActive(true);
+            return "";
           }}
         />
 
@@ -208,7 +215,7 @@ const Options: FC<OptionsProps> = (props) => {
                 )
               );
             }}
-            disabled={false}
+            disabled={!isGenerateBtnActive}
             text="Generate"
           />
 
