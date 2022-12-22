@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Header from "./sections/Header";
-import Options from "./sections/Options";
-import Preview from "./sections/Preview";
+import Header from "./pages/Header";
+import Options from "./pages/Options";
+import Preview from "./pages/Preview";
 
 const App = () => {
   const [link, setLink] = useState<string>(
