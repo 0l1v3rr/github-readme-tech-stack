@@ -194,7 +194,7 @@ const Options: FC<OptionsProps> = (props) => {
 
         <div className="w-full h-[.8px] bg-gh-border mx-auto" />
 
-        <div className="flex items-stretch gap-2">
+        <div className="flex items-stretch gap-3">
           <GreenButton
             icon={IoHammerOutline}
             onClick={() => {
@@ -216,7 +216,11 @@ const Options: FC<OptionsProps> = (props) => {
             text="Generate"
           />
 
-          <SecondaryButton onClick={() => reset()} text="Reset" />
+          <SecondaryButton
+            onClick={() => reset()}
+            text="Reset"
+            className="text-red-500 font-semibold"
+          />
         </div>
       </div>
     </section>
