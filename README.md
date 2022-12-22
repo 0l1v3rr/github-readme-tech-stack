@@ -41,7 +41,7 @@ With this site, you can customize your card with a live preview.
 <img src="./docs/demo-site-2.png" alt="">
 
 > **Warning**  
-> If the site doesn't load and displays a full white screen, try it in incognito mode.
+> If the site doesn't load and displays a full white screen, try it in incognito mode, or clear your browser's cache.
 
 <hr>
 

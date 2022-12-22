@@ -3,18 +3,6 @@ import { VscSettings } from "react-icons/vsc";
 import { IoHammerOutline } from "react-icons/io5";
 import SelectInput from "../components/input/SelectInput";
 import GreenButton from "../components/buttons/GreenButton";
-import { useRecoilState } from "recoil";
-import {
-  alignState,
-  borderRadiusState,
-  borderState,
-  fontSizeState,
-  fontWeightState,
-  lineCountState,
-  linesState,
-  themeState,
-  titleState,
-} from "../atoms";
 import { FC, useCallback, useEffect, useState } from "react";
 import LineInput from "../components/input/LineInput";
 import { Line } from "../types/line";
@@ -33,15 +21,15 @@ const Options: FC<OptionsProps> = (props) => {
   const themes = useFetchThemes();
   const [lineChars, setLineChars] = useState(["1"]);
 
-  const [title, setTitle] = useRecoilState<string>(titleState);
-  const [lineCount, setLineCount] = useRecoilState<string>(lineCountState);
-  const [theme, setTheme] = useRecoilState(themeState);
-  const [align, setAlign] = useRecoilState(alignState);
-  const [lines, setLines] = useRecoilState(linesState);
-  const [showBorder, setShowBorder] = useRecoilState(borderState);
-  const [borderRadius, setBorderRadius] = useRecoilState(borderRadiusState);
-  const [fontWeight, setFontWeight] = useRecoilState(fontWeightState);
-  const [fontSize, setFontSize] = useRecoilState(fontSizeState);
+  const [title, setTitle] = useState<string>("My Tech Stack");
+  const [lineCount, setLineCount] = useState<string>("1");
+  const [theme, setTheme] = useState<string>("github");
+  const [align, setAlign] = useState<string>("left");
+  const [lines, setLines] = useState<Line[]>([]);
+  const [showBorder, setShowBorder] = useState(true);
+  const [borderRadius, setBorderRadius] = useState<string>("4.5");
+  const [fontWeight, setFontWeight] = useState<string>("semibold");
+  const [fontSize, setFontSize] = useState<string>("18");
 
   useEffect(() => {
     // create an array with the numbers of lineCount to 1
