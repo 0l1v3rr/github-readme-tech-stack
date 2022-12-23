@@ -24,6 +24,20 @@ If none of these themes fit your needs, feel free to [add one.](https://github.c
   </tr>
 
   <tr>
+    <td align="center"><code>github_dark_green</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark_green&title=github_dark_green&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><code>github_dark_red</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark_red&title=github_dark_red&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
+
+  <tr>
     <td align="center"><code>react</code></td>
     <td>
       <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=react&title=react&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
@@ -148,6 +162,34 @@ If none of these themes fit your needs, feel free to [add one.](https://github.c
       <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=blood_dark&title=blood_dark&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
     </td>
   </tr>
+
+  <tr>
+    <td align="center"><code>hacker</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=hacker&title=hacker&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><code>windows</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=windows&title=windows&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><code>halloween</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=halloween&title=halloween&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><code>christmas</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=christmas&title=christmas&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
   
   <tr>
     <td align="center"><code>catppuccin_latte</code></td>
@@ -174,6 +216,27 @@ If none of these themes fit your needs, feel free to [add one.](https://github.c
     <td align="center"><code>catppuccin_mocha</code></td>
     <td>
       <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=catppuccin_mocha&title=catppuccin_mocha&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><code>vs</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=vs&title=vs&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><code>bearded</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=bearded&title=bearded&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><code>rainglow</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=rainglow&title=rainglow&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
     </td>
   </tr>
 </table>

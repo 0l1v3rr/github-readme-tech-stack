@@ -18,6 +18,18 @@ themes.set("github_dark", {
   titleColor: "#58A6FF",
   badgeColor: "#161B22",
 });
+themes.set("github_dark_green", {
+  backgroundColor: "#0D1117",
+  borderColor: "#21262D",
+  titleColor: "#43ec63",
+  badgeColor: "#161B22",
+});
+themes.set("github_dark_red", {
+  backgroundColor: "#0D1117",
+  borderColor: "#21262D",
+  titleColor: "#ff8f69",
+  badgeColor: "#161B22",
+});
 themes.set("react", {
   backgroundColor: "#222222",
   borderColor: "#3B3B3B",
@@ -127,28 +139,22 @@ themes.set("blood_dark", {
   badgeColor: "#0F3242",
 });
 themes.set("hacker", {
-  backgroundColor: "#000000",
-  borderColor: "#1DDB07",
+  backgroundColor: "#101010",
+  borderColor: "#222",
   titleColor: "#1DDB07",
-  badgeColor: "#0F0F0F",
+  badgeColor: "#222",
 });
 themes.set("android", {
-  backgroundColor: "#000000",
-  borderColor: "#3ADD85",
+  backgroundColor: "#101010",
+  borderColor: "#222",
   titleColor: "#3ADD85",
-  badgeColor: "#0F0F0F",
+  badgeColor: "#222",
 });
 themes.set("windows", {
-  backgroundColor: "#000000",
-  borderColor: "#00A3EE",
+  backgroundColor: "#101010",
+  borderColor: "#222",
   titleColor: "#00A3EE",
-  badgeColor: "#0F0F0F",
-});
-themes.set("java", {
-  backgroundColor: "#000000",
-  borderColor: "#3383A3",
-  titleColor: "#3383A3",
-  badgeColor: "#0F0F0F",
+  badgeColor: "#222",
 });
 themes.set("halloween", {
   backgroundColor: "#1C1A2B",
@@ -197,6 +203,24 @@ themes.set("catppuccin_mocha", {
   borderColor: "#6c7086",
   badgeColor: "#181825",
   titleColor: "#94e2d5",
+});
+themes.set("vs", {
+  backgroundColor: "#1e1e1e",
+  borderColor: "#252526",
+  badgeColor: "#252526",
+  titleColor: "#56b9f0",
+});
+themes.set("bearded", {
+  backgroundColor: "#161d29",
+  borderColor: "#1c2433",
+  badgeColor: "#1c2433",
+  titleColor: "#22e6c5",
+});
+themes.set("rainglow", {
+  backgroundColor: "#0e1114",
+  borderColor: "#12161a",
+  badgeColor: "#12161a",
+  titleColor: "#228a96",
 });
 
 /**
