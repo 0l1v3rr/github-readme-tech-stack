@@ -13,6 +13,9 @@
 <br>
 
 <div align="center">
+  <a href="https://github.com/0l1v3rr/github-readme-tech-stack/stargazers" target="_blank">
+    <img src="https://img.shields.io/github/stars/0l1v3rr/github-readme-tech-stack.svg?style=for-the-badge&logo=chart.js&color=fad039&logoColor=D9E0EE&labelColor=343A40" alt="Stars">
+  </a>
   <a href="https://github.com/0l1v3rr/github-readme-tech-stack/graphs/contributors" target="_blank">
     <img src="https://img.shields.io/github/contributors/0l1v3rr/github-readme-tech-stack.svg?style=for-the-badge&logo=trello&color=008CDD&logoColor=D9E0EE&labelColor=343A40" alt="Contributors">
   </a>
@@ -20,7 +23,7 @@
     <img src="https://img.shields.io/github/release/0l1v3rr/github-readme-tech-stack.svg?style=for-the-badge&logo=github&color=00B274&logoColor=D9E0EE&labelColor=343A40" alt="Version">
   </a>
   <a href="https://twitter.com/intent/tweet?text=Display%20your%20favorite%20technologies%2C%20tools%2C%20or%20the%20tech%20stack%20your%20project%20uses%20with%20these%20fully%20customizable%2C%20good-looking%20cards%20on%20your%20GitHub%20README%21&url=https://github.com/0l1v3rr/github-readme-tech-stack&hashtagsgithub,readme,cards,stats,profile,shields,react,typescript,tailwindcss" target="_blank">
-    <img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=for-the-badge&logo=twitter&color=1c93e4&logoColor=D9E0EE&labelColor=343A40" alt="Version">
+    <img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=for-the-badge&logo=twitter&color=1c93e4&logoColor=D9E0EE&labelColor=343A40" alt="Tweet">
   </a>
 </div>
 
@@ -65,6 +68,12 @@ None of the fields are required. Every query parameter has a default value displ
 ## 🪁 Themes
 These cards come with several built-in themes you can use. You can find all of them by clicking [here](docs/THEMES.md).  
 If you would like to use other themes, and add one for yourself and others, please check this [issue](https://github.com/0l1v3rr/github-readme-tech-stack/issues/2).
+
+<hr>
+
+## ❗ Important
+- We suggest you not put too many badges inside one card, because the loading time can be too slow, and it can overflow the 15s limit, which results in a card that's not displayed. The maximum amount of badges inside one card should be around 16. If you want to display more, do it in two or three cards.
+- If you use our [Demo Website](https://github-readme-tech-stack.vercel.app) to generate and customize your card, and it displays an empty screen, it's because your browser cached the previously deployed names of the JS bundles. In order to resolve this issue, clear your browser's cache or open the site in incognito mode.
 
 <hr>
 
