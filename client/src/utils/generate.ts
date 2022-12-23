@@ -1,20 +1,19 @@
-import { Line } from "../types/line";
+import { Card } from "../types/card";
 
-export const generateLink = (
-  title: string,
-  lineCount: string,
-  theme: string,
-  align: string,
-  lines: Line[],
-  showBorder: boolean,
-  borderRadius: string,
-  fontWeight: string,
-  fontSize: string
-): string => {
+export const generateLink = ({
+  title,
+  theme,
+  align,
+  lines,
+  showBorder,
+  borderRadius,
+  fontWeight,
+  fontSize,
+}: Card): string => {
   // replace every space with %20
   title = title.replace(/[ ]/g, "%20");
 
-  let res = `https://github-readme-tech-stack.vercel.app/api/cards?title=${title}&lineCount=${lineCount}&theme=${theme}&align=${align}&showBorder=${showBorder}&borderRadius=${borderRadius}&fontSize=${fontSize}&fontWeight=${fontWeight}`;
+  let res = `https://github-readme-tech-stack.vercel.app/api/cards?title=${title}&lineCount=${lines.length}&theme=${theme}&align=${align}&showBorder=${showBorder}&borderRadius=${borderRadius}&fontSize=${fontSize}&fontWeight=${fontWeight}`;
 
   for (const l of lines) {
     // if the line doesn't contain badges

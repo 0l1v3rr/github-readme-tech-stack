@@ -3,9 +3,9 @@ import { VscSettings } from "react-icons/vsc";
 import { IoHammerOutline } from "react-icons/io5";
 import SelectInput from "../components/input/SelectInput";
 import GreenButton from "../components/buttons/GreenButton";
-import { FC, useCallback, useEffect, useState } from "react";
+import { FC, useCallback, useState } from "react";
 import LineInput from "../components/input/LineInput";
-import { Line } from "../types/line";
+import { Card, Line, newCard } from "../types/card";
 import { generateLink } from "../utils/generate";
 import { useFetchThemes } from "../hooks/useFetchThemes";
 import NumberInput from "../components/input/NumberInput";
@@ -19,65 +19,42 @@ interface OptionsProps {
 
 const Options: FC<OptionsProps> = (props) => {
   const themes = useFetchThemes();
-  const [lineChars, setLineChars] = useState(["1"]);
+  const [card, setCard] = useState<Card>(newCard());
 
-  const [title, setTitle] = useState<string>("My Tech Stack");
-  const [lineCount, setLineCount] = useState<string>("1");
-  const [theme, setTheme] = useState<string>("github");
-  const [align, setAlign] = useState<string>("left");
-  const [lines, setLines] = useState<Line[]>([]);
-  const [showBorder, setShowBorder] = useState(true);
-  const [borderRadius, setBorderRadius] = useState<string>("4.5");
-  const [fontWeight, setFontWeight] = useState<string>("semibold");
-  const [fontSize, setFontSize] = useState<string>("18");
+  const updateLineCount = useCallback(
+    (lineNumber: number) => {
+      // storing just the line numbers in an array
+      const lineNums: number[] = card.lines.map((x) => Number(x.lineNumber));
 
-  useEffect(() => {
-    // create an array with the numbers of lineCount to 1
-    const res: string[] = [];
-    for (let i = 1; i <= Number(lineCount); i++) {
-      res.push(`${i}`);
-      setLines((prev) => [
-        ...prev,
-        {
-          badges: [],
-          lineNumber: `${i}`,
-        },
-      ]);
-    }
-    setLineChars(res);
-  }, [lineCount, setLineCount, setLines]);
+      // variable to store the result
+      const updated: Line[] = [];
 
-  const reset = () => {
-    setTitle("My Tech Stack");
-    setLineCount("1");
-    setTheme("github");
-    setAlign("left");
-    setShowBorder(true);
-    setLines([]);
-    setBorderRadius("4.5");
-    setFontSize("18");
-    setFontWeight("semibold");
-  };
-
-  const updateLine = useCallback(
-    (line: Line) => {
-      setLines((prev) => {
-        const res: Line[] = [];
-
-        for (const l of [...prev]) {
-          if (l.lineNumber === line.lineNumber) {
-            res.push(line);
-            continue;
-          }
-
-          res.push(l);
+      for (let i = 1; i <= lineNumber; i++) {
+        // if the card.lines contain line with this lineNumber
+        if (lineNums.includes(i)) {
+          updated.push(card.lines.filter((x) => x.lineNumber === `${i}`)[0]);
+          continue;
         }
 
-        return res;
-      });
+        // else push a new one
+        updated.push({
+          badges: [],
+          lineNumber: `${i}`,
+        });
+      }
+
+      setCard({ ...card, lines: updated });
     },
-    [setLines]
+    [card]
   );
+
+  const updateLine = (line: Line) => {
+    const lines = [...card.lines];
+
+    lines[lines.findIndex((l) => l.lineNumber === line.lineNumber)] = line;
+
+    setCard({ ...card, lines: lines });
+  };
 
   const validateBorderRadius = (val: string): string => {
     const num = parseInt(val);
@@ -108,8 +85,8 @@ const Options: FC<OptionsProps> = (props) => {
         <Input
           label="Title"
           placeholder="My Tech Stack"
-          value={title}
-          setValue={(val) => setTitle(val)}
+          value={card.title}
+          setValue={(v) => setCard({ ...card, title: v, lines: card.lines })}
           validate={() => ""}
         />
 
@@ -117,16 +94,16 @@ const Options: FC<OptionsProps> = (props) => {
           <SelectInput
             label="Theme"
             options={themes}
-            value={theme}
-            setValue={setTheme}
+            value={card.theme}
+            setValue={(v) => setCard({ ...card, theme: v, lines: card.lines })}
             searchField={true}
           />
 
           <SelectInput
             label="Badge Align"
             options={["left", "center", "right"]}
-            value={align}
-            setValue={(val) => setAlign(val)}
+            value={card.align}
+            setValue={(v) => setCard({ ...card, align: v, lines: card.lines })}
           />
         </div>
 
@@ -134,14 +111,18 @@ const Options: FC<OptionsProps> = (props) => {
           <SelectInput
             label="Font Weight"
             options={["thin", "normal", "semibold", "bold"]}
-            value={fontWeight}
-            setValue={(val) => setFontWeight(val)}
+            value={card.fontWeight}
+            setValue={(v) =>
+              setCard({ ...card, fontWeight: v, lines: card.lines })
+            }
           />
 
           <NumberInput
             label="Font Size"
-            value={fontSize}
-            setValue={(val) => setFontSize(val)}
+            value={card.fontSize}
+            setValue={(v) =>
+              setCard({ ...card, fontSize: v, lines: card.lines })
+            }
             minValue={15}
             maxValue={30}
           />
@@ -150,8 +131,10 @@ const Options: FC<OptionsProps> = (props) => {
         <Input
           label="Border Radius"
           placeholder="4.5"
-          value={borderRadius}
-          setValue={(val) => setBorderRadius(val)}
+          value={card.borderRadius}
+          setValue={(v) =>
+            setCard({ ...card, borderRadius: v, lines: card.lines })
+          }
           helperText="A number between 0 and 50."
           validate={(val) => validateBorderRadius(val)}
         />
@@ -159,14 +142,16 @@ const Options: FC<OptionsProps> = (props) => {
         <div className="flex items-start gap-4">
           <TrueFalseInput
             label="Border"
-            setValue={(val) => setShowBorder(val)}
-            value={showBorder}
+            value={card.showBorder}
+            setValue={(v) =>
+              setCard({ ...card, showBorder: v, lines: card.lines })
+            }
           />
 
           <NumberInput
             label="Lines"
-            value={lineCount}
-            setValue={(val) => setLineCount(val)}
+            value={`${card.lines.length}`}
+            setValue={(v) => updateLineCount(Number(v))}
             minValue={1}
             maxValue={5}
           />
@@ -176,8 +161,12 @@ const Options: FC<OptionsProps> = (props) => {
       <div className="my-4 flex flex-col gap-4 px-4">
         <div className="w-full h-[.8px] bg-gh-border mx-auto" />
 
-        {lineChars.map((line) => (
-          <LineInput line={line} updateLine={updateLine} key={line} />
+        {card.lines.map((line) => (
+          <LineInput
+            line={line}
+            updateLine={updateLine}
+            key={line.lineNumber}
+          />
         ))}
 
         <div className="w-full h-[.8px] bg-gh-border mx-auto" />
@@ -185,27 +174,13 @@ const Options: FC<OptionsProps> = (props) => {
         <div className="flex items-stretch gap-3">
           <GreenButton
             icon={IoHammerOutline}
-            onClick={() => {
-              props.setLink(
-                generateLink(
-                  title,
-                  lineCount,
-                  theme,
-                  align,
-                  lines,
-                  showBorder,
-                  borderRadius,
-                  fontWeight,
-                  fontSize
-                )
-              );
-            }}
-            disabled={validateBorderRadius(borderRadius) !== ""}
+            onClick={() => props.setLink(generateLink(card))}
+            disabled={validateBorderRadius(card.borderRadius) !== ""}
             text="Generate"
           />
 
           <SecondaryButton
-            onClick={() => reset()}
+            onClick={() => setCard(newCard())}
             text="Reset"
             className="text-red-500 font-semibold"
           />

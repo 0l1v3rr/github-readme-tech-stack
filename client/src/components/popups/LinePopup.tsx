@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { Badge } from "../../types/line";
+import { Badge } from "../../types/card";
 import GreenButton from "../buttons/GreenButton";
 import { FiSave } from "react-icons/fi";
 import SecondaryButton from "../buttons/SecondaryButton";

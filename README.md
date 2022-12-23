@@ -54,7 +54,7 @@ None of the fields are required. Every query parameter has a default value displ
 | Parameter | Example | Default value | Description|
 |---------- |---------|---------------|------------|
 | **title** | `?title=My%20Title` | My Tech Stack | The title of the card. %20 can be used as a space. |
-| **theme** | `?theme=github_dark` | github | The theme of the card. You can browse between the themes [here](#-themes). |
+| **theme** | `?theme=github_dark` | github | The theme of the card. You can browse between the themes [here](docs/THEMES.md). |
 | **align** | `?align=center` | left | The alignment of the badges. (`left`, `center`, `right`) |
 | **showBorder** | `?showBorder=false` | true | Display the border around the card or not. (`true`, `false`) |
 | **borderRadius** | `?borderRadius=12.5` | 4.5 | Value between 0 and 50. |
