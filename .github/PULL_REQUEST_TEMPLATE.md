@@ -13,4 +13,3 @@ Please delete options that are not relevant.
 - [ ] My code follows the style and structure of this project
 - [ ] My code follows the principles of clean code
 - [ ] My changes generate no new warnings, bugs or errors
-- [ ] I formatted my code with the `npm run format` command

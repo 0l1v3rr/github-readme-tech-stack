@@ -5,16 +5,14 @@
 </div>
 
 <div align="center">
-  Display your favorite technologies, tools, or the tech stack your project uses with these fully customizable, good-looking cards on your GitHub README!  
-
-  These cards are in perfect harmony with other similar README cards, such as <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">github-readme-stats</a> or <a href="https://github.com/DenverCoder1/github-readme-streak-stats" target="_blank">github-readme-streak-stats</a>. Nevertheless, these cards are fully customizable on our <a href="https://github-readme-tech-stack.vercel.app" target="_blank">website</a>.
+  Display your favorite technologies, tools, or the tech stack your project uses with these fully customizable, good-looking cards on your GitHub README! These cards are in perfect harmony with other similar README cards, such as <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">github-readme-stats</a> or <a href="https://github.com/DenverCoder1/github-readme-streak-stats" target="_blank">github-readme-streak-stats</a>.
 </div>
 
 <br>
 
 <div align="center">
   <a href="https://github.com/0l1v3rr/github-readme-tech-stack/stargazers" target="_blank">
-    <img src="https://img.shields.io/github/stars/0l1v3rr/github-readme-tech-stack.svg?style=for-the-badge&logo=chart.js&color=fad039&logoColor=D9E0EE&labelColor=343A40" alt="Stars">
+    <img src="https://img.shields.io/github/stars/0l1v3rr/github-readme-tech-stack.svg?style=for-the-badge&logo=chart.js&color=FF9E0F&logoColor=D9E0EE&labelColor=343A40" alt="Stars">
   </a>
   <a href="https://github.com/0l1v3rr/github-readme-tech-stack/graphs/contributors" target="_blank">
     <img src="https://img.shields.io/github/contributors/0l1v3rr/github-readme-tech-stack.svg?style=for-the-badge&logo=trello&color=008CDD&logoColor=D9E0EE&labelColor=343A40" alt="Contributors">
@@ -37,14 +35,11 @@
 
 <hr>
 
-## ⚡ Demo Website
-With this site, you can customize your card with a live preview.  
+## ⚡ Quick Start
+The easiest way to start using these cards is to visit our website, where you can customize your card with a live preview.  
 [https://github-readme-tech-stack.vercel.app](https://github-readme-tech-stack.vercel.app)
 
 <img src="./docs/demo-site-2.png" alt="">
-
-> **Warning**  
-> If the site doesn't load and displays a full white screen, try it in incognito mode, or clear your browser's cache.
 
 <hr>
 
@@ -53,7 +48,7 @@ None of the fields are required. Every query parameter has a default value displ
 
 | Parameter | Example | Default value | Description|
 |---------- |---------|---------------|------------|
-| **title** | `?title=My%20Title` | My Tech Stack | The title of the card. %20 can be used as a space. |
+| **title** | `?title=My%20Title` | My Tech Stack | The title of the card. `%20` can be used as a space. |
 | **theme** | `?theme=github_dark` | github | The theme of the card. You can browse between the themes [here](docs/THEMES.md). |
 | **align** | `?align=center` | left | The alignment of the badges. (`left`, `center`, `right`) |
 | **showBorder** | `?showBorder=false` | true | Display the border around the card or not. (`true`, `false`) |
@@ -106,9 +101,9 @@ You can use [GitHub's new feature](https://github.blog/changelog/2022-05-19-spec
 ### 🎭 Adding custom SVG logo
 We support this using [Base64](https://en.wikipedia.org/wiki/Base64) format.  
 **[\*](https://stackoverflow.com/questions/38985050/how-do-i-use-the-logo-option-in-shields-io-badges) Here's an easy 3-step guide:**
-1. Download the image and use one of the many online tools, e.g. [http://b64.io/](http://b64.io/), to encode it.
+1. Download the SVG and use one of the many online tools, e.g. [http://b64.io/](http://b64.io/), to encode it.
 2. Encode the Base64 string in [percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding). Take the Base64 string and use one of the many online tools, e.g. [http://meyerweb.com/eric/tools/dencoder/](http://meyerweb.com/eric/tools/dencoder/), to encode the string.
-3. Finally, replace the first element of the badge (the `logoName`) with this string inside the URL. (e.g `<Base64>,typescript,2D79C7;`)
+3. Finally, replace the first element of a badge (the `logoName`) with this string inside the URL. (`<Base64>,typescript,2D79C7;`)
 
 <hr>
 
@@ -116,6 +111,7 @@ We support this using [Base64](https://en.wikipedia.org/wiki/Base64) format.
 If you don't have NodeJS, [download and install it](https://nodejs.org/en/).  
 Then open a terminal and type these commands:
 
+**Backend:**
 ```sh
 # Clone the project:
 git clone https://github.com/0l1v3rr/github-readme-tech-stack.git
@@ -127,8 +123,10 @@ npm run prepare
 
 # Run the application:
 npm run dev
+```
 
-# -- Frontend:
+**Frontend:**
+```sh
 cd client
 
 # Install the dependencies:
@@ -140,14 +138,10 @@ npm start
 
 <hr>
 
-## 📝 License
-This project is licensed under the [MIT License](LICENSE).
-
-<hr>
-
 ## 🧑‍🤝‍🧑 Contributing
 Every contribution is welcomed.  
-You can find a contributing guideline [here](CONTRIBUTING.md).
+You can find a contributing guideline [here](CONTRIBUTING.md).  
+This project is licensed under the [MIT License](LICENSE).
 
 <hr>
 
