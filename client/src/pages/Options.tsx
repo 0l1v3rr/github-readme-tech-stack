@@ -12,6 +12,7 @@ import NumberInput from "../components/input/NumberInput";
 import TrueFalseInput from "../components/input/TrueFalseInput";
 import Input from "../components/input/Input";
 import SecondaryButton from "../components/buttons/SecondaryButton";
+import { validateBorderRadius } from "../utils/validate";
 
 interface OptionsProps {
   setLink: (link: string) => void;
@@ -54,24 +55,6 @@ const Options: FC<OptionsProps> = (props) => {
     lines[lines.findIndex((l) => l.lineNumber === line.lineNumber)] = line;
 
     setCard({ ...card, lines: lines });
-  };
-
-  const validateBorderRadius = (val: string): string => {
-    const num = parseInt(val);
-
-    if (val.trim() === "") {
-      return "Please provide a border radius!";
-    }
-
-    if (!val.split("").every((x) => "0123456789.".includes(x))) {
-      return "Please provide a valid number!";
-    }
-
-    if (num > 50 || num < 0) {
-      return "Please provide a value between 0 and 50";
-    }
-
-    return "";
   };
 
   return (

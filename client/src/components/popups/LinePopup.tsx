@@ -5,6 +5,7 @@ import { FiSave } from "react-icons/fi";
 import SecondaryButton from "../buttons/SecondaryButton";
 import Input from "../input/Input";
 import ColorInput from "../input/ColorInput";
+import { validateHex, validateIconAndLabel } from "../../utils/validate";
 
 interface LinePopupProps {
   isActive: boolean;
@@ -17,31 +18,6 @@ const LinePopup: FC<LinePopupProps> = (props) => {
   const [icon, setIcon] = useState<string>("react");
   const [label, setLabel] = useState<string>("react");
   const [color, setColor] = useState<string>("#3498db");
-
-  const validateIconAndLabel = (
-    val: string,
-    iorl: "icon" | "label"
-  ): string => {
-    if (val.length < 3 || val.length > 32) {
-      return `The ${iorl} should be between 2 and 32 characters.`;
-    }
-
-    return "";
-  };
-
-  const validateHex = (val: string): string => {
-    if (val === "auto") {
-      return "";
-    }
-
-    // starts with #, 3 or 6 characters long, contains only hexadecimal values
-    const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
-    if (!hexColorRegex.test(val)) {
-      return "The color should be a valid hexadecimal color or the value auto.";
-    }
-
-    return "";
-  };
 
   const handleSave = () => {
     props.addBadge({
