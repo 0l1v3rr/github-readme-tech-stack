@@ -39,7 +39,9 @@
 The easiest way to start using these cards is to visit our website, where you can customize your card with a live preview.
 [https://github-readme-tech-stack.vercel.app](https://github-readme-tech-stack.vercel.app)
 
-<img src="./docs/github-readme-tech-stack.gif" alt="tutorial">
+<p align="center">
+    <img src="./docs/github-readme-tech-stack.gif" alt="tutorial">
+</p>
 
 <hr>
 
