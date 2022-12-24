@@ -63,6 +63,17 @@ const ColorInput: FC<ColorInputProps> = (props) => {
         >
           <BsArrowRepeat />
         </button>
+
+        <input
+          value={isError || props.value === "auto" ? "#8B949E" : props.value}
+          onChange={(e) => props.setValue(e.target.value)}
+          type="color"
+          autoComplete="off"
+          className="text-base border border-solid rounded-md px-2 py-1 
+            leading-none cursor-pointer border-gh-button-border 
+            bg-gh-button hover:bg-gh-button-active hover:border-gh-button-border-active
+            transition-all duration-150 w-10 h-8 color-input"
+        />
       </div>
 
       {!isError && props.helperText && (

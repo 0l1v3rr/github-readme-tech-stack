@@ -20,3 +20,17 @@
     @apply bg-gh-bg;
   }
 }
+
+@layer utilities {
+  .color-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .color-input::-webkit-color-swatch {
+    @apply border-0 rounded-sm;
+  }
+  .color-input::-moz-color-swatch {
+    @apply border-0 rounded-sm;
+  }
+}
