@@ -239,4 +239,18 @@ If none of these themes fit your needs, feel free to [add one.](https://github.c
       <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=rainglow&title=rainglow&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
     </td>
   </tr>
+
+  <tr>
+    <td align="center"><code>levike</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?title=levike&lineCount=1&theme=levike&line1=typescript,typescript,auto;express,express,61DAFB">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><code>android</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?title=android&lineCount=1&theme=android&line1=typescript,typescript,auto;express,express,61DAFB">
+    </td>
+  </tr>
 </table>
