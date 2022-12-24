@@ -105,19 +105,21 @@ const LineInput: FC<InputProps> = (props) => {
                     cursor-pointer border border-solid border-gh-bg-secondary 
                     hover:border-gh-red transition-all duration-150"
                 >
-                  <div className="text-gh-text-secondary">
-                    <img
-                      className="w-4 h-4"
-                      src={`https://cdn.simpleicons.org/${badge.iconName}/${
-                        badge.color === "auto"
-                          ? ""
-                          : badge.color.replace("#", "")
-                      }`}
-                      alt=""
-                    />
-                  </div>
+                  <img
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).style.display = "none";
+                    }}
+                    className="w-4 h-4"
+                    src={`https://cdn.simpleicons.org/${badge.iconName}/${
+                      badge.color === "auto" ? "" : badge.color.replace("#", "")
+                    }`}
+                    alt=""
+                  />
 
-                  <div className="font-semibold text-white font-dejavu text-[.7rem] tracking-wider">
+                  <div
+                    className="font-semibold text-white font-dejavu text-[.7rem] 
+                      tracking-wider py-[.145rem]"
+                  >
                     {badge.label.toUpperCase()}
                   </div>
                 </div>
