@@ -36,10 +36,12 @@
 <hr>
 
 ## ⚡ Quick Start
-The easiest way to start using these cards is to visit our website, where you can customize your card with a live preview.  
+The easiest way to start using these cards is to visit our website, where you can customize your card with a live preview.
 [https://github-readme-tech-stack.vercel.app](https://github-readme-tech-stack.vercel.app)
 
-<img src="./docs/demo-site-2.png" alt="">
+<p align="center">
+    <img src="./docs/github-readme-tech-stack.gif" alt="tutorial">
+</p>
 
 <hr>
 
@@ -61,7 +63,7 @@ None of the fields are required. Every query parameter has a default value displ
 <hr>
 
 ## 🪁 Themes
-These cards come with several built-in themes you can use. You can find all of them by clicking [here](docs/THEMES.md).  
+These cards come with several built-in themes you can use. You can find all of them by clicking [here](docs/THEMES.md).
 If you would like to use other themes, and add one for yourself and others, please check this [issue](https://github.com/0l1v3rr/github-readme-tech-stack/issues/2).
 
 <hr>
@@ -86,7 +88,7 @@ You can use [GitHub's new feature](https://github.blog/changelog/2022-05-19-spec
 
 ```html
 <picture>
-  <source 
+  <source
     srcset="https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark&lineCount=1&line1=typescript,typescript,auto"
     media="(prefers-color-scheme: dark)"
   />
@@ -99,7 +101,7 @@ You can use [GitHub's new feature](https://github.blog/changelog/2022-05-19-spec
 ```
 
 ### 🎭 Adding custom SVG logo
-We support this using [Base64](https://en.wikipedia.org/wiki/Base64) format.  
+We support this using [Base64](https://en.wikipedia.org/wiki/Base64) format.
 **[\*](https://stackoverflow.com/questions/38985050/how-do-i-use-the-logo-option-in-shields-io-badges) Here's an easy 3-step guide:**
 1. Download the SVG and use one of the many online tools, e.g. [http://b64.io/](http://b64.io/), to encode it.
 2. Encode the Base64 string in [percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding). Take the Base64 string and use one of the many online tools, e.g. [http://meyerweb.com/eric/tools/dencoder/](http://meyerweb.com/eric/tools/dencoder/), to encode the string.
@@ -108,7 +110,7 @@ We support this using [Base64](https://en.wikipedia.org/wiki/Base64) format.
 <hr>
 
 ## ⚒️ Building from source
-If you don't have NodeJS, [download and install it](https://nodejs.org/en/).  
+If you don't have NodeJS, [download and install it](https://nodejs.org/en/).
 Then open a terminal and type these commands:
 
 **Backend:**
@@ -139,8 +141,8 @@ npm start
 <hr>
 
 ## 🧑‍🤝‍🧑 Contributing
-Every contribution is welcomed.  
-You can find a contributing guideline [here](CONTRIBUTING.md).  
+Every contribution is welcomed.
+You can find a contributing guideline [here](CONTRIBUTING.md).
 This project is licensed under the [MIT License](LICENSE).
 
 <hr>
