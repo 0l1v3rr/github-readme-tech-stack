@@ -1,6 +1,6 @@
 import ButtonLink from "../components/buttons/ButtonLink";
 import Title from "../components/repo/Title";
-import { AiOutlineStar, AiOutlineGithub } from "react-icons/ai";
+import { AiFillStar, AiOutlineGithub } from "react-icons/ai";
 import { BiGitRepoForked } from "react-icons/bi";
 import { useFetchGitHub } from "../hooks/useFetchGitHub";
 
@@ -29,9 +29,10 @@ const Header = () => {
 
         <ButtonLink
           link="https://github.com/0l1v3rr/github-readme-tech-stack/stargazers"
-          icon={AiOutlineStar}
+          icon={AiFillStar}
           num={Number(ghStats.stargazers)}
-          text="Star"
+          text="Starred"
+          iconClassName="text-gh-yellow"
         />
       </div>
     </header>

@@ -1,5 +1,5 @@
 import SectionTitle from "../components/text/SectionTitle";
-import { BsEmojiHeartEyes } from "react-icons/bs";
+import { ImFilePicture } from "react-icons/im";
 import { FC, useEffect, useState } from "react";
 import Codeblock from "../components/text/Codeblock";
 
@@ -16,7 +16,7 @@ const Preview: FC<PreviewProps> = (props) => {
 
   return (
     <section className="border border-solid border-gh-border rounded-md w-full lg:w-[55%] pb-2">
-      <SectionTitle icon={BsEmojiHeartEyes} title="Preview" />
+      <SectionTitle icon={ImFilePicture} title="Preview" />
 
       <a
         href={props.link}
