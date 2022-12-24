@@ -87,13 +87,14 @@ export default class SvgGenerator {
     let leftPadding = 0;
 
     for (const badge of badges) {
-      icons += await this.createBadge(badge, leftPadding);
-      leftPadding += 10 + badgeWidth(badge.label);
+      const b = await this.createBadge(badge, leftPadding);
+      icons += b;
+      leftPadding += 10 + badgeWidth(b);
     }
 
     // align: left   ==> x = 25
     // align: center ==> x = 495/2 - leftPadding/2
-    // align: right ==> x = 495 - 25 - leftPadding
+    // align: right  ==> x = 495 - 25 - leftPadding
     let x = 25;
 
     switch (this.card.getBadgeAlign()) {
