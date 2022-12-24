@@ -248,9 +248,9 @@ If none of these themes fit your needs, feel free to [add one.](https://github.c
   </tr>
 
   <tr>
-    <td align="center"><code>dracula</code></td>
+    <td align="center"><code>android</code></td>
     <td>
-      <img src="https://github-readme-tech-stack.vercel.app/api/cards?title=dracula&lineCount=1&theme=dracula&line1=typescript,typescript,auto;express,express,61DAFB">
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?title=android&lineCount=1&theme=android&line1=typescript,typescript,auto;express,express,61DAFB">
     </td>
   </tr>
 </table>
