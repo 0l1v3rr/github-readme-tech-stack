@@ -55,6 +55,7 @@ None of the fields are required. Every query parameter has a default value displ
 | **align** | `?align=center` | left | The alignment of the badges. (`left`, `center`, `right`) |
 | **showBorder** | `?showBorder=false` | true | Display the border around the card or not. (`true`, `false`) |
 | **borderRadius** | `?borderRadius=12.5` | 4.5 | Value between 0 and 50. |
+| **fontFamily** | `?fontFamily=consolas` | Segoe UI | The font family of the title. If the specified family doesn't exist, the default is used. |
 | **fontSize** | `?fontSize=20` | 18 | The size of the title. Accepts a value between 15 and 30. |
 | **fontWeight** | `?fontWeight=normal` | semibold | The thickness of the title. (`thin`, `normal`, `semibold`, `bold`) |
 | **lineCount** | `?lineCount=2` | 1 | The number of lines you want to add to your card. |

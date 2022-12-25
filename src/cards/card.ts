@@ -10,6 +10,7 @@ export default class Card {
   private borderRadius: number;
   private fontWeight: FontWeight;
   private fontSize: number;
+  private fontFamily;
 
   private lines: Map<number, Badge[]>;
 
@@ -21,6 +22,7 @@ export default class Card {
     this.borderRadius = 4.5;
     this.fontWeight = FontWeight.SEMIBOLD;
     this.fontSize = 18;
+    this.fontFamily = "Segoe UI";
 
     this.lineCount = 1;
     this.lines = new Map<number, Badge[]>();
@@ -101,5 +103,11 @@ export default class Card {
 
   public setFontSize = (fontSize: number): void => {
     this.fontSize = fontSize;
+  };
+
+  public getFontFamily = (): string => this.fontFamily;
+
+  public setFontFamily = (fontFamily: string): void => {
+    this.fontFamily = fontFamily;
   };
 }

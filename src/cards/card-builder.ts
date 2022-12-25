@@ -12,6 +12,7 @@ const fontWeight = z
   .enum(["thin", "normal", "semibold", "bold"])
   .catch("semibold");
 const fontSize = z.number().min(15).max(30).catch(18);
+const fontFamily = z.string().min(3).max(16).catch("Segoe UI");
 
 // const numberThatAcceptsString = z.preprocess((input) => {
 //   const processed = z
@@ -78,6 +79,11 @@ export default class CardBuilder {
 
   public theme(_theme = "github"): CardBuilder {
     this.card.setTheme(getThemeByName(_theme));
+    return this;
+  }
+
+  public family(_fontFamily = "Segoe UI"): CardBuilder {
+    this.card.setFontFamily(fontFamily.parse(_fontFamily));
     return this;
   }
 

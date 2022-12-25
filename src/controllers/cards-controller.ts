@@ -12,6 +12,7 @@ export const getCard = async (req: Request, res: Response) => {
     borderRadius,
     fontWeight,
     fontSize,
+    fontFamily,
     theme,
   } = req.query;
 
@@ -23,6 +24,7 @@ export const getCard = async (req: Request, res: Response) => {
     .borderRadius(borderRadius?.toString())
     .fontWeight(fontWeight?.toString())
     .fontSize(fontSize?.toString())
+    .family(fontFamily?.toString())
     .theme(theme?.toString())
     .lines((line, addBadge) => {
       // get the line query param based on the `line` argument (example: line1)
