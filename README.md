@@ -72,7 +72,7 @@ If you would like to use other themes, and add one for yourself and others, plea
 ## ❗ Important
 - We suggest you not put too many badges inside one card, because the loading time can be too slow, and it can overflow the 15s limit, which results in a card that's not displayed. The maximum amount of badges inside one card should be around 16. If you want to display more, do it in two or three cards.
 - If you use our [Demo Website](https://github-readme-tech-stack.vercel.app) to generate and customize your card, and it displays an empty screen, it's because your browser cached the previously deployed names of the JS bundles. In order to resolve this issue, clear your browser's cache or open the site in incognito mode.
-- You can browse between the icons [here](https://simpleicons.org/).
+- The cards display [shields.io](https://shields.io/) badges. You can browse between the choosable icons [here](https://simpleicons.org/).
 
 <hr>
 
