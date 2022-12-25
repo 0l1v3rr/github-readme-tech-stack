@@ -23,6 +23,7 @@ export interface Card {
   borderRadius: string;
   fontWeight: string;
   fontSize: string;
+  fontFamily: string;
   lines: Line[];
 }
 
@@ -35,6 +36,7 @@ export const newCard = (): Card => {
     lines: [{ badges: [], lineNumber: "1" }],
     showBorder: true,
     theme: "github",
+    fontFamily: "Segoe UI",
     title: "My Tech Stack",
   };
 };

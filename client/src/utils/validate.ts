@@ -23,6 +23,14 @@ export const validateIconAndLabel = (
   return "";
 };
 
+export const validateFontFamily = (val: string): string => {
+  if (val.length < 3 || val.length > 16) {
+    return `The font family should be between 2 and 16 characters.`;
+  }
+
+  return "";
+};
+
 export const validateBorderRadius = (val: string): string => {
   const num = parseInt(val);
 

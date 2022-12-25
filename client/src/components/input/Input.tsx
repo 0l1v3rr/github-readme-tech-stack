@@ -43,14 +43,16 @@ const Input: FC<InputProps> = (props) => {
       />
 
       {!isError && props.helperText && (
-        <div className="flex items-center gap-1 text-sm italic text-gh-text-secondary">
-          <HiOutlineInformationCircle /> {props.helperText}
+        <div className="flex items-center gap-1 text-[.8rem] italic text-gh-text-secondary">
+          <HiOutlineInformationCircle />
+          <span>{props.helperText}</span>
         </div>
       )}
 
       {isError && (
-        <div className="flex items-center gap-1 text-sm italic text-red-500">
-          <BiError /> {props.validate(props.value)}
+        <div className="flex items-center gap-1 text-[.8rem] italic text-red-500">
+          <BiError />
+          <span>{props.validate(props.value)}</span>
         </div>
       )}
     </div>

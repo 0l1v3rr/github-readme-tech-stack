@@ -9,11 +9,13 @@ export const generateLink = ({
   borderRadius,
   fontWeight,
   fontSize,
+  fontFamily,
 }: Card): string => {
   // replace every space with %20
   title = title.replace(/[ ]/g, "%20");
+  fontFamily = fontFamily.replace(/[ ]/g, "%20");
 
-  let res = `https://github-readme-tech-stack.vercel.app/api/cards?title=${title}&lineCount=${lines.length}&theme=${theme}&align=${align}&showBorder=${showBorder}&borderRadius=${borderRadius}&fontSize=${fontSize}&fontWeight=${fontWeight}`;
+  let res = `https://github-readme-tech-stack.vercel.app/api/cards?title=${title}&lineCount=${lines.length}&theme=${theme}&align=${align}&showBorder=${showBorder}&borderRadius=${borderRadius}&fontSize=${fontSize}&fontWeight=${fontWeight}&fontFamily=${fontFamily}`;
 
   for (const l of lines) {
     // if the line doesn't contain badges

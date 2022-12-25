@@ -12,7 +12,7 @@ import NumberInput from "../components/input/NumberInput";
 import TrueFalseInput from "../components/input/TrueFalseInput";
 import Input from "../components/input/Input";
 import SecondaryButton from "../components/buttons/SecondaryButton";
-import { validateBorderRadius } from "../utils/validate";
+import { validateBorderRadius, validateFontFamily } from "../utils/validate";
 
 interface OptionsProps {
   setLink: (link: string) => void;
@@ -122,6 +122,17 @@ const Options: FC<OptionsProps> = (props) => {
           validate={(val) => validateBorderRadius(val)}
         />
 
+        <Input
+          label="Font Family"
+          placeholder="Segoe UI"
+          value={card.fontFamily}
+          setValue={(v) =>
+            setCard({ ...card, fontFamily: v, lines: card.lines })
+          }
+          helperText="If the specified family doesn't exist, the default is used."
+          validate={(val) => validateFontFamily(val)}
+        />
+
         <div className="flex items-start gap-4">
           <TrueFalseInput
             label="Border"
@@ -158,7 +169,12 @@ const Options: FC<OptionsProps> = (props) => {
           <GreenButton
             icon={IoHammerOutline}
             onClick={() => props.setLink(generateLink(card))}
-            disabled={validateBorderRadius(card.borderRadius) !== ""}
+            disabled={
+              !(
+                validateBorderRadius(card.borderRadius) === "" &&
+                validateFontFamily(card.fontFamily) === ""
+              )
+            }
             text="Generate"
           />
 
