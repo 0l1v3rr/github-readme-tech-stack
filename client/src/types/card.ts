@@ -24,6 +24,8 @@ export interface Card {
   fontWeight: string;
   fontSize: string;
   fontFamily: string;
+  gap: string;
+  lineHeight: string;
   lines: Line[];
 }
 
@@ -38,5 +40,7 @@ export const newCard = (): Card => {
     theme: "github",
     fontFamily: "Segoe UI",
     title: "My Tech Stack",
+    lineHeight: "7",
+    gap: "10",
   };
 };

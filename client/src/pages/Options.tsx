@@ -150,6 +150,26 @@ const Options: FC<OptionsProps> = (props) => {
             maxValue={5}
           />
         </div>
+
+        <div className="flex items-start gap-4">
+          <NumberInput
+            label="Gap"
+            value={`${card.gap}`}
+            setValue={(v) => setCard({ ...card, gap: v, lines: card.lines })}
+            minValue={0}
+            maxValue={30}
+          />
+
+          <NumberInput
+            label="Line Height"
+            value={`${card.lineHeight}`}
+            setValue={(v) =>
+              setCard({ ...card, lineHeight: v, lines: card.lines })
+            }
+            minValue={0}
+            maxValue={30}
+          />
+        </div>
       </div>
 
       <div className="my-4 flex flex-col gap-4 px-4">

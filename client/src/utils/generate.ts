@@ -54,6 +54,24 @@ class UrlBuilder {
     return this;
   }
 
+  public gap(gap: string): UrlBuilder {
+    if (gap === this.defaultCard.gap) {
+      return this;
+    }
+
+    this.url += `gap=${gap}&`;
+    return this;
+  }
+
+  public lineHeight(lineHeight: string): UrlBuilder {
+    if (lineHeight === this.defaultCard.lineHeight) {
+      return this;
+    }
+
+    this.url += `lineHeight=${lineHeight}&`;
+    return this;
+  }
+
   public fontSize(fontSize: string): UrlBuilder {
     if (fontSize === this.defaultCard.fontSize) {
       return this;
@@ -81,6 +99,11 @@ class UrlBuilder {
     return this;
   }
 
+  public lineCount(lc: number): UrlBuilder {
+    this.url += `lineCount=${lc}&`;
+    return this;
+  }
+
   public build(): string {
     const lastChar = this.url.at(-1);
     if (lastChar === "?" || lastChar === "&") {
@@ -101,6 +124,8 @@ export const generateLink = ({
   fontWeight,
   fontSize,
   fontFamily,
+  lineHeight,
+  gap,
 }: Card): string => {
   let res = new UrlBuilder()
     .title(title)
@@ -110,7 +135,10 @@ export const generateLink = ({
     .fontSize(fontSize)
     .fontWeight(fontWeight)
     .showBorder(showBorder)
+    .lineHeight(lineHeight)
+    .lineCount(lines.length)
     .theme(theme)
+    .gap(gap)
     .build();
 
   for (const l of lines) {
