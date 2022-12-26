@@ -14,6 +14,7 @@ const fontWeight = z
 const fontSize = z.number().min(15).max(30).catch(18);
 const fontFamily = z.string().min(3).max(16).catch("Segoe UI");
 const gap = z.number().min(0).max(30).catch(10);
+const lineHeight = z.number().min(0).max(30).catch(7);
 
 // const numberThatAcceptsString = z.preprocess((input) => {
 //   const processed = z
@@ -90,6 +91,11 @@ export default class CardBuilder {
 
   public gap(_gap = "10"): CardBuilder {
     this.card.setGap(gap.parse(Number(_gap)));
+    return this;
+  }
+
+  public lineHeight(_lh = "7"): CardBuilder {
+    this.card.setLineHeight(lineHeight.parse(Number(_lh)));
     return this;
   }
 

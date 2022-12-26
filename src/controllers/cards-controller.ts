@@ -15,6 +15,7 @@ export const getCard = async (req: Request, res: Response) => {
     fontFamily,
     theme,
     gap,
+    lineHeight,
   } = req.query;
 
   const card = new CardBuilder()
@@ -28,6 +29,7 @@ export const getCard = async (req: Request, res: Response) => {
     .family(fontFamily?.toString())
     .theme(theme?.toString())
     .gap(gap?.toString())
+    .lineHeight(lineHeight?.toString())
     .lines((line, addBadge) => {
       // get the line query param based on the `line` argument (example: line1)
       // validate the line

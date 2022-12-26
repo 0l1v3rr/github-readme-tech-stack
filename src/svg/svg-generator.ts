@@ -8,14 +8,18 @@ export default class SvgGenerator {
   private width: number;
   private height: number;
   private card: Card;
+  private lineHeight: number;
 
   public constructor(card: Card) {
     this.card = card;
     this.width = 495;
 
+    // the height of a badge is 28
+    this.lineHeight = this.card.getLineHeight() + 28;
+
     // the base (line == 1) height is 100
-    // each additional line increases the height by 35
-    this.height = 100 + (card.getLineCount() - 1) * 35;
+    // each additional line increases the height by this.lineHeight
+    this.height = 100 + (card.getLineCount() - 1) * this.lineHeight;
   }
 
   /**
@@ -79,9 +83,9 @@ export default class SvgGenerator {
     badges: Badge[],
     lineNumber: number
   ): Promise<string> => {
-    // the first line is 35
-    // each additional line increases this by 35
-    const translateY = 35 + (lineNumber - 1) * 35;
+    // the first line is this.lineHeight
+    // each additional line increases this by this.lineHeight
+    const translateY = this.lineHeight + (lineNumber - 1) * this.lineHeight;
 
     let icons = "";
     let leftPadding = 0;

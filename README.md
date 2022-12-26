@@ -59,6 +59,7 @@ None of the fields are required. Every query parameter has a default value displ
 | **fontSize** | `?fontSize=20` | 18 | The size of the title. Accepts a number between 15 and 30. |
 | **fontWeight** | `?fontWeight=normal` | semibold | The thickness of the title. (`thin`, `normal`, `semibold`, `bold`) |
 | **gap** | `?gap=15` | 10 | The gap between the badges. Accepts a number between 0 and 30. |
+| **lineHeight** | `?lineHeight=10` | 7 | The gap between the lines. Accepts a number between 0 and 30. |
 | **lineCount** | `?lineCount=2` | 1 | The number of lines you want to add to your card. |
 | **line{n}** | `?line1=html5,html5,auto` | - | The current line of the badge, where {n} is a number. *`(1 <= n <= lineCount)`* |
 
