@@ -85,7 +85,7 @@ export default class SvgGenerator {
   ): Promise<string> => {
     // the first line is this.lineHeight
     // each additional line increases this by this.lineHeight
-    const translateY = this.lineHeight + (lineNumber - 1) * this.lineHeight;
+    const translateY = 35 + (lineNumber - 1) * this.lineHeight;
 
     let icons = "";
     let leftPadding = 0;
@@ -97,7 +97,7 @@ export default class SvgGenerator {
     }
 
     // align: left   ==> x = 25
-    // align: center ==> x = 495/2 - leftPadding/2
+    // align: center ==> x = 495/2 - leftPadding/2 + gap/2
     // align: right  ==> x = 495 - 25 - leftPadding + gap
     let x = 25;
 
@@ -106,7 +106,7 @@ export default class SvgGenerator {
         x = 25;
         break;
       case "center":
-        x = 495 / 2 - leftPadding / 2;
+        x = 495 / 2 - leftPadding / 2 + this.card.getGap() / 2;
         break;
       case "right":
         x = 495 - 25 - leftPadding + this.card.getGap();
