@@ -13,6 +13,7 @@ const fontWeight = z
   .catch("semibold");
 const fontSize = z.number().min(15).max(30).catch(18);
 const fontFamily = z.string().min(3).max(16).catch("Segoe UI");
+const gap = z.number().min(0).max(30).catch(10);
 
 // const numberThatAcceptsString = z.preprocess((input) => {
 //   const processed = z
@@ -84,6 +85,11 @@ export default class CardBuilder {
 
   public family(_fontFamily = "Segoe UI"): CardBuilder {
     this.card.setFontFamily(fontFamily.parse(_fontFamily));
+    return this;
+  }
+
+  public gap(_gap = "10"): CardBuilder {
+    this.card.setGap(gap.parse(Number(_gap)));
     return this;
   }
 

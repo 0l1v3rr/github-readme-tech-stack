@@ -10,7 +10,8 @@ export default class Card {
   private borderRadius: number;
   private fontWeight: FontWeight;
   private fontSize: number;
-  private fontFamily;
+  private fontFamily: string;
+  private gap: number;
 
   private lines: Map<number, Badge[]>;
 
@@ -23,6 +24,7 @@ export default class Card {
     this.fontWeight = FontWeight.SEMIBOLD;
     this.fontSize = 18;
     this.fontFamily = "Segoe UI";
+    this.gap = 10;
 
     this.lineCount = 1;
     this.lines = new Map<number, Badge[]>();
@@ -109,5 +111,11 @@ export default class Card {
 
   public setFontFamily = (fontFamily: string): void => {
     this.fontFamily = fontFamily;
+  };
+
+  public getGap = (): number => this.gap;
+
+  public setGap = (gap: number): void => {
+    this.gap = gap;
   };
 }
