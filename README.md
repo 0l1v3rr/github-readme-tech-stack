@@ -49,7 +49,7 @@ The easiest way to start using these cards is to visit our website, where you ca
 None of the fields are required. Every query parameter has a default value displayed below.  
 
 > **Note**  
-> Not every query parameter is changeable in the Demo Website.
+> Not every query parameter is changeable on the Demo Website.
 
 | Parameter | Example | Default value | Description |
 |---------- |---------|---------------|------------ |
