@@ -17,7 +17,7 @@ interface LinePopupProps {
 const LinePopup: FC<LinePopupProps> = (props) => {
   const [icon, setIcon] = useState<string>("react");
   const [label, setLabel] = useState<string>("react");
-  const [color, setColor] = useState<string>("#3498db");
+  const [color, setColor] = useState<string>("#5ed3f3");
 
   const handleSave = () => {
     props.addBadge({
@@ -33,7 +33,7 @@ const LinePopup: FC<LinePopupProps> = (props) => {
     props.closePopup();
     setIcon("react");
     setLabel("react");
-    setColor("#3498db");
+    setColor("#5ed3f3");
   };
 
   const activeClasses = "opacity-100 pointer-events-auto scale-100";
@@ -79,7 +79,7 @@ const LinePopup: FC<LinePopupProps> = (props) => {
 
         <ColorInput
           label="Badge color"
-          placeholder="#3498db"
+          placeholder="#5ed3f3"
           value={color}
           setValue={(val: string) => setColor(val)}
           validate={(val) => validateHex(val)}

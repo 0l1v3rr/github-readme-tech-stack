@@ -22,17 +22,10 @@ const LineInput: FC<InputProps> = (props) => {
     });
   };
 
-  const removeBadge = (badge: Badge) => {
+  const removeBadge = (index: number) => {
     props.updateLine({
       lineNumber: props.line.lineNumber,
-      badges: [...props.line.badges].filter(
-        (b) =>
-          !(
-            b.color === badge.color &&
-            b.iconName === badge.iconName &&
-            b.label === badge.label
-          )
-      ),
+      badges: [...props.line.badges].filter((_, i) => i !== index),
     });
   };
 
@@ -66,7 +59,10 @@ const LineInput: FC<InputProps> = (props) => {
             Badges: {props.line.badges.length}
           </span>
 
-          <HoverText label="Click the badge to remove it" className="ml-auto">
+          <HoverText
+            label="Double click on the badge to remove it"
+            className="ml-auto"
+          >
             <div
               className="cursor-pointer text-gh-text-secondary 
                 hover:text-gh-text transition-all duration-150"
@@ -96,11 +92,16 @@ const LineInput: FC<InputProps> = (props) => {
 
         {props.line.badges.length > 0 && (
           <div className="flex items-center gap-3 p-2 overflow-hidden flex-wrap">
-            {props.line.badges.map((badge) => {
+            {props.line.badges.map((badge, index) => {
               return (
                 <div
                   key={`${badge.iconName}-${Math.random()}`}
-                  onClick={() => removeBadge(badge)}
+                  onClick={(event) => {
+                    // double click
+                    if (event.detail === 2) {
+                      removeBadge(index);
+                    }
+                  }}
                   className="flex items-center gap-3 py-[.45rem] px-3 bg-gh-bg-secondary 
                     cursor-pointer border border-solid border-gh-bg-secondary 
                     hover:border-gh-red transition-all duration-150"
