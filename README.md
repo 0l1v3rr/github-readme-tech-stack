@@ -46,10 +46,13 @@ The easiest way to start using these cards is to visit our website, where you ca
 <hr>
 
 ## 🔧 Query parameters
-None of the fields are required. Every query parameter has a default value displayed below.
+None of the fields are required. Every query parameter has a default value displayed below.  
 
-| Parameter | Example | Default value | Description|
-|---------- |---------|---------------|------------|
+> **Note**
+> Not every query parameter is changeable in the Demo Website.
+
+| Parameter | Example | Default value | Description |
+|---------- |---------|---------------|------------ |
 | **title** | `?title=My%20Title` | My Tech Stack | The title of the card. `%20` can be used as a space. |
 | **theme** | `?theme=github_dark` | github | The theme of the card. You can browse between the themes [here](docs/THEMES.md). |
 | **align** | `?align=center` | left | The alignment of the badges. (`left`, `center`, `right`) |
@@ -58,6 +61,7 @@ None of the fields are required. Every query parameter has a default value displ
 | **fontFamily** | `?fontFamily=consolas` | Segoe UI | The font family of the title. If the specified family doesn't exist, the default is used. |
 | **fontSize** | `?fontSize=20` | 18 | The size of the title. Accepts a number between 15 and 30. |
 | **fontWeight** | `?fontWeight=normal` | semibold | The thickness of the title. (`thin`, `normal`, `semibold`, `bold`) |
+| **width** | `?width=500` | 495 | The width of the card. Accepts a valid number. |
 | **gap** | `?gap=15` | 10 | The gap between the badges. Accepts a number between 0 and 30. |
 | **lineHeight** | `?lineHeight=10` | 7 | The gap between the lines. Accepts a number between 0 and 30. |
 | **lineCount** | `?lineCount=2` | 1 | The number of lines you want to add to your card. |

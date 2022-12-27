@@ -10,9 +10,9 @@ export default class SvgGenerator {
   private card: Card;
   private lineHeight: number;
 
-  public constructor(card: Card) {
+  public constructor(card: Card, width = 495) {
     this.card = card;
-    this.width = 495;
+    this.width = width;
 
     // the height of a badge is 28
     this.lineHeight = this.card.getLineHeight() + 28;
@@ -97,8 +97,8 @@ export default class SvgGenerator {
     }
 
     // align: left   ==> x = 25
-    // align: center ==> x = 495/2 - leftPadding/2 + gap/2
-    // align: right  ==> x = 495 - 25 - leftPadding + gap
+    // align: center ==> x = width/2 - leftPadding/2 + gap/2
+    // align: right  ==> x = width - 25 - leftPadding + gap
     let x = 25;
 
     switch (this.card.getBadgeAlign()) {
@@ -106,10 +106,10 @@ export default class SvgGenerator {
         x = 25;
         break;
       case "center":
-        x = 495 / 2 - leftPadding / 2 + this.card.getGap() / 2;
+        x = this.width / 2 - leftPadding / 2 + this.card.getGap() / 2;
         break;
       case "right":
-        x = 495 - 25 - leftPadding + this.card.getGap();
+        x = this.width - 25 - leftPadding + this.card.getGap();
         break;
     }
 

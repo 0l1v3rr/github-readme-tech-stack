@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import CardBuilder from "../cards/card-builder";
 import SvgGenerator from "../svg/svg-generator";
-import { validateLine } from "../utils/validator";
+import { parseWidth, validateLine } from "../utils/validator";
 
 export const getCard = async (req: Request, res: Response) => {
   const {
@@ -16,6 +16,7 @@ export const getCard = async (req: Request, res: Response) => {
     theme,
     gap,
     lineHeight,
+    width,
   } = req.query;
 
   const card = new CardBuilder()
@@ -41,5 +42,7 @@ export const getCard = async (req: Request, res: Response) => {
     .build();
 
   res.setHeader("Content-Type", "image/svg+xml");
-  res.send(await new SvgGenerator(card).toString());
+  res.send(
+    await new SvgGenerator(card, parseWidth(width?.toString())).toString()
+  );
 };

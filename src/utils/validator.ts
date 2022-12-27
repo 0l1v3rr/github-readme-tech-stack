@@ -2,6 +2,26 @@ import { Badge } from "../cards/types";
 import { formatHexColor } from "./hex-color";
 
 /**
+ * Parses the width into a valid number.
+ *
+ * @param {string | undefined} width The width.
+ * @returns {number} The parsed width.
+ */
+export const parseWidth = (width = "495"): number => {
+  if (width === "495") {
+    return 495;
+  }
+
+  const num = Number(width);
+
+  if (isNaN(num)) {
+    return 495;
+  }
+
+  return num;
+};
+
+/**
  * Converts the line into a Badge array.
  * If there's any error in the line,
  * it returns an empty array.
