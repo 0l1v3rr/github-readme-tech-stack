@@ -67,9 +67,14 @@ None of the fields are required. Every query parameter has a default value displ
 | **lineCount** | `?lineCount=2` | 1 | The number of lines you want to add to your card. |
 | **line{n}** | `?line1=html5,html5,auto` | - | The current line of the badge, where {n} is a number. *`(1 <= n <= lineCount)`* |
 
+<hr>
+
+## 🪁 Themes
+These cards come with several built-in themes you can use. You can find all of them by clicking [here](docs/THEMES.md).  
+If you would like to use other themes, and add one for yourself and others, please check this [issue](https://github.com/0l1v3rr/github-readme-tech-stack/issues/2).  
 
 You can customize a theme using these query parameters.  
-These parameters accept only valid hexadecimal colors, otherwise they are not applied. Please use `%23` instead of `#`.
+These parameters accept only valid hexadecimal colors, otherwise, they are not applied. Please use `%23` instead of `#`.
 
 > **Warning**  
 > If the `?theme=` parameter is specified, any of these color customizations will override the theme's values.
@@ -78,13 +83,6 @@ These parameters accept only valid hexadecimal colors, otherwise they are not ap
 |-----------|---------|-------------|
 | **bg**    | `?bg=%2383324c` | The color of the background. |
 | **border**    | `?border=%232da7c7` | The color of the border. |
-
-<hr>
-
-## 🪁 Themes
-These cards come with several built-in themes you can use. You can find all of them by clicking [here](docs/THEMES.md).  
-You can customize a theme for yourself using the [query parameters](#-query-parameters).
-If you would like to use other themes, and add one for yourself and others, please check this [issue](https://github.com/0l1v3rr/github-readme-tech-stack/issues/2).  
 
 <hr>
 
