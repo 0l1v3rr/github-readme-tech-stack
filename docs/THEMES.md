@@ -1,7 +1,7 @@
 ## Supported themes
 
 Here are the currently supported themes spread in a table.  
-If none of these themes fit your needs, feel free to [add one.](https://github.com/0l1v3rr/github-readme-tech-stack/issues/2) Every new theme is welcomed.
+If you would like to use other themes, and add one for yourself and others, please check this [issue](https://github.com/0l1v3rr/github-readme-tech-stack/issues/2).
 
 <table>
   <tr>
