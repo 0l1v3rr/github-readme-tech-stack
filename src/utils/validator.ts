@@ -7,7 +7,7 @@ import { formatHexColor } from "./hex-color";
  * @param {string | undefined} width The width.
  * @returns {number} The parsed width.
  */
-export const parseWidth = (width = "495"): number => {
+export const parseWidth = (width: string | undefined = "495"): number => {
   if (width === "495") {
     return 495;
   }
@@ -19,6 +19,18 @@ export const parseWidth = (width = "495"): number => {
   }
 
   return num;
+};
+
+/**
+ * Function to determine if a string is a valid hexadecimal color.
+ * Starts with #, 3 or 6 characters long, contains only hexadecimal values
+ *
+ * @param {string} color The color string.
+ * @returns {boolean} True if the color is valid.
+ */
+export const isHexColor = (color: string): boolean => {
+  const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+  return hexColorRegex.test(color);
 };
 
 /**
