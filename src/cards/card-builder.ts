@@ -100,11 +100,22 @@ export default class CardBuilder {
     return this;
   }
 
-  public bg(bgColor = ""): CardBuilder {
+  public bgColor(bgColor = ""): CardBuilder {
     if (isHexColor(bgColor)) {
       this.card.setTheme({
         ...this.card.getTheme(),
         backgroundColor: bgColor,
+      });
+    }
+
+    return this;
+  }
+
+  public borderColor(border = ""): CardBuilder {
+    if (isHexColor(border)) {
+      this.card.setTheme({
+        ...this.card.getTheme(),
+        borderColor: border,
       });
     }
 
