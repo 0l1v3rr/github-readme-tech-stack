@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { isHexColor } from "../utils/validator";
 import Card from "./card";
 import { getThemeByName } from "./themes";
 import { Badge } from "./types";
@@ -96,6 +97,17 @@ export default class CardBuilder {
 
   public lineHeight(_lh = "7"): CardBuilder {
     this.card.setLineHeight(lineHeight.parse(Number(_lh)));
+    return this;
+  }
+
+  public bg(bgColor = ""): CardBuilder {
+    if (isHexColor(bgColor)) {
+      this.card.setTheme({
+        ...this.card.getTheme(),
+        backgroundColor: bgColor,
+      });
+    }
+
     return this;
   }
 

@@ -17,6 +17,7 @@ export const getCard = async (req: Request, res: Response) => {
     gap,
     lineHeight,
     width,
+    bg,
   } = req.query;
 
   const card = new CardBuilder()
@@ -39,6 +40,7 @@ export const getCard = async (req: Request, res: Response) => {
         addBadge(b)
       );
     })
+    .bg(bg?.toString())
     .build();
 
   res.setHeader("Content-Type", "image/svg+xml");
