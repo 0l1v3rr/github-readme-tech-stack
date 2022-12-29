@@ -83,6 +83,8 @@ These parameters accept only valid hexadecimal colors, otherwise, they are not a
 |-----------|---------|-------------|
 | **bg**    | `?bg=%2383324c` | The color of the background. |
 | **border**    | `?border=%232da7c7` | The color of the border. |
+| **badge**    | `?badge=%2383324c` | The color of the badges. |
+| **titleColor**    | `?titleColor=%232da7c7` | The color of the title. |
 
 <hr>
 
