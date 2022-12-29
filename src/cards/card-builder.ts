@@ -144,6 +144,17 @@ export default class CardBuilder {
     return this;
   }
 
+  public hideBackground(hb = "false"): CardBuilder {
+    if (hb.toString() === "true") {
+      this.card.setTheme({
+        ...this.card.getTheme(),
+        backgroundColor: "#00000000",
+      });
+    }
+
+    return this;
+  }
+
   public lines(
     cb: (line: number, addBadge: (b: Badge) => void) => void
   ): CardBuilder {

@@ -21,6 +21,7 @@ export const getCard = async (req: Request, res: Response) => {
     border,
     badge,
     titleColor,
+    hideBg,
   } = req.query;
 
   const card = new CardBuilder()
@@ -47,6 +48,7 @@ export const getCard = async (req: Request, res: Response) => {
     .borderColor(border?.toString())
     .badgeColor(badge?.toString())
     .titleColor(titleColor?.toString())
+    .hideBackground(hideBg?.toString())
     .build();
 
   res.setHeader("Content-Type", "image/svg+xml");
