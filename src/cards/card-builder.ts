@@ -122,6 +122,28 @@ export default class CardBuilder {
     return this;
   }
 
+  public badgeColor(badge = ""): CardBuilder {
+    if (isHexColor(badge)) {
+      this.card.setTheme({
+        ...this.card.getTheme(),
+        badgeColor: badge,
+      });
+    }
+
+    return this;
+  }
+
+  public titleColor(title = ""): CardBuilder {
+    if (isHexColor(title)) {
+      this.card.setTheme({
+        ...this.card.getTheme(),
+        titleColor: title,
+      });
+    }
+
+    return this;
+  }
+
   public lines(
     cb: (line: number, addBadge: (b: Badge) => void) => void
   ): CardBuilder {
