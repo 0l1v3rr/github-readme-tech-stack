@@ -36,6 +36,15 @@ class UrlBuilder {
     return this;
   }
 
+  public hideBg(hideBg: boolean): UrlBuilder {
+    if (hideBg === this.defaultCard.hideBg) {
+      return this;
+    }
+
+    this.url += `hideBg=${hideBg}&`;
+    return this;
+  }
+
   public align(align: string): UrlBuilder {
     if (align === this.defaultCard.align) {
       return this;
@@ -126,6 +135,7 @@ export const generateLink = ({
   fontFamily,
   lineHeight,
   gap,
+  hideBg,
 }: Card): string => {
   let res = new UrlBuilder()
     .title(title)
@@ -139,6 +149,7 @@ export const generateLink = ({
     .lineCount(lines.length)
     .theme(theme)
     .gap(gap)
+    .hideBg(hideBg)
     .build();
 
   for (const l of lines) {

@@ -20,6 +20,7 @@ export interface Card {
   theme: string;
   align: string;
   showBorder: boolean;
+  hideBg: boolean;
   borderRadius: string;
   fontWeight: string;
   fontSize: string;
@@ -42,5 +43,6 @@ export const newCard = (): Card => {
     title: "My Tech Stack",
     lineHeight: "7",
     gap: "10",
+    hideBg: false,
   };
 };

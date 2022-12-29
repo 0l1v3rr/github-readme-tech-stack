@@ -48,9 +48,6 @@ The easiest way to start using these cards is to visit our website, where you ca
 ## 🔧 Query parameters
 None of the fields are required. Every query parameter has a default value displayed below.  
 
-> **Note**  
-> Not every query parameter is changeable on the Demo Website.
-
 | Parameter | Example | Default value | Description |
 |---------- |---------|---------------|------------ |
 | **title** | `?title=My%20Title` | My Tech Stack | The title of the card. `%20` can be used as a space. |
@@ -74,6 +71,7 @@ None of the fields are required. Every query parameter has a default value displ
 These cards come with several built-in themes you can use. You can find all of them by clicking [here](docs/THEMES.md).  
 If you would like to use other themes, and add one for yourself and others, please check this [issue](https://github.com/0l1v3rr/github-readme-tech-stack/issues/2).  
 
+### 🖌 Customizing a theme
 You can customize a theme using these query parameters.  
 These parameters accept only valid hexadecimal colors, otherwise, they are not applied. Please use `%23` instead of `#`.
 

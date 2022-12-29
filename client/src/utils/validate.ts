@@ -16,8 +16,8 @@ export const validateIconAndLabel = (
   val: string,
   iorl: "icon" | "label"
 ): string => {
-  if (val.length < 3 || val.length > 32) {
-    return `The ${iorl} should be between 2 and 32 characters.`;
+  if (val.length < 2 || val.length > 32) {
+    return `The ${iorl} should be between 1 and 32 characters.`;
   }
 
   return "";

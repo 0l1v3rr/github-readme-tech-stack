@@ -134,24 +134,6 @@ const Options: FC<OptionsProps> = (props) => {
         />
 
         <div className="flex items-start gap-4">
-          <TrueFalseInput
-            label="Border"
-            value={card.showBorder}
-            setValue={(v) =>
-              setCard({ ...card, showBorder: v, lines: card.lines })
-            }
-          />
-
-          <NumberInput
-            label="Lines"
-            value={`${card.lines.length}`}
-            setValue={(v) => updateLineCount(Number(v))}
-            minValue={1}
-            maxValue={5}
-          />
-        </div>
-
-        <div className="flex items-start gap-4">
           <NumberInput
             label="Gap"
             value={`${card.gap}`}
@@ -170,10 +152,34 @@ const Options: FC<OptionsProps> = (props) => {
             maxValue={30}
           />
         </div>
+
+        <div className="flex items-start gap-4">
+          <TrueFalseInput
+            label="Show Border"
+            value={card.showBorder}
+            setValue={(v) =>
+              setCard({ ...card, showBorder: v, lines: card.lines })
+            }
+          />
+
+          <TrueFalseInput
+            label="Hide Background"
+            value={card.hideBg}
+            setValue={(v) => setCard({ ...card, hideBg: v, lines: card.lines })}
+          />
+        </div>
       </div>
 
       <div className="my-4 flex flex-col gap-4 px-4">
         <div className="w-full h-[.8px] bg-gh-border mx-auto" />
+
+        <NumberInput
+          label="Line Count"
+          value={`${card.lines.length}`}
+          setValue={(v) => updateLineCount(Number(v))}
+          minValue={1}
+          maxValue={5}
+        />
 
         {card.lines.map((line) => (
           <LineInput
