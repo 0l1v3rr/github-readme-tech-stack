@@ -36,7 +36,7 @@ const ButtonLink: FC<ButtonLinkProps> = (props) => {
       <div className="font-semibold">{props.text}</div>
 
       {props.num !== undefined && (
-        <div className="bg-gh-button-active rounded-full px-2 py-1 leading-none text-[.8rem]">
+        <div className="bg-gh-button-active rounded-full px-2 py-1 leading-none text-[.8rem] font-semibold">
           {props.num}
         </div>
       )}

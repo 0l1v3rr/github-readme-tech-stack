@@ -23,33 +23,6 @@ const Options: FC<OptionsProps> = (props) => {
   const themes = useFetchThemes();
   const [card, setCard] = useState<Card>(newCard());
 
-  const updateLineCount = useCallback(
-    (lineNumber: number) => {
-      // storing just the line numbers in an array
-      const lineNums: number[] = card.lines.map((x) => Number(x.lineNumber));
-
-      // variable to store the result
-      const updated: Line[] = [];
-
-      for (let i = 1; i <= lineNumber; i++) {
-        // if the card.lines contain line with this lineNumber
-        if (lineNums.includes(i)) {
-          updated.push(card.lines.filter((x) => x.lineNumber === `${i}`)[0]);
-          continue;
-        }
-
-        // else push a new one
-        updated.push({
-          badges: [],
-          lineNumber: `${i}`,
-        });
-      }
-
-      setCard({ ...card, lines: updated });
-    },
-    [card]
-  );
-
   const addLine = useCallback(
     (lineNumber: number) => {
       setCard({
@@ -62,6 +35,17 @@ const Options: FC<OptionsProps> = (props) => {
           },
         ],
       });
+    },
+    [card]
+  );
+
+  const removeLine = useCallback(
+    (lineNumber: string) => {
+      const updated = [...card.lines].filter(
+        (x) => x.lineNumber !== lineNumber
+      );
+
+      setCard({ ...card, lines: updated });
     },
     [card]
   );
@@ -194,6 +178,7 @@ const Options: FC<OptionsProps> = (props) => {
           <LineInput
             line={line}
             updateLine={updateLine}
+            removeLine={removeLine}
             key={line.lineNumber}
           />
         ))}

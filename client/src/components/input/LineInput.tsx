@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import { Badge, Line } from "../../types/card";
 import { AiOutlinePlus } from "react-icons/ai";
+import { BiTrash } from "react-icons/bi";
 import BlurOverlay from "../popups/BlurOverlay";
 import LinePopup from "../popups/LinePopup";
 import HoverText from "../hover/HoverText";
@@ -9,6 +10,7 @@ import { AiOutlineQuestionCircle } from "react-icons/ai";
 interface InputProps {
   line: Line;
   updateLine: (line: Line) => void;
+  removeLine: (lineNumber: string) => void;
   className?: string;
 }
 
@@ -82,6 +84,20 @@ const LineInput: FC<InputProps> = (props) => {
               <AiOutlinePlus />
             </button>
           </HoverText>
+
+          {props.line.lineNumber !== "1" && (
+            <HoverText label="Remove line">
+              <button
+                type="button"
+                aria-label="Add badge"
+                className="cursor-pointer text-gh-text-secondary 
+                hover:text-gh-red-active transition-all duration-150"
+                onClick={() => props.removeLine(props.line.lineNumber)}
+              >
+                <BiTrash />
+              </button>
+            </HoverText>
+          )}
         </div>
 
         {props.line.badges.length < 1 && (
