@@ -248,6 +248,13 @@ If you would like to use other themes, and add one for yourself and others, plea
   </tr>
 
   <tr>
+    <td align="center"><code>0l1v3rr</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=0l1v3rr&title=0l1v3rr&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
+
+  <tr>
     <td align="center"><code>android</code></td>
     <td>
       <img src="https://github-readme-tech-stack.vercel.app/api/cards?title=android&lineCount=1&theme=android&line1=typescript,typescript,auto;express,express,61DAFB">

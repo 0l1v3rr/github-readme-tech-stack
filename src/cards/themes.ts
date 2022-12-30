@@ -222,6 +222,12 @@ themes.set("rainglow", {
   badgeColor: "#12161a",
   titleColor: "#228a96",
 });
+themes.set("0l1v3rr", {
+  backgroundColor: "#0B0E14",
+  borderColor: "#151B26",
+  titleColor: "#FF4747",
+  badgeColor: "#10151F",
+});
 
 /**
  * Searches for the specified theme in the themes map.
