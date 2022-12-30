@@ -10,6 +10,7 @@ interface InputProps {
   className?: string;
   helperText?: string;
   validate: (value: string) => string;
+  inputLink?: string;
 }
 
 const Input: FC<InputProps> = (props) => {
@@ -20,9 +21,23 @@ const Input: FC<InputProps> = (props) => {
     <div className={`${props.className} w-full flex flex-col gap-1`}>
       <label
         htmlFor={id}
-        className="text-sm text-gh-text-secondary font-semibold w-fit"
+        className="text-sm text-gh-text-secondary font-semibold w-fit
+          flex gap-1 items-center"
       >
         {props.label}
+
+        {props.inputLink !== undefined && (
+          <sup>
+            <a
+              href={props.inputLink}
+              target="_blank"
+              rel="noreferrer"
+              className="text-gh-blue cursor-pointer hover:underline"
+            >
+              [1]
+            </a>
+          </sup>
+        )}
       </label>
 
       <input

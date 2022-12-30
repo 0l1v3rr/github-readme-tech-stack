@@ -62,7 +62,8 @@ const LinePopup: FC<LinePopupProps> = (props) => {
           value={icon}
           setValue={(val: string) => setIcon(val)}
           validate={(val) => validateIconAndLabel(val, "icon")}
-          helperText="You can browse between the icons here: https://simpleicons.org/"
+          helperText="You can browse between the icons by clicking the link [1] above."
+          inputLink="https://simpleicons.org/"
         />
 
         <div className="w-full h-[.8px] bg-gh-border mx-auto" />

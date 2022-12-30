@@ -61,7 +61,7 @@ const Options: FC<OptionsProps> = (props) => {
   return (
     <section
       className="border border-solid border-gh-border rounded-md 
-        w-full lg:w-[45%]"
+        w-full lg:w-1/2"
     >
       <SectionTitle icon={VscSettings} title="Options" />
 
