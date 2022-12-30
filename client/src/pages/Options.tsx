@@ -1,6 +1,7 @@
 import SectionTitle from "../components/text/SectionTitle";
 import { VscSettings } from "react-icons/vsc";
 import { IoHammerOutline } from "react-icons/io5";
+import { AiOutlinePlus } from "react-icons/ai";
 import SelectInput from "../components/input/SelectInput";
 import GreenButton from "../components/buttons/GreenButton";
 import { FC, useCallback, useState } from "react";
@@ -45,6 +46,22 @@ const Options: FC<OptionsProps> = (props) => {
       }
 
       setCard({ ...card, lines: updated });
+    },
+    [card]
+  );
+
+  const addLine = useCallback(
+    (lineNumber: number) => {
+      setCard({
+        ...card,
+        lines: [
+          ...card.lines,
+          {
+            badges: [],
+            lineNumber: `${lineNumber}`,
+          },
+        ],
+      });
     },
     [card]
   );
@@ -173,14 +190,6 @@ const Options: FC<OptionsProps> = (props) => {
       <div className="my-4 flex flex-col gap-4 px-4">
         <div className="w-full h-[.8px] bg-gh-border mx-auto" />
 
-        <NumberInput
-          label="Line Count"
-          value={`${card.lines.length}`}
-          setValue={(v) => updateLineCount(Number(v))}
-          minValue={1}
-          maxValue={5}
-        />
-
         {card.lines.map((line) => (
           <LineInput
             line={line}
@@ -188,6 +197,13 @@ const Options: FC<OptionsProps> = (props) => {
             key={line.lineNumber}
           />
         ))}
+
+        <SecondaryButton
+          onClick={() => addLine(card.lines.length + 1)}
+          text="Add Line"
+          icon={AiOutlinePlus}
+          className="flex items-center justify-center gap-2"
+        />
 
         <div className="w-full h-[.8px] bg-gh-border mx-auto" />
 
