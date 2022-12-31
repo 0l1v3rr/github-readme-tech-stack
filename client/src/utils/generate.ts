@@ -169,3 +169,7 @@ export const generateLink = ({
 
   return res;
 };
+
+export const generateHex = (): string => {
+  return "#" + Math.random().toString(16).slice(2, 8).toLowerCase();
+};

@@ -1,7 +1,8 @@
-import { FC, useCallback, useId } from "react";
+import { FC, useId } from "react";
 import { BiError } from "react-icons/bi";
 import { HiOutlineInformationCircle } from "react-icons/hi";
 import { BsArrowRepeat } from "react-icons/bs";
+import { generateHex } from "../../utils/generate";
 
 interface ColorInputProps {
   label: string;
@@ -16,10 +17,6 @@ interface ColorInputProps {
 const ColorInput: FC<ColorInputProps> = (props) => {
   const id = `${props.label}-${useId()}`;
   const isError = props.validate(props.value).trim() !== "";
-
-  const generateHex = useCallback((): string => {
-    return "#" + Math.random().toString(16).slice(2, 8).toLowerCase();
-  }, []);
 
   return (
     <div className={`${props.className} w-full flex flex-col gap-1`}>

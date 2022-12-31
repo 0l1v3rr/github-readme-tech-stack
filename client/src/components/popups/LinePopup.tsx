@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Badge } from "../../types/card";
 import GreenButton from "../buttons/GreenButton";
 import { FiSave } from "react-icons/fi";
@@ -6,6 +6,7 @@ import SecondaryButton from "../buttons/SecondaryButton";
 import Input from "../input/Input";
 import ColorInput from "../input/ColorInput";
 import { validateHex, validateIconAndLabel } from "../../utils/validate";
+import { generateHex } from "../../utils/generate";
 
 interface LinePopupProps {
   isActive: boolean;
@@ -17,7 +18,15 @@ interface LinePopupProps {
 const LinePopup: FC<LinePopupProps> = (props) => {
   const [icon, setIcon] = useState<string>("react");
   const [label, setLabel] = useState<string>("react");
-  const [color, setColor] = useState<string>("#5ed3f3");
+  const [color, setColor] = useState<string>(generateHex());
+
+  useEffect(() => {
+    if (props.isActive) {
+      setColor(generateHex());
+      setIcon("react");
+      setLabel("react");
+    }
+  }, [props.isActive]);
 
   const handleSave = () => {
     props.addBadge({
@@ -26,14 +35,7 @@ const LinePopup: FC<LinePopupProps> = (props) => {
       label: label,
     });
 
-    handleCancel();
-  };
-
-  const handleCancel = () => {
     props.closePopup();
-    setIcon("react");
-    setLabel("react");
-    setColor("#5ed3f3");
   };
 
   const activeClasses = "opacity-100 pointer-events-auto scale-100";
@@ -105,7 +107,7 @@ const LinePopup: FC<LinePopupProps> = (props) => {
           }
         />
 
-        <SecondaryButton onClick={handleCancel} text="Cancel" />
+        <SecondaryButton onClick={() => props.closePopup()} text="Cancel" />
       </div>
     </div>
   );
