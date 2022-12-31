@@ -5,6 +5,8 @@ interface TrueFalseInputProps {
   value: boolean;
   setValue: (value: boolean) => void;
   className?: string;
+  trueLabel: string;
+  falseLabel: string;
 }
 
 const TrueFalseInput: FC<TrueFalseInputProps> = (props) => {
@@ -28,7 +30,7 @@ const TrueFalseInput: FC<TrueFalseInputProps> = (props) => {
                 : "hover:border-gh-button-border-active"
             }`}
         >
-          True
+          {props.trueLabel}
         </div>
 
         <div
@@ -40,7 +42,7 @@ const TrueFalseInput: FC<TrueFalseInputProps> = (props) => {
                 : "hover:border-gh-button-border-active"
             }`}
         >
-          False
+          {props.falseLabel}
         </div>
       </div>
     </div>
