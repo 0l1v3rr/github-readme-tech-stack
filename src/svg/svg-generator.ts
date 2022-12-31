@@ -70,13 +70,17 @@ export default class SvgGenerator {
   };
 
   private generateLines = async (): Promise<string> => {
-    let res = "";
+    const promises: Promise<string>[] = [];
 
     for (const line of this.card.getLinesMap()) {
-      res += await this.createLine(line[1], line[0]);
+      promises.push(this.createLine(line[1], line[0]));
     }
 
-    return res;
+    const resolved = await Promise.all(promises);
+
+    return resolved.reduce((res, line) => {
+      return (res += line);
+    }, "");
   };
 
   private createLine = async (
