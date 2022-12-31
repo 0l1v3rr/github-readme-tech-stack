@@ -1,7 +1,5 @@
 <div align="center">
-  <h2>
-    <a href="https://github-readme-tech-stack.vercel.app" target="_blank">🔖 GitHub Readme Tech Stack 🔖</a>
-  </h2>
+  <h2>GitHub Readme Tech Stack</h2>
 </div>
 
 <div align="center">
