@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { FiCheck } from "react-icons/fi";
 import { useOuterClick } from "../../hooks/useOuterClick";
 
@@ -17,6 +17,7 @@ const SelectInput: FC<SelectInputProps> = (props) => {
   const [options, setOptions] = useState<string[]>([...props.options]);
 
   const ref = useOuterClick(() => setIsActive(false));
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (filterValue.trim() === "") {
@@ -47,7 +48,12 @@ const SelectInput: FC<SelectInputProps> = (props) => {
       </label>
 
       <div
-        onClick={() => setIsActive((prev) => !prev)}
+        onClick={() => {
+          setIsActive((prev) => {
+            if (!prev) inputRef.current?.focus();
+            return !prev;
+          });
+        }}
         onBlur={() => setIsActive(false)}
         className={`ml-auto text-base border border-solid rounded-md px-2 
           pb-1 pt-[.16rem] text-gh-text transition-all cursor-pointer 
@@ -93,6 +99,7 @@ const SelectInput: FC<SelectInputProps> = (props) => {
               className="bg-gh-bg px-2 py-1 text-gh-text placeholder:text-gh-text-secondary 
                 border border-solid border-gh-border rounded-md outline-none 
                 focus:border-gh-blue active:border-gh-blue"
+              ref={inputRef}
             />
           </div>
         )}
