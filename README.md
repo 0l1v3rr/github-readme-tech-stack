@@ -3,7 +3,22 @@
 </div>
 
 <div align="center">
-  Display your favorite technologies, tools, or the tech stack your project uses with these fully customizable, good-looking cards on your GitHub README! These cards are in perfect harmony with other similar README cards, such as <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">github-readme-stats</a> or <a href="https://github.com/DenverCoder1/github-readme-streak-stats" target="_blank">github-readme-streak-stats</a>.
+  <a href="" target="_blank">
+    <img src="https://img.shields.io/badge/Request%20Feature-%20-%234cd137" alt="Request Feature">
+  </a>
+  <a href="" target="_blank">
+    <img src="https://img.shields.io/badge/Report%20Bug-%20-%23e74c3c" alt="Report Bug">
+  </a>
+  <a href="" target="_blank">
+    <img src="https://img.shields.io/badge/Demo%20Website-%20-%239b59b6" alt="Demo Website">
+  </a>
+  <a href="https://twitter.com/intent/tweet?text=Display%20your%20favorite%20technologies%2C%20tools%2C%20or%20the%20tech%20stack%20your%20project%20uses%20with%20these%20fully%20customizable%2C%20good-looking%20cards%20on%20your%20GitHub%20README%21&url=https://github.com/0l1v3rr/github-readme-tech-stack&hashtagsgithub,readme,cards,stats,profile,shields,react,typescript,tailwindcss" target="_blank">
+    <img src="https://img.shields.io/badge/Tweet-%20-%231c93e4" alt="Tweet">
+  </a>
+</div>
+
+<div align="center">
+  Display your favorite technologies, tools, or the tech stack your project uses with these fully customizable, good-looking cards on your GitHub README!
 </div>
 
 <br>
@@ -18,16 +33,13 @@
   <a href="https://github.com/0l1v3rr/github-readme-tech-stack/releases" target="_blank">
     <img src="https://img.shields.io/github/release/0l1v3rr/github-readme-tech-stack.svg?style=for-the-badge&logo=github&color=00B274&logoColor=D9E0EE&labelColor=343A40" alt="Version">
   </a>
-  <a href="https://twitter.com/intent/tweet?text=Display%20your%20favorite%20technologies%2C%20tools%2C%20or%20the%20tech%20stack%20your%20project%20uses%20with%20these%20fully%20customizable%2C%20good-looking%20cards%20on%20your%20GitHub%20README%21&url=https://github.com/0l1v3rr/github-readme-tech-stack&hashtagsgithub,readme,cards,stats,profile,shields,react,typescript,tailwindcss" target="_blank">
-    <img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=for-the-badge&logo=twitter&color=1c93e4&logoColor=D9E0EE&labelColor=343A40" alt="Tweet">
-  </a>
 </div>
 
 <br>
 
 <div align="center">
-  <a href="https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark&lineCount=2&line1=node.js,node.js,0;typescript,typescript,0;express,express,61DAFB&line2=html5,html,0;react,react,0;tailwindcss,tailwind,0&title=This%20Project%27s%20Tech%20Stack">
-    <img  src="https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark&lineCount=2&line1=node.js,node.js,0;typescript,typescript,0;express,express,61DAFB&line2=html5,html,0;react,react,0;tailwindcss,tailwind,0&title=This%20Project%27s%20Tech%20Stack" title="Tech Stack">
+  <a href="https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark_green&lineCount=2&line1=node.js,node.js,0;typescript,typescript,0;express,express,61DAFB&line2=html5,html,0;react,react,0;tailwindcss,tailwind,0&title=This%20Project%27s%20Tech%20Stack">
+    <img  src="https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark_green&lineCount=2&line1=node.js,node.js,0;typescript,typescript,0;express,express,61DAFB&line2=html5,html,0;react,react,0;tailwindcss,tailwind,0&title=This%20Project%27s%20Tech%20Stack" title="Tech Stack">
   </a>
 </div>
 
