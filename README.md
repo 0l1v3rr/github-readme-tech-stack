@@ -3,13 +3,13 @@
 </div>
 
 <div align="center">
-  <a href="" target="_blank">
+  <a href="https://github.com/0l1v3rr/github-readme-tech-stack/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=" target="_blank">
     <img src="https://img.shields.io/badge/Request%20Feature-%20-%234cd137" alt="Request Feature">
   </a>
-  <a href="" target="_blank">
+  <a href="https://github.com/0l1v3rr/github-readme-tech-stack/issues/new?assignees=&labels=bug&template=bug_report.md&title=" target="_blank">
     <img src="https://img.shields.io/badge/Report%20Bug-%20-%23e74c3c" alt="Report Bug">
   </a>
-  <a href="" target="_blank">
+  <a href="https://github-readme-tech-stack.vercel.app" target="_blank">
     <img src="https://img.shields.io/badge/Demo%20Website-%20-%239b59b6" alt="Demo Website">
   </a>
   <a href="https://twitter.com/intent/tweet?text=Display%20your%20favorite%20technologies%2C%20tools%2C%20or%20the%20tech%20stack%20your%20project%20uses%20with%20these%20fully%20customizable%2C%20good-looking%20cards%20on%20your%20GitHub%20README%21&url=https://github.com/0l1v3rr/github-readme-tech-stack&hashtagsgithub,readme,cards,stats,profile,shields,react,typescript,tailwindcss" target="_blank">
