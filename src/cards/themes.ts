@@ -228,6 +228,30 @@ themes.set("0l1v3rr", {
   titleColor: "#FF4747",
   badgeColor: "#10151F",
 });
+themes.set("discord", {
+  backgroundColor: "#202226",
+  borderColor: "#2f3137",
+  titleColor: "#5865f2",
+  badgeColor: "#2f3137",
+});
+themes.set("facebook", {
+  backgroundColor: "#1a191e",
+  borderColor: "#2a292e",
+  titleColor: "#1771e6",
+  badgeColor: "#2a292e",
+});
+themes.set("gruvbox", {
+  backgroundColor: "#232323",
+  borderColor: "#303030",
+  titleColor: "#fabe2b",
+  badgeColor: "#303030",
+});
+themes.set("nord", {
+  backgroundColor: "#2a313e",
+  borderColor: "#343C4D",
+  titleColor: "#82a2c2",
+  badgeColor: "#343C4D",
+});
 
 /**
  * Searches for the specified theme in the themes map.

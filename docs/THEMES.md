@@ -260,4 +260,32 @@ If you would like to use other themes, and add one for yourself and others, plea
       <img src="https://github-readme-tech-stack.vercel.app/api/cards?title=android&lineCount=1&theme=android&line1=typescript,typescript,auto;express,express,61DAFB">
     </td>
   </tr>
+
+  <tr>
+    <td align="center"><code>discord</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=discord&title=discord&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><code>gruvbox</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=gruvbox&title=gruvbox&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><code>nord</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=nord&title=nord&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><code>facebook</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=facebook&title=facebook&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
 </table>
