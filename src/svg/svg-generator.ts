@@ -20,6 +20,10 @@ export default class SvgGenerator {
     // the base (line == 1) height is 100
     // each additional line increases the height by this.lineHeight
     this.height = 100 + (card.getLineCount() - 1) * this.lineHeight;
+
+    if (this.card.getHideTitle()) {
+      this.height -= this.card.getFontSize() + 5;
+    }
   }
 
   /**
@@ -52,9 +56,13 @@ export default class SvgGenerator {
           stroke-opacity="${this.card.getShowBorder() ? 1 : 0}"
         />
 
-        <g transform="translate(25, 35)">
-          <text x="0" y="0" class="header">${this.card.getTitle()}</text>
-        </g>
+        ${
+          this.card.getHideTitle()
+            ? ""
+            : `<g transform="translate(25, 35)">
+                <text x="0" y="0" class="header">${this.card.getTitle()}</text>
+              </g>`
+        }
 
         ${await this.generateLines()}
 
@@ -89,7 +97,11 @@ export default class SvgGenerator {
   ): Promise<string> => {
     // the first line is this.lineHeight
     // each additional line increases this by this.lineHeight
-    const translateY = 35 + (lineNumber - 1) * this.lineHeight;
+    let translateY = 35 + (lineNumber - 1) * this.lineHeight;
+
+    if (this.card.getHideTitle()) {
+      translateY -= this.card.getFontSize() + this.card.getFontSize() / 3;
+    }
 
     let icons = "";
     let leftPadding = 0;

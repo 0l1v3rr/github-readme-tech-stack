@@ -13,6 +13,7 @@ export default class Card {
   private fontFamily: string;
   private gap: number;
   private lineHeight: number;
+  private hideTitle: boolean;
 
   private lines: Map<number, Badge[]>;
 
@@ -27,6 +28,7 @@ export default class Card {
     this.fontFamily = "Segoe UI";
     this.gap = 10;
     this.lineHeight = 7;
+    this.hideTitle = false;
 
     this.lineCount = 1;
     this.lines = new Map<number, Badge[]>();
@@ -125,5 +127,11 @@ export default class Card {
 
   public setLineHeight = (lineHeight: number): void => {
     this.lineHeight = lineHeight;
+  };
+
+  public getHideTitle = (): boolean => this.hideTitle;
+
+  public setHideTitle = (hideTitle: boolean): void => {
+    this.hideTitle = hideTitle;
   };
 }

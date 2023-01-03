@@ -22,6 +22,7 @@ export const getCard = async (req: Request, res: Response) => {
     badge,
     titleColor,
     hideBg,
+    hideTitle,
   } = req.query;
 
   const card = new CardBuilder()
@@ -29,6 +30,7 @@ export const getCard = async (req: Request, res: Response) => {
     .lineCount(lineCount?.toString())
     .align(align?.toString())
     .border(showBorder?.toString())
+    .hideTitle(hideTitle?.toString())
     .borderRadius(borderRadius?.toString())
     .fontWeight(fontWeight?.toString())
     .fontSize(fontSize?.toString())

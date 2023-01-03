@@ -65,6 +65,11 @@ export default class CardBuilder {
     return this;
   }
 
+  public hideTitle(_hideTitle = "false"): CardBuilder {
+    this.card.setHideTitle(_hideTitle === "true");
+    return this;
+  }
+
   public borderRadius(_borderRadius = "4.5"): CardBuilder {
     this.card.setBorderRadius(borderRadius.parse(Number(_borderRadius)));
     return this;

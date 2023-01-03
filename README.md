@@ -64,6 +64,7 @@ None of the fields are required. Every query parameter has a default value displ
 | **theme** | `?theme=github_dark` | github | The theme of the card. You can browse between the themes [here](docs/THEMES.md). |
 | **align** | `?align=center` | left | The alignment of the badges. (`left`, `center`, `right`) |
 | **showBorder** | `?showBorder=false` | true | Display the border around the card or not. (`true`, `false`) |
+| **hideTitle** | `?hideTitle=true` | false | Display the title of the card or not. (`true`, `false`) |
 | **hideBg** | `?hideBg=true` | false | If true, sets the background to transparent. (`true`, `false`) |
 | **borderRadius** | `?borderRadius=12.5` | 4.5 | Number between 0 and 50. |
 | **fontFamily** | `?fontFamily=consolas` | Segoe UI | The font family of the title. If the specified family doesn't exist, the default is used. |
