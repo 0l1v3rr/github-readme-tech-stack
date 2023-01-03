@@ -156,21 +156,31 @@ const Options: FC<OptionsProps> = (props) => {
 
         <div className="flex items-start gap-4">
           <TrueFalseInput
-            label="Border"
+            label="Show Border"
             value={card.showBorder}
             setValue={(v) =>
               setCard({ ...card, showBorder: v, lines: card.lines })
             }
-            trueLabel="Show"
-            falseLabel="Hide"
+            trueLabel="T"
+            falseLabel="F"
           />
 
           <TrueFalseInput
-            label="Background"
+            label="Hide Background"
             value={card.hideBg}
             setValue={(v) => setCard({ ...card, hideBg: v, lines: card.lines })}
-            trueLabel="Show"
-            falseLabel="Hide"
+            trueLabel="T"
+            falseLabel="F"
+          />
+
+          <TrueFalseInput
+            label="Hide Title"
+            value={card.hideTitle}
+            setValue={(v) =>
+              setCard({ ...card, hideTitle: v, lines: card.lines })
+            }
+            trueLabel="T"
+            falseLabel="F"
           />
         </div>
       </div>

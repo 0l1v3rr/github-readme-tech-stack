@@ -1,4 +1,5 @@
 import { FC } from "react";
+import HoverText from "../hover/HoverText";
 
 interface TrueFalseInputProps {
   label: string;
@@ -21,29 +22,33 @@ const TrueFalseInput: FC<TrueFalseInputProps> = (props) => {
           rounded-md py-1 leading-none text-gh-text outline-none flex items-center 
           justify-evenly"
       >
-        <div
-          onClick={() => props.setValue(true)}
-          className={`py-1 px-4 border border-solid border-gh-border rounded-md 
+        <HoverText label="True">
+          <div
+            onClick={() => props.setValue(true)}
+            className={`py-1 px-4 border border-solid border-gh-border rounded-md 
             cursor-pointer transition-all duration-150 hover:text-green-400 hover:bg-gh-button ${
               props.value
                 ? "text-green-400 bg-gh-button"
                 : "hover:border-gh-button-border-active"
             }`}
-        >
-          {props.trueLabel}
-        </div>
+          >
+            {props.trueLabel}
+          </div>
+        </HoverText>
 
-        <div
-          onClick={() => props.setValue(false)}
-          className={`py-1 px-4 border border-solid border-gh-border rounded-md 
-            cursor-pointer transition-all duration-150 hover:text-red-400 hover:bg-gh-button ${
-              !props.value
-                ? "text-red-400 bg-gh-button"
-                : "hover:border-gh-button-border-active"
-            }`}
-        >
-          {props.falseLabel}
-        </div>
+        <HoverText label="False">
+          <div
+            onClick={() => props.setValue(false)}
+            className={`py-1 px-4 border border-solid border-gh-border rounded-md 
+              cursor-pointer transition-all duration-150 hover:text-red-400 hover:bg-gh-button ${
+                !props.value
+                  ? "text-red-400 bg-gh-button"
+                  : "hover:border-gh-button-border-active"
+              }`}
+          >
+            {props.falseLabel}
+          </div>
+        </HoverText>
       </div>
     </div>
   );

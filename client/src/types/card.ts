@@ -27,6 +27,7 @@ export interface Card {
   fontFamily: string;
   gap: string;
   lineHeight: string;
+  hideTitle: boolean;
   lines: Line[];
 }
 
@@ -43,6 +44,7 @@ export const newCard = (): Card => {
     title: "My Tech Stack",
     lineHeight: "7",
     gap: "10",
+    hideTitle: false,
     hideBg: false,
   };
 };
