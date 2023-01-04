@@ -24,9 +24,7 @@ export default class SvgGenerator {
       this.card.getFontSize() +
       (card.getLineCount() - 1) * this.lineHeight;
 
-    if (this.card.getHideTitle()) {
-      this.height -= this.card.getFontSize() + 5;
-    }
+    this.height -= this.card.getHideTitle() ? 25 : 0;
   }
 
   /**
@@ -103,9 +101,7 @@ export default class SvgGenerator {
     let translateY =
       17 + this.card.getFontSize() + (lineNumber - 1) * this.lineHeight;
 
-    if (this.card.getHideTitle()) {
-      translateY -= this.card.getFontSize() + this.card.getFontSize() / 3;
-    }
+    translateY -= this.card.getHideTitle() ? 25 : 0;
 
     let icons = "";
     let leftPadding = 0;
