@@ -17,9 +17,12 @@ export default class SvgGenerator {
     // the height of a badge is 28
     this.lineHeight = this.card.getLineHeight() + 28;
 
-    // the base (line == 1) height is 100
+    // the base (line == 1) height is 82 + fontSize
     // each additional line increases the height by this.lineHeight
-    this.height = 100 + (card.getLineCount() - 1) * this.lineHeight;
+    this.height =
+      82 +
+      this.card.getFontSize() +
+      (card.getLineCount() - 1) * this.lineHeight;
 
     if (this.card.getHideTitle()) {
       this.height -= this.card.getFontSize() + 5;
@@ -59,7 +62,7 @@ export default class SvgGenerator {
         ${
           this.card.getHideTitle()
             ? ""
-            : `<g transform="translate(25, 35)">
+            : `<g transform="translate(25, ${17 + this.card.getFontSize()})">
                 <text x="0" y="0" class="header">${this.card.getTitle()}</text>
               </g>`
         }
@@ -97,7 +100,8 @@ export default class SvgGenerator {
   ): Promise<string> => {
     // the first line is this.lineHeight
     // each additional line increases this by this.lineHeight
-    let translateY = 35 + (lineNumber - 1) * this.lineHeight;
+    let translateY =
+      17 + this.card.getFontSize() + (lineNumber - 1) * this.lineHeight;
 
     if (this.card.getHideTitle()) {
       translateY -= this.card.getFontSize() + this.card.getFontSize() / 3;
