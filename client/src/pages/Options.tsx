@@ -101,8 +101,17 @@ const Options: FC<OptionsProps> = (props) => {
             }
           />
 
+          <SelectInput
+            label="Title Align"
+            options={["left", "center", "right"]}
+            value={card.titleAlign}
+            setValue={(v) =>
+              setCard({ ...card, titleAlign: v, lines: card.lines })
+            }
+          />
+
           <NumberInput
-            label="Font Size"
+            label="Title Size"
             value={card.fontSize}
             setValue={(v) =>
               setCard({ ...card, fontSize: v, lines: card.lines })

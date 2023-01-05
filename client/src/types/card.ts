@@ -19,6 +19,7 @@ export interface Card {
   title: string;
   theme: string;
   align: string;
+  titleAlign: string;
   showBorder: boolean;
   hideBg: boolean;
   borderRadius: string;
@@ -46,5 +47,6 @@ export const newCard = (): Card => {
     gap: "10",
     hideTitle: false,
     hideBg: false,
+    titleAlign: "left",
   };
 };

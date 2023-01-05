@@ -63,6 +63,15 @@ class UrlBuilder {
     return this;
   }
 
+  public titleAlign(titleAlign: string): UrlBuilder {
+    if (titleAlign === this.defaultCard.titleAlign) {
+      return this;
+    }
+
+    this.url += `titleAlign=${titleAlign}&`;
+    return this;
+  }
+
   public borderRadius(borderRadius: string): UrlBuilder {
     if (borderRadius === this.defaultCard.borderRadius) {
       return this;
@@ -146,10 +155,12 @@ export const generateLink = ({
   gap,
   hideBg,
   hideTitle,
+  titleAlign,
 }: Card): string => {
   let res = new UrlBuilder()
     .title(title)
     .align(align)
+    .titleAlign(titleAlign)
     .borderRadius(borderRadius)
     .fontFamily(fontFamily)
     .fontSize(fontSize)
