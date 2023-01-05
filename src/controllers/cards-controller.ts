@@ -23,12 +23,14 @@ export const getCard = async (req: Request, res: Response) => {
     titleColor,
     hideBg,
     hideTitle,
+    titleAlign,
   } = req.query;
 
   const card = new CardBuilder()
     .title(title?.toString())
     .lineCount(lineCount?.toString())
     .align(align?.toString())
+    .titleAlign(titleAlign?.toString())
     .border(showBorder?.toString())
     .hideTitle(hideTitle?.toString())
     .borderRadius(borderRadius?.toString())

@@ -1,5 +1,5 @@
 import Card from "../cards/card";
-import { Badge } from "../cards/types";
+import { Badge, TextAnchor } from "../cards/types";
 import { badgeWidth } from "../utils/badge-width";
 import { fetchBadge } from "../utils/fetch-badge";
 import { formatHexColor } from "../utils/hex-color";
@@ -34,6 +34,24 @@ export default class SvgGenerator {
    * @returns {string} The generated raw SVG.
    */
   public toString = async (): Promise<string> => {
+    // default values: left title align
+    let textTranslateX = 25;
+    let textXPercent = 0;
+    let textAnchor: TextAnchor = "start";
+
+    switch (this.card.getTitleAlign()) {
+      case "center":
+        textTranslateX = 0;
+        textXPercent = 50;
+        textAnchor = "middle";
+        break;
+      case "right":
+        textTranslateX = -25;
+        textXPercent = 100;
+        textAnchor = "end";
+        break;
+    }
+
     return `
       <svg
         width="${this.width}"
@@ -60,9 +78,13 @@ export default class SvgGenerator {
         ${
           this.card.getHideTitle()
             ? ""
-            : `<g transform="translate(25, ${17 + this.card.getFontSize()})">
-                <text x="0" y="0" class="header">${this.card.getTitle()}</text>
-              </g>`
+            : `<g transform="translate(${textTranslateX}, ${
+                17 + this.card.getFontSize()
+              })">
+                <text x="${textXPercent}%" y="0" text-anchor="${textAnchor}" class="header">
+                  ${this.card.getTitle()}
+                </text>
+               </g>`
         }
 
         ${await this.generateLines()}

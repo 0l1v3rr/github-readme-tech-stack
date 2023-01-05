@@ -63,6 +63,7 @@ None of the fields are required. Every query parameter has a default value displ
 | **title** | `?title=My%20Title` | My Tech Stack | The title of the card. `%20` can be used as a space. |
 | **theme** | `?theme=github_dark` | github | The theme of the card. You can browse between the themes [here](docs/THEMES.md). |
 | **align** | `?align=center` | left | The alignment of the badges. (`left`, `center`, `right`) |
+| **titleAlign** | `?align=center` | left | The alignment of the title. (`left`, `center`, `right`) |
 | **showBorder** | `?showBorder=false` | true | Display the border around the card or not. (`true`, `false`) |
 | **hideTitle** | `?hideTitle=true` | false | Display the title of the card or not. (`true`, `false`) |
 | **hideBg** | `?hideBg=true` | false | If true, sets the background to transparent. (`true`, `false`) |

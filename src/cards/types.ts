@@ -11,7 +11,8 @@ export interface Badge {
   logoColor: string;
 }
 
-export type BadgeAlign = "left" | "center" | "right";
+export type Align = "left" | "center" | "right";
+export type TextAnchor = "start" | "middle" | "end";
 
 export const enum FontWeight {
   THIN = 200,

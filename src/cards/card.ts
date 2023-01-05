@@ -1,11 +1,12 @@
 import { getThemeByName } from "./themes";
-import { Badge, BadgeAlign, FontWeight, Theme } from "./types";
+import { Badge, Align, FontWeight, Theme } from "./types";
 
 export default class Card {
   private title: string;
   private lineCount: number;
   private theme: Theme;
-  private badgeAlign: BadgeAlign;
+  private badgeAlign: Align;
+  private titleAlign: Align;
   private showBorder: boolean;
   private borderRadius: number;
   private fontWeight: FontWeight;
@@ -21,6 +22,7 @@ export default class Card {
     this.title = "My Tech Stack";
     this.theme = getThemeByName("github");
     this.badgeAlign = "left";
+    this.titleAlign = "left";
     this.showBorder = true;
     this.borderRadius = 4.5;
     this.fontWeight = FontWeight.SEMIBOLD;
@@ -71,10 +73,16 @@ export default class Card {
     this.lines.set(lineCount, lineValue);
   };
 
-  public getBadgeAlign = (): BadgeAlign => this.badgeAlign;
+  public getBadgeAlign = (): Align => this.badgeAlign;
 
-  public setBadgeAlign = (badgeAlign: BadgeAlign): void => {
+  public setBadgeAlign = (badgeAlign: Align): void => {
     this.badgeAlign = badgeAlign;
+  };
+
+  public getTitleAlign = (): Align => this.titleAlign;
+
+  public setTitleAlign = (titleAlign: Align): void => {
+    this.titleAlign = titleAlign;
   };
 
   public getShowBorder = (): boolean => this.showBorder;

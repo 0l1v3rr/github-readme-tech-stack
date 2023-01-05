@@ -58,6 +58,11 @@ export default class CardBuilder {
     return this;
   }
 
+  public titleAlign(_titleAlign = "left"): CardBuilder {
+    this.card.setTitleAlign(align.parse(_titleAlign));
+    return this;
+  }
+
   public border(_showBorder = "true"): CardBuilder {
     this.card.setShowBorder(
       showBorder.parse(_showBorder === "false" ? false : true)
