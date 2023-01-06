@@ -10,7 +10,7 @@ themes.set("github", {
   backgroundColor: "#FFFFFF",
   borderColor: "#D8DEE4",
   titleColor: "#0969DA",
-  badgeColor: "#F3F3F3",
+  badgeColor: "#EAEFFC",
 });
 themes.set("github_dark", {
   backgroundColor: "#0D1117",
