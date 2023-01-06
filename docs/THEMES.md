@@ -288,4 +288,25 @@ If you have a cool new theme in mind, or add one for yourself and others, please
       <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=facebook&title=facebook&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
     </td>
   </tr>
+
+  <tr>
+    <td align="center"><code>2077</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=2077&title=2077&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><code>solarized</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=solarized&title=solarized&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><code>solarized_dark</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=solarized_dark&title=solarized_dark&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
 </table>

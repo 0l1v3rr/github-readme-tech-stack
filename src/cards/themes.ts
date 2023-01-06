@@ -252,6 +252,24 @@ themes.set("nord", {
   titleColor: "#82a2c2",
   badgeColor: "#343C4D",
 });
+themes.set("2077", {
+  backgroundColor: "#141321",
+  borderColor: "#201F36",
+  titleColor: "#FF0055",
+  badgeColor: "#201F36",
+});
+themes.set("solarized", {
+  backgroundColor: "#FDF6E3",
+  borderColor: "#F0E9D7",
+  titleColor: "#268BD2",
+  badgeColor: "#FFFAF2",
+});
+themes.set("solarized_dark", {
+  backgroundColor: "#073642",
+  borderColor: "#062C36",
+  titleColor: "#268BD2",
+  badgeColor: "#062C36",
+});
 
 /**
  * Searches for the specified theme in the themes map.
