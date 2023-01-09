@@ -35,7 +35,7 @@
     "@vercel/node": "2.8.2",
     "@vitest/coverage-c8": "^0.26.3",
     "eslint": "^8.30.0",
-    "husky": "^8.0.2",
+    "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "nodemon": "^2.0.20",
     "prettier": "^2.8.1",
