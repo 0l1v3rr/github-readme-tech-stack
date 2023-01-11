@@ -1,6 +1,6 @@
 {
   "name": "github-readme-tech-stack",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Display your favorite technologies, tools, or the tech stack your project uses with these fully customizable, good-looking cards on your GitHub README!",
   "main": "src/app.ts",
   "scripts": {

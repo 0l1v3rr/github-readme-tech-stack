@@ -1,5 +1,4 @@
 import { FC } from "react";
-import HoverText from "../hover/HoverText";
 
 interface TrueFalseInputProps {
   label: string;
@@ -19,36 +18,29 @@ const TrueFalseInput: FC<TrueFalseInputProps> = (props) => {
 
       <div
         className="w-full ml-auto text-base bg-gh-bg border border-solid border-gh-border 
-          rounded-md py-1 leading-none text-gh-text outline-none flex items-center 
+          rounded-md leading-none text-gh-text outline-none flex items-center 
           justify-evenly"
       >
-        <HoverText label="True">
-          <div
-            onClick={() => props.setValue(true)}
-            className={`py-1 px-4 border border-solid border-gh-border rounded-md 
-            cursor-pointer transition-all duration-150 hover:text-green-400 hover:bg-gh-button ${
-              props.value
-                ? "text-green-400 bg-gh-button"
-                : "hover:border-gh-button-border-active"
+        <div
+          onClick={() => props.setValue(true)}
+          className={`rounded-tl-md rounded-bl-md w-1/2 text-center px-1 py-1.5
+            border-r border-solid border-gh-border cursor-pointer transition-all 
+            duration-150 hover:text-green-400 hover:bg-gh-button ${
+              props.value ? "text-green-400 bg-gh-button" : ""
             }`}
-          >
-            {props.trueLabel}
-          </div>
-        </HoverText>
+        >
+          {props.trueLabel}
+        </div>
 
-        <HoverText label="False">
-          <div
-            onClick={() => props.setValue(false)}
-            className={`py-1 px-4 border border-solid border-gh-border rounded-md 
-              cursor-pointer transition-all duration-150 hover:text-red-400 hover:bg-gh-button ${
-                !props.value
-                  ? "text-red-400 bg-gh-button"
-                  : "hover:border-gh-button-border-active"
-              }`}
-          >
-            {props.falseLabel}
-          </div>
-        </HoverText>
+        <div
+          onClick={() => props.setValue(false)}
+          className={`rounded-tr-md rounded-br-md w-1/2 text-center px-1 py-1.5
+            cursor-pointer transition-all duration-150 hover:text-red-400 hover:bg-gh-button ${
+              !props.value ? "text-red-400 bg-gh-button" : ""
+            }`}
+        >
+          {props.falseLabel}
+        </div>
       </div>
     </div>
   );
