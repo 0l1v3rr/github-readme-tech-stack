@@ -33,10 +33,7 @@ const LineInput: FC<InputProps> = (props) => {
 
   return (
     <div className={`${props.className} w-full flex flex-col gap-1 text-sm`}>
-      <BlurOverlay
-        isActive={isPopupOpen}
-        closePopup={() => setIsPopupOpen(false)}
-      />
+      <BlurOverlay isActive={isPopupOpen} />
 
       <LinePopup
         addBadge={addBadge}
@@ -127,7 +124,9 @@ const LineInput: FC<InputProps> = (props) => {
                       (e.target as HTMLImageElement).style.display = "none";
                     }}
                     className="w-4 h-4"
-                    src={`https://cdn.simpleicons.org/${badge.iconName}/${
+                    src={`https://cdn.simpleicons.org/${encodeURI(
+                      badge.iconName
+                    )}/${
                       badge.color === "auto" ? "" : badge.color.replace("#", "")
                     }`}
                     alt=""

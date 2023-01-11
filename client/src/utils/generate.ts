@@ -183,7 +183,7 @@ export const generateLink = ({
     let line = `&line${l.lineNumber}=`;
     for (const b of l.badges) {
       const color = b.color.replace("#", "");
-      line += `${b.iconName},${b.label},${color};`;
+      line += `${encodeURI(b.iconName)},${encodeURI(b.label)},${color};`;
     }
 
     res += line;

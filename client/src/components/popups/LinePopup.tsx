@@ -39,7 +39,7 @@ const LinePopup: FC<LinePopupProps> = (props) => {
   };
 
   const activeClasses = "opacity-100 pointer-events-auto scale-100";
-  const inactiveClasses = "opacity-0 pointer-events-none scale-0";
+  const inactiveClasses = "opacity-0 pointer-events-none scale-50";
 
   return (
     <div
