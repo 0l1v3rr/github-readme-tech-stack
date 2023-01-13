@@ -18,6 +18,7 @@ const SelectInput: FC<SelectInputProps> = (props) => {
 
   const ref = useOuterClick(() => setIsActive(false));
   const inputRef = useRef<HTMLInputElement>(null);
+  const activeRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     if (filterValue.trim() === "") {
@@ -50,7 +51,13 @@ const SelectInput: FC<SelectInputProps> = (props) => {
       <div
         onClick={() => {
           setIsActive((prev) => {
-            if (!prev) inputRef.current?.focus();
+            if (!prev) {
+              inputRef.current?.focus();
+              activeRef.current?.scrollIntoView({
+                block: "nearest",
+                inline: "start",
+              });
+            }
             return !prev;
           });
         }}
@@ -118,7 +125,7 @@ const SelectInput: FC<SelectInputProps> = (props) => {
                   }`}
               >
                 {isSelected && (
-                  <span>
+                  <span ref={activeRef}>
                     <FiCheck />
                   </span>
                 )}
