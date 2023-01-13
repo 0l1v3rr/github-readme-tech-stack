@@ -309,4 +309,11 @@ If you have a cool new theme in mind, or add one for yourself and others, please
       <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=solarized_dark&title=solarized_dark&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
     </td>
   </tr>
+
+  <tr>
+   <td align="center"><code>cyberpunk</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=cyberpunk&title=cyberpunk&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
 </table>

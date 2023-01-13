@@ -175,10 +175,10 @@ themes.set("levike", {
   badgeColor: "393E46",
 });
 themes.set("cyberpunk", {
-  backgroundColor: "#ae0640",
-  borderColor: "#000000",
-  titleColor: "#de6a8d",
-  badgeColor: "#9a437b",
+  backgroundColor: "#0a0b0e",
+  borderColor: "#ff0055",
+  titleColor: "#ff0055",
+  badgeColor: "#330716",
 });
 themes.set("catppuccin_latte", {
   backgroundColor: "#eff1f5",
