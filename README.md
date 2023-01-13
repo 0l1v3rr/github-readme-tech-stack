@@ -25,7 +25,7 @@
 
 <div align="center">
   <a href="https://github.com/0l1v3rr/github-readme-tech-stack/stargazers" target="_blank">
-    <img src="https://img.shields.io/github/stars/0l1v3rr/github-readme-tech-stack.svg?style=for-the-badge&logo=chart.js&color=e34c26&logoColor=D9E0EE&labelColor=343A40" alt="Stars">
+    <img src="https://img.shields.io/github/stars/0l1v3rr/github-readme-tech-stack.svg?style=for-the-badge&logo=chart.js&color=26689A&logoColor=D9E0EE&labelColor=343A40" alt="Stars">
   </a>
   <a href="https://github.com/0l1v3rr/github-readme-tech-stack/graphs/contributors" target="_blank">
     <img src="https://img.shields.io/github/contributors/0l1v3rr/github-readme-tech-stack.svg?style=for-the-badge&logo=trello&color=008CDD&logoColor=D9E0EE&labelColor=343A40" alt="Contributors">
