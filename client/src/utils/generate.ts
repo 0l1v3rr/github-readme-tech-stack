@@ -195,3 +195,33 @@ export const generateLink = ({
 export const generateHex = (): string => {
   return "#" + Math.random().toString(16).slice(2, 8).toLowerCase();
 };
+
+export const getRandomTechnology = (): string => {
+  const technologies: string[] = [
+    "javascript",
+    "typescript",
+    "python",
+    "react",
+    "angular",
+    "svelte",
+    "tailwindcss",
+    "rust",
+    "go",
+    "bootstrap",
+    "electron",
+    "express",
+    "spring",
+    "css3",
+    "html5",
+    "ruby",
+    "prisma",
+    "node.js",
+    "babel",
+    "docker",
+    "postman",
+    "trello",
+    "google",
+  ];
+
+  return technologies[Math.floor(Math.random() * technologies.length)];
+};

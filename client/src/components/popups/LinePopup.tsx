@@ -6,7 +6,7 @@ import SecondaryButton from "../buttons/SecondaryButton";
 import Input from "../input/Input";
 import ColorInput from "../input/ColorInput";
 import { validateHex, validateIconAndLabel } from "../../utils/validate";
-import { generateHex } from "../../utils/generate";
+import { generateHex, getRandomTechnology } from "../../utils/generate";
 
 interface LinePopupProps {
   isActive: boolean;
@@ -23,8 +23,10 @@ const LinePopup: FC<LinePopupProps> = (props) => {
   useEffect(() => {
     if (props.isActive) {
       setColor(generateHex());
-      setIcon("react");
-      setLabel("react");
+
+      const rand = getRandomTechnology();
+      setIcon(rand);
+      setLabel(rand);
     }
   }, [props.isActive]);
 
