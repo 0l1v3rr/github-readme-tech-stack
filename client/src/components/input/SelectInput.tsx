@@ -1,5 +1,7 @@
 import { FC, useEffect, useRef, useState } from "react";
 import { FiCheck } from "react-icons/fi";
+import { IoMdClose } from "react-icons/io";
+import { useDebounceValue } from "../../hooks/useDebounceValue";
 import { useOuterClick } from "../../hooks/useOuterClick";
 
 interface SelectInputProps {
@@ -15,23 +17,28 @@ const SelectInput: FC<SelectInputProps> = (props) => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [filterValue, setFilterValue] = useState<string>("");
   const [options, setOptions] = useState<string[]>([...props.options]);
+  const debounceFilterValue = useDebounceValue(filterValue, 250);
 
   const ref = useOuterClick(() => setIsActive(false));
   const inputRef = useRef<HTMLInputElement>(null);
   const activeRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    if (filterValue.trim() === "") {
+    if (debounceFilterValue.trim().length < 1) {
       setOptions([...props.options]);
+      activeRef.current?.scrollIntoView({
+        block: "nearest",
+        inline: "start",
+      });
       return;
     }
 
     setOptions(
       [...props.options].filter((o) =>
-        o.includes(filterValue.toLowerCase().trim())
+        o.includes(debounceFilterValue.toLowerCase().trim())
       )
     );
-  }, [filterValue, props.options]);
+  }, [debounceFilterValue, props.options]);
 
   const selectValue = (value: string): void => {
     setIsActive(false);
@@ -136,6 +143,19 @@ const SelectInput: FC<SelectInputProps> = (props) => {
               </li>
             );
           })}
+
+          {options.length < 1 && (
+            <li
+              className="flex items-center gap-4 py-1 px-2 transition-all duration-150 
+              text-gh-text min-w-[10rem]"
+            >
+              <span>
+                <IoMdClose />
+              </span>
+
+              <span>No theme found</span>
+            </li>
+          )}
         </ul>
       </div>
     </div>
