@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github-readme-tech-stack.vercel.app/",
+  "homepage": "https://0l1v3rr.github.io/github-readme-tech-stack",
   "serviceWorker": "false",
   "dependencies": {
     "@types/node": "^16.18.3",
@@ -19,7 +19,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build --env.NO_CACHE=true"
+    "build": "react-scripts build --env.NO_CACHE=true",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build -m \"client: deploy to GitHub Pages\""
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +44,7 @@
   "devDependencies": {
     "@types/react-syntax-highlighter": "^15.5.5",
     "autoprefixer": "^10.4.13",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.19",
     "tailwindcss": "^3.2.4"
   }

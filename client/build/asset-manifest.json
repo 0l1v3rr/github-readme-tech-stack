@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.ca9b3525.css",
-    "main.js": "/static/js/main.44218d5e.js",
-    "index.html": "/index.html",
-    "main.ca9b3525.css.map": "/static/css/main.ca9b3525.css.map",
-    "main.44218d5e.js.map": "/static/js/main.44218d5e.js.map"
+    "main.css": "/github-readme-tech-stack/static/css/main.ca9b3525.css",
+    "main.js": "/github-readme-tech-stack/static/js/main.44218d5e.js",
+    "index.html": "/github-readme-tech-stack/index.html",
+    "main.ca9b3525.css.map": "/github-readme-tech-stack/static/css/main.ca9b3525.css.map",
+    "main.44218d5e.js.map": "/github-readme-tech-stack/static/js/main.44218d5e.js.map"
   },
   "entrypoints": [
     "static/css/main.ca9b3525.css",
