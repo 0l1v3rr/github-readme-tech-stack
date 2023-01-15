@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useLayoutEffect, useRef, useState } from "react";
 import { FiCheck } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
 import { useDebounceValue } from "../../hooks/useDebounceValue";
@@ -23,8 +23,10 @@ const SelectInput: FC<SelectInputProps> = (props) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const activeRef = useRef<HTMLSpanElement>(null);
 
-  useEffect(() => {
-    if (debounceFilterValue.trim().length < 1) {
+  useLayoutEffect(() => {
+    const val = debounceFilterValue.toLowerCase().trim();
+
+    if (val.length < 1) {
       setOptions([...props.options]);
       activeRef.current?.scrollIntoView({
         block: "nearest",
@@ -33,11 +35,7 @@ const SelectInput: FC<SelectInputProps> = (props) => {
       return;
     }
 
-    setOptions(
-      [...props.options].filter((o) =>
-        o.includes(debounceFilterValue.toLowerCase().trim())
-      )
-    );
+    setOptions([...props.options].filter((o) => o.includes(val)));
   }, [debounceFilterValue, props.options]);
 
   const selectValue = (value: string): void => {
@@ -126,10 +124,9 @@ const SelectInput: FC<SelectInputProps> = (props) => {
               <li
                 key={option}
                 onClick={() => selectValue(option)}
-                className={`flex items-center gap-4 py-1 px-2 transition-all duration-150 
-                  hover:bg-gh-button cursor-pointer text-gh-text min-w-[10rem] ${
-                    i === 0 ? "" : "border-t border-solid border-gh-border-dark"
-                  }`}
+                className="flex items-center gap-4 py-1 px-2 transition-all duration-150 
+                  hover:bg-gh-button cursor-pointer text-gh-text min-w-[10rem] border-t 
+                  border-solid border-gh-border-dark"
               >
                 {isSelected && (
                   <span ref={activeRef}>
