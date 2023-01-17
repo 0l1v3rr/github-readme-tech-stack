@@ -67,6 +67,7 @@ const Input: FC<InputProps> = (props) => {
 
         <button
           type="button"
+          aria-label="Clear"
           onMouseDown={() => props.setValue("")}
           className={twMerge(
             `absolute top-1/2 -translate-y-1/2 cursor-pointer right-2

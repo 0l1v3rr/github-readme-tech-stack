@@ -233,7 +233,7 @@ const Options: FC<OptionsProps> = (props) => {
           <SecondaryButton
             onClick={() => setCard(newCard())}
             text="Reset"
-            className="text-red-500 font-semibold"
+            className="text-red-400 font-semibold"
           />
         </div>
       </div>
