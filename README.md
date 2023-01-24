@@ -18,7 +18,7 @@
 </div>
 
 <div align="center">
-  Display your favorite technologies, tools, or the tech stack your project uses with these fully customizable, good-looking cards on your GitHub README!
+  Show off your favorite technologies, tools, or the tech stack your project uses with these fully customizable, great-looking cards on your GitHub README!
 </div>
 
 <br>
@@ -46,7 +46,7 @@
 <hr>
 
 ## ⚡ Quick Start
-The easiest way to start using these cards is to visit our website, where you can customize your card with a live preview.  
+The easiest way to get started is to visit our website, where you can customize and preview your card live.  
 [https://github-readme-tech-stack.vercel.app](https://github-readme-tech-stack.vercel.app)
 
 <p align="center">
@@ -56,7 +56,7 @@ The easiest way to start using these cards is to visit our website, where you ca
 <hr>
 
 ## 🔧 Query parameters
-None of the fields are required. Every query parameter has a default value displayed below.  
+None of the fields are required. Each query parameter has a default value, which is listed below. 
 
 | Parameter | Example | Default value | Description |
 |---------- |---------|---------------|------------ |
@@ -80,15 +80,15 @@ None of the fields are required. Every query parameter has a default value displ
 <hr>
 
 ## 🪁 Themes
-These cards come with several built-in themes you can use. You can find all of them by clicking [here](docs/THEMES.md).  
-If you have a cool new theme in mind, or add one for yourself and others, please check [#45](https://github.com/0l1v3rr/github-readme-tech-stack/issues/45)
+These cards come with several built-in themes that you can use. You can find them all by clicking [here](docs/THEMES.md).  
+If you have a cool new theme in mind, or want to add one for yourself and others, please see [#45](https://github.com/0l1v3rr/github-readme-tech-stack/issues/45).
 
 ### 🖌 Customizing a theme
-You can customize a theme using these query parameters.  
-These parameters accept only valid hexadecimal colors, otherwise, they are not applied. Please use `%23` instead of `#`.
+These query parameters allow you to customize a theme.  
+These parameters only accept valid hexadecimal colors, otherwise they will not be applied. Please use `%23` instead of `#`.
 
 > **Warning**  
-> If the `?theme=` parameter is specified, any of these color customizations will override the theme's values.
+> If the `?theme=` parameter is specified, any of these color adjustments will override the theme values.
 
 | Parameter | Example | Description |
 |-----------|---------|-------------|
@@ -102,7 +102,7 @@ These parameters accept only valid hexadecimal colors, otherwise, they are not a
 ## 🧠 Tips
 
 ### 🪢 Align the card in the markdown
-If you're using markdown, you may want to align your cards. There's an easy way to do it with the align attribute:
+If you're using markdown, you may want to align your cards. There's an easy way to do this with the align attribute:
 ```html
 <img align="center" src="https://github-readme-tech-stack.vercel.app/api/cards" alt="My Tech Stack" />
 ```
@@ -135,7 +135,7 @@ We support this using [Base64](https://en.wikipedia.org/wiki/Base64) format.
 
 ## ⚒️ Building from source
 If you don't have NodeJS, [download and install it](https://nodejs.org/en/).  
-Then open a terminal and type these commands:
+Then open a terminal and type the following commands:
 
 **Backend:**
 ```sh
@@ -165,9 +165,9 @@ npm start
 <hr>
 
 ## 🧑‍🤝‍🧑 Contributing
-Every contribution is welcomed.  
+All contributions are welcome.  
 You can find a contributing guideline [here](CONTRIBUTING.md).  
-This project is licensed under the [MIT License](LICENSE).
+This project is released under the [MIT License](LICENSE).
 
 <hr>
 

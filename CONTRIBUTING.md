@@ -1,6 +1,6 @@
 # Contributing
 
-First of all, thanks for taking the time to contribute! Every contribution is welcomed.  
+First of all, thank you for taking the time to contribute! Every contribution is appreciated.  
 Reading and following these guidelines will help us make the contribution process easy and effective for everyone involved.
 
 - [Contributing](#contributing)
@@ -8,7 +8,7 @@ Reading and following these guidelines will help us make the contribution proces
   - [Ways of contributing](#ways-of-contributing)
     - [Issues](#issues)
       - [Found a bug?](#found-a-bug)
-      - [Feature request, suggestion](#feature-request-suggestion)
+      - [Feature Request, Suggestion](#feature-request-suggestion)
     - [Pull Request](#pull-request)
     - [Other ways](#other-ways)
   - [General information](#general-information)
@@ -17,43 +17,43 @@ Reading and following these guidelines will help us make the contribution proces
 
 ## Code of Conduct
 
-By participating and contributing to this project, you agree to uphold our [Code of Conduct](CODE_OF_CONDUCT.md).
+By participating and contributing to this project, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 <hr>
 
 ## Ways of contributing
 
-Contributions are made to this repository via **Issues** and **Pull Requests**.
+Contributions to this repository are made via **Issues** and **Pull Requests**.
 
 ### Issues
 
 #### Found a bug?
 
-Open an issue, where you describe the bug and explain how it occurred.  
-Please, use an issue template, it guides you on how you should write your issue.
+Open a new issue describing the bug and how it occurred.  
+Please use an issue template, it will guide you on how to write your issue.
 
-#### Feature request, suggestion
+#### Feature Request, Suggestion
 
-Here, you should use one of our issue templates as well.  
-If you want to work on your suggestion as well, please, open an issue before you start working, so we know about it.
+Again, you should use one of our issue templates.  
+If you want to work on your suggestion as well, please open an issue before you start working on it, so we know about it.
 
 ### Pull Request
 
-If there's an issue you want to fix or develop, or you opened an issue as a feature request and want to work on the solution:
+If there's an issue you want to fix or develop, or if you've submitted an issue as a feature request and want to work on the solution:
 
 1. Fork this repository
 2. Clone your fork
 3. Start working on your changes
 4. Commit and push your changes
-5. Open a Pull Request with the changes you made
+5. Open a Pull Request with your changes
 
 ### Other ways
 
-If you currently don't have any ideas in mind but want to support the project:
+If you don't have any ideas yet, but want to support the project:
 
 1. Add a GitHub star to this project
 2. Tweet about the project
-3. Write a review or a blog article about the project
+3. Write a review or blog post about the project
 
 <hr>
 
