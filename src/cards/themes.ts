@@ -270,6 +270,12 @@ themes.set("solarized_dark", {
   titleColor: "#268BD2",
   badgeColor: "#062C36",
 });
+themes.set("tailwindcss", {
+  backgroundColor: "#0f172a",
+  borderColor: "#1e293b",
+  titleColor: "#38bdf8",
+  badgeColor: "#1e293b",
+});
 
 /**
  * Searches for the specified theme in the themes map.

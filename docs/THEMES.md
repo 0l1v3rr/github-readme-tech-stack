@@ -316,4 +316,11 @@ If you have a cool new theme in mind, or want to add one for yourself and others
       <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=cyberpunk&title=cyberpunk&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
     </td>
   </tr>
+
+  <tr>
+    <td align="center"><code>tailwindcss</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=tailwindcss&title=tailwindcss&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
+    </td>
+  </tr>
 </table>
