@@ -34,7 +34,7 @@
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.53.0",
     "@vercel/node": "2.9.6",
-    "@vitest/coverage-c8": "^0.28.1",
+    "@vitest/coverage-c8": "^0.29.2",
     "eslint": "^8.35.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
