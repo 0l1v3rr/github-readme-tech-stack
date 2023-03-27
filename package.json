@@ -39,7 +39,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
     "nodemon": "^2.0.21",
-    "prettier": "^2.8.5",
+    "prettier": "^2.8.7",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2",
     "vitest": "^0.29.3"
