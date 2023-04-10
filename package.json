@@ -37,7 +37,7 @@
     "@vitest/coverage-c8": "^0.29.8",
     "eslint": "^8.36.0",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.0",
+    "lint-staged": "^13.2.1",
     "nodemon": "^2.0.21",
     "prettier": "^2.8.7",
     "ts-node": "^10.9.1",
