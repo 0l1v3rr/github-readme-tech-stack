@@ -37,7 +37,7 @@ The easiest way to get started is to visit our website, where you can customize 
 [https://github-readme-tech-stack.vercel.app](https://github-readme-tech-stack.vercel.app)
 
 <p align="center">
-    <img src="./docs/github-readme-tech-stack.gif" alt="tutorial">
+    <img src="./docs/README.gif" alt="tutorial">
 </p>
 
 <hr>
