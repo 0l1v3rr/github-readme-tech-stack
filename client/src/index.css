@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  *::-webkit-scrollbar {
+    @apply h-[.75rem] w-[.75rem];
+  }
+
+  *::-webkit-scrollbar-track {
+    @apply bg-gh-gray;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply rounded-md border-[3px] border-solid border-transparent 
+      bg-gh-border bg-clip-content transition-all;
+  }
+
+  body {
+    @apply bg-gh-bg;
+  }
+}

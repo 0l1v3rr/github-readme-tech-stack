@@ -1,10 +1,11 @@
 import Button from "./components/ui/Button";
 import { BiGitRepoForked } from "react-icons/bi";
 import Input from "./components/ui/Input";
+import Select from "./components/ui/Select";
 
 const App = () => {
   return (
-    <div className="p-4 flex flex-col gap-2 bg-gh-bg w-full min-h-screen">
+    <div className="flex min-h-screen w-full flex-col gap-2 bg-gh-bg p-4">
       <Button icon={<BiGitRepoForked />} label="Previous" variant="success" />
 
       <Button
@@ -19,6 +20,32 @@ const App = () => {
       <Input variant="primary" placeholder="Hello, I am a placeholder!" />
       <Input variant="secondary" />
       <Input variant="danger" />
+
+      <Select
+        selected={{
+          label: "github",
+          value: "github",
+        }}
+        options={[
+          {
+            label: "github",
+            value: "github",
+          },
+          {
+            label: "github_dark",
+            value: "github_dark",
+          },
+          {
+            label: "tokyonight",
+            value: "tokyonight",
+          },
+        ]}
+        select={(opt) => {
+          console.log(opt);
+        }}
+        label="Theme"
+        filter={true}
+      />
     </div>
   );
 };

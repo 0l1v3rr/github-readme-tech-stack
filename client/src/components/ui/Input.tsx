@@ -35,6 +35,7 @@ const Input: FC<InputProps> = ({
     <input
       aria-label={label}
       type={type}
+      autoComplete="off"
       className={cn(inputVariants({ variant, className }))}
       {...props}
     />
