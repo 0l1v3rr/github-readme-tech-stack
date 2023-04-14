@@ -2,6 +2,7 @@ import Button from "./components/ui/Button";
 import { BiGitRepoForked } from "react-icons/bi";
 import Input from "./components/ui/Input";
 import Select from "./components/ui/Select";
+import InputWrapper from "./components/ui/InputWrapper";
 
 const App = () => {
   return (
@@ -19,7 +20,14 @@ const App = () => {
 
       <Input variant="primary" placeholder="Hello, I am a placeholder!" />
       <Input variant="secondary" />
-      <Input variant="danger" />
+
+      <InputWrapper
+        label="Description"
+        description="Please fill in this field."
+        htmlFor="input"
+      >
+        <Input variant="danger" id="input" required />
+      </InputWrapper>
 
       <Select
         selected={{
