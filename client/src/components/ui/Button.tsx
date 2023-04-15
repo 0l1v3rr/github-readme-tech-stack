@@ -41,7 +41,7 @@ interface ButtonProps
     VariantProps<typeof buttonVariants> {
   label: string;
   icon?: ReactElement;
-  badge?: string;
+  badge?: string | number;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -68,7 +68,7 @@ const Button: FC<ButtonProps> = ({
       {icon}
       {label}
       {badge && (
-        <div className="text-[.8rem] bg-gh-gray-active text-gh-text rounded-full px-1.5 py-1 leading-none">
+        <div className="rounded-full bg-gh-gray-active px-1.5 py-1 text-[.8rem] leading-none text-gh-text">
           {badge}
         </div>
       )}
