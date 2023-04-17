@@ -276,6 +276,12 @@ themes.set("tailwindcss", {
   titleColor: "#38bdf8",
   badgeColor: "#1e293b",
 });
+themes.set("fleet", {
+  backgroundColor: "#181818",
+  borderColor: "#383838",
+  titleColor: "#83d6c5",
+  badgeColor: "#d6d6dd",
+});
 
 /**
  * Searches for the specified theme in the themes map.
