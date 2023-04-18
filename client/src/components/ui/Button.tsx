@@ -3,13 +3,13 @@ import { VariantProps, cva } from "class-variance-authority";
 import { cn } from "./utils";
 
 const buttonVariants = cva(
-  "leading-none rounded-md border transition-all duration-200 flex items-center gap-2 text-gh-text outline-none focus:outline-2 focus:outline-gh-blue-active outline-offset-0",
+  "leading-none rounded-md border transition-all duration-200 flex items-center gap-2 text-gh-text outline-none focus-visible:outline-2 focus-visible:outline-gh-blue-active outline-offset-0 select-none",
   {
     variants: {
       variant: {
         success: "bg-gh-green border-gh-green-active hover:bg-gh-green-active",
         secondary:
-          "bg-gh-gray border-gh-border hover:bg-gh-gray-active hover:border-gh-border-active",
+          "bg-gh-gray border-gh-border hover:bg-gh-gray-active hover:border-gh-border-active disabled:border-gh-border disabled:text-gh-text-secondary disabled:bg-gh-gray",
         danger:
           "bg-gh-gray border-gh-border text-gh-red-active hover:bg-gh-red hover:border-gh-red-active hover:text-gh-text",
       },

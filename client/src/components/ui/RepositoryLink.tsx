@@ -58,10 +58,7 @@ const RepositoryLink = ({ user, repository, isPublic }: Props) => {
             {repository}
           </a>
 
-          <div
-            className="select-none rounded-full border border-gh-border 
-              px-2 py-1 text-[.8rem] leading-none text-gh-border-active"
-          >
+          <div className="hidden select-none rounded-full border border-gh-border px-2 py-1 text-[.8rem] leading-none text-gh-border-active sm:block">
             {isPublic ? "Public" : "Private"}
           </div>
         </div>

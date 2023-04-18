@@ -1,7 +1,12 @@
 import React from "react";
+import PageOne from "./PageOne";
 
 const MultistepForm = () => {
-  return <div>MultistepForm</div>;
+  return (
+    <section>
+      <PageOne />
+    </section>
+  );
 };
 
 export default MultistepForm;

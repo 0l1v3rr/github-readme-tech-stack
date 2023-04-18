@@ -1,8 +1,8 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
 type Props = {
-  children: ReactElement | ReactElement[];
+  children: ReactNode;
   className?: string;
 };
 
