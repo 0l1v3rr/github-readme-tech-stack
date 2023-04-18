@@ -59,7 +59,7 @@ const Button: FC<ButtonProps> = ({
   return (
     <button
       className={cn(
-        buttonVariants({ variant, size, fontWeight, className, width })
+        buttonVariants({ variant, size, fontWeight, width, className })
       )}
       type={type}
       aria-label={label}

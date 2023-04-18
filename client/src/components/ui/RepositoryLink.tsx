@@ -13,9 +13,9 @@ type Props = {
 
 const RepositoryLink = ({ user, repository, isPublic }: Props) => {
   const [githubStats, setGithubStats] = useState<GithubResponse>({
-    forks_count: 0,
-    stargazers_count: 0,
-    description: "",
+    forks_count: 9,
+    stargazers_count: 12,
+    description: "This is a description",
   });
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const RepositoryLink = ({ user, repository, isPublic }: Props) => {
 
   return (
     <div>
-      <div className="flex items-center justify-between gap-2">
+      <div className="flex flex-col items-start justify-between gap-2 md:flex-row md:items-center">
         <div className="flex items-center gap-1 text-xl">
           <svg
             aria-hidden="true"
@@ -84,7 +84,7 @@ const RepositoryLink = ({ user, repository, isPublic }: Props) => {
         </div>
       </div>
 
-      <div className="text-justify text-sm text-gh-text-secondary">
+      <div className="mt-2 text-justify text-sm text-gh-text-secondary md:mt-0">
         {githubStats.description}
       </div>
     </div>

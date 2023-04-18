@@ -28,6 +28,9 @@ export default {
         "gh-yellow": "#e3b341",
         "gh-lime": "#30b950",
       },
+      fontFamily: {
+        segoe: ["Segoe UI", "Tahoma", "Geneva", "Verdana", "sans-serif"],
+      },
     },
   },
   plugins: [],

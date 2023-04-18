@@ -17,6 +17,6 @@
   }
 
   body {
-    @apply bg-gh-bg;
+    @apply bg-gh-bg font-segoe;
   }
 }
