@@ -17,10 +17,10 @@ const FormWrapper = ({ title, children, className, ...props }: Props) => {
 
   return (
     <form
-      className="h-full w-full overflow-hidden rounded-md border border-gh-border"
+      className="h-full w-full rounded-md border border-gh-border"
       {...props}
     >
-      <div className="flex select-none items-center gap-4 border-b border-gh-border bg-gh-bg-secondary px-4 py-3 leading-none">
+      <div className="flex select-none items-center gap-4 rounded-tl-md rounded-tr-md border-b border-gh-border bg-gh-bg-secondary px-4 py-3 leading-none">
         <AiOutlineSetting className="text-gh-text-secondary" />
 
         <h2 className="font-semibold text-gh-text">{title}</h2>
@@ -54,7 +54,11 @@ const FormWrapper = ({ title, children, className, ...props }: Props) => {
         />
 
         <Button
-          onClick={nextPage}
+          type="submit"
+          onClick={(e) => {
+            e.preventDefault();
+            nextPage();
+          }}
           label={isLastPage ? "Generate" : "Next"}
           variant="success"
           size="small"

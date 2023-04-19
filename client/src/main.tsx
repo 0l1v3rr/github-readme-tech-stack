@@ -5,9 +5,9 @@ import "./index.css";
 import { MultistepProvider } from "./context/MultistepContext";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <MultistepProvider>
+  <MultistepProvider>
+    <React.StrictMode>
       <App />
-    </MultistepProvider>
-  </React.StrictMode>
+    </React.StrictMode>
+  </MultistepProvider>
 );
