@@ -12,8 +12,14 @@ interface Props extends FormHTMLAttributes<HTMLFormElement> {
 }
 
 const FormWrapper = ({ title, children, className, ...props }: Props) => {
-  const { isFirstPage, isLastPage, currentPageIndex, previousPage, nextPage } =
-    useMultistepContext();
+  const {
+    isFirstPage,
+    isLastPage,
+    currentPageIndex,
+    previousPage,
+    nextPage,
+    totalPages,
+  } = useMultistepContext();
 
   return (
     <form
@@ -28,7 +34,7 @@ const FormWrapper = ({ title, children, className, ...props }: Props) => {
         <div className="ml-auto flex items-center gap-0.5 text-gh-text-secondary">
           <span className="text-gh-blue">#{currentPageIndex + 1}</span>
           <span>/</span>
-          <span>10</span>
+          <span>{totalPages}</span>
         </div>
       </div>
 

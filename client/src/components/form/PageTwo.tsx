@@ -6,27 +6,28 @@ import Hr from "../ui/Hr";
 import P from "../ui/P";
 import Input from "../ui/Input";
 import Quote from "../ui/Quote";
+import { useThemes } from "../../hooks/useThemes";
 
 const PageTwo = () => {
-  const themes = ["github", "github_dark"];
+  const themes = useThemes();
 
   return (
-    <FormWrapper title="Theme" className="gap-2">
-      <p className="text-gh-text">
+    <FormWrapper title="Customizing the theme" className="gap-2">
+      <P>
         First, please select the theme you would like to use. We have tons of
         ready-made themes you can use. The themes are available{" "}
         <Link href="https://github.com/0l1v3rr/github-readme-tech-stack/blob/master/docs/THEMES.md">
           here
         </Link>
         .
-      </p>
+      </P>
 
       <Select
         id="themes"
         label="Themes"
         className="w-[50%]"
         filter={true}
-        selected={{ label: themes[0], value: themes[0] }}
+        selected={{ label: "github", value: "github" }}
         options={themes.map((theme) => ({
           label: theme,
           value: theme,
@@ -39,8 +40,7 @@ const PageTwo = () => {
       <Hr />
 
       <P>
-        If none of these themes fits your needs, you can customize it and change
-        the default values:
+        If none of these themes fits your needs, you can customize it below:
       </P>
 
       <div className="flex gap-4">

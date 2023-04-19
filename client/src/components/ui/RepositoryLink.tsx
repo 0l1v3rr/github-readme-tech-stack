@@ -18,11 +18,11 @@ const RepositoryLink = ({ user, repository, isPublic }: Props) => {
     description: "This is a description",
   });
 
-  // useEffect(() => {
-  //   axios
-  //     .get<GithubResponse>(`https://api.github.com/repos/${user}/${repository}`)
-  //     .then((res) => setGithubStats(res.data));
-  // }, []);
+  useEffect(() => {
+    axios
+      .get<GithubResponse>(`https://api.github.com/repos/${user}/${repository}`)
+      .then((res) => setGithubStats(res.data));
+  }, []);
 
   return (
     <div>

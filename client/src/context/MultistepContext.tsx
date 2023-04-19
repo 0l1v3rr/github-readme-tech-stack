@@ -9,6 +9,7 @@ export interface MultistepContextType {
   isLastPage: boolean;
   currentPage: ReactNode;
   currentPageIndex: number;
+  totalPages: number;
   previousPage: () => void;
   nextPage: () => void;
 }
@@ -29,6 +30,7 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
     isLastPage,
     previousPage,
     nextPage,
+    totalPages,
   } = useMultistepForm([<PageOne />, <PageTwo />, <PageThree />]);
 
   return (
@@ -40,6 +42,7 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
         currentPageIndex,
         previousPage,
         nextPage,
+        totalPages,
       }}
     >
       {children}

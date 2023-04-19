@@ -1,5 +1,6 @@
 import FormWrapper from "../ui/FormWrapper";
 import Link from "../ui/Link";
+import P from "../ui/P";
 
 const PageOne = () => {
   return (
@@ -19,11 +20,11 @@ const PageOne = () => {
         have to write the query parameters manually.
       </p>
 
-      <p className="text-gh-text">
+      <P>
         You can find an example card above. It's in my{" "}
         <Link href="https://github.com/0l1v3rr">profile README</Link>, feel free
         to check it out as well.
-      </p>
+      </P>
     </FormWrapper>
   );
 };

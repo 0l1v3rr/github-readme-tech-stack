@@ -15,6 +15,7 @@ export const useMultistepForm = (pages: ReactNode[]) => {
   const isLastPage = currentPageIndex === pages.length - 1;
 
   const currentPage = pages[currentPageIndex];
+  const totalPages = pages.length;
 
   return {
     currentPage,
@@ -23,5 +24,6 @@ export const useMultistepForm = (pages: ReactNode[]) => {
     isLastPage,
     previousPage,
     nextPage,
+    totalPages,
   };
 };
