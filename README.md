@@ -15,6 +15,7 @@
   <a href="https://twitter.com/intent/tweet?text=Display%20your%20favorite%20technologies%2C%20tools%2C%20or%20the%20tech%20stack%20your%20project%20uses%20with%20these%20fully%20customizable%2C%20good-looking%20cards%20on%20your%20GitHub%20README%21&url=https://github.com/0l1v3rr/github-readme-tech-stack&hashtagsgithub,readme,cards,stats,profile,shields,react,typescript,tailwindcss" target="_blank">
     <img src="https://img.shields.io/badge/Tweet-%20-%231c93e4" alt="Tweet">
   </a>
+  <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2F0l1v3rr%2Fgithub-readme-tech-stack&count_bg=%2327A968&title_bg=%235C5C5C&icon=&icon_color=%23E7E7E7&title=Views&edge_flat=false"/></a>
 </div>
 
 <div align="center">
@@ -24,8 +25,8 @@
 <br>
 
 <div align="center">
-  <a href="https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark_red&lineCount=2&line1=node.js,node.js,0;typescript,typescript,0;express,express,61DAFB&line2=html5,html,0;react,react,0;tailwindcss,tailwind,0&title=This%20Project%27s%20Tech%20Stack">
-    <img  src="https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark_red&lineCount=2&line1=node.js,node.js,0;typescript,typescript,0;express,express,61DAFB&line2=html5,html,0;react,react,0;tailwindcss,tailwind,0&title=This%20Project%27s%20Tech%20Stack" title="Tech Stack">
+  <a href="https://github-readme-tech-stack.vercel.app/api/cards?theme=facebook&lineCount=2&line1=node.js,node.js,0;typescript,typescript,0;express,express,61DAFB&line2=vite,vite,auto;react,react,auto;tailwindcss,tailwind,auto&title=This%20Project%27s%20Tech%20Stack">
+    <img  src="https://github-readme-tech-stack.vercel.app/api/cards?theme=facebook&lineCount=2&line1=node.js,node.js,0;typescript,typescript,0;express,express,61DAFB&line2=vite,vite,auto;react,react,auto;tailwindcss,tailwind,auto&title=This%20Project%27s%20Tech%20Stack" title="Tech Stack">
   </a>
 </div>
 

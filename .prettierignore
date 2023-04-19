@@ -2,6 +2,5 @@
 build
 dist
 node_modules
-README.md
 coverage
 client/build
