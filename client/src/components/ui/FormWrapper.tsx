@@ -4,22 +4,16 @@ import { BsSendCheck } from "react-icons/bs";
 import { CgErase, CgEnter } from "react-icons/cg";
 import Button from "./Button";
 import { cn } from "./utils";
+import { useMultistepContext } from "../../hooks/useMultistepContext";
 
 interface Props extends FormHTMLAttributes<HTMLFormElement> {
   title: string;
   children?: ReactNode;
-  pageNumber: number;
 }
 
-const FormWrapper = ({
-  title,
-  children,
-  pageNumber,
-  className,
-  ...props
-}: Props) => {
-  const isFirstPage = false;
-  const isLastPage = false;
+const FormWrapper = ({ title, children, className, ...props }: Props) => {
+  const { isFirstPage, isLastPage, currentPageIndex, previousPage, nextPage } =
+    useMultistepContext();
 
   return (
     <form
@@ -32,7 +26,7 @@ const FormWrapper = ({
         <h2 className="font-semibold text-gh-text">{title}</h2>
 
         <div className="ml-auto flex items-center gap-0.5 text-gh-text-secondary">
-          <span className="text-gh-blue">#{pageNumber}</span>
+          <span className="text-gh-blue">#{currentPageIndex + 1}</span>
           <span>/</span>
           <span>10</span>
         </div>
@@ -51,6 +45,7 @@ const FormWrapper = ({
         />
 
         <Button
+          onClick={previousPage}
           disabled={isFirstPage}
           label="Previous"
           variant="secondary"
@@ -59,6 +54,7 @@ const FormWrapper = ({
         />
 
         <Button
+          onClick={nextPage}
           label={isLastPage ? "Generate" : "Next"}
           variant="success"
           size="small"

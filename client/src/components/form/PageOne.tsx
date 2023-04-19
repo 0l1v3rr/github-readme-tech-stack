@@ -4,7 +4,6 @@ import Link from "../ui/Link";
 const PageOne = () => {
   return (
     <FormWrapper
-      pageNumber={1}
       title="Welcome to github-readme-tech-stack!"
       className="items-center gap-2"
     >

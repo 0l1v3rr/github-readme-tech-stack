@@ -1,12 +1,8 @@
-import React from "react";
-import PageOne from "./PageOne";
+import { useMultistepContext } from "../../hooks/useMultistepContext";
 
 const MultistepForm = () => {
-  return (
-    <section>
-      <PageOne />
-    </section>
-  );
+  const { currentPage } = useMultistepContext();
+  return <>{currentPage}</>;
 };
 
 export default MultistepForm;
