@@ -7,9 +7,11 @@ import P from "../ui/P";
 import Input from "../ui/Input";
 import Quote from "../ui/Quote";
 import { useThemes } from "../../hooks/useThemes";
+import { useMultistepContext } from "../../hooks/useMultistepContext";
 
 const PageTwo = () => {
   const themes = useThemes();
+  const { card, setCard } = useMultistepContext();
 
   return (
     <FormWrapper title="Customizing the theme" className="gap-2">
@@ -27,14 +29,12 @@ const PageTwo = () => {
         label="Themes"
         className="w-[50%]"
         filter={true}
-        selected={{ label: "github", value: "github" }}
+        selected={{ label: card.theme, value: card.theme }}
         options={themes.map((theme) => ({
           label: theme,
           value: theme,
         }))}
-        select={() => {
-          console.log("hi");
-        }}
+        select={(val) => setCard((prev) => ({ ...prev, theme: val.value }))}
       />
 
       <Hr />
@@ -45,21 +45,53 @@ const PageTwo = () => {
 
       <div className="flex gap-4">
         <InputWrapper label="Background color" htmlFor="bg-color">
-          <Input placeholder="#0B0E14" className="w-full" id="bg-color" />
+          <Input
+            placeholder="#0B0E14"
+            className="w-full"
+            id="bg-color"
+            value={card.backgroundColor}
+            onChange={(e) =>
+              setCard((prev) => ({ ...prev, backgroundColor: e.target.value }))
+            }
+          />
         </InputWrapper>
 
         <InputWrapper label="Border color" htmlFor="border-color">
-          <Input placeholder="#151B26" className="w-full" id="border-color" />
+          <Input
+            placeholder="#151B26"
+            className="w-full"
+            id="border-color"
+            value={card.borderColor}
+            onChange={(e) =>
+              setCard((prev) => ({ ...prev, borderColor: e.target.value }))
+            }
+          />
         </InputWrapper>
       </div>
 
       <div className="flex gap-4">
         <InputWrapper label="Title color" htmlFor="title-color">
-          <Input placeholder="#FF4747" className="w-full" id="title-color" />
+          <Input
+            placeholder="#FF4747"
+            className="w-full"
+            id="title-color"
+            value={card.titleColor}
+            onChange={(e) =>
+              setCard((prev) => ({ ...prev, titleColor: e.target.value }))
+            }
+          />
         </InputWrapper>
 
         <InputWrapper label="Badge color" htmlFor="badge-color">
-          <Input placeholder="#10151F" className="w-full" id="badge-color" />
+          <Input
+            placeholder="#10151F"
+            className="w-full"
+            id="badge-color"
+            value={card.badgeColor}
+            onChange={(e) =>
+              setCard((prev) => ({ ...prev, badgeColor: e.target.value }))
+            }
+          />
         </InputWrapper>
       </div>
 
