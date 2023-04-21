@@ -74,6 +74,9 @@ const PageThree = () => {
           <Input
             id="font-size"
             type="number"
+            required
+            min={8}
+            max={48}
             placeholder="Font Size"
             value={card.fontSize}
             className="appearance-none"

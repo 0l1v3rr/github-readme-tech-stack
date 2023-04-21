@@ -46,6 +46,7 @@ const PageTwo = () => {
       <div className="flex gap-4">
         <InputWrapper label="Background color" htmlFor="bg-color">
           <Input
+            pattern="^[]{0}|#([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$"
             placeholder="#0B0E14"
             className="w-full"
             id="bg-color"
@@ -58,6 +59,7 @@ const PageTwo = () => {
 
         <InputWrapper label="Border color" htmlFor="border-color">
           <Input
+            pattern="^[]{0}|#([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$"
             placeholder="#151B26"
             className="w-full"
             id="border-color"
@@ -72,6 +74,7 @@ const PageTwo = () => {
       <div className="flex gap-4">
         <InputWrapper label="Title color" htmlFor="title-color">
           <Input
+            pattern="^[]{0}|#([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$"
             placeholder="#FF4747"
             className="w-full"
             id="title-color"
@@ -84,6 +87,7 @@ const PageTwo = () => {
 
         <InputWrapper label="Badge color" htmlFor="badge-color">
           <Input
+            pattern="^[]{0}|#([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$"
             placeholder="#10151F"
             className="w-full"
             id="badge-color"

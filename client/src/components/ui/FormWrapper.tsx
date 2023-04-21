@@ -23,6 +23,11 @@ const FormWrapper = ({ title, children, className, ...props }: Props) => {
 
   return (
     <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        e.currentTarget.reportValidity();
+        nextPage();
+      }}
       className="h-full w-full rounded-md border border-gh-border"
       {...props}
     >
@@ -61,10 +66,6 @@ const FormWrapper = ({ title, children, className, ...props }: Props) => {
 
         <Button
           type="submit"
-          onClick={(e) => {
-            e.preventDefault();
-            nextPage();
-          }}
           label={isLastPage ? "Generate" : "Next"}
           variant="success"
           size="small"
