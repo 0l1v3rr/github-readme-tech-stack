@@ -28,16 +28,16 @@ interface MultistepProviderProps {
 
 export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
   const [card, setCard] = useState<Card>({
-    title: "",
+    title: "My Tech Stack",
     theme: "github",
     align: "",
-    titleAlign: "",
+    titleAlign: "left",
     showBorder: true,
     hideBg: false,
     borderRadius: "",
-    fontWeight: "",
-    fontSize: "",
-    fontFamily: "",
+    fontWeight: "semibold",
+    fontSize: 18,
+    fontFamily: "Segoe UI",
     gap: "",
     lineHeight: "",
     hideTitle: false,

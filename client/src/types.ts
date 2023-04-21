@@ -18,7 +18,7 @@ export interface Card {
   hideBg: boolean;
   borderRadius: string;
   fontWeight: string;
-  fontSize: string;
+  fontSize: number;
   fontFamily: string;
   gap: string;
   lineHeight: string;
