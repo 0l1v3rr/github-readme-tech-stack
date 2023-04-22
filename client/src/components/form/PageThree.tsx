@@ -1,4 +1,5 @@
 import { useMultistepContext } from "../../hooks/useMultistepContext";
+import Flex from "../layout/Flex";
 import FormWrapper from "../ui/FormWrapper";
 import Input from "../ui/Input";
 import InputWrapper from "../ui/InputWrapper";
@@ -9,7 +10,7 @@ const PageThree = () => {
 
   return (
     <FormWrapper title="Title" className="gap-2">
-      <div className="flex gap-4">
+      <Flex>
         <InputWrapper label="Title" htmlFor="title">
           <Input
             id="title"
@@ -36,9 +37,9 @@ const PageThree = () => {
             }
           />
         </InputWrapper>
-      </div>
+      </Flex>
 
-      <div className="flex gap-4">
+      <Flex>
         <InputWrapper label="Font Weight">
           <Select
             options={[
@@ -85,7 +86,7 @@ const PageThree = () => {
             }
           />
         </InputWrapper>
-      </div>
+      </Flex>
     </FormWrapper>
   );
 };

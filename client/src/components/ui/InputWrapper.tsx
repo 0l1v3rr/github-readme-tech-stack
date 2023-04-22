@@ -17,7 +17,7 @@ const InputWrapper: FC<InputWrapperProps> = ({
     <div className="flex w-full flex-col gap-1">
       <label
         htmlFor={htmlFor}
-        className="flex select-none items-start gap-1 font-semibold text-gh-text"
+        className="flex w-fit select-none items-start gap-1 font-semibold text-gh-text"
       >
         {label}{" "}
         {children.props.required && (

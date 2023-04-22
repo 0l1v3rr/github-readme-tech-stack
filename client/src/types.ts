@@ -16,7 +16,7 @@ export interface Card {
   titleAlign: string;
   showBorder: boolean;
   hideBg: boolean;
-  borderRadius: string;
+  borderRadius: number;
   fontWeight: string;
   fontSize: number;
   fontFamily: string;
@@ -28,6 +28,7 @@ export interface Card {
   borderColor?: string;
   titleColor?: string;
   badgeColor?: string;
+  width: number;
 }
 
 export interface Line {

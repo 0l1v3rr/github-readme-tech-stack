@@ -4,6 +4,7 @@ import PageOne from "../components/form/PageOne";
 import PageTwo from "../components/form/PageTwo";
 import PageThree from "../components/form/PageThree";
 import { Card } from "../types";
+import PageFour from "../components/form/PageFour";
 
 export interface MultistepContextType {
   isFirstPage: boolean;
@@ -34,7 +35,7 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
     titleAlign: "left",
     showBorder: true,
     hideBg: false,
-    borderRadius: "",
+    borderRadius: 4.5,
     fontWeight: "semibold",
     fontSize: 18,
     fontFamily: "Segoe UI",
@@ -46,6 +47,7 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
     borderColor: "",
     titleColor: "",
     badgeColor: "",
+    width: 495,
   });
 
   const updateCard = useCallback(
@@ -63,7 +65,7 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
     previousPage,
     nextPage,
     totalPages,
-  } = useMultistepForm([<PageOne />, <PageTwo />, <PageThree />]);
+  } = useMultistepForm([<PageOne />, <PageTwo />, <PageThree />, <PageFour />]);
 
   return (
     <MultistepContext.Provider

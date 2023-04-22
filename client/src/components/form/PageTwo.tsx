@@ -8,6 +8,7 @@ import Input from "../ui/Input";
 import Quote from "../ui/Quote";
 import { useThemes } from "../../hooks/useThemes";
 import { useMultistepContext } from "../../hooks/useMultistepContext";
+import Flex from "../layout/Flex";
 
 const PageTwo = () => {
   const themes = useThemes();
@@ -43,7 +44,7 @@ const PageTwo = () => {
         If none of these themes fits your needs, you can customize it below:
       </P>
 
-      <div className="flex gap-4">
+      <Flex>
         <InputWrapper label="Background color" htmlFor="bg-color">
           <Input
             pattern="^[]{0}|#([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$"
@@ -69,9 +70,9 @@ const PageTwo = () => {
             }
           />
         </InputWrapper>
-      </div>
+      </Flex>
 
-      <div className="flex gap-4">
+      <Flex>
         <InputWrapper label="Title color" htmlFor="title-color">
           <Input
             pattern="^[]{0}|#([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$"
@@ -97,7 +98,7 @@ const PageTwo = () => {
             }
           />
         </InputWrapper>
-      </div>
+      </Flex>
 
       <Quote variant="Warning">
         These values will override the selected theme's value!
