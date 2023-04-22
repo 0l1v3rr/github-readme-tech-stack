@@ -27,7 +27,8 @@ export default {
         "gh-orange": "#f78166",
         "gh-mustard": "#d29922",
         "gh-yellow": "#e3b341",
-        "gh-lime": "#30b950",
+        "gh-lime": "#3fb950",
+        "gh-lime-active": "#56ff6e",
       },
       fontFamily: {
         segoe: ["Segoe UI", "Tahoma", "Geneva", "Verdana", "sans-serif"],
