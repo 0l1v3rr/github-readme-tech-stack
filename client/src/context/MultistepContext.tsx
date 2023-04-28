@@ -5,6 +5,7 @@ import PageTwo from "../components/form/PageTwo";
 import PageThree from "../components/form/PageThree";
 import { Card } from "../types";
 import PageFour from "../components/form/PageFour";
+import PageFive from "../components/form/PageFive";
 
 export interface MultistepContextType {
   isFirstPage: boolean;
@@ -31,7 +32,7 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
   const [card, setCard] = useState<Card>({
     title: "My Tech Stack",
     theme: "github",
-    align: "",
+    align: "left",
     titleAlign: "left",
     showBorder: true,
     hideBg: false,
@@ -39,10 +40,11 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
     fontWeight: "semibold",
     fontSize: 18,
     fontFamily: "Segoe UI",
-    gap: "",
-    lineHeight: "",
+    gap: 10,
+    lineHeight: 7,
     hideTitle: false,
     lines: [],
+    lineCount: 1,
     backgroundColor: "",
     borderColor: "",
     titleColor: "",
@@ -65,7 +67,13 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
     previousPage,
     nextPage,
     totalPages,
-  } = useMultistepForm([<PageOne />, <PageTwo />, <PageThree />, <PageFour />]);
+  } = useMultistepForm([
+    <PageOne />,
+    <PageTwo />,
+    <PageThree />,
+    <PageFour />,
+    <PageFive />,
+  ]);
 
   return (
     <MultistepContext.Provider

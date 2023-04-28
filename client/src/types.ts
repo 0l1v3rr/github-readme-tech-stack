@@ -20,10 +20,11 @@ export interface Card {
   fontWeight: string;
   fontSize: number;
   fontFamily: string;
-  gap: string;
-  lineHeight: string;
+  gap: number;
+  lineHeight: number;
   hideTitle: boolean;
   lines: Line[];
+  lineCount: number;
   backgroundColor?: string;
   borderColor?: string;
   titleColor?: string;

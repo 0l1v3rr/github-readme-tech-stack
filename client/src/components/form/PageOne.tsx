@@ -6,7 +6,7 @@ const PageOne = () => {
   return (
     <FormWrapper
       title="Welcome to github-readme-tech-stack!"
-      className="items-center gap-2"
+      className="items-center"
     >
       <img
         width="420px"

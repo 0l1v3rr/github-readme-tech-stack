@@ -9,7 +9,7 @@ const PageThree = () => {
   const { card, setCard } = useMultistepContext();
 
   return (
-    <FormWrapper title="Title" className="gap-2">
+    <FormWrapper title="Title">
       <Flex>
         <InputWrapper label="Title" htmlFor="title">
           <Input
