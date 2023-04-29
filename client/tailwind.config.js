@@ -32,6 +32,7 @@ export default {
       },
       fontFamily: {
         segoe: ["Segoe UI", "Tahoma", "Geneva", "Verdana", "sans-serif"],
+        dejavu: ["DejaVu Sans", "sans-serif"],
       },
     },
   },

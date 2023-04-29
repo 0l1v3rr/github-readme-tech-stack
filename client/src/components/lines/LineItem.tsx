@@ -2,6 +2,7 @@ import { useMultistepContext } from "../../hooks/useMultistepContext";
 import { Line } from "../../types";
 import Hr from "../ui/Hr";
 import { formatNumberWord } from "../ui/utils";
+import BadgeItem from "./BadgeItem";
 import NewBadge from "./NewBadge";
 
 type Props = {
@@ -18,9 +19,15 @@ const LineItem = ({ line }: Props) => {
       </div>
 
       <div className="flex flex-col gap-2 px-3 py-2">
-        {line.badges.length < 1 && (
+        {line.badges.length < 1 ? (
           <div className="text-center text-sm text-gh-text-secondary">
             🥱 No badges selected.
+          </div>
+        ) : (
+          <div className="flex flex-wrap gap-2">
+            {line.badges.map((badge, i) => (
+              <BadgeItem key={i} badge={badge} />
+            ))}
           </div>
         )}
 
