@@ -39,7 +39,7 @@ const buttonVariants = cva(
 interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  label: string;
+  label?: string;
   icon?: ReactElement;
   badge?: string | number;
 }
@@ -62,7 +62,7 @@ const Button: FC<ButtonProps> = ({
         buttonVariants({ variant, size, fontWeight, width, className })
       )}
       type={type}
-      aria-label={label}
+      aria-label={label ?? props["aria-label"]}
       {...props}
     >
       {icon}

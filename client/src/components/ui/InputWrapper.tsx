@@ -1,7 +1,7 @@
 import { FC, ReactElement } from "react";
 
 interface InputWrapperProps {
-  label: string;
+  label?: string;
   description?: string;
   htmlFor?: string;
   children: ReactElement;
@@ -15,15 +15,17 @@ const InputWrapper: FC<InputWrapperProps> = ({
 }) => {
   return (
     <div className="flex w-full flex-col gap-1">
-      <label
-        htmlFor={htmlFor}
-        className="flex w-fit select-none items-start gap-1 font-semibold text-gh-text"
-      >
-        {label}{" "}
-        {children.props.required && (
-          <span className="text-gh-red-active">*</span>
-        )}
-      </label>
+      {label !== undefined && (
+        <label
+          htmlFor={htmlFor}
+          className="flex w-fit select-none items-start gap-1 font-semibold text-gh-text"
+        >
+          {label}{" "}
+          {children.props.required && (
+            <span className="text-gh-red-active">*</span>
+          )}
+        </label>
+      )}
 
       {children}
 

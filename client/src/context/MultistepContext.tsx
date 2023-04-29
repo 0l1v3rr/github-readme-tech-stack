@@ -3,7 +3,7 @@ import { useMultistepForm } from "../hooks/useMultistepForm";
 import PageOne from "../components/form/PageOne";
 import PageTwo from "../components/form/PageTwo";
 import PageThree from "../components/form/PageThree";
-import { Card } from "../types";
+import { Badge, Card } from "../types";
 import PageFour from "../components/form/PageFour";
 import PageFive from "../components/form/PageFive";
 import PageSix from "../components/form/PageSix";
@@ -19,6 +19,7 @@ export interface MultistepContextType {
   card: Card;
   updateCard: () => (updated: Partial<Card>) => void;
   setCard: React.Dispatch<React.SetStateAction<Card>>;
+  addBadge: (lineNumber: number, badge: Badge) => void;
 }
 
 export const MultistepContext = createContext<MultistepContextType>(
@@ -59,6 +60,26 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
     []
   );
 
+  const addBadge = useCallback((lineNumber: number, badge: Badge) => {
+    setCard((prev) => {
+      const newObj = { ...prev };
+      const lineIdx = newObj.lines.findIndex(
+        (x) => x.lineNumber === lineNumber
+      );
+
+      // line with the specified lineNumber doesn't exist
+      if (lineIdx === -1) return prev;
+
+      // update the badges
+      newObj.lines[lineIdx].badges = [
+        ...newObj.lines[lineIdx].badges,
+        { ...badge },
+      ];
+
+      return newObj;
+    });
+  }, []);
+
   const {
     currentPage,
     currentPageIndex,
@@ -89,6 +110,7 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
         card,
         updateCard,
         setCard,
+        addBadge,
       }}
     >
       {children}
