@@ -43,7 +43,7 @@ const Input: FC<InputProps> = ({
         return;
       }
 
-      // if the input checks the validity
+      // if the input passes the validity
       if (e.target.checkValidity()) {
         setActualVariant(variant);
         return;

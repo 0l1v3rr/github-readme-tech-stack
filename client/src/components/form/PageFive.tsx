@@ -3,6 +3,7 @@ import Flex from "../layout/Flex";
 import FormWrapper from "../ui/FormWrapper";
 import Input from "../ui/Input";
 import InputWrapper from "../ui/InputWrapper";
+import Quote from "../ui/Quote";
 import Select from "../ui/Select";
 
 const PageFive = () => {
@@ -36,11 +37,13 @@ const PageFive = () => {
             type="number"
             min={1}
             max={6}
-            value={card.lineCount}
+            value={card.lines.length}
             onChange={(e) =>
               setCard((prev) => ({
                 ...prev,
-                lineCount: e.target.valueAsNumber,
+                lines: Array.from({ length: e.target.valueAsNumber }).map(
+                  (_, i) => ({ lineNumber: i + 1, badges: [] })
+                ),
               }))
             }
           />
@@ -85,6 +88,11 @@ const PageFive = () => {
           />
         </InputWrapper>
       </Flex>
+
+      <Quote variant="Warning">
+        If you change the Lines parameter, your previously set lines will be
+        reset.
+      </Quote>
     </FormWrapper>
   );
 };

@@ -24,7 +24,6 @@ export interface Card {
   lineHeight: number;
   hideTitle: boolean;
   lines: Line[];
-  lineCount: number;
   backgroundColor?: string;
   borderColor?: string;
   titleColor?: string;
@@ -33,7 +32,7 @@ export interface Card {
 }
 
 export interface Line {
-  lineNumber: string;
+  lineNumber: number;
   badges: Badge[];
 }
 

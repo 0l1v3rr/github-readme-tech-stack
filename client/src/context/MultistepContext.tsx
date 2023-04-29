@@ -6,6 +6,7 @@ import PageThree from "../components/form/PageThree";
 import { Card } from "../types";
 import PageFour from "../components/form/PageFour";
 import PageFive from "../components/form/PageFive";
+import PageSix from "../components/form/PageSix";
 
 export interface MultistepContextType {
   isFirstPage: boolean;
@@ -20,8 +21,8 @@ export interface MultistepContextType {
   setCard: React.Dispatch<React.SetStateAction<Card>>;
 }
 
-export const MultistepContext = createContext<MultistepContextType | null>(
-  null
+export const MultistepContext = createContext<MultistepContextType>(
+  {} as MultistepContextType
 );
 
 interface MultistepProviderProps {
@@ -43,8 +44,7 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
     gap: 10,
     lineHeight: 7,
     hideTitle: false,
-    lines: [],
-    lineCount: 1,
+    lines: [{ lineNumber: 1, badges: [] }],
     backgroundColor: "",
     borderColor: "",
     titleColor: "",
@@ -73,6 +73,7 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
     <PageThree />,
     <PageFour />,
     <PageFive />,
+    <PageSix />,
   ]);
 
   return (
