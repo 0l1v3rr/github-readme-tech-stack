@@ -1,4 +1,4 @@
-import { FC, InputHTMLAttributes, useCallback, useState } from "react";
+import { InputHTMLAttributes, forwardRef, useCallback, useState } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 import { cn } from "./utils";
 
@@ -24,49 +24,45 @@ interface InputProps
   label?: string;
 }
 
-const Input: FC<InputProps> = ({
-  className,
-  variant,
-  label,
-  type = "text",
-  onChange,
-  ...props
-}) => {
-  const [actualVariant, setActualVariant] =
-    useState<InputProps["variant"]>(variant);
+const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ className, variant, label, type = "text", onChange, ...props }, ref) => {
+    const [actualVariant, setActualVariant] =
+      useState<InputProps["variant"]>(variant);
 
-  const checkValidity = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      // if the input is empty, don't indicate error
-      if (e.target.value.trim() === "") {
-        setActualVariant(variant);
-        return;
-      }
+    const checkValidity = useCallback(
+      (e: React.ChangeEvent<HTMLInputElement>) => {
+        // if the input is empty, don't indicate error
+        if (e.target.value.trim() === "") {
+          setActualVariant(variant);
+          return;
+        }
 
-      // if the input passes the validity
-      if (e.target.checkValidity()) {
-        setActualVariant(variant);
-        return;
-      }
+        // if the input passes the validity
+        if (e.target.checkValidity()) {
+          setActualVariant(variant);
+          return;
+        }
 
-      setActualVariant("danger");
-    },
-    []
-  );
+        setActualVariant("danger");
+      },
+      []
+    );
 
-  return (
-    <input
-      aria-label={label}
-      type={type}
-      autoComplete="off"
-      onChange={(e) => {
-        onChange?.(e);
-        checkValidity(e);
-      }}
-      className={cn(inputVariants({ variant: actualVariant }), className)}
-      {...props}
-    />
-  );
-};
+    return (
+      <input
+        aria-label={label}
+        ref={ref}
+        type={type}
+        autoComplete="off"
+        onChange={(e) => {
+          onChange?.(e);
+          checkValidity(e);
+        }}
+        className={cn(inputVariants({ variant: actualVariant }), className)}
+        {...props}
+      />
+    );
+  }
+);
 
 export default Input;

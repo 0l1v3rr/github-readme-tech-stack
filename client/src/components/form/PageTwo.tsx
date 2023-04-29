@@ -15,7 +15,7 @@ const PageTwo = () => {
   const { card, setCard } = useMultistepContext();
 
   return (
-    <FormWrapper title="Customizing the theme">
+    <FormWrapper title="Theme">
       <P>
         First, please select the theme you would like to use. We have tons of
         ready-made themes you can use. The themes are available{" "}

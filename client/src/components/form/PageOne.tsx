@@ -10,7 +10,7 @@ const PageOne = () => {
     >
       <img
         width="420px"
-        src="https://github-readme-tech-stack.vercel.app/api/cards?title=Tech%20Stack&align=center&titleAlign=center&lineCount=2&theme=0l1v3rr&line2=react,react,2d79c7;tailwindcss,tailwind,38bdf8;typescript,typescript,2d79c7;&line1=laravel,laravel,ff2d20;go,golang,00add8;node.js,node.js,23b45d;&width=420&fontSize=20"
+        src="https://github-readme-tech-stack.vercel.app/api/cards?title=Tech%20Stack&align=center&titleAlign=center&fontSize=20&lineCount=2&theme=0l1v3rr&line1=laravel,laravel,auto;go,golang,00add8;docker,docker,auto;&line2=react,react,2d79c7;tailwindcss,tailwind,38bdf8;typescript,typescript,2d79c7;&width=420"
         alt="Tech Stack"
       />
 

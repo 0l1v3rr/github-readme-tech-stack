@@ -1,7 +1,7 @@
 import Flex from "../layout/Flex";
 import InputWrapper from "../ui/InputWrapper";
 import Input from "../ui/Input";
-import { useState } from "react";
+import { useRef } from "react";
 import { Badge } from "../../types";
 import Button from "../ui/Button";
 import { GoPlus } from "react-icons/go";
@@ -11,36 +11,22 @@ type Props = {
 };
 
 const NewBadge = ({ addBadge }: Props) => {
-  const [icon, setIcon] = useState<string>("");
-  const [label, setLabel] = useState<string>("");
-  const [color, setColor] = useState<string>("");
+  const iconRef = useRef<HTMLInputElement | null>(null);
+  const labelRef = useRef<HTMLInputElement | null>(null);
+  const colorRef = useRef<HTMLInputElement | null>(null);
 
   return (
     <Flex className="items-start">
       <InputWrapper description="The name of the icon">
-        <Input
-          placeholder="react"
-          pattern="^[a-zA-Z]{3,32}$"
-          value={icon}
-          onChange={(e) => setIcon(e.target.value)}
-        />
+        <Input ref={iconRef} placeholder="react" pattern="^[a-zA-Z]{3,32}$" />
       </InputWrapper>
 
       <InputWrapper description="The label shown on the badge">
-        <Input
-          placeholder="react"
-          pattern="^[a-zA-Z]{3,32}$"
-          value={label}
-          onChange={(e) => setLabel(e.target.value)}
-        />
+        <Input ref={labelRef} placeholder="react" pattern="^[a-zA-Z]{3,32}$" />
       </InputWrapper>
 
       <InputWrapper description="The color of the icon">
-        <Input
-          placeholder="#5ed3f3"
-          value={color}
-          onChange={(e) => setColor(e.target.value)}
-        />
+        <Input ref={colorRef} placeholder="#5ed3f3" />
       </InputWrapper>
 
       <Button
@@ -50,10 +36,28 @@ const NewBadge = ({ addBadge }: Props) => {
         size="small"
         className="h-[30.67px]"
         onClick={() => {
-          addBadge({ color, icon, label });
-          setIcon("");
-          setLabel("");
-          setColor("");
+          if (!colorRef.current || !iconRef.current || !labelRef.current) {
+            return;
+          }
+
+          // if the refs are invalid
+          if (
+            colorRef.current.reportValidity() ||
+            iconRef.current.reportValidity() ||
+            labelRef.current.reportValidity()
+          ) {
+            return;
+          }
+
+          addBadge({
+            color: colorRef.current.value,
+            icon: iconRef.current.value,
+            label: labelRef.current.value,
+          });
+
+          colorRef.current.value = "";
+          iconRef.current.value = "";
+          labelRef.current.value = "";
         }}
       />
     </Flex>
