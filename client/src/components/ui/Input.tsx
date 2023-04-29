@@ -1,4 +1,4 @@
-import { FC, InputHTMLAttributes } from "react";
+import { FC, InputHTMLAttributes, useCallback, useState } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 import { cn } from "./utils";
 
@@ -29,14 +29,41 @@ const Input: FC<InputProps> = ({
   variant,
   label,
   type = "text",
+  onChange,
   ...props
 }) => {
+  const [actualVariant, setActualVariant] =
+    useState<InputProps["variant"]>(variant);
+
+  const checkValidity = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      // if the input is empty, don't indicate error
+      if (e.target.value.trim() === "") {
+        setActualVariant(variant);
+        return;
+      }
+
+      // if the input checks the validity
+      if (e.target.checkValidity()) {
+        setActualVariant(variant);
+        return;
+      }
+
+      setActualVariant("danger");
+    },
+    []
+  );
+
   return (
     <input
       aria-label={label}
       type={type}
       autoComplete="off"
-      className={cn(inputVariants({ variant, className }))}
+      onChange={(e) => {
+        onChange?.(e);
+        checkValidity(e);
+      }}
+      className={cn(inputVariants({ variant: actualVariant }), className)}
       {...props}
     />
   );
