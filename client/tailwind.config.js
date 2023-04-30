@@ -19,6 +19,7 @@ export default {
         "gh-blue-active": "#58a6ff",
         "gh-green": "#238636",
         "gh-green-active": "#2EA043",
+        "gh-green-disabled": "#20702F",
         "gh-red": "#DA3633",
         "gh-red-active": "#F85149",
         "gh-gray": "#21262D",

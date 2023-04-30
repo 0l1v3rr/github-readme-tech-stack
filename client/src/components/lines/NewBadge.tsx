@@ -1,66 +1,74 @@
-import Flex from "../layout/Flex";
 import InputWrapper from "../ui/InputWrapper";
 import Input from "../ui/Input";
-import { useRef } from "react";
 import { Badge } from "../../types";
 import Button from "../ui/Button";
 import { GoPlus } from "react-icons/go";
+import ColorInput from "../ui/ColorInput";
+import { useState } from "react";
+import { HEX_COLOR_REGEX, ICON_REGEX } from "../../const";
 
 type Props = {
   addBadge: (badge: Badge) => void;
 };
 
 const NewBadge = ({ addBadge }: Props) => {
-  const iconRef = useRef<HTMLInputElement | null>(null);
-  const labelRef = useRef<HTMLInputElement | null>(null);
-  const colorRef = useRef<HTMLInputElement | null>(null);
+  const [icon, setIcon] = useState<string>("");
+  const [label, setLabel] = useState<string>("");
+  const [color, setColor] = useState<string>("");
 
   return (
-    <Flex className="items-start">
+    <fieldset className="flex items-start gap-4">
       <InputWrapper description="The name of the icon">
-        <Input ref={iconRef} placeholder="react" pattern="^[a-zA-Z]{3,32}$" />
+        <Input
+          formNoValidate
+          value={icon}
+          onChange={(e) => setIcon(e.target.value)}
+          placeholder="react"
+        />
       </InputWrapper>
 
       <InputWrapper description="The label shown on the badge">
-        <Input ref={labelRef} placeholder="react" pattern="^[a-zA-Z]{3,32}$" />
+        <Input
+          formNoValidate
+          value={label}
+          onChange={(e) => setLabel(e.target.value)}
+          placeholder="react"
+        />
       </InputWrapper>
 
       <InputWrapper description="The color of the icon">
-        <Input ref={colorRef} placeholder="#5ed3f3" />
+        <ColorInput
+          formNoValidate
+          value={color}
+          onChange={(e) => setColor(e.target.value)}
+          placeholder="#58a6ff"
+        />
       </InputWrapper>
 
       <Button
+        disabled={
+          !HEX_COLOR_REGEX.test(color) ||
+          !ICON_REGEX.test(icon) ||
+          !ICON_REGEX.test(label)
+        }
         aria-label="Add Badge"
         icon={<GoPlus />}
         variant="success"
         size="small"
         className="h-[30.67px]"
         onClick={() => {
-          if (!colorRef.current || !iconRef.current || !labelRef.current) {
-            return;
-          }
-
-          // if the refs are invalid
-          if (
-            colorRef.current.reportValidity() ||
-            iconRef.current.reportValidity() ||
-            labelRef.current.reportValidity()
-          ) {
-            return;
-          }
-
           addBadge({
-            color: colorRef.current.value,
-            icon: iconRef.current.value,
-            label: labelRef.current.value,
+            color,
+            icon,
+            label,
           });
 
-          colorRef.current.value = "";
-          iconRef.current.value = "";
-          labelRef.current.value = "";
+          setColor("");
+          setIcon("");
+          setLabel("");
         }}
       />
-    </Flex>
+    </fieldset>
   );
 };
 

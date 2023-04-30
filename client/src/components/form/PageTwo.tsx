@@ -9,6 +9,7 @@ import Quote from "../ui/Quote";
 import { useThemes } from "../../hooks/useThemes";
 import { useMultistepContext } from "../../hooks/useMultistepContext";
 import Flex from "../layout/Flex";
+import ColorInput from "../ui/ColorInput";
 
 const PageTwo = () => {
   const themes = useThemes();
@@ -46,7 +47,7 @@ const PageTwo = () => {
 
       <Flex>
         <InputWrapper label="Background color" htmlFor="bg-color">
-          <Input
+          <ColorInput
             pattern="^[]{0}|#([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$"
             placeholder="#0B0E14"
             className="w-full"
@@ -59,7 +60,7 @@ const PageTwo = () => {
         </InputWrapper>
 
         <InputWrapper label="Border color" htmlFor="border-color">
-          <Input
+          <ColorInput
             pattern="^[]{0}|#([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$"
             placeholder="#151B26"
             className="w-full"
@@ -74,7 +75,7 @@ const PageTwo = () => {
 
       <Flex>
         <InputWrapper label="Title color" htmlFor="title-color">
-          <Input
+          <ColorInput
             pattern="^[]{0}|#([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$"
             placeholder="#FF4747"
             className="w-full"
@@ -87,7 +88,7 @@ const PageTwo = () => {
         </InputWrapper>
 
         <InputWrapper label="Badge color" htmlFor="badge-color">
-          <Input
+          <ColorInput
             pattern="^[]{0}|#([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$"
             placeholder="#10151F"
             className="w-full"
