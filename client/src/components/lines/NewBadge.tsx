@@ -6,6 +6,7 @@ import { GoPlus } from "react-icons/go";
 import ColorInput from "../ui/ColorInput";
 import { useState } from "react";
 import { HEX_COLOR_REGEX, ICON_REGEX } from "../../const";
+import SvgInput from "./SvgInput";
 
 type Props = {
   addBadge: (badge: Badge) => void;
@@ -18,9 +19,8 @@ const NewBadge = ({ addBadge }: Props) => {
 
   return (
     <fieldset className="flex items-start gap-4">
-      <InputWrapper description="The name of the icon">
-        <Input
-          formNoValidate
+      <InputWrapper description="The icon in the badge">
+        <SvgInput
           value={icon}
           onChange={(e) => setIcon(e.target.value)}
           placeholder="react"
@@ -29,7 +29,6 @@ const NewBadge = ({ addBadge }: Props) => {
 
       <InputWrapper description="The label shown on the badge">
         <Input
-          formNoValidate
           value={label}
           onChange={(e) => setLabel(e.target.value)}
           placeholder="react"
