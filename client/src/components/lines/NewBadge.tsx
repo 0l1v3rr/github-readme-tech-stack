@@ -7,6 +7,8 @@ import ColorInput from "../ui/ColorInput";
 import { useState } from "react";
 import { HEX_COLOR_REGEX, ICON_REGEX } from "../../const";
 import SvgInput from "./SvgInput";
+import PopupContainer from "../ui/PopupContainer";
+import Upload from "./Upload";
 
 type Props = {
   addBadge: (badge: Badge) => void;
@@ -17,11 +19,33 @@ const NewBadge = ({ addBadge }: Props) => {
   const [label, setLabel] = useState<string>("");
   const [color, setColor] = useState<string>("");
 
+  const [isPopupActive, setIsPopupActive] = useState(false);
+  const [file, setFile] = useState<null | File>(null);
+
   return (
     <fieldset className="flex items-start gap-4">
+      <PopupContainer
+        closePopup={() => setIsPopupActive(false)}
+        isOpen={isPopupActive}
+      >
+        <Upload
+          file={file}
+          closePopup={() => setIsPopupActive(false)}
+          uploadFile={(file) => {
+            setFile(file);
+
+            const fr = new FileReader();
+            fr.readAsDataURL(file);
+            fr.onload = (e) => setIcon(e.target?.result?.toString() ?? icon);
+          }}
+        />
+      </PopupContainer>
+
       <InputWrapper description="The icon in the badge">
         <SvgInput
-          value={icon}
+          value={file !== null ? file.name : icon}
+          disabled={file !== null}
+          onBtnClick={() => setIsPopupActive(true)}
           onChange={(e) => setIcon(e.target.value)}
           placeholder="react"
         />
@@ -38,6 +62,7 @@ const NewBadge = ({ addBadge }: Props) => {
       <InputWrapper description="The color of the icon">
         <ColorInput
           formNoValidate
+          disabled={file !== null}
           value={color}
           onChange={(e) => setColor(e.target.value)}
           placeholder="#58a6ff"
@@ -47,7 +72,7 @@ const NewBadge = ({ addBadge }: Props) => {
       <Button
         disabled={
           !HEX_COLOR_REGEX.test(color) ||
-          !ICON_REGEX.test(icon) ||
+          (!ICON_REGEX.test(icon) && !file) ||
           !ICON_REGEX.test(label)
         }
         aria-label="Add Badge"
@@ -62,6 +87,7 @@ const NewBadge = ({ addBadge }: Props) => {
             label,
           });
 
+          setFile(null);
           setColor("");
           setIcon("");
           setLabel("");

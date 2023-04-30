@@ -26,7 +26,7 @@ const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
           value={
             HEX_COLOR_REGEX.test(value.toString() ?? "") ? value : "#58a6ff"
           }
-          className="h-[30.67px] w-10 cursor-pointer rounded-br-md rounded-tr-md border border-gh-border bg-gh-bg px-2 py-1 outline-0 outline-offset-0 outline-gh-blue transition-all duration-150 [outline-style:solid] hover:border-gh-border-active hover:bg-gh-gray-active"
+          className="h-[30.67px] w-10 cursor-pointer rounded-br-md rounded-tr-md border border-gh-border bg-gh-bg px-2 py-1 outline-0 outline-offset-0 outline-gh-blue transition-all duration-150 [outline-style:solid] hover:border-gh-border-active hover:bg-gh-gray-active disabled:cursor-not-allowed disabled:border-gh-border disabled:bg-gh-bg"
           {...props}
         />
       </div>
