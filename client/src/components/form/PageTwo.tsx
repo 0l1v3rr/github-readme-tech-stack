@@ -56,6 +56,9 @@ const PageTwo = () => {
             onChange={(e) =>
               setCard((prev) => ({ ...prev, backgroundColor: e.target.value }))
             }
+            setColor={(c) =>
+              setCard((prev) => ({ ...prev, backgroundColor: c }))
+            }
           />
         </InputWrapper>
 
@@ -69,6 +72,7 @@ const PageTwo = () => {
             onChange={(e) =>
               setCard((prev) => ({ ...prev, borderColor: e.target.value }))
             }
+            setColor={(c) => setCard((prev) => ({ ...prev, borderColor: c }))}
           />
         </InputWrapper>
       </Flex>
@@ -84,6 +88,7 @@ const PageTwo = () => {
             onChange={(e) =>
               setCard((prev) => ({ ...prev, titleColor: e.target.value }))
             }
+            setColor={(c) => setCard((prev) => ({ ...prev, titleColor: c }))}
           />
         </InputWrapper>
 
@@ -97,6 +102,7 @@ const PageTwo = () => {
             onChange={(e) =>
               setCard((prev) => ({ ...prev, badgeColor: e.target.value }))
             }
+            setColor={(c) => setCard((prev) => ({ ...prev, badgeColor: c }))}
           />
         </InputWrapper>
       </Flex>

@@ -13,8 +13,8 @@ const LineItem = ({ line }: Props) => {
   const { addBadge } = useMultistepContext();
 
   return (
-    <div className="w-full overflow-hidden rounded-md border border-gh-border bg-gh-bg">
-      <div className="border-b border-gh-border bg-gh-bg-secondary px-3 py-2 leading-none text-gh-text">
+    <div className="w-full rounded-md border border-gh-border bg-gh-bg">
+      <div className="rounded-tl-md rounded-tr-md border-b border-gh-border bg-gh-bg-secondary px-3 py-2 leading-none text-gh-text">
         {formatNumberWord(line.lineNumber)} line
       </div>
 

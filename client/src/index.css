@@ -3,30 +3,46 @@
 @tailwind utilities;
 
 @layer base {
-  *::-webkit-scrollbar {
-    @apply h-[.75rem] w-[.75rem];
-  }
-
-  *::-webkit-scrollbar-track {
-    @apply bg-gh-gray;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    @apply rounded-md border-[3px] border-solid border-transparent 
-      bg-gh-border bg-clip-content transition-all;
-  }
-
   body {
     @apply bg-gh-bg font-segoe;
   }
 
+  /* custom scrollbar */
+  *::-webkit-scrollbar {
+    @apply h-[.75rem] w-[.75rem];
+  }
+  *::-webkit-scrollbar-track {
+    @apply bg-gh-gray;
+  }
+  *::-webkit-scrollbar-thumb {
+    @apply rounded-md border-[3px] border-solid border-transparent bg-gh-border bg-clip-content transition-all;
+  }
+
+  /* remove the arrows from the number input fields */
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
-
   input[type="number"] {
     -moz-appearance: textfield;
     appearance: none;
+  }
+
+  /* customize the color-picker */
+  .color-input .react-colorful {
+    @apply h-32 w-32;
+  }
+  .color-input .react-colorful__hue-pointer,
+  .color-input .react-colorful__saturation-pointer {
+    @apply h-4 w-4 border;
+  }
+  .color-input .react-colorful__hue {
+    @apply h-3;
+  }
+  .color-input .react-colorful__saturation {
+    @apply mb-2 rounded-sm;
+  }
+  .color-input .react-colorful__hue {
+    @apply rounded-sm;
   }
 }

@@ -4,7 +4,6 @@ import { cn } from "../ui/utils";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import Button from "../ui/Button";
 
-// eslint-disable-next-line
 interface SvgInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
   onBtnClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
@@ -19,7 +18,6 @@ const SvgInput = forwardRef<HTMLInputElement, SvgInputProps>(
           value={value}
           type="text"
           required={required}
-          pattern={`^${required ? "" : "[]{0}|"}#[a-fA-F0-9]{6}$`}
           className="z-10 rounded-br-none rounded-tr-none transition-none [border-right:none!important]"
           {...props}
         />
