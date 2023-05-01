@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-gh-bg font-segoe;
+    @apply min-h-screen w-full overflow-x-hidden bg-gh-bg font-segoe;
   }
 
   /* custom scrollbar */

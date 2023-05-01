@@ -4,7 +4,7 @@ import { Badge } from "../../types";
 import Button from "../ui/Button";
 import { GoPlus } from "react-icons/go";
 import ColorInput from "../ui/ColorInput";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { HEX_COLOR_REGEX, ICON_REGEX } from "../../const";
 import SvgInput from "./SvgInput";
 import PopupContainer from "../ui/PopupContainer";
@@ -22,6 +22,28 @@ const NewBadge = ({ addBadge }: Props) => {
   const [isPopupActive, setIsPopupActive] = useState(false);
   const [file, setFile] = useState<null | File>(null);
 
+  const uploadFile = useCallback((file: File) => {
+    setFile(file);
+
+    // read the file as data:image...
+    const fr = new FileReader();
+    fr.readAsDataURL(file);
+    fr.onload = (e) => setIcon(e.target?.result?.toString() ?? icon);
+  }, []);
+
+  const handleBtnClick = useCallback(() => {
+    addBadge({
+      color,
+      icon,
+      label,
+    });
+
+    setFile(null);
+    setColor("");
+    setIcon("");
+    setLabel("");
+  }, [color, icon, label]);
+
   return (
     <fieldset className="flex items-start gap-4">
       <PopupContainer
@@ -31,12 +53,10 @@ const NewBadge = ({ addBadge }: Props) => {
         <Upload
           file={file}
           closePopup={() => setIsPopupActive(false)}
-          uploadFile={(file) => {
-            setFile(file);
-
-            const fr = new FileReader();
-            fr.readAsDataURL(file);
-            fr.onload = (e) => setIcon(e.target?.result?.toString() ?? icon);
+          uploadFile={uploadFile}
+          clearIcon={() => {
+            setIcon("");
+            setFile(null);
           }}
         />
       </PopupContainer>
@@ -72,27 +92,16 @@ const NewBadge = ({ addBadge }: Props) => {
 
       <Button
         disabled={
-          !HEX_COLOR_REGEX.test(color) ||
-          (!ICON_REGEX.test(icon) && !file) ||
-          !ICON_REGEX.test(label)
+          !(file === null
+            ? HEX_COLOR_REGEX.test(color) && ICON_REGEX.test(icon)
+            : true)
         }
         aria-label="Add Badge"
         icon={<GoPlus />}
         variant="success"
         size="small"
         className="h-[30.67px]"
-        onClick={() => {
-          addBadge({
-            color,
-            icon,
-            label,
-          });
-
-          setFile(null);
-          setColor("");
-          setIcon("");
-          setLabel("");
-        }}
+        onClick={handleBtnClick}
       />
     </fieldset>
   );

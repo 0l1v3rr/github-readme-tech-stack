@@ -22,7 +22,7 @@ const PopupContainer = ({ isOpen, closePopup, children }: Props) => {
 
       <div
         className={cn(
-          "absolute left-1/2 top-1/2 z-50 flex w-96 -translate-x-1/2 -translate-y-1/2 flex-col gap-2 overflow-hidden rounded-md border border-gh-border bg-gh-bg shadow-sm transition-all duration-150",
+          "fixed left-1/2 top-1/2 z-50 flex w-96 -translate-x-1/2 -translate-y-1/2 flex-col gap-2 overflow-hidden rounded-md border border-gh-border bg-gh-bg shadow-sm transition-all duration-150",
           isOpen
             ? "pointer-events-auto scale-100 select-auto opacity-100"
             : "pointer-events-none scale-50 select-none opacity-0"

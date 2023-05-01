@@ -7,9 +7,10 @@ type Props = {
   closePopup: () => void;
   file: File | null;
   uploadFile: (file: File) => void;
+  clearIcon: () => void;
 };
 
-const Upload = ({ closePopup, uploadFile, file }: Props) => {
+const Upload = ({ closePopup, uploadFile, file, clearIcon }: Props) => {
   const [isDraggedOver, setIsDraggedOver] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -74,10 +75,22 @@ const Upload = ({ closePopup, uploadFile, file }: Props) => {
       <div className="border-border flex items-stretch gap-2 border-t border-gh-border px-3 py-2">
         <Button
           size="small"
-          variant="danger"
+          variant="secondary"
           onClick={() => closePopup()}
           label="Cancel"
         />
+
+        {file !== null && (
+          <Button
+            size="small"
+            variant="danger"
+            onClick={() => {
+              clearIcon();
+              closePopup();
+            }}
+            label="Remove icon"
+          />
+        )}
       </div>
     </>
   );

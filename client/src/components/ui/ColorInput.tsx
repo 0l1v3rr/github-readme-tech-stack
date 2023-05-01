@@ -13,7 +13,7 @@ interface ColorInputProps
 }
 
 const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
-  ({ className, required, value = "", setColor, ...props }, ref) => {
+  ({ className, required, value = "", disabled, setColor, ...props }, ref) => {
     value = value.toString();
 
     const [isPickerActive, setIsPickerActive] = useState(false);
@@ -34,9 +34,10 @@ const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
           required={required}
           pattern={`^${required ? "" : "[]{0}|"}#[a-fA-F0-9]{6}$`}
           className={cn(
-            "z-10 rounded-br-none rounded-tr-none [border-right:none!important] [transition:none!important]",
+            "z-10 rounded-br-none rounded-tr-none [border-right:none!important]",
             isPickerActive ? "bg-gh-bg outline-gh-blue" : ""
           )}
+          disabled={disabled}
           {...props}
         />
 
@@ -45,18 +46,23 @@ const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
           variant="secondary"
           onFocus={() => setIsPickerActive(true)}
           style={{
-            color: HEX_COLOR_REGEX.test(value) ? value : "#58a6ff",
+            color: disabled
+              ? "#7d8590"
+              : HEX_COLOR_REGEX.test(value)
+              ? value
+              : "#58a6ff",
           }}
           className={cn(
-            "rounded-bl-none rounded-tl-none bg-gh-bg px-3 text-base [transition:none!important]",
+            "rounded-bl-none rounded-tl-none bg-gh-bg px-3 text-base",
             isPickerActive ? "outline-gh-blue hover:border-gh-border" : ""
           )}
+          disabled={disabled}
           icon={<IoMdColorFilter />}
         />
 
         <div
           className={cn(
-            "color-input absolute right-[-53%] top-[-590%] z-30 flex flex-col gap-1 overflow-hidden rounded-md border border-gh-border bg-gh-bg shadow-md",
+            "color-input absolute right-0 top-[-590%] z-30 flex translate-x-3/4 flex-col gap-1 overflow-hidden rounded-md border border-gh-border bg-gh-bg shadow-md",
             isPickerActive
               ? "pointer-events-auto opacity-100"
               : "pointer-events-none opacity-0"
