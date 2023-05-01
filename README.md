@@ -1,5 +1,7 @@
 <div align="center">
-  <h2>GitHub Readme Tech Stack</h2>
+  <a href="https://github-readme-tech-stack.vercel.app">
+    <img  src="https://github-readme-tech-stack.vercel.app/api/cards?theme=facebook&lineCount=2&line1=node.js,node.js,0;typescript,typescript,0;express,express,61DAFB&line2=vite,vite,auto;react,react,auto;tailwindcss,tailwind,auto&title=GitHub%20Readme%20Tech%20Stack&fontSize=22&align=center&titleAlign=center&width=450" title="Tech Stack">
+  </a>
 </div>
 
 <div align="center">
@@ -15,19 +17,13 @@
   <a href="https://twitter.com/intent/tweet?text=Display%20your%20favorite%20technologies%2C%20tools%2C%20or%20the%20tech%20stack%20your%20project%20uses%20with%20these%20fully%20customizable%2C%20good-looking%20cards%20on%20your%20GitHub%20README%21&url=https://github.com/0l1v3rr/github-readme-tech-stack&hashtagsgithub,readme,cards,stats,profile,shields,react,typescript,tailwindcss" target="_blank">
     <img src="https://img.shields.io/badge/Tweet-%20-%231c93e4" alt="Tweet">
   </a>
-  <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2F0l1v3rr%2Fgithub-readme-tech-stack&count_bg=%2327A968&title_bg=%235C5C5C&icon=&icon_color=%23E7E7E7&title=Views&edge_flat=false"/></a>
+  <a href="https://hits.seeyoufarm.com">
+    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2F0l1v3rr%2Fgithub-readme-tech-stack&count_bg=%2327A968&title_bg=%235C5C5C&icon=&icon_color=%23E7E7E7&title=Views&edge_flat=false"/>
+  </a>
 </div>
 
 <div align="center">
   Show off your favorite technologies, tools, or the tech stack your project uses with these fully customizable, great-looking cards on your GitHub README!
-</div>
-
-<br>
-
-<div align="center">
-  <a href="https://github-readme-tech-stack.vercel.app/api/cards?theme=facebook&lineCount=2&line1=node.js,node.js,0;typescript,typescript,0;express,express,61DAFB&line2=vite,vite,auto;react,react,auto;tailwindcss,tailwind,auto&title=This%20Project%27s%20Tech%20Stack">
-    <img  src="https://github-readme-tech-stack.vercel.app/api/cards?theme=facebook&lineCount=2&line1=node.js,node.js,0;typescript,typescript,0;express,express,61DAFB&line2=vite,vite,auto;react,react,auto;tailwindcss,tailwind,auto&title=This%20Project%27s%20Tech%20Stack" title="Tech Stack">
-  </a>
 </div>
 
 <hr>
@@ -38,8 +34,31 @@ The easiest way to get started is to visit our website, where you can customize 
 [https://github-readme-tech-stack.vercel.app](https://github-readme-tech-stack.vercel.app)
 
 <p align="center">
-    <img src="./docs/README.gif" alt="tutorial">
+  <img src="./docs/README.gif" alt="tutorial">
 </p>
+
+<hr>
+
+## ❓ Why?
+
+As a developer, it's important to showcase your expertise in different technologies to potential collaborators and employers. With **github-readme-tech-stack**, you can easily create a visual representation of the technologies used in your GitHub repository and include it in your **profile README**. This can help you stand out and attract the attention of others who are looking for developers with specific skill sets.
+
+The images are fully customizable, so you can choose the technologies you want to showcase and even adjust the colors, icons, and the alignment to match your personal brand.
+
+Personally, I've always wanted to show off my skills in a clean and modern way. I could do that with just the badges, but they didn't match the style of the [github-readme-streak-stats](https://github.com/DenverCoder1/github-readme-streak-stats) and the [github-readme-stats](https://github.com/anuraghazra/github-readme-stats). With **github-readme-tech-stack**, that's no longer a problem, it naturally matches those cards!
+
+<hr>
+
+## 👉 Features
+
+- **Easy to use:** Creating a Tech Stack image is as simple as adding a markdown tag to your `profile README`.
+- **Demo website:** github-readme-tech-stack has a demo website, where you can build your own card with no effort.
+- **Customizable:** Choose the technologies you want to showcase and customize the colors and icons to match your personal brand.
+- **Custom icons:** You can even upload and use your **own** `svg` icons if they don't already exist.
+- **Multiple themes:** These cards come with several pre-made themes that you can use. However, if none of the themes suits your style, you can easily create your **own**!
+- **Badges:** github-readme-tech-stack uses [shields.io](https://shields.io/) badges and [simple-icons](https://simpleicons.org/) under the hood.
+- **Style:** github-readme-tech-stack is designed to match the style of [github-readme-streak-stats](https://github.com/DenverCoder1/github-readme-streak-stats), [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) and many other cool tools.
+- **Open-source:** github-readme-tech-stack is open source and actively maintained, so you can be sure it will continue to be a reliable tool for showcasing your tech stack. Contributions and feature requests are always welcome.
 
 <hr>
 
@@ -65,6 +84,10 @@ None of the fields are required. Each query parameter has a default value, which
 | **lineHeight**   | `?lineHeight=10`          | 7             | The gap between the lines. Accepts a number between 0 and 30.                             |
 | **lineCount**    | `?lineCount=2`            | 1             | The number of lines you want to add to your card.                                         |
 | **line{n}**      | `?line1=html5,html5,auto` | -             | The current line of the badge, where {n} is a number. _`(1 <= n <= lineCount)`_           |
+| **bg**           | `?bg=%2383324c`           | -             | The color of the background.                                                              |
+| **border**       | `?border=%232da7c7`       | -             | The color of the border.                                                                  |
+| **badge**        | `?badge=%2383324c`        | -             | The color of the badges.                                                                  |
+| **titleColor**   | `?titleColor=%232da7c7`   | -             | The color of the title.                                                                   |
 
 <hr>
 
@@ -72,70 +95,6 @@ None of the fields are required. Each query parameter has a default value, which
 
 These cards come with several built-in themes that you can use. You can find them all by clicking [here](docs/THEMES.md).  
 If you have a cool new theme in mind, or want to add one for yourself and others, please see [#45](https://github.com/0l1v3rr/github-readme-tech-stack/issues/45).
-
-### 🖌 Customizing a theme
-
-These query parameters allow you to customize a theme.  
-These parameters only accept valid hexadecimal colors, otherwise they will not be applied. Please use `%23` instead of `#`.
-
-> **Warning**  
-> If the `?theme=` parameter is specified, any of these color adjustments will override the theme values.
-
-| Parameter      | Example                 | Description                  |
-| -------------- | ----------------------- | ---------------------------- |
-| **bg**         | `?bg=%2383324c`         | The color of the background. |
-| **border**     | `?border=%232da7c7`     | The color of the border.     |
-| **badge**      | `?badge=%2383324c`      | The color of the badges.     |
-| **titleColor** | `?titleColor=%232da7c7` | The color of the title.      |
-
-<hr>
-
-## 🧠 Tips
-
-### 🪢 Align the card in the markdown
-
-If you're using markdown, you may want to align your cards. There's an easy way to do this with the align attribute:
-
-```html
-<img
-  align="center"
-  src="https://github-readme-tech-stack.vercel.app/api/cards"
-  alt="My Tech Stack"
-/>
-```
-
-### 📚 GitHub's media feature
-
-You can use [GitHub's new feature](https://github.blog/changelog/2022-05-19-specify-theme-context-for-images-in-markdown-beta/) to specify whether to display images for light or dark mode users.
-
-```html
-<picture>
-  <source
-    srcset="
-      https://github-readme-tech-stack.vercel.app/api/cards?theme=github_dark&lineCount=1&line1=typescript,typescript,auto
-    "
-    media="(prefers-color-scheme: dark)"
-  />
-  <source
-    srcset="
-      https://github-readme-tech-stack.vercel.app/api/cards?theme=github&lineCount=1&line1=typescript,typescript,auto
-    "
-    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-  />
-  <img
-    src="https://github-readme-tech-stack.vercel.app/api/cards?theme=github&lineCount=1&line1=typescript,typescript,auto"
-  />
-</picture>
-```
-
-### 🎭 Adding custom SVG logo
-
-We support this using [Base64](https://en.wikipedia.org/wiki/Base64) format.
-**[\*](https://stackoverflow.com/questions/38985050/how-do-i-use-the-logo-option-in-shields-io-badges) Here's an easy 3-step guide:**
-
-1. Download the SVG and use one of the many online tools, e.g. [http://b64.io/](http://b64.io/), to encode it.
-2. Encode the Base64 string in [percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding). Take the Base64 string and use one of the many online tools, e.g. [http://meyerweb.com/eric/tools/dencoder/](http://meyerweb.com/eric/tools/dencoder/), to encode the string.
-3. Finally, replace the first element of a badge (the `logoName`) with this string inside the URL. (`<Base64>,typescript,2D79C7;`)
 
 <hr>
 
