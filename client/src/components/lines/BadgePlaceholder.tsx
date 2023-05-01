@@ -52,7 +52,7 @@ const BadgePlaceholder = ({ lineNumber, position }: Props) => {
       onDragLeave={() => setHovered(false)}
       onDragEnter={() => (shouldDropBeAllowed() ? setHovered(true) : {})}
       className={cn(
-        "h-[30.4px] border-r-[.5rem] border-gh-bg",
+        "h-[31.73px] border-r-[.5rem] border-gh-bg",
         hovered ? "border-l-[.5rem] bg-gh-bg-dark" : "bg-transparent"
       )}
       style={{

@@ -11,7 +11,7 @@ type Props = {
 
 const BadgeItem = ({ badge, removeBadge, lineNumber }: Props) => {
   const [dragged, setDragged] = useState(false);
-  const { setGrabbedBadge } = useMultistepContext();
+  const { setGrabbedBadge, grabbedBadge } = useMultistepContext();
 
   const handleDragStart = useCallback(
     (e: React.DragEvent<HTMLButtonElement>) => {
@@ -43,8 +43,11 @@ const BadgeItem = ({ badge, removeBadge, lineNumber }: Props) => {
         setGrabbedBadge(undefined);
       }}
       className={cn(
-        "flex cursor-grab select-none items-center gap-3 bg-gh-bg-secondary px-3 py-[.45rem] transition-all duration-150 hover:bg-gh-gray",
-        dragged ? "hidden" : ""
+        "flex cursor-grab select-none items-center gap-3 border border-gh-bg px-3 py-[.45rem] transition-all duration-150",
+        dragged
+          ? "border-gh-bg-secondary bg-gh-bg-dark text-gh-bg-dark"
+          : "bg-gh-bg-secondary text-white",
+        grabbedBadge === undefined ? "hover:bg-gh-gray" : ""
       )}
       onClick={(e) => {
         // double click
@@ -55,7 +58,7 @@ const BadgeItem = ({ badge, removeBadge, lineNumber }: Props) => {
     >
       <img
         onError={(e) => (e.currentTarget.style.display = "none")}
-        className="h-4 w-4 select-none"
+        className={cn("h-4 w-4 select-none", dragged ? "opacity-0" : "")}
         alt={`${badge.icon}`}
         // the image is in dataUrl format if starts with data:image, else display it from simpleicons
         src={
@@ -68,7 +71,7 @@ const BadgeItem = ({ badge, removeBadge, lineNumber }: Props) => {
       />
 
       {badge.label.trim().length > 0 && (
-        <span className="py-[.145rem] font-dejavu text-[.70rem] font-bold uppercase leading-none tracking-wider text-white">
+        <span className="py-[.145rem] font-dejavu text-[.70rem] font-bold uppercase leading-none tracking-wider">
           {badge.label}
         </span>
       )}
