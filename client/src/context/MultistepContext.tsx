@@ -3,7 +3,7 @@ import { useMultistepForm } from "../hooks/useMultistepForm";
 import PageOne from "../components/form/PageOne";
 import PageTwo from "../components/form/PageTwo";
 import PageThree from "../components/form/PageThree";
-import { Badge, Card } from "../types";
+import { Badge, BadgeDataTransfer, Card } from "../types";
 import PageFour from "../components/form/PageFour";
 import PageFive from "../components/form/PageFive";
 import PageSix from "../components/form/PageSix";
@@ -21,6 +21,15 @@ export interface MultistepContextType {
   setCard: React.Dispatch<React.SetStateAction<Card>>;
   addBadge: (lineNumber: number, badge: Omit<Badge, "position">) => void;
   removeBadge: (lineNumber: number, position: number) => void;
+  grabbedBadge: BadgeDataTransfer | undefined;
+  setGrabbedBadge: React.Dispatch<
+    React.SetStateAction<BadgeDataTransfer | undefined>
+  >;
+  insertBadge: (
+    lineNumber: number,
+    position: number,
+    bdt: BadgeDataTransfer
+  ) => void;
 }
 
 export const MultistepContext = createContext<MultistepContextType>(
@@ -32,6 +41,8 @@ interface MultistepProviderProps {
 }
 
 export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
+  const [grabbedBadge, setGrabbedBadge] = useState<BadgeDataTransfer>();
+
   const [card, setCard] = useState<Card>({
     title: "My Tech Stack",
     theme: "github",
@@ -50,15 +61,9 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
       {
         lineNumber: 1,
         badges: [
-          { position: 1, color: "auto", icon: "react", label: "react" },
           { position: 0, color: "auto", icon: "laravel", label: "laravel" },
-        ],
-      },
-      {
-        lineNumber: 2,
-        badges: [
-          { position: 1, color: "auto", icon: "spring", label: "spring" },
-          { position: 0, color: "auto", icon: "c", label: "c" },
+          { position: 1, color: "auto", icon: "react", label: "react" },
+          { position: 2, color: "auto", icon: "c", label: "c" },
         ],
       },
     ],
@@ -71,7 +76,7 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
 
   const updateCard = useCallback(
     () => (updated: Partial<Card>) => {
-      setCard((prev) => ({ ...prev, ...updated }));
+      setCard((prev) => ({ ...prev, updated }));
     },
     []
   );
@@ -79,8 +84,8 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
   const addBadge = useCallback(
     (lineNumber: number, badge: Omit<Badge, "position">) => {
       setCard((prev) => {
-        const newObj = { ...prev };
-        const lineIdx = newObj.lines.findIndex(
+        const newCard = structuredClone(prev);
+        const lineIdx = newCard.lines.findIndex(
           (x) => x.lineNumber === lineNumber
         );
 
@@ -88,12 +93,12 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
         if (lineIdx === -1) return prev;
 
         // update the badges
-        newObj.lines[lineIdx].badges = [
-          ...newObj.lines[lineIdx].badges,
-          { ...badge, position: newObj.lines[lineIdx].badges.length },
+        newCard.lines[lineIdx].badges = [
+          ...newCard.lines[lineIdx].badges,
+          { ...badge, position: newCard.lines[lineIdx].badges.length },
         ];
 
-        return newObj;
+        return newCard;
       });
     },
     []
@@ -101,22 +106,61 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
 
   const removeBadge = useCallback((lineNumber: number, position: number) => {
     setCard((prev) => {
-      const newObj = { ...prev };
-      const lineIdx = newObj.lines.findIndex(
+      const newCard = structuredClone(prev);
+      const lineIdx = newCard.lines.findIndex(
         (x) => x.lineNumber === lineNumber
       );
 
       // line with the specified lineNumber doesn't exist
       if (lineIdx === -1) return prev;
 
-      // remove the badge
-      newObj.lines[lineIdx].badges = newObj.lines[lineIdx].badges.filter(
-        (x) => x.position !== position
-      );
+      // remove the badge and rearrange the positions
+      newCard.lines[lineIdx].badges = newCard.lines[lineIdx].badges
+        .sort((a, z) => a.position - z.position)
+        .filter((x) => x.position !== position)
+        .map((prev, i) => ({ ...prev, position: i }));
 
-      return newObj;
+      return newCard;
     });
   }, []);
+
+  const insertBadge = useCallback(
+    (lineNumber: number, position: number, bdt: BadgeDataTransfer) => {
+      // If the grabbed badge is in the left side of the new position,
+      // we need to decrement the position by one,
+      // because we grabbed (technically removed) one from the new position's left side.
+      if (position > bdt.badge.position) position--;
+
+      setCard((prev) => {
+        const newCard = structuredClone(prev);
+        const lineIdx = newCard.lines.findIndex(
+          (x) => x.lineNumber === lineNumber
+        );
+
+        // line with the specified lineNumber doesn't exist
+        if (lineIdx === -1) return prev;
+
+        // remove the old badge
+        newCard.lines[lineIdx].badges = newCard.lines[lineIdx].badges
+          .sort((a, z) => a.position - z.position)
+          .filter((x) => x.position !== bdt.badge.position);
+
+        // insert the new badge
+        newCard.lines[lineIdx].badges.splice(position, 0, bdt.badge);
+
+        // rearrange the positions
+        newCard.lines[lineIdx].badges = newCard.lines[lineIdx].badges.map(
+          (prev, i) => ({
+            ...prev,
+            position: i,
+          })
+        );
+
+        return newCard;
+      });
+    },
+    []
+  );
 
   const {
     currentPage,
@@ -150,6 +194,9 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
         setCard,
         addBadge,
         removeBadge,
+        grabbedBadge,
+        setGrabbedBadge,
+        insertBadge,
       }}
     >
       {children}
