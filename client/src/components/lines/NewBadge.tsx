@@ -11,7 +11,7 @@ import PopupContainer from "../ui/PopupContainer";
 import Upload from "./Upload";
 
 type Props = {
-  addBadge: (badge: Badge) => void;
+  addBadge: (badge: Omit<Badge, "position">) => void;
 };
 
 const NewBadge = ({ addBadge }: Props) => {

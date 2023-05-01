@@ -2,11 +2,21 @@ import { Badge } from "../../types";
 
 type Props = {
   badge: Badge;
+  removeBadge: (position: number) => void;
 };
 
-const BadgeItem = ({ badge }: Props) => {
+const BadgeItem = ({ badge, removeBadge }: Props) => {
   return (
-    <div className="flex cursor-pointer select-none items-center gap-3 border border-solid border-gh-bg-secondary bg-gh-bg-secondary px-3 py-[.45rem] transition-all duration-150">
+    <button
+      draggable
+      className="flex cursor-grab select-none items-center gap-3 bg-gh-bg-secondary px-3 py-[.45rem] transition-all duration-150 hover:bg-gh-gray"
+      onClick={(e) => {
+        // double click
+        if (e.detail === 2) {
+          removeBadge(badge.position);
+        }
+      }}
+    >
       <img
         onError={(e) => (e.currentTarget.style.display = "none")}
         className="h-4 w-4 select-none"
@@ -26,7 +36,7 @@ const BadgeItem = ({ badge }: Props) => {
           {badge.label}
         </span>
       )}
-    </div>
+    </button>
   );
 };
 

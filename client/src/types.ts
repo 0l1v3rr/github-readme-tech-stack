@@ -37,6 +37,7 @@ export interface Line {
 }
 
 export interface Badge {
+  position: number;
   icon: string;
   label: string;
   color: string;

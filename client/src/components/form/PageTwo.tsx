@@ -4,7 +4,6 @@ import Select from "../ui/Select";
 import InputWrapper from "../ui/InputWrapper";
 import Hr from "../ui/Hr";
 import P from "../ui/P";
-import Input from "../ui/Input";
 import Quote from "../ui/Quote";
 import { useThemes } from "../../hooks/useThemes";
 import { useMultistepContext } from "../../hooks/useMultistepContext";

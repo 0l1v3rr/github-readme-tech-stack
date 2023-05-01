@@ -19,7 +19,8 @@ export interface MultistepContextType {
   card: Card;
   updateCard: () => (updated: Partial<Card>) => void;
   setCard: React.Dispatch<React.SetStateAction<Card>>;
-  addBadge: (lineNumber: number, badge: Badge) => void;
+  addBadge: (lineNumber: number, badge: Omit<Badge, "position">) => void;
+  removeBadge: (lineNumber: number, position: number) => void;
 }
 
 export const MultistepContext = createContext<MultistepContextType>(
@@ -45,7 +46,22 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
     gap: 10,
     lineHeight: 7,
     hideTitle: false,
-    lines: [{ lineNumber: 1, badges: [] }],
+    lines: [
+      {
+        lineNumber: 1,
+        badges: [
+          { position: 1, color: "auto", icon: "react", label: "react" },
+          { position: 0, color: "auto", icon: "laravel", label: "laravel" },
+        ],
+      },
+      {
+        lineNumber: 2,
+        badges: [
+          { position: 1, color: "auto", icon: "spring", label: "spring" },
+          { position: 0, color: "auto", icon: "c", label: "c" },
+        ],
+      },
+    ],
     backgroundColor: "",
     borderColor: "",
     titleColor: "",
@@ -60,7 +76,30 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
     []
   );
 
-  const addBadge = useCallback((lineNumber: number, badge: Badge) => {
+  const addBadge = useCallback(
+    (lineNumber: number, badge: Omit<Badge, "position">) => {
+      setCard((prev) => {
+        const newObj = { ...prev };
+        const lineIdx = newObj.lines.findIndex(
+          (x) => x.lineNumber === lineNumber
+        );
+
+        // line with the specified lineNumber doesn't exist
+        if (lineIdx === -1) return prev;
+
+        // update the badges
+        newObj.lines[lineIdx].badges = [
+          ...newObj.lines[lineIdx].badges,
+          { ...badge, position: newObj.lines[lineIdx].badges.length },
+        ];
+
+        return newObj;
+      });
+    },
+    []
+  );
+
+  const removeBadge = useCallback((lineNumber: number, position: number) => {
     setCard((prev) => {
       const newObj = { ...prev };
       const lineIdx = newObj.lines.findIndex(
@@ -70,11 +109,10 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
       // line with the specified lineNumber doesn't exist
       if (lineIdx === -1) return prev;
 
-      // update the badges
-      newObj.lines[lineIdx].badges = [
-        ...newObj.lines[lineIdx].badges,
-        { ...badge },
-      ];
+      // remove the badge
+      newObj.lines[lineIdx].badges = newObj.lines[lineIdx].badges.filter(
+        (x) => x.position !== position
+      );
 
       return newObj;
     });
@@ -111,6 +149,7 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
         updateCard,
         setCard,
         addBadge,
+        removeBadge,
       }}
     >
       {children}

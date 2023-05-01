@@ -10,7 +10,7 @@ type Props = {
 };
 
 const LineItem = ({ line }: Props) => {
-  const { addBadge } = useMultistepContext();
+  const { addBadge, removeBadge } = useMultistepContext();
 
   return (
     <div className="w-full rounded-md border border-gh-border bg-gh-bg">
@@ -25,9 +25,15 @@ const LineItem = ({ line }: Props) => {
           </div>
         ) : (
           <div className="flex flex-wrap gap-2">
-            {line.badges.map((badge, i) => (
-              <BadgeItem key={i} badge={badge} />
-            ))}
+            {[...line.badges]
+              .sort((a, z) => a.position - z.position)
+              .map((badge, i) => (
+                <BadgeItem
+                  key={i}
+                  badge={badge}
+                  removeBadge={(p) => removeBadge(line.lineNumber, p)}
+                />
+              ))}
           </div>
         )}
 
