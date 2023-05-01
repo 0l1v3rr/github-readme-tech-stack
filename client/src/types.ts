@@ -42,3 +42,9 @@ export interface Badge {
   label: string;
   color: string;
 }
+
+export interface BadgeDataTransfer {
+  badgeWidth: number;
+  badge: Badge;
+  lineNumber: number;
+}
