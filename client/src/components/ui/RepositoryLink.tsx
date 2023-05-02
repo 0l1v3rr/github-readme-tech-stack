@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import Button from "./Button";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { BiGitRepoForked } from "react-icons/bi";
 import { FaStar } from "react-icons/fa";
 import { GithubResponse } from "../../types";
-import axios from "axios";
+import Button from "./Button";
 
 type Props = {
   user: string;
@@ -18,11 +18,11 @@ const RepositoryLink = ({ user, repository, isPublic }: Props) => {
     description: "This is a description",
   });
 
-  // useEffect(() => {
-  //   axios
-  //     .get<GithubResponse>(`https://api.github.com/repos/${user}/${repository}`)
-  //     .then((res) => setGithubStats(res.data));
-  // }, []);
+  useEffect(() => {
+    axios
+      .get<GithubResponse>(`https://api.github.com/repos/${user}/${repository}`)
+      .then((res) => setGithubStats(res.data));
+  }, []);
 
   return (
     <div>

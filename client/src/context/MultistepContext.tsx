@@ -1,13 +1,13 @@
-import { FC, ReactNode, createContext, useState, useCallback } from "react";
-import { useMultistepForm } from "../hooks/useMultistepForm";
-import PageOne from "../components/form/PageOne";
-import PageTwo from "../components/form/PageTwo";
-import PageThree from "../components/form/PageThree";
-import { Badge, BadgeDataTransfer, Card } from "../types";
-import PageFour from "../components/form/PageFour";
+import { FC, ReactNode, createContext, useCallback, useState } from "react";
 import PageFive from "../components/form/PageFive";
+import PageFour from "../components/form/PageFour";
+import PageOne from "../components/form/PageOne";
 import PageSix from "../components/form/PageSix";
+import PageThree from "../components/form/PageThree";
+import PageTwo from "../components/form/PageTwo";
 import { INITIAL_CARD } from "../const";
+import { useMultistepForm } from "../hooks/useMultistepForm";
+import { Badge, BadgeDataTransfer, Card, Line } from "../types";
 
 export interface MultistepContextType {
   isFirstPage: boolean;
@@ -22,9 +22,7 @@ export interface MultistepContextType {
   addBadge: (lineNumber: number, badge: Omit<Badge, "position">) => void;
   removeBadge: (lineNumber: number, position: number) => void;
   grabbedBadge: BadgeDataTransfer | undefined;
-  setGrabbedBadge: React.Dispatch<
-    React.SetStateAction<BadgeDataTransfer | undefined>
-  >;
+  setGrabbedBadge: (grabbedBadge: BadgeDataTransfer | undefined) => void;
   insertBadge: (
     lineNumber: number,
     position: number,
@@ -63,25 +61,32 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
     <PageSix />,
   ]);
 
+  /**
+   * Updates the card in a way that none of the card's parameters is required.
+   *
+   * @param {Partial<Card>} updated
+   */
   const updateCard = useCallback(
     (updated: Partial<Card>) => setCard((prev) => ({ ...prev, ...updated })),
     []
   );
 
-  const addBadge = useCallback(
-    (lineNumber: number, badge: Omit<Badge, "position">) => {
+  /**
+   * Updates a line with the specified lineNumber.
+   * If the line with the lineNumber is not presented, it does nothing.
+   *
+   * @param {number} lineNumber
+   * @param {(line: Line) => void} callback
+   */
+  const updateLine = useCallback(
+    (lineNumber: number, callback: (line: Line) => void) => {
       setCard((prev) => {
         // check whether the line exists
-        const line = prev.lines.findIndex((x) => x.lineNumber === lineNumber);
-        if (line === -1) return prev;
+        const idx = prev.lines.findIndex((x) => x.lineNumber === lineNumber);
+        if (idx === -1) return prev;
 
         const newCard = structuredClone(prev);
-
-        // update the badges
-        newCard.lines[line].badges = [
-          ...newCard.lines[line].badges,
-          { ...badge, position: newCard.lines[line].badges.length },
-        ];
+        callback(newCard.lines[idx]);
 
         return newCard;
       });
@@ -89,24 +94,53 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
     []
   );
 
-  const removeBadge = useCallback((lineNumber: number, position: number) => {
-    setCard((prev) => {
-      // check whether the line exists
-      const line = prev.lines.findIndex((x) => x.lineNumber === lineNumber);
-      if (line === -1) return prev;
+  /**
+   * Pushes a badge to the end of a line.
+   * You should pass the badge without the position property.
+   *
+   * @param {number} lineNumber
+   * @param {Omit<Badge, "position">} badge
+   */
+  const addBadge = useCallback(
+    (lineNumber: number, badge: Omit<Badge, "position">) => {
+      updateLine(lineNumber, (line) => {
+        const { badges } = line;
+        badges.push({ position: badges.length, ...badge });
+      });
+    },
+    [updateLine]
+  );
 
-      const newCard = structuredClone(prev);
+  /**
+   * Removes a badge in the specified line at the specified position.
+   *
+   * @param {number} lineNumber
+   * @param {number} position
+   */
+  const removeBadge = useCallback(
+    (lineNumber: number, position: number) => {
+      updateLine(lineNumber, (line) => {
+        const { badges } = line;
 
-      // remove the badge and rearrange the positions
-      newCard.lines[line].badges = newCard.lines[line].badges
-        .sort((a, z) => a.position - z.position)
-        .filter((x) => x.position !== position)
-        .map((prev, i) => ({ ...prev, position: i }));
+        // remove the old badge
+        const idx = badges.map((x) => x.position).indexOf(position);
+        if (idx !== -1) badges.splice(idx, 1);
 
-      return newCard;
-    });
-  }, []);
+        // rearrange the positions
+        badges.forEach((badge, i) => (badge.position = i));
+      });
+    },
+    [updateLine]
+  );
 
+  /**
+   * Inserts a new badge in the specified line at a specified position.
+   * This function also removes the old badge from the array.
+   *
+   * @param {number} lineNumber
+   * @param {number} position
+   * @param {BadgeDataTransfer} bdt
+   */
   const insertBadge = useCallback(
     (lineNumber: number, position: number, bdt: BadgeDataTransfer) => {
       // If the grabbed badge is in the left side of the new position,
@@ -114,31 +148,24 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
       // because we grabbed (technically removed) one from the new position's left side.
       if (position > bdt.badge.position) position--;
 
-      setCard((prev) => {
-        // check whether the line exists
-        const line = prev.lines.findIndex((x) => x.lineNumber === lineNumber);
-        if (line === -1) return prev;
-
-        const newCard = structuredClone(prev);
-        const badges = newCard.lines[line].badges;
-        const badgePositions = badges.map((badge) => badge.position);
+      updateLine(lineNumber, (line) => {
+        const { badges } = line;
 
         // remove the old badge
-        const idx = badgePositions.indexOf(bdt.badge.position);
+        const idx = badges.map((x) => x.position).indexOf(bdt.badge.position);
         if (idx !== -1) badges.splice(idx, 1);
 
         // insert the new badge
         badges.splice(position, 0, bdt.badge);
-
-        // rearrange the positions
         badges.forEach((badge, i) => (badge.position = i));
-
-        return newCard;
       });
     },
-    []
+    [updateLine]
   );
 
+  /**
+   * Resets the card by setting it to it's initial state.
+   */
   const resetCard = useCallback(() => {
     goToPageFirst();
     setCard(structuredClone(INITIAL_CARD));
