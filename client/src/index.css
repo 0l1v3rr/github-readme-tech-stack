@@ -30,7 +30,7 @@
 
   /* customize the color-picker */
   .color-input .react-colorful {
-    @apply h-32 w-32;
+    @apply h-32 w-40;
   }
   .color-input .react-colorful__hue-pointer,
   .color-input .react-colorful__saturation-pointer {

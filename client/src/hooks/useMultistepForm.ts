@@ -11,6 +11,8 @@ export const useMultistepForm = (pages: ReactNode[]) => {
       pages.length - 1 !== prev ? prev + 1 : prev
     );
 
+  const goToPageFirst = () => setCurrentPageIndex(0);
+
   const isFirstPage = currentPageIndex === 0;
   const isLastPage = currentPageIndex === pages.length - 1;
 
@@ -25,5 +27,6 @@ export const useMultistepForm = (pages: ReactNode[]) => {
     previousPage,
     nextPage,
     totalPages,
+    goToPageFirst,
   };
 };

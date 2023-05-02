@@ -7,6 +7,7 @@ import { Badge, BadgeDataTransfer, Card } from "../types";
 import PageFour from "../components/form/PageFour";
 import PageFive from "../components/form/PageFive";
 import PageSix from "../components/form/PageSix";
+import { INITIAL_CARD } from "../const";
 
 export interface MultistepContextType {
   isFirstPage: boolean;
@@ -30,6 +31,7 @@ export interface MultistepContextType {
     position: number,
     bdt: BadgeDataTransfer
   ) => void;
+  resetCard: () => void;
 }
 
 export const MultistepContext = createContext<MultistepContextType>(
@@ -42,37 +44,25 @@ interface MultistepProviderProps {
 
 export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
   const [grabbedBadge, setGrabbedBadge] = useState<BadgeDataTransfer>();
+  const [card, setCard] = useState<Card>(structuredClone(INITIAL_CARD));
 
-  const [card, setCard] = useState<Card>({
-    title: "My Tech Stack",
-    theme: "github",
-    align: "left",
-    titleAlign: "left",
-    showBorder: true,
-    hideBg: false,
-    borderRadius: 4.5,
-    fontWeight: "semibold",
-    fontSize: 18,
-    fontFamily: "Segoe UI",
-    gap: 10,
-    lineHeight: 7,
-    hideTitle: false,
-    lines: [
-      {
-        lineNumber: 1,
-        badges: [
-          { position: 0, color: "auto", icon: "laravel", label: "laravel" },
-          { position: 1, color: "auto", icon: "react", label: "react" },
-          { position: 2, color: "auto", icon: "c", label: "c" },
-        ],
-      },
-    ],
-    backgroundColor: "",
-    borderColor: "",
-    titleColor: "",
-    badgeColor: "",
-    width: 495,
-  });
+  const {
+    currentPage,
+    currentPageIndex,
+    isFirstPage,
+    isLastPage,
+    previousPage,
+    nextPage,
+    totalPages,
+    goToPageFirst,
+  } = useMultistepForm([
+    <PageOne />,
+    <PageTwo />,
+    <PageThree />,
+    <PageFour />,
+    <PageFive />,
+    <PageSix />,
+  ]);
 
   const updateCard = useCallback(
     () => (updated: Partial<Card>) => {
@@ -84,18 +74,16 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
   const addBadge = useCallback(
     (lineNumber: number, badge: Omit<Badge, "position">) => {
       setCard((prev) => {
-        const newCard = structuredClone(prev);
-        const lineIdx = newCard.lines.findIndex(
-          (x) => x.lineNumber === lineNumber
-        );
+        // check whether the line exists
+        const line = prev.lines.findIndex((x) => x.lineNumber === lineNumber);
+        if (line === -1) return prev;
 
-        // line with the specified lineNumber doesn't exist
-        if (lineIdx === -1) return prev;
+        const newCard = structuredClone(prev);
 
         // update the badges
-        newCard.lines[lineIdx].badges = [
-          ...newCard.lines[lineIdx].badges,
-          { ...badge, position: newCard.lines[lineIdx].badges.length },
+        newCard.lines[line].badges = [
+          ...newCard.lines[line].badges,
+          { ...badge, position: newCard.lines[line].badges.length },
         ];
 
         return newCard;
@@ -106,16 +94,14 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
 
   const removeBadge = useCallback((lineNumber: number, position: number) => {
     setCard((prev) => {
-      const newCard = structuredClone(prev);
-      const lineIdx = newCard.lines.findIndex(
-        (x) => x.lineNumber === lineNumber
-      );
+      // check whether the line exists
+      const line = prev.lines.findIndex((x) => x.lineNumber === lineNumber);
+      if (line === -1) return prev;
 
-      // line with the specified lineNumber doesn't exist
-      if (lineIdx === -1) return prev;
+      const newCard = structuredClone(prev);
 
       // remove the badge and rearrange the positions
-      newCard.lines[lineIdx].badges = newCard.lines[lineIdx].badges
+      newCard.lines[line].badges = newCard.lines[line].badges
         .sort((a, z) => a.position - z.position)
         .filter((x) => x.position !== position)
         .map((prev, i) => ({ ...prev, position: i }));
@@ -156,22 +142,10 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
     []
   );
 
-  const {
-    currentPage,
-    currentPageIndex,
-    isFirstPage,
-    isLastPage,
-    previousPage,
-    nextPage,
-    totalPages,
-  } = useMultistepForm([
-    <PageOne />,
-    <PageTwo />,
-    <PageThree />,
-    <PageFour />,
-    <PageFive />,
-    <PageSix />,
-  ]);
+  const resetCard = useCallback(() => {
+    goToPageFirst();
+    setCard(structuredClone(INITIAL_CARD));
+  }, []);
 
   return (
     <MultistepContext.Provider
@@ -191,6 +165,7 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
         grabbedBadge,
         setGrabbedBadge,
         insertBadge,
+        resetCard,
       }}
     >
       {children}

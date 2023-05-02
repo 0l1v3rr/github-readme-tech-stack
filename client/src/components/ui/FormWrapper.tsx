@@ -19,6 +19,7 @@ const FormWrapper = ({ title, children, className, ...props }: Props) => {
     previousPage,
     nextPage,
     totalPages,
+    resetCard,
   } = useMultistepContext();
 
   return (
@@ -49,6 +50,7 @@ const FormWrapper = ({ title, children, className, ...props }: Props) => {
 
       <div className="flex items-center gap-2 border-t border-gh-border px-4 py-2">
         <Button
+          onClick={resetCard}
           label="Reset"
           variant="danger"
           size="small"
