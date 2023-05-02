@@ -132,29 +132,23 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
       if (position > bdt.badge.position) position--;
 
       setCard((prev) => {
-        const newCard = structuredClone(prev);
-        const lineIdx = newCard.lines.findIndex(
-          (x) => x.lineNumber === lineNumber
-        );
+        // check whether the line exists
+        const line = prev.lines.findIndex((x) => x.lineNumber === lineNumber);
+        if (line === -1) return prev;
 
-        // line with the specified lineNumber doesn't exist
-        if (lineIdx === -1) return prev;
+        const newCard = structuredClone(prev);
+        const badges = newCard.lines[line].badges;
+        const badgePositions = badges.map((badge) => badge.position);
 
         // remove the old badge
-        newCard.lines[lineIdx].badges = newCard.lines[lineIdx].badges
-          .sort((a, z) => a.position - z.position)
-          .filter((x) => x.position !== bdt.badge.position);
+        const idx = badgePositions.indexOf(bdt.badge.position);
+        if (idx !== -1) badges.splice(idx, 1);
 
         // insert the new badge
-        newCard.lines[lineIdx].badges.splice(position, 0, bdt.badge);
+        badges.splice(position, 0, bdt.badge);
 
         // rearrange the positions
-        newCard.lines[lineIdx].badges = newCard.lines[lineIdx].badges.map(
-          (prev, i) => ({
-            ...prev,
-            position: i,
-          })
-        );
+        badges.forEach((badge, i) => (badge.position = i));
 
         return newCard;
       });

@@ -47,7 +47,7 @@ const PageFour = () => {
       </Flex>
 
       <Flex>
-        <InputWrapper label="Show border">
+        <InputWrapper label="Border">
           <TrueFalseInput
             value={card.showBorder}
             trueLabel="Show"
@@ -67,7 +67,7 @@ const PageFour = () => {
           />
         </InputWrapper>
 
-        <InputWrapper label="Show title">
+        <InputWrapper label="Title">
           <TrueFalseInput
             value={!card.hideTitle}
             trueLabel="Show"

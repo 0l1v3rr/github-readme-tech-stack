@@ -39,8 +39,8 @@ const BadgePlaceholder = ({ lineNumber, position }: Props) => {
       e.preventDefault();
 
       insertBadge(lineNumber, position, grabbedBadge);
-      setHovered(false);
       setGrabbedBadge(undefined);
+      setHovered(false);
     },
     [grabbedBadge, insertBadge, lineNumber, position]
   );
@@ -52,8 +52,11 @@ const BadgePlaceholder = ({ lineNumber, position }: Props) => {
       onDragLeave={() => setHovered(false)}
       onDragEnter={() => (shouldDropBeAllowed() ? setHovered(true) : {})}
       className={cn(
-        "h-[31.73px] border-r-[.5rem] border-gh-bg",
-        hovered ? "border-l-[.5rem] bg-gh-bg-dark" : "bg-transparent"
+        "h-[31.73px] border-gh-bg",
+        hovered ? "border-l-[.5rem] bg-gh-bg-dark" : "bg-transparent",
+        grabbedBadge && grabbedBadge.badge.position + 1 === position
+          ? ""
+          : "border-r-[.5rem]"
       )}
       style={{
         width:

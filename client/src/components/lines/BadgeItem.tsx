@@ -44,9 +44,7 @@ const BadgeItem = ({ badge, removeBadge, lineNumber }: Props) => {
       }}
       className={cn(
         "flex cursor-grab select-none items-center gap-3 border border-gh-bg px-3 py-[.45rem] transition-all duration-150",
-        dragged
-          ? "border-gh-bg-secondary bg-gh-bg-dark text-gh-bg-dark"
-          : "bg-gh-bg-secondary text-white",
+        dragged ? "hidden" : "bg-gh-bg-secondary text-white",
         grabbedBadge === undefined ? "hover:bg-gh-gray" : ""
       )}
       onClick={(e) => {
