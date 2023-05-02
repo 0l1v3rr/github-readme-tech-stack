@@ -6,7 +6,7 @@ import InputWrapper from "../ui/InputWrapper";
 import Select from "../ui/Select";
 
 const PageThree = () => {
-  const { card, setCard } = useMultistepContext();
+  const { card, updateCard } = useMultistepContext();
 
   return (
     <FormWrapper title="Title">
@@ -17,9 +17,7 @@ const PageThree = () => {
             required
             placeholder="Title"
             value={card.title}
-            onChange={(e) =>
-              setCard((prev) => ({ ...prev, title: e.target.value }))
-            }
+            onChange={(e) => updateCard({ title: e.target.value })}
           />
         </InputWrapper>
 
@@ -32,9 +30,7 @@ const PageThree = () => {
             id="family"
             placeholder="Font Family"
             value={card.fontFamily}
-            onChange={(e) =>
-              setCard((prev) => ({ ...prev, fontFamily: e.target.value }))
-            }
+            onChange={(e) => updateCard({ fontFamily: e.target.value })}
           />
         </InputWrapper>
       </Flex>
@@ -50,9 +46,7 @@ const PageThree = () => {
             ]}
             label="Font Weight"
             selected={{ value: card.fontWeight, label: card.fontWeight }}
-            select={(val) =>
-              setCard((prev) => ({ ...prev, fontWeight: val.value }))
-            }
+            select={(val) => updateCard({ fontWeight: val.value })}
           />
         </InputWrapper>
 
@@ -65,9 +59,7 @@ const PageThree = () => {
             ]}
             label="Text Align"
             selected={{ value: card.titleAlign, label: card.titleAlign }}
-            select={(val) =>
-              setCard((prev) => ({ ...prev, titleAlign: val.value }))
-            }
+            select={(val) => updateCard({ titleAlign: val.value })}
           />
         </InputWrapper>
 
@@ -81,9 +73,7 @@ const PageThree = () => {
             placeholder="Font Size"
             value={card.fontSize}
             className="appearance-none"
-            onChange={(e) =>
-              setCard((prev) => ({ ...prev, fontSize: e.target.valueAsNumber }))
-            }
+            onChange={(e) => updateCard({ fontSize: e.target.valueAsNumber })}
           />
         </InputWrapper>
       </Flex>

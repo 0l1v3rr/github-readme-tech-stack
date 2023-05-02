@@ -7,7 +7,7 @@ import Quote from "../ui/Quote";
 import Select from "../ui/Select";
 
 const PageFive = () => {
-  const { card, setCard } = useMultistepContext();
+  const { card, updateCard } = useMultistepContext();
 
   return (
     <FormWrapper title="Lines">
@@ -21,9 +21,7 @@ const PageFive = () => {
             ]}
             label="Badges Align"
             selected={{ value: card.align, label: card.align }}
-            select={(val) =>
-              setCard((prev) => ({ ...prev, fontWeight: val.value }))
-            }
+            select={(val) => updateCard({ align: val.value })}
           />
         </InputWrapper>
 
@@ -39,12 +37,11 @@ const PageFive = () => {
             max={6}
             value={card.lines.length}
             onChange={(e) =>
-              setCard((prev) => ({
-                ...prev,
+              updateCard({
                 lines: Array.from({ length: e.target.valueAsNumber }).map(
                   (_, i) => ({ lineNumber: i + 1, badges: [] })
                 ),
-              }))
+              })
             }
           />
         </InputWrapper>
@@ -62,9 +59,7 @@ const PageFive = () => {
             min={0}
             max={32}
             value={card.gap}
-            onChange={(e) =>
-              setCard((prev) => ({ ...prev, gap: e.target.valueAsNumber }))
-            }
+            onChange={(e) => updateCard({ gap: e.target.valueAsNumber })}
           />
         </InputWrapper>
 
@@ -79,12 +74,7 @@ const PageFive = () => {
             min={0}
             max={32}
             value={card.lineHeight}
-            onChange={(e) =>
-              setCard((prev) => ({
-                ...prev,
-                lineHeight: e.target.valueAsNumber,
-              }))
-            }
+            onChange={(e) => updateCard({ lineHeight: e.target.valueAsNumber })}
           />
         </InputWrapper>
       </Flex>

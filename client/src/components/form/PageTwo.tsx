@@ -12,7 +12,7 @@ import ColorInput from "../ui/ColorInput";
 
 const PageTwo = () => {
   const themes = useThemes();
-  const { card, setCard } = useMultistepContext();
+  const { card, updateCard } = useMultistepContext();
 
   return (
     <FormWrapper title="Theme">
@@ -35,7 +35,7 @@ const PageTwo = () => {
           label: theme,
           value: theme,
         }))}
-        select={(val) => setCard((prev) => ({ ...prev, theme: val.value }))}
+        select={(val) => updateCard({ theme: val.value })}
       />
 
       <Hr />
@@ -47,31 +47,21 @@ const PageTwo = () => {
       <Flex>
         <InputWrapper label="Background color" htmlFor="bg-color">
           <ColorInput
-            pattern="^[]{0}|#([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$"
             placeholder="#0B0E14"
-            className="w-full"
             id="bg-color"
             value={card.backgroundColor}
-            onChange={(e) =>
-              setCard((prev) => ({ ...prev, backgroundColor: e.target.value }))
-            }
-            setColor={(c) =>
-              setCard((prev) => ({ ...prev, backgroundColor: c }))
-            }
+            onChange={(e) => updateCard({ backgroundColor: e.target.value })}
+            setColor={(c) => updateCard({ backgroundColor: c })}
           />
         </InputWrapper>
 
         <InputWrapper label="Border color" htmlFor="border-color">
           <ColorInput
-            pattern="^[]{0}|#([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$"
             placeholder="#151B26"
-            className="w-full"
             id="border-color"
             value={card.borderColor}
-            onChange={(e) =>
-              setCard((prev) => ({ ...prev, borderColor: e.target.value }))
-            }
-            setColor={(c) => setCard((prev) => ({ ...prev, borderColor: c }))}
+            onChange={(e) => updateCard({ borderColor: e.target.value })}
+            setColor={(c) => updateCard({ borderColor: c })}
           />
         </InputWrapper>
       </Flex>
@@ -79,29 +69,21 @@ const PageTwo = () => {
       <Flex>
         <InputWrapper label="Title color" htmlFor="title-color">
           <ColorInput
-            pattern="^[]{0}|#([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$"
             placeholder="#FF4747"
-            className="w-full"
             id="title-color"
             value={card.titleColor}
-            onChange={(e) =>
-              setCard((prev) => ({ ...prev, titleColor: e.target.value }))
-            }
-            setColor={(c) => setCard((prev) => ({ ...prev, titleColor: c }))}
+            onChange={(e) => updateCard({ titleColor: e.target.value })}
+            setColor={(c) => updateCard({ titleColor: c })}
           />
         </InputWrapper>
 
         <InputWrapper label="Badge color" htmlFor="badge-color">
           <ColorInput
-            pattern="^[]{0}|#([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$"
             placeholder="#10151F"
-            className="w-full"
             id="badge-color"
             value={card.badgeColor}
-            onChange={(e) =>
-              setCard((prev) => ({ ...prev, badgeColor: e.target.value }))
-            }
-            setColor={(c) => setCard((prev) => ({ ...prev, badgeColor: c }))}
+            onChange={(e) => updateCard({ badgeColor: e.target.value })}
+            setColor={(c) => updateCard({ badgeColor: c })}
           />
         </InputWrapper>
       </Flex>

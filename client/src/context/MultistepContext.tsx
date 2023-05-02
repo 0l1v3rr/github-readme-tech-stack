@@ -18,8 +18,7 @@ export interface MultistepContextType {
   previousPage: () => void;
   nextPage: () => void;
   card: Card;
-  updateCard: () => (updated: Partial<Card>) => void;
-  setCard: React.Dispatch<React.SetStateAction<Card>>;
+  updateCard: (updated: Partial<Card>) => void;
   addBadge: (lineNumber: number, badge: Omit<Badge, "position">) => void;
   removeBadge: (lineNumber: number, position: number) => void;
   grabbedBadge: BadgeDataTransfer | undefined;
@@ -65,9 +64,7 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
   ]);
 
   const updateCard = useCallback(
-    () => (updated: Partial<Card>) => {
-      setCard((prev) => ({ ...prev, updated }));
-    },
+    (updated: Partial<Card>) => setCard((prev) => ({ ...prev, ...updated })),
     []
   );
 
@@ -159,7 +156,6 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
         totalPages,
         card,
         updateCard,
-        setCard,
         addBadge,
         removeBadge,
         grabbedBadge,

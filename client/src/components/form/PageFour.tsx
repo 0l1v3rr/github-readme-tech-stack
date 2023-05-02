@@ -6,7 +6,7 @@ import InputWrapper from "../ui/InputWrapper";
 import TrueFalseInput from "../ui/TrueFalseInput";
 
 const PageFour = () => {
-  const { card, setCard } = useMultistepContext();
+  const { card, updateCard } = useMultistepContext();
 
   return (
     <FormWrapper title="Card">
@@ -20,9 +20,7 @@ const PageFour = () => {
             min={16}
             max={2048}
             value={card.width}
-            onChange={(e) =>
-              setCard((prev) => ({ ...prev, width: e.target.valueAsNumber }))
-            }
+            onChange={(e) => updateCard({ width: e.target.valueAsNumber })}
           />
         </InputWrapper>
 
@@ -37,10 +35,7 @@ const PageFour = () => {
             step={0.5}
             value={card.borderRadius}
             onChange={(e) =>
-              setCard((prev) => ({
-                ...prev,
-                borderRadius: e.target.valueAsNumber,
-              }))
+              updateCard({ borderRadius: e.target.valueAsNumber })
             }
           />
         </InputWrapper>
@@ -52,9 +47,7 @@ const PageFour = () => {
             value={card.showBorder}
             trueLabel="Show"
             falseLabel="Hide"
-            setValue={(val) =>
-              setCard((prev) => ({ ...prev, showBorder: val }))
-            }
+            setValue={(val) => updateCard({ showBorder: val })}
           />
         </InputWrapper>
 
@@ -63,7 +56,7 @@ const PageFour = () => {
             value={!card.hideBg}
             trueLabel="Show"
             falseLabel="Hide"
-            setValue={(val) => setCard((prev) => ({ ...prev, hideBg: !val }))}
+            setValue={(val) => updateCard({ hideBg: !val })}
           />
         </InputWrapper>
 
@@ -72,9 +65,7 @@ const PageFour = () => {
             value={!card.hideTitle}
             trueLabel="Show"
             falseLabel="Hide"
-            setValue={(val) =>
-              setCard((prev) => ({ ...prev, hideTitle: !val }))
-            }
+            setValue={(val) => updateCard({ hideTitle: !val })}
           />
         </InputWrapper>
       </Flex>

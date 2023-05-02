@@ -13,8 +13,8 @@ export const useOuterClick = <T extends HTMLElement>(
   });
 
   useEffect(() => {
-    const handleClick = (e: any) => {
-      if (ref.current && !ref.current?.contains(e.target)) {
+    const handleClick = (e: MouseEvent) => {
+      if (ref.current && !ref.current?.contains(e.target as Node)) {
         callbackRef.current();
       }
     };
