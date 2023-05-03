@@ -16,16 +16,7 @@ export const INITIAL_CARD: Card = {
   gap: 10,
   lineHeight: 7,
   hideTitle: false,
-  lines: [
-    {
-      lineNumber: 1,
-      badges: [
-        { position: 0, color: "auto", icon: "laravel", label: "laravel" },
-        { position: 1, color: "auto", icon: "react", label: "react" },
-        { position: 2, color: "auto", icon: "c", label: "c" },
-      ],
-    },
-  ],
+  lines: [{ lineNumber: 1, badges: [] }],
   backgroundColor: "",
   borderColor: "",
   titleColor: "",
