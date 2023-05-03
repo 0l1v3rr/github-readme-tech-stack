@@ -8,6 +8,7 @@ import PageTwo from "../components/form/PageTwo";
 import { INITIAL_CARD } from "../const";
 import { useMultistepForm } from "../hooks/useMultistepForm";
 import { Badge, BadgeDataTransfer, Card, Line } from "../types";
+import PageSeven from "../components/form/PageSeven";
 
 export interface MultistepContextType {
   isFirstPage: boolean;
@@ -59,6 +60,7 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
     <PageFour />,
     <PageFive />,
     <PageSix />,
+    <PageSeven />,
   ]);
 
   /**

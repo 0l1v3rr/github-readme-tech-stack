@@ -37,6 +37,7 @@ const BadgeItem = ({ badge, removeBadge, lineNumber }: Props) => {
   return (
     <button
       draggable
+      type="button"
       onDragStart={handleDragStart}
       onDragEnd={() => {
         setDragged(false);

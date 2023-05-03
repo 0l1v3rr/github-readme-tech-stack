@@ -86,7 +86,7 @@ const NewBadge = ({ addBadge }: Props) => {
           value={color}
           onChange={(e) => setColor(e.target.value)}
           setColor={(c) => setColor(c)}
-          placeholder="#58a6ff"
+          placeholder={file === null ? "#58a6ff" : ""}
         />
       </InputWrapper>
 
