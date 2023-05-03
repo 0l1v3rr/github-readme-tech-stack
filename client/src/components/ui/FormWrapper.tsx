@@ -1,6 +1,5 @@
 import { FormHTMLAttributes, ReactNode } from "react";
 import { AiOutlineSetting } from "react-icons/ai";
-import { BsSendCheck } from "react-icons/bs";
 import { CgErase, CgEnter } from "react-icons/cg";
 import Button from "./Button";
 import { cn } from "./utils";
@@ -68,10 +67,11 @@ const FormWrapper = ({ title, children, className, ...props }: Props) => {
 
         <Button
           type="submit"
-          label={isLastPage ? "Generate" : "Next"}
+          disabled={isLastPage}
+          label="Next"
           variant="success"
           size="small"
-          icon={isLastPage ? <BsSendCheck /> : <CgEnter />}
+          icon={<CgEnter />}
         />
       </div>
     </form>

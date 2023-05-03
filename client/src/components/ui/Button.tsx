@@ -8,7 +8,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         success:
-          "bg-gh-green border-gh-green-active hover:bg-gh-green-active disabled:bg-gh-green-disabled",
+          "bg-gh-green border-gh-green-active hover:bg-gh-green-active disabled:bg-gh-green-disabled disabled:border-gh-green-disabled-border disabled:text-gh-text-secondary",
         secondary:
           "bg-gh-gray border-gh-border hover:bg-gh-gray-active hover:border-gh-border-active disabled:border-gh-border disabled:text-gh-text-secondary disabled:bg-gh-gray",
         danger:
