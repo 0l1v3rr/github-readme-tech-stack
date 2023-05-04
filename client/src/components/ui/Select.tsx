@@ -1,4 +1,11 @@
-import { ButtonHTMLAttributes, FC, useState, useMemo } from "react";
+import {
+  ButtonHTMLAttributes,
+  FC,
+  useState,
+  useMemo,
+  useRef,
+  useEffect,
+} from "react";
 import { SelectOption } from "../../types";
 import { AiFillCaretDown } from "react-icons/ai";
 import { FiCheck } from "react-icons/fi";
@@ -24,6 +31,17 @@ const Select: FC<SelectProps> = ({
 }) => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [filterText, setFilterText] = useState<string>("");
+  const selectedRef = useRef<HTMLLIElement | null>(null);
+
+  useEffect(
+    () =>
+      selectedRef.current?.scrollIntoView({
+        block: "center",
+        inline: "start",
+        behavior: "smooth",
+      }),
+    [isActive, selected]
+  );
 
   const filteredOptions = useMemo(() => {
     if (!filter) return [...options];
@@ -87,6 +105,7 @@ const Select: FC<SelectProps> = ({
           {filteredOptions.length > 0 ? (
             filteredOptions.map((option, i) => (
               <li
+                ref={option.value === selected.value ? selectedRef : undefined}
                 onClick={() => select(option)}
                 className={cn(
                   "flex items-center gap-4 px-4 py-1.5 text-left text-sm hover:bg-gh-blue",

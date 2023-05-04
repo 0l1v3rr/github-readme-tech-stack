@@ -188,7 +188,7 @@ class CardBuilder {
         line += `${encodeURI(b.icon)},${encodeURI(b.label)},${color};`;
       }
 
-      this.url += line;
+      this.url += `${line}&`;
     }
 
     return this;
