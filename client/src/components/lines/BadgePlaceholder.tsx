@@ -54,7 +54,9 @@ const BadgePlaceholder = ({ lineNumber, position }: Props) => {
       className={cn(
         "h-[31.73px] border-gh-bg",
         hovered ? "border-l-[.5rem] bg-gh-bg-dark" : "bg-transparent",
-        grabbedBadge && grabbedBadge.badge.position + 1 === position
+        grabbedBadge &&
+          grabbedBadge.lineNumber === lineNumber &&
+          grabbedBadge.badge.position + 1 === position
           ? ""
           : "border-r-[.5rem]"
       )}
