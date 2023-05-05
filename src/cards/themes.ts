@@ -6,17 +6,17 @@ import { Theme } from "./types";
  */
 export const themes: Map<string, Theme> = new Map<string, Theme>();
 
-themes.set("github", {
-  backgroundColor: "#FFFFFF",
-  borderColor: "#D8DEE4",
-  titleColor: "#0969DA",
-  badgeColor: "#EAEFFC",
-});
 themes.set("github_dark", {
   backgroundColor: "#0D1117",
   borderColor: "#21262D",
   titleColor: "#58A6FF",
   badgeColor: "#161B22",
+});
+themes.set("github", {
+  backgroundColor: "#FFFFFF",
+  borderColor: "#D8DEE4",
+  titleColor: "#0969DA",
+  badgeColor: "#EAEFFC",
 });
 themes.set("github_dark_green", {
   backgroundColor: "#0D1117",
@@ -286,7 +286,7 @@ themes.set("fleet", {
 /**
  * Searches for the specified theme in the themes map.
  * If the theme is not present in the map, then the default
- * github theme gets returned.
+ * github_dark theme gets returned.
  *
  * @param {string} name The name of the theme.
  * @returns {Theme} The found theme.

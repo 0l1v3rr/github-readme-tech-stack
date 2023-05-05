@@ -7,7 +7,7 @@
     "build": "tsc -p .",
     "build:client": "npm run build --prefix client",
     "start": "node dist/app.js",
-    "start:client": "npm start --prefix client",
+    "start:client": "npm run dev --prefix client",
     "deploy": "npm run deploy --prefix client",
     "dev": "nodemon src/app.ts",
     "format": "prettier --write .",

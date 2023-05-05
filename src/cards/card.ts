@@ -20,7 +20,7 @@ export default class Card {
 
   public constructor() {
     this.title = "My Tech Stack";
-    this.theme = getThemeByName("github");
+    this.theme = getThemeByName("github_dark");
     this.badgeAlign = "left";
     this.titleAlign = "left";
     this.showBorder = true;
