@@ -1,10 +1,10 @@
 import { Card } from "./types";
 
-export const ICON_REGEX = /^[a-zA-Z]{3,32}$/;
+export const ICON_REGEX = /^[a-zA-Z-_ ]{2,32}$/;
 export const HEX_COLOR_REGEX = /#[a-fA-F0-9]{6}$/;
 export const INITIAL_CARD: Card = {
   title: "My Tech Stack",
-  theme: "github",
+  theme: "github_dark",
   align: "left",
   titleAlign: "left",
   showBorder: true,
