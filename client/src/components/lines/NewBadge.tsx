@@ -86,14 +86,16 @@ const NewBadge = ({ addBadge }: Props) => {
           value={color}
           onChange={(e) => setColor(e.target.value)}
           setColor={(c) => setColor(c)}
-          placeholder={file === null ? "#58a6ff" : ""}
+          placeholder={file === null ? "#58a6ff" : "auto"}
+          canBeAuto={true}
         />
       </InputWrapper>
 
       <Button
         disabled={
           !(file === null
-            ? HEX_COLOR_REGEX.test(color) && ICON_REGEX.test(icon)
+            ? (HEX_COLOR_REGEX.test(color) || color.toLowerCase() === "auto") &&
+              ICON_REGEX.test(icon)
             : true)
         }
         aria-label="Add Badge"

@@ -11,10 +11,22 @@ import { BsArrowRepeat } from "react-icons/bs";
 interface ColorInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
   setColor: (color: string) => void;
+  canBeAuto?: boolean;
 }
 
 const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
-  ({ className, required, value = "", disabled, setColor, ...props }, ref) => {
+  (
+    {
+      className,
+      required,
+      value = "",
+      disabled,
+      setColor,
+      canBeAuto = false,
+      ...props
+    },
+    ref
+  ) => {
     value = value.toString();
 
     const [isPickerActive, setIsPickerActive] = useState(false);
@@ -33,7 +45,9 @@ const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
           onFocus={() => setIsPickerActive(true)}
           type="text"
           required={required}
-          pattern={`^${required ? "" : "[]{0}|"}#[a-fA-F0-9]{6}$`}
+          pattern={`^${required ? "" : "[]{0}|"}${
+            canBeAuto ? "auto|" : ""
+          }#[a-fA-F0-9]{6}$`}
           className={cn(
             "z-10 rounded-br-none rounded-tr-none [border-right:none!important]",
             isPickerActive ? "outline-2 outline-gh-blue" : ""
