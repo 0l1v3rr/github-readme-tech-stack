@@ -78,8 +78,8 @@ const Select: FC<SelectProps> = ({
 
       <div
         className={cn(
-          "absolute left-0 top-10 border border-gh-border bg-gh-bg-secondary",
-          "z-50 w-full overflow-hidden rounded-md shadow-md transition-all duration-100",
+          "absolute left-0 top-10 border border-gh-border bg-gh-bg-secondary shadow-popup",
+          "z-50 w-full overflow-hidden rounded-md transition-all duration-100",
           isActive
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"

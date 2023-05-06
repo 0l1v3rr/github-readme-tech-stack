@@ -36,6 +36,10 @@ export default {
         segoe: ["Segoe UI", "Tahoma", "Geneva", "Verdana", "sans-serif"],
         dejavu: ["DejaVu Sans", "sans-serif"],
       },
+      boxShadow: {
+        popup: "0 2px 10px rgba(0,0,0,.5)",
+        card: "1px 3px 10px rgba(0,0,0,.25)",
+      },
     },
   },
   plugins: [],

@@ -59,7 +59,7 @@ const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
 
         <div
           className={cn(
-            "color-input absolute right-0 top-[-630%] z-30 flex translate-x-[77%] flex-col gap-1 overflow-hidden rounded-md border border-gh-border bg-gh-bg shadow-md transition-all duration-150",
+            "color-input absolute right-0 top-[-630%] z-30 flex translate-x-[77%] flex-col gap-1 overflow-hidden rounded-md border border-gh-border bg-gh-bg shadow-popup transition-all duration-150",
             isPickerActive
               ? "pointer-events-auto opacity-100"
               : "pointer-events-none opacity-0"

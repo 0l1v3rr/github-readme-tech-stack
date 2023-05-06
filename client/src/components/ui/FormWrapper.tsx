@@ -28,7 +28,7 @@ const FormWrapper = ({ title, children, className, ...props }: Props) => {
         e.currentTarget.reportValidity();
         nextPage();
       }}
-      className="h-full w-full rounded-md border border-gh-border"
+      className="h-full w-full rounded-md border border-gh-border shadow-card"
       {...props}
     >
       <div className="flex select-none items-center gap-4 rounded-tl-md rounded-tr-md border-b border-gh-border bg-gh-bg-secondary px-4 py-3 leading-none">

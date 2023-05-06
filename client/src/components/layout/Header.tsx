@@ -12,8 +12,8 @@ const Header = () => {
       <div className="border-t border-gh-border pt-2">
         <h1 className="text-xl text-gh-text">Create your tech-stack card</h1>
         <p className="text-[.8rem] text-gh-text-secondary">
-          Create your Tech Stack card in a few easy steps using our{" "}
-          <span className="font-semibold text-gh-lime">options wizard</span>!
+          Create your Tech Stack card in a{" "}
+          <span className="font-semibold text-gh-lime">few easy steps</span>!
         </p>
       </div>
     </div>
