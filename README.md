@@ -94,7 +94,8 @@ None of the fields are required. Each query parameter has a default value, which
 ## 🪁 Themes
 
 These cards come with several built-in themes that you can use. You can find them all by clicking [here](docs/THEMES.md).  
-If you have a cool new theme in mind, or want to add one for yourself and others, please see [#45](https://github.com/0l1v3rr/github-readme-tech-stack/issues/45).
+If you have a cool new theme in mind, or want to add one for yourself and others, please see [#45](https://github.com/0l1v3rr/github-readme-tech-stack/issues/45).  
+You can also customize the themes. It's easier to do with the [demo website](#⚡-quick-start).
 
 <hr>
 
