@@ -147,5 +147,5 @@ This project is released under the [MIT License](LICENSE).
 - [github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
 - [github-profile-summary-cards](https://github.com/vn7n24fzkq/github-profile-summary-cards)
 - [markdown-badges](https://github.com/Ileriayo/markdown-badges)
-- [simple-icons](https://simpleicons.org/)
 - [shields.io](https://shields.io/)
+- [simple-icons](https://simpleicons.org/)
