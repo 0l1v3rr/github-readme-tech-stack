@@ -48,3 +48,10 @@ export interface BadgeDataTransfer {
   badge: Badge;
   lineNumber: number;
 }
+
+export interface Theme {
+  backgroundColor: string;
+  borderColor: string;
+  titleColor: string;
+  badgeColor: string;
+}

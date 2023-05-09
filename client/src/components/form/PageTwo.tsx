@@ -9,39 +9,63 @@ import { useThemes } from "../../hooks/useThemes";
 import { useMultistepContext } from "../../hooks/useMultistepContext";
 import Flex from "../layout/Flex";
 import ColorInput from "../ui/ColorInput";
+import Button from "../ui/Button";
+import { useCallback } from "react";
+import axios from "axios";
+import { Theme } from "../../types";
 
 const PageTwo = () => {
   const themes = useThemes();
   const { card, updateCard } = useMultistepContext();
 
+  const loadColors = useCallback(() => {
+    axios
+      .get<Theme>(
+        `https://github-readme-tech-stack.vercel.app/api/themes/${card.theme}`
+      )
+      .then((res) =>
+        updateCard({
+          backgroundColor: res.data.backgroundColor,
+          borderColor: res.data.borderColor,
+          titleColor: res.data.titleColor,
+          badgeColor: res.data.badgeColor,
+        })
+      );
+  }, [card.theme, updateCard]);
+
   return (
     <FormWrapper title="Theme">
       <P>
-        First, please select the theme you would like to use. We have tons of
-        ready-made themes you can use. The themes are available{" "}
+        We have tons of ready-made themes you can use. The themes are available{" "}
         <Link href="https://github.com/0l1v3rr/github-readme-tech-stack/blob/master/docs/THEMES.md">
           here
         </Link>
         .
       </P>
 
-      <Select
-        id="themes"
-        label="Themes"
-        className="w-[50%]"
-        filter={true}
-        selected={{ label: card.theme, value: card.theme }}
-        options={themes.map((theme) => ({
-          label: theme,
-          value: theme,
-        }))}
-        select={(val) => updateCard({ theme: val.value })}
-      />
+      <Flex>
+        <Select
+          id="themes"
+          label="Themes"
+          className="w-[60%]"
+          filter={true}
+          selected={{ label: card.theme, value: card.theme }}
+          options={themes.map((theme) => ({
+            label: theme,
+            value: theme,
+          }))}
+          select={(val) => updateCard({ theme: val.value })}
+        />
+
+        <Button label="Load Colors" onClick={loadColors} />
+      </Flex>
 
       <Hr />
 
       <P>
-        If none of these themes fits your needs, you can customize it below:
+        If none of these themes suits your needs, you can customize them below.
+        By clicking the "Load Colors" button above, the colors of the selected
+        theme will be loaded into the input fields below.
       </P>
 
       <Flex>
