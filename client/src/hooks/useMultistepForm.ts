@@ -1,7 +1,12 @@
 import { ReactNode, useState } from "react";
+import { useSearchParams } from "./useSearchParams";
 
 export const useMultistepForm = (pages: ReactNode[]) => {
-  const [currentPageIndex, setCurrentPageIndex] = useState<number>(0);
+  const params = useSearchParams();
+  const [currentPageIndex, setCurrentPageIndex] = useState<number>(() => {
+    const idx = params.get("page");
+    return idx === null ? 0 : Number(idx);
+  });
 
   const previousPage = () =>
     setCurrentPageIndex((prev) => (prev > 0 ? prev - 1 : prev));
