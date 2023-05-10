@@ -1,9 +1,10 @@
-import { FormHTMLAttributes, ReactNode } from "react";
+import { FormHTMLAttributes, ReactNode, useCallback, useState } from "react";
 import { AiOutlineSetting } from "react-icons/ai";
 import { CgErase, CgEnter } from "react-icons/cg";
 import Button from "./Button";
 import { cn } from "./utils";
 import { useMultistepContext } from "../../hooks/useMultistepContext";
+import { BsClipboardCheck, BsClipboard } from "react-icons/bs";
 
 interface Props extends FormHTMLAttributes<HTMLFormElement> {
   title: string;
@@ -12,6 +13,7 @@ interface Props extends FormHTMLAttributes<HTMLFormElement> {
 
 const FormWrapper = ({ title, children, className, ...props }: Props) => {
   const {
+    card,
     isFirstPage,
     isLastPage,
     currentPageIndex,
@@ -20,6 +22,19 @@ const FormWrapper = ({ title, children, className, ...props }: Props) => {
     totalPages,
     resetCard,
   } = useMultistepContext();
+
+  const [copied, setCopied] = useState(false);
+
+  const copyCardUrl = useCallback(() => {
+    setCopied(true);
+    navigator.clipboard.writeText(
+      `https://0l1v3rr.github.io/github-readme-tech-stack?card=${JSON.stringify(
+        card
+      )}&page=${currentPageIndex}`
+    );
+
+    setTimeout(() => setCopied(false), 1000);
+  }, [card, currentPageIndex]);
 
   return (
     <form
@@ -54,6 +69,15 @@ const FormWrapper = ({ title, children, className, ...props }: Props) => {
           variant="danger"
           size="small"
           icon={<CgErase />}
+        />
+
+        <Button
+          onClick={copyCardUrl}
+          label={copied ? "Copied" : "Copy Card URL"}
+          variant="secondary"
+          size="small"
+          className={copied ? "text-gh-lime-active" : ""}
+          icon={copied ? <BsClipboardCheck /> : <BsClipboard />}
         />
 
         <Button
