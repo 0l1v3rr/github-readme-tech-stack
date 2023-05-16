@@ -4,7 +4,6 @@
     "silent": true
   },
   "public": true,
-  "builds": [{ "src": "./src/(.*)" }],
   "routes": [
     {
       "src": "/robots.txt",
