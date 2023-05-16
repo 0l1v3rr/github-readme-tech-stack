@@ -4,7 +4,7 @@
     "silent": true
   },
   "public": true,
-  "builds": [{ "src": "/(.*)" }],
+  "builds": [{ "src": "./src/(.*)" }],
   "routes": [
     {
       "src": "/robots.txt",
@@ -13,10 +13,6 @@
     {
       "src": "/favicon.ico",
       "status": 204
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/src/app.ts"
     }
   ]
 }
