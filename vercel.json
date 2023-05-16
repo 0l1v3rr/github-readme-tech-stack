@@ -6,12 +6,7 @@
   "public": true,
   "routes": [
     {
-      "src": "/robots.txt",
-      "status": 204
-    },
-    {
-      "src": "/favicon.ico",
-      "status": 204
+      "src": "/(.*)"
     }
   ]
 }
