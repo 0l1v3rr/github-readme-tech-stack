@@ -1,8 +1,5 @@
 .github
 .husky
-client
-client_old
-coverage
 docs
 node_modules
 scripts

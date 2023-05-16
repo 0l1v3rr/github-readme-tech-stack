@@ -12,7 +12,7 @@ printf "It also generates a ${RED}<tr>${NC} tag, so you can paste it inside the 
 read -p "theme name > " THEME
 
 VERCEL_BASE="https://github-readme-tech-stack.vercel.app/api/cards"
-BASE="http://localhost:8080/api/cards"
+BASE="http://localhost:3000/api/cards"
 PARAMS="?theme=${THEME}&title=${THEME}&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB"
 
 LINK="${BASE}${PARAMS}"

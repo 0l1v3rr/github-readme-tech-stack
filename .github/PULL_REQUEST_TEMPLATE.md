@@ -1,7 +1,9 @@
 ## Description
+
 Please include a summary of the change and which issue is fixed.
 
 ## Type of change
+
 Please delete options that are not relevant.
 
 - [ ] Bug fix (non-breaking change which fixes an issue)
@@ -10,6 +12,7 @@ Please delete options that are not relevant.
 - [ ] This change requires a documentation update
 
 ## Checklist:
+
 - [ ] My code follows the style and structure of this project
 - [ ] My code follows the principles of clean code
 - [ ] My changes generate no new warnings, bugs or errors

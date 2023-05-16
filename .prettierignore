@@ -1,6 +1,5 @@
-.github
 build
 dist
 node_modules
-coverage
-client/build
+.next
+out

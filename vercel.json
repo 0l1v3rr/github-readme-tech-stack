@@ -4,12 +4,6 @@
     "silent": true
   },
   "public": true,
-  "builds": [
-    {
-      "src": "src/app.ts",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
     {
       "src": "/robots.txt",

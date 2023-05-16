@@ -17,3 +17,15 @@ export const formatHexColor = (color: string): string => {
 
   return color.replace("#", "%23");
 };
+
+/**
+ * Function to determine if a string is a valid hexadecimal color.
+ * Starts with #, 3 or 6 characters long, contains only hexadecimal values
+ *
+ * @param {string} color The color string.
+ * @returns {boolean} True if the color is valid.
+ */
+export const isHexColor = (color: string): boolean => {
+  const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+  return hexColorRegex.test(color);
+};
