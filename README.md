@@ -1,26 +1,8 @@
 <div align="center">
   <a href="https://github-readme-tech-stack.vercel.app">
-    <img  src="https://github-readme-tech-stack.vercel.app/api/cards?title=GitHub%20Readme%20Tech%20Stack&align=center&titleAlign=center&fontSize=22&lineHeight=10&lineCount=2&theme=windows&width=450&line1=node.js,node.js,auto;typescript,typescript,auto;express,express,ffffff;&line2=react,react,auto;tailwindcss,tailwind,auto;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiBjbGFzcz0iaWNvbmlmeSBpY29uaWZ5LS1sb2dvcyIgd2lkdGg9IjMxLjg4IiBoZWlnaHQ9IjMyIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0IiB2aWV3Qm94PSIwIDAgMjU2IDI1NyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJJY29uaWZ5SWQxODEzMDg4ZmUxZmJjMDFmYjQ2NiIgeDE9Ii0uODI4JSIgeDI9IjU3LjYzNiUiIHkxPSI3LjY1MiUiIHkyPSI3OC40MTElIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNDFEMUZGIj48L3N0b3A+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjQkQzNEZFIj48L3N0b3A+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9Ikljb25pZnlJZDE4MTMwODhmZTFmYmMwMWZiNDY3IiB4MT0iNDMuMzc2JSIgeDI9IjUwLjMxNiUiIHkxPSIyLjI0MiUiIHkyPSI4OS4wMyUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNGRkVBODMiPjwvc3RvcD48c3RvcCBvZmZzZXQ9IjguMzMzJSIgc3RvcC1jb2xvcj0iI0ZGREQzNSI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI0ZGQTgwMCI+PC9zdG9wPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGZpbGw9InVybCgjSWNvbmlmeUlkMTgxMzA4OGZlMWZiYzAxZmI0NjYpIiBkPSJNMjU1LjE1MyAzNy45MzhMMTM0Ljg5NyAyNTIuOTc2Yy0yLjQ4MyA0LjQ0LTguODYyIDQuNDY2LTExLjM4Mi4wNDhMLjg3NSAzNy45NThjLTIuNzQ2LTQuODE0IDEuMzcxLTEwLjY0NiA2LjgyNy05LjY3bDEyMC4zODUgMjEuNTE3YTYuNTM3IDYuNTM3IDAgMCAwIDIuMzIyLS4wMDRsMTE3Ljg2Ny0yMS40ODNjNS40MzgtLjk5MSA5LjU3NCA0Ljc5NiA2Ljg3NyA5LjYyWiI+PC9wYXRoPjxwYXRoIGZpbGw9InVybCgjSWNvbmlmeUlkMTgxMzA4OGZlMWZiYzAxZmI0NjcpIiBkPSJNMTg1LjQzMi4wNjNMOTYuNDQgMTcuNTAxYTMuMjY4IDMuMjY4IDAgMCAwLTIuNjM0IDMuMDE0bC01LjQ3NCA5Mi40NTZhMy4yNjggMy4yNjggMCAwIDAgMy45OTcgMy4zNzhsMjQuNzc3LTUuNzE4YzIuMzE4LS41MzUgNC40MTMgMS41MDcgMy45MzYgMy44MzhsLTcuMzYxIDM2LjA0N2MtLjQ5NSAyLjQyNiAxLjc4MiA0LjUgNC4xNTEgMy43OGwxNS4zMDQtNC42NDljMi4zNzItLjcyIDQuNjUyIDEuMzYgNC4xNSAzLjc4OGwtMTEuNjk4IDU2LjYyMWMtLjczMiAzLjU0MiAzLjk3OSA1LjQ3MyA1Ljk0MyAyLjQzN2wxLjMxMy0yLjAyOGw3Mi41MTYtMTQ0LjcyYzEuMjE1LTIuNDIzLS44OC01LjE4Ni0zLjU0LTQuNjcybC0yNS41MDUgNC45MjJjLTIuMzk2LjQ2Mi00LjQzNS0xLjc3LTMuNzU5LTQuMTE0bDE2LjY0Ni01Ny43MDVjLjY3Ny0yLjM1LTEuMzctNC41ODMtMy43NjktNC4xMTNaIj48L3BhdGg+PC9zdmc+,vite,;" title="Tech Stack">
+    <img src="https://github-readme-tech-stack.vercel.app/api/cards?title=GitHub%20Readme%20Tech%20Stack&align=center&titleAlign=center&fontSize=22&lineHeight=10&lineCount=2&theme=rainglow&width=450&bg=%230e1114&badge=%2312161a&border=%2312161a&titleColor=%2321c0d1&line1=react,react,auto;tailwindcss,tailwindcss,auto;axios,axios,5A29E4;&line2=next.js,next.js,ffffff;typescript,typescript,auto;prettier,prettier,auto;" alt="GitHub Readme Tech Stack" />
   </a>
 </div>
-
-<!--<div align="center">
-  <a href="https://github.com/0l1v3rr/github-readme-tech-stack/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=" target="_blank">
-    <img src="https://img.shields.io/badge/Request%20Feature-%20-%234cd137" alt="Request Feature">
-  </a>
-  <a href="https://github.com/0l1v3rr/github-readme-tech-stack/issues/new?assignees=&labels=bug&template=bug_report.md&title=" target="_blank">
-    <img src="https://img.shields.io/badge/Report%20Bug-%20-%23e74c3c" alt="Report Bug">
-  </a>
-  <a href="https://github-readme-tech-stack.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/Demo%20Website-%20-%239b59b6" alt="Demo Website">
-  </a>
-  <a href="https://twitter.com/intent/tweet?text=Display%20your%20favorite%20technologies%2C%20tools%2C%20or%20the%20tech%20stack%20your%20project%20uses%20with%20these%20fully%20customizable%2C%20good-looking%20cards%20on%20your%20GitHub%20README%21&url=https://github.com/0l1v3rr/github-readme-tech-stack&hashtagsgithub,readme,cards,stats,profile,shields,react,typescript,tailwindcss" target="_blank">
-    <img src="https://img.shields.io/badge/Tweet-%20-%231c93e4" alt="Tweet">
-  </a>
-  <a href="https://hits.seeyoufarm.com">
-    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2F0l1v3rr%2Fgithub-readme-tech-stack&count_bg=%2327A968&title_bg=%235C5C5C&icon=&icon_color=%23E7E7E7&title=Views&edge_flat=false"/>
-  </a>
-</div>-->
 
 <div align="center">
   Show off your favorite technologies, tools, or the tech stack your project uses with these fully customizable, great-looking cards on your GitHub README!
@@ -104,8 +86,6 @@ You can also customize the themes. It's easier to do with the [demo website](#âš
 If you don't have NodeJS, [download and install it](https://nodejs.org/en/).  
 Then open a terminal and type the following commands:
 
-**Backend:**
-
 ```sh
 # Clone the project:
 git clone https://github.com/0l1v3rr/github-readme-tech-stack.git
@@ -117,18 +97,6 @@ npm run prepare
 
 # Run the application:
 npm run dev
-```
-
-**Frontend:**
-
-```sh
-cd client
-
-# Install the dependencies:
-npm i
-
-# Run the application:
-npm start
 ```
 
 <hr>

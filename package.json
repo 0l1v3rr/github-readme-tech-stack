@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "20.1.5",
@@ -44,5 +45,8 @@
   "bugs": {
     "url": "https://github.com/0l1v3rr/github-readme-tech-stack/issues"
   },
-  "homepage": "https://github-readme-tech-stack.vercel.app"
+  "homepage": "https://github-readme-tech-stack.vercel.app",
+  "devDependencies": {
+    "husky": "^8.0.3"
+  }
 }
