@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils/cn";
 import { useState } from "react";
 import { MdCheck, MdContentCopy } from "react-icons/md";
-
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import xml from "react-syntax-highlighter/dist/esm/languages/hljs/xml";
 import theme from "react-syntax-highlighter/dist/esm/styles/hljs/vs2015";

@@ -1,6 +1,6 @@
+import { generateLink } from "@/lib/card/card-url-builder";
+import { useMultistepContext } from "@/hooks/useMultistepContext";
 import { useMemo } from "react";
-import { generateLink } from "../utils/generate";
-import { useMultistepContext } from "./useMultistepContext";
 
 export const useCardUrl = () => {
   const { card } = useMultistepContext();

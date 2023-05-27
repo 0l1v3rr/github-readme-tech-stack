@@ -1,10 +1,10 @@
 "use client";
 
-import { useContext } from "react";
 import {
   MultistepContext,
   MultistepContextType,
-} from "../context/MultistepContext";
+} from "@/context/MultistepContext";
+import { useContext } from "react";
 
 export const useMultistepContext = (): MultistepContextType => {
   return useContext(MultistepContext) as MultistepContextType;

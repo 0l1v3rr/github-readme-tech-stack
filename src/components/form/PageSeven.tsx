@@ -10,11 +10,7 @@ const PageSeven = () => {
 
   return (
     <FormWrapper title="Your Card" className="items-center px-6">
-      <img
-        className="select-none"
-        src={url}
-        alt={card.title}
-      />
+      <img className="select-none" src={url} alt={card.title} />
 
       <CodeWrapper title="URL">
         <CodeBlock code={url} />

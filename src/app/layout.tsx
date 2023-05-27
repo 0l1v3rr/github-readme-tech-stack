@@ -1,6 +1,6 @@
-import { Metadata } from "next";
 import "./globals.css";
 import { MultistepProvider } from "@/context/MultistepContext";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "GitHub Readme Tech Stack",

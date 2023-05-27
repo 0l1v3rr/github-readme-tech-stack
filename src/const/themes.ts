@@ -285,7 +285,7 @@ themes.set("fleet", {
 
 /**
  * Searches for the specified theme in the themes map.
- * If the theme is not present in the map, then 
+ * If the theme is not present in the map, then
  * the default github_dark theme gets returned.
  */
 export const getThemeByName = (name: string): Theme => {

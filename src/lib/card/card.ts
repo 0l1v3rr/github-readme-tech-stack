@@ -1,5 +1,5 @@
 import { getThemeByName } from "@/const/themes";
-import { Badge, Align, FontWeight, Theme } from "@/types";
+import { Align, Badge, FontWeight, Theme } from "@/types";
 
 export default class Card {
   private title: string;

@@ -1,8 +1,8 @@
-import { z } from "zod";
-import Card from "./card";
 import { getThemeByName } from "@/const/themes";
-import { Badge } from "@/types";
+import Card from "@/lib/card/card";
 import { isHexColor } from "@/lib/utils/validator";
+import { Badge } from "@/types";
+import { z } from "zod";
 
 const title = z.string();
 const lineCount = z.number().min(1).catch(1);
@@ -16,15 +16,6 @@ const fontSize = z.number().min(15).max(30).catch(18);
 const fontFamily = z.string().min(3).max(16).catch("Segoe UI");
 const gap = z.number().min(0).max(30).catch(10);
 const lineHeight = z.number().min(0).max(30).catch(7);
-
-// const numberThatAcceptsString = z.preprocess((input) => {
-//   const processed = z
-//     .string()
-//     .regex(/^\d+$/)
-//     .transform(Number)
-//     .safeParse(input);
-//   return processed.success ? processed.data : input;
-// }, z.number().min(15).max(30).catch(18));
 
 export default class CardBuilder {
   private card: Card;

@@ -1,7 +1,7 @@
+import { HEX_COLOR_REGEX, INITIAL_CARD } from "@/const/card";
 import { Card, Line } from "@/types";
-import { INITIAL_CARD, HEX_COLOR_REGEX } from "@/const/card";
 
-class CardBuilder {
+class CardUrlBuilder {
   private url: string;
 
   public constructor() {
@@ -225,7 +225,7 @@ export const generateLink = ({
   borderColor,
   titleColor,
 }: Card): string => {
-  return new CardBuilder()
+  return new CardUrlBuilder()
     .title(title)
     .align(align)
     .titleAlign(titleAlign)
