@@ -1,6 +1,6 @@
-import { useCallback, useState } from "react";
 import { useMultistepContext } from "@/hooks/useMultistepContext";
-import { cn } from "../ui/utils";
+import { cn } from "@/lib/utils/cn";
+import { useCallback, useState } from "react";
 
 type Props = {
   lineNumber: number;

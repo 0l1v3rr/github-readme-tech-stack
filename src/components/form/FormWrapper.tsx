@@ -1,9 +1,9 @@
+import Button from "@/components/ui/Button";
+import { useMultistepContext } from "@/hooks/useMultistepContext";
+import { cn } from "@/lib/utils/cn";
 import { FormHTMLAttributes, ReactNode } from "react";
 import { AiOutlineSetting } from "react-icons/ai";
-import { CgErase, CgEnter } from "react-icons/cg";
-import Button from "./Button";
-import { cn } from "./utils";
-import { useMultistepContext } from "../../hooks/useMultistepContext";
+import { CgEnter, CgErase } from "react-icons/cg";
 
 interface Props extends FormHTMLAttributes<HTMLFormElement> {
   title: string;

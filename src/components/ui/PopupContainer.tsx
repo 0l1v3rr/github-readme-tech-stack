@@ -1,5 +1,5 @@
+import { cn } from "@/lib/utils/cn";
 import { ReactNode } from "react";
-import { cn } from "./utils";
 
 type Props = {
   isOpen: boolean;

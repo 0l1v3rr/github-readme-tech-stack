@@ -31,6 +31,7 @@ export type GithubResponse = {
   stargazers_count: number;
   forks_count: number;
   description: string;
+  private: boolean;
 };
 
 export type Card = {

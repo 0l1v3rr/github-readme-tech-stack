@@ -1,6 +1,6 @@
-import FormWrapper from "../ui/FormWrapper";
-import Link from "../ui/Link";
-import P from "../ui/P";
+import FormWrapper from "@/components/form/FormWrapper";
+import Link from "@/components/ui/Link";
+import P from "@/components/ui/P";
 
 const PageOne = () => {
   return (

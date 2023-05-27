@@ -1,8 +1,8 @@
+import FormWrapper from "@/components/form/FormWrapper";
+import LineItem from "@/components/lines/LineItem";
+import P from "@/components/ui/P";
+import Quote from "@/components/ui/Quote";
 import { useMultistepContext } from "@/hooks/useMultistepContext";
-import LineItem from "../lines/LineItem";
-import FormWrapper from "../ui/FormWrapper";
-import P from "../ui/P";
-import Quote from "../ui/Quote";
 
 const PageSix = () => {
   const { card } = useMultistepContext();

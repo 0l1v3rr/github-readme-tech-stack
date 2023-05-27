@@ -1,18 +1,18 @@
-import FormWrapper from "../ui/FormWrapper";
-import Link from "../ui/Link";
-import Select from "../ui/Select";
-import InputWrapper from "../ui/InputWrapper";
-import Hr from "../ui/Hr";
-import P from "../ui/P";
-import Quote from "../ui/Quote";
-import { useThemes } from "@/hooks/useThemes";
+import FormWrapper from "@/components/form/FormWrapper";
+import Flex from "@/components/layout/Flex";
+import Button from "@/components/ui/Button";
+import ColorInput from "@/components/ui/ColorInput";
+import Hr from "@/components/ui/Hr";
+import InputWrapper from "@/components/ui/InputWrapper";
+import Link from "@/components/ui/Link";
+import P from "@/components/ui/P";
+import Quote from "@/components/ui/Quote";
+import Select from "@/components/ui/Select";
 import { useMultistepContext } from "@/hooks/useMultistepContext";
-import Flex from "../layout/Flex";
-import ColorInput from "../ui/ColorInput";
-import Button from "../ui/Button";
-import { useCallback } from "react";
-import axios from "axios";
+import { useThemes } from "@/hooks/useThemes";
 import { Theme } from "@/types";
+import axios from "axios";
+import { useCallback } from "react";
 
 const PageTwo = () => {
   const themes = useThemes();

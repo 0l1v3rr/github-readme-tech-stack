@@ -1,14 +1,14 @@
-import InputWrapper from "../ui/InputWrapper";
-import Input from "../ui/Input";
-import { Badge } from "../../types";
-import Button from "../ui/Button";
-import { GoPlus } from "react-icons/go";
-import ColorInput from "../ui/ColorInput";
-import { useState, useCallback } from "react";
+import SvgInput from "@/components/lines/SvgInput";
+import Upload from "@/components/lines/Upload";
+import Button from "@/components/ui/Button";
+import ColorInput from "@/components/ui/ColorInput";
+import Input from "@/components/ui/Input";
+import InputWrapper from "@/components/ui/InputWrapper";
+import PopupContainer from "@/components/ui/PopupContainer";
 import { HEX_COLOR_REGEX, ICON_REGEX } from "@/const/card";
-import SvgInput from "./SvgInput";
-import PopupContainer from "../ui/PopupContainer";
-import Upload from "./Upload";
+import { Badge } from "@/types";
+import { useCallback, useState } from "react";
+import { GoPlus } from "react-icons/go";
 
 type Props = {
   addBadge: (badge: Omit<Badge, "position">) => void;

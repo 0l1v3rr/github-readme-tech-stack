@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const useThemes = () => {
   const [themes, setThemes] = useState<string[]>(["github", "github_dark"]);

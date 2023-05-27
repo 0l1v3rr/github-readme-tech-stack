@@ -1,12 +1,12 @@
-import { InputHTMLAttributes, forwardRef, useState } from "react";
-import Input from "./Input";
-import { cn } from "./utils";
+import Button from "@/components/ui/Button";
+import Input from "@/components/ui/Input";
 import { HEX_COLOR_REGEX } from "@/const/card";
-import { IoMdColorFilter } from "react-icons/io";
-import Button from "./Button";
-import { HexColorPicker } from "react-colorful";
 import { useOuterClick } from "@/hooks/useOuterClick";
+import { cn } from "@/lib/utils/cn";
+import { InputHTMLAttributes, forwardRef, useState } from "react";
+import { HexColorPicker } from "react-colorful";
 import { BsArrowRepeat } from "react-icons/bs";
+import { IoMdColorFilter } from "react-icons/io";
 
 interface ColorInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {

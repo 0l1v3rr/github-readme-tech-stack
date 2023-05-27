@@ -1,9 +1,9 @@
+import BadgeItem from "@/components/lines/BadgeItem";
+import BadgePlaceholder from "@/components/lines/BadgePlaceholder";
+import NewBadge from "@/components/lines/NewBadge";
 import { useMultistepContext } from "@/hooks/useMultistepContext";
+import { formatNumberWord } from "@/lib/utils/format";
 import { Line } from "@/types";
-import { formatNumberWord } from "../ui/utils";
-import BadgeItem from "./BadgeItem";
-import BadgePlaceholder from "./BadgePlaceholder";
-import NewBadge from "./NewBadge";
 import React from "react";
 
 type Props = {

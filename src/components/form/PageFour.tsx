@@ -1,9 +1,9 @@
+import FormWrapper from "@/components/form/FormWrapper";
+import Flex from "@/components/layout/Flex";
+import Input from "@/components/ui/Input";
+import InputWrapper from "@/components/ui/InputWrapper";
+import TrueFalseInput from "@/components/ui/TrueFalseInput";
 import { useMultistepContext } from "@/hooks/useMultistepContext";
-import Flex from "../layout/Flex";
-import FormWrapper from "../ui/FormWrapper";
-import Input from "../ui/Input";
-import InputWrapper from "../ui/InputWrapper";
-import TrueFalseInput from "../ui/TrueFalseInput";
 
 const PageFour = () => {
   const { card, updateCard } = useMultistepContext();

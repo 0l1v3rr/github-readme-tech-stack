@@ -1,5 +1,5 @@
+import { cn } from "@/lib/utils/cn";
 import { ReactNode } from "react";
-import { twMerge } from "tailwind-merge";
 
 type Props = {
   children: ReactNode;
@@ -9,7 +9,7 @@ type Props = {
 const Main = ({ children, className }: Props) => {
   return (
     <main
-      className={twMerge(
+      className={cn(
         "mx-auto flex min-h-screen w-full flex-col gap-2 bg-gh-bg px-4 py-6 lg:w-[48rem]",
         className
       )}

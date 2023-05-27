@@ -1,8 +1,8 @@
 import { z } from "zod";
-import { isHexColor } from "@/utils/hex-color";
 import Card from "./card";
 import { getThemeByName } from "@/const/themes";
 import { Badge } from "@/types";
+import { isHexColor } from "@/lib/utils/validator";
 
 const title = z.string();
 const lineCount = z.number().min(1).catch(1);

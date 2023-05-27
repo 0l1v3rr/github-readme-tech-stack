@@ -1,8 +1,8 @@
+import Button from "@/components/ui/Button";
+import Input from "@/components/ui/Input";
+import { cn } from "@/lib/utils/cn";
 import { InputHTMLAttributes, forwardRef } from "react";
-import Input from "../ui/Input";
-import { cn } from "../ui/utils";
 import { AiOutlineCloudUpload } from "react-icons/ai";
-import Button from "../ui/Button";
 
 interface SvgInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {

@@ -285,11 +285,8 @@ themes.set("fleet", {
 
 /**
  * Searches for the specified theme in the themes map.
- * If the theme is not present in the map, then the default
- * github_dark theme gets returned.
- *
- * @param {string} name The name of the theme.
- * @returns {Theme} The found theme.
+ * If the theme is not present in the map, then 
+ * the default github_dark theme gets returned.
  */
 export const getThemeByName = (name: string): Theme => {
   return themes.get(name.toLowerCase()) ?? Array.from(themes).at(0)![1];

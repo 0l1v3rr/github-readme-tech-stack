@@ -1,10 +1,10 @@
+import FormWrapper from "@/components/form/FormWrapper";
+import Flex from "@/components/layout/Flex";
+import Input from "@/components/ui/Input";
+import InputWrapper from "@/components/ui/InputWrapper";
+import Quote from "@/components/ui/Quote";
+import Select from "@/components/ui/Select";
 import { useMultistepContext } from "@/hooks/useMultistepContext";
-import Flex from "../layout/Flex";
-import FormWrapper from "../ui/FormWrapper";
-import Input from "../ui/Input";
-import InputWrapper from "../ui/InputWrapper";
-import Quote from "../ui/Quote";
-import Select from "../ui/Select";
 
 const PageFive = () => {
   const { card, updateCard } = useMultistepContext();

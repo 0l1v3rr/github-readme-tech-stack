@@ -1,7 +1,7 @@
+import Button from "@/components/ui/Button";
+import { cn } from "@/lib/utils/cn";
 import { useCallback, useState } from "react";
-import Button from "../ui/Button";
 import { AiOutlineCloudUpload } from "react-icons/ai";
-import { cn } from "../ui/utils";
 
 type Props = {
   closePopup: () => void;

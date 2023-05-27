@@ -1,5 +1,5 @@
+import { cn } from "@/lib/utils/cn";
 import { FC, ReactNode } from "react";
-import { cn } from "./utils";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 
 interface QuoteProps {

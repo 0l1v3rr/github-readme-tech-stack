@@ -1,7 +1,7 @@
 import Card from "./card";
 import { Badge, TextAnchor } from "@/types";
 import { fetchBadge, badgeWidth } from "@/utils/badge";
-import { formatHexColor } from "@/utils/hex-color";
+import { formatHexColor } from "../utils/format";
 
 export default class SvgGenerator {
   private width: number;

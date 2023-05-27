@@ -1,20 +1,20 @@
+import Button from "@/components/ui/Button";
+import { GithubResponse } from "@/types";
 import axios from "axios";
 import { BiGitRepoForked } from "react-icons/bi";
 import { FaStar } from "react-icons/fa";
-import { GithubResponse } from "@/types";
-import Button from "./Button";
 
 type Props = {
   user: string;
   repository: string;
-  isPublic: boolean;
 };
 
-const RepositoryLink = async ({ user, repository, isPublic }: Props) => {
+const RepositoryLink = async ({ user, repository }: Props) => {
   let githubStats: GithubResponse = {
     description: "This is a description.",
     forks_count: 12,
     stargazers_count: 61,
+    private: false,
   };
 
   try {
@@ -60,7 +60,7 @@ const RepositoryLink = async ({ user, repository, isPublic }: Props) => {
           </a>
 
           <div className="hidden select-none rounded-full border border-gh-border px-2 py-1 text-[.8rem] leading-none text-gh-border-active sm:block">
-            {isPublic ? "Public" : "Private"}
+            {githubStats.private ? "Private" : "Public"}
           </div>
         </div>
 

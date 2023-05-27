@@ -1,16 +1,16 @@
 "use client";
 
-import { FC, ReactNode, createContext, useCallback, useState } from "react";
-import { INITIAL_CARD } from "@/const/card";
-import { Badge, BadgeDataTransfer, Card, Line } from "@/types";
-import { useMultistepForm } from "@/hooks/useMultistepForm";
-import PageOne from "@/components/form/PageOne";
-import PageTwo from "@/components/form/PageTwo";
-import PageThree from "@/components/form/PageThree";
-import PageFour from "@/components/form/PageFour";
 import PageFive from "@/components/form/PageFive";
-import PageSix from "@/components/form/PageSix";
+import PageFour from "@/components/form/PageFour";
+import PageOne from "@/components/form/PageOne";
 import PageSeven from "@/components/form/PageSeven";
+import PageSix from "@/components/form/PageSix";
+import PageThree from "@/components/form/PageThree";
+import PageTwo from "@/components/form/PageTwo";
+import { INITIAL_CARD } from "@/const/card";
+import { useMultistepForm } from "@/hooks/useMultistepForm";
+import { Badge, BadgeDataTransfer, Card, Line } from "@/types";
+import { FC, ReactNode, createContext, useCallback, useState } from "react";
 
 export interface MultistepContextType {
   isFirstPage: boolean;
@@ -67,8 +67,6 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
 
   /**
    * Updates the card in a way that none of the card's parameters is required.
-   *
-   * @param {Partial<Card>} updated
    */
   const updateCard = useCallback(
     (updated: Partial<Card>) => setCard((prev) => ({ ...prev, ...updated })),
@@ -78,9 +76,6 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
   /**
    * Updates a line with the specified lineNumber.
    * If the line with the lineNumber is not presented, it does nothing.
-   *
-   * @param {number} lineNumber
-   * @param {(line: Line) => void} callback
    */
   const updateLine = useCallback(
     (lineNumber: number, callback: (line: Line) => void) => {
@@ -101,9 +96,6 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
   /**
    * Pushes a badge to the end of a line.
    * You should pass the badge without the position property.
-   *
-   * @param {number} lineNumber
-   * @param {Omit<Badge, "position">} badge
    */
   const addBadge = useCallback(
     (lineNumber: number, badge: Omit<Badge, "position">) => {
@@ -117,9 +109,6 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
 
   /**
    * Removes a badge in the specified line at the specified position.
-   *
-   * @param {number} lineNumber
-   * @param {number} position
    */
   const removeBadge = useCallback(
     (lineNumber: number, position: number) => {
@@ -140,10 +129,6 @@ export const MultistepProvider: FC<MultistepProviderProps> = ({ children }) => {
   /**
    * Inserts a new badge in the specified line at a specified position.
    * This function also removes the old badge from the array.
-   *
-   * @param {number} lineNumber
-   * @param {number} position
-   * @param {BadgeDataTransfer} bdt
    */
   const insertBadge = useCallback(
     (lineNumber: number, position: number, bdt: BadgeDataTransfer) => {

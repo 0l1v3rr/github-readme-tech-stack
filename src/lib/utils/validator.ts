@@ -1,11 +1,8 @@
+import { formatHexColor } from "@/lib/utils/format";
 import { Badge } from "@/types";
-import { formatHexColor } from "./hex-color";
 
 /**
  * Parses the width into a valid number.
- *
- * @param {string | undefined} width The width.
- * @returns {number} The parsed width.
  */
 export const parseWidth = (width: string | undefined = "495"): number => {
   if (width === "495") return 495;
@@ -18,11 +15,7 @@ export const parseWidth = (width: string | undefined = "495"): number => {
 
 /**
  * Converts the line into a Badge array.
- * If there's any error in the line,
- * it returns an empty array.
- *
- * @param {string} line The line.
- * @returns {Badge[]} The converted badges
+ * If there's any error in the line, it returns an empty array.
  */
 export const validateLine = (line: string): Badge[] => {
   // replace the comma and the semicolon if the line contains "base64"
@@ -64,4 +57,12 @@ export const validateLine = (line: string): Badge[] => {
   }
 
   return badges;
+};
+
+/**
+ * Function to determine if a string is a valid hexadecimal color.
+ */
+export const isHexColor = (color: string): boolean => {
+  const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+  return hexColorRegex.test(color);
 };

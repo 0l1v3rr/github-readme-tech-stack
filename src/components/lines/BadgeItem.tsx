@@ -1,7 +1,7 @@
-import { useCallback, useState } from "react";
-import { Badge } from "@/types";
-import { cn } from "../ui/utils";
 import { useMultistepContext } from "@/hooks/useMultistepContext";
+import { cn } from "@/lib/utils/cn";
+import { Badge } from "@/types";
+import { useCallback, useState } from "react";
 
 type Props = {
   badge: Badge;

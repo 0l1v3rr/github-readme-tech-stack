@@ -1,16 +1,16 @@
+import Input from "@/components/ui/Input";
+import { cn } from "@/lib/utils/cn";
+import { SelectOption } from "@/types";
 import {
   ButtonHTMLAttributes,
   FC,
-  useState,
+  useEffect,
   useMemo,
   useRef,
-  useEffect,
+  useState,
 } from "react";
-import { SelectOption } from "../../types";
 import { AiFillCaretDown } from "react-icons/ai";
 import { FiCheck } from "react-icons/fi";
-import { cn } from "./utils";
-import Input from "./Input";
 
 interface SelectProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   selected: SelectOption;
@@ -63,10 +63,7 @@ const Select: FC<SelectProps> = ({
         setIsActive(true);
       }}
       className={cn(
-        `relative select-none rounded-md border border-gh-border bg-gh-gray 
-        leading-none text-gh-text outline-none outline-offset-0 transition-all 
-        duration-200 hover:border-gh-border-active hover:bg-gh-gray-active 
-        focus:border-gh-border-active focus:bg-gh-gray-active`,
+        "relative select-none rounded-md border border-gh-border bg-gh-gray leading-none text-gh-text outline-none outline-offset-0 transition-all duration-200 hover:border-gh-border-active hover:bg-gh-gray-active focus:border-gh-border-active focus:bg-gh-gray-active",
         className
       )}
       {...props}

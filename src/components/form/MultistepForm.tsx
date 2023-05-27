@@ -1,6 +1,6 @@
 "use client";
 
-import { useMultistepContext } from "../../hooks/useMultistepContext";
+import { useMultistepContext } from "@/hooks/useMultistepContext";
 
 const MultistepForm = () => {
   const { currentPage } = useMultistepContext();

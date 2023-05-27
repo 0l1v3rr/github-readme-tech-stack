@@ -1,6 +1,6 @@
-import { InputHTMLAttributes, forwardRef, useCallback, useState } from "react";
+import { cn } from "@/lib/utils/cn";
 import { VariantProps, cva } from "class-variance-authority";
-import { cn } from "./utils";
+import { InputHTMLAttributes, forwardRef, useCallback, useState } from "react";
 
 const inputVariants = cva(
   "disabled:bg-gh-bg disabled:text-gh-text-secondary  w-full rounded-md px-2 py-1 leading-none outline-none bg-gh-bg-dark border border-gh-border text-gh-text active:bg-gh-bg focus:bg-gh-bg transition-all duration-150 placeholder:text-gh-border focus:outline-2 outline-offset-0",
