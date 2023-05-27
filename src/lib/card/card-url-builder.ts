@@ -2,10 +2,10 @@ import { HEX_COLOR_REGEX, INITIAL_CARD } from "@/const/card";
 import { Card, Line } from "@/types";
 
 class CardUrlBuilder {
-  private url: string;
+  private params: URLSearchParams;
 
   public constructor() {
-    this.url = "https://github-readme-tech-stack.vercel.app/api/cards?";
+    this.params = new URLSearchParams();
   }
 
   public title(title: string) {
@@ -13,7 +13,7 @@ class CardUrlBuilder {
       return this;
     }
 
-    this.url += `title=${encodeURI(title)}&`;
+    this.params.append("title", title);
     return this;
   }
 
@@ -22,7 +22,7 @@ class CardUrlBuilder {
       return this;
     }
 
-    this.url += `theme=${theme}&`;
+    this.params.append("theme", theme);
     return this;
   }
 
@@ -31,7 +31,7 @@ class CardUrlBuilder {
       return this;
     }
 
-    this.url += `showBorder=${showBorder}&`;
+    this.params.append("showBorder", showBorder ? "true" : "false");
     return this;
   }
 
@@ -40,7 +40,7 @@ class CardUrlBuilder {
       return this;
     }
 
-    this.url += `hideBg=${hideBg}&`;
+    this.params.append("hideBg", hideBg ? "true" : "false");
     return this;
   }
 
@@ -49,7 +49,7 @@ class CardUrlBuilder {
       return this;
     }
 
-    this.url += `hideTitle=${hideTitle}&`;
+    this.params.append("hideTitle", hideTitle ? "true" : "false");
     return this;
   }
 
@@ -58,7 +58,7 @@ class CardUrlBuilder {
       return this;
     }
 
-    this.url += `align=${align}&`;
+    this.params.append("align", align);
     return this;
   }
 
@@ -67,7 +67,7 @@ class CardUrlBuilder {
       return this;
     }
 
-    this.url += `titleAlign=${titleAlign}&`;
+    this.params.append("titleAlign", titleAlign);
     return this;
   }
 
@@ -76,7 +76,7 @@ class CardUrlBuilder {
       return this;
     }
 
-    this.url += `borderRadius=${borderRadius}&`;
+    this.params.append("borderRadius", borderRadius.toString());
     return this;
   }
 
@@ -85,7 +85,7 @@ class CardUrlBuilder {
       return this;
     }
 
-    this.url += `gap=${gap}&`;
+    this.params.append("gap", gap.toString());
     return this;
   }
 
@@ -94,7 +94,7 @@ class CardUrlBuilder {
       return this;
     }
 
-    this.url += `lineHeight=${lineHeight}&`;
+    this.params.append("lineHeight", lineHeight.toString());
     return this;
   }
 
@@ -103,7 +103,7 @@ class CardUrlBuilder {
       return this;
     }
 
-    this.url += `fontSize=${fontSize}&`;
+    this.params.append("fontSize", fontSize.toString());
     return this;
   }
 
@@ -112,7 +112,7 @@ class CardUrlBuilder {
       return this;
     }
 
-    this.url += `fontWeight=${fontWeight}&`;
+    this.params.append("fontWeight", fontWeight);
     return this;
   }
 
@@ -121,12 +121,12 @@ class CardUrlBuilder {
       return this;
     }
 
-    this.url += `fontFamily=${encodeURI(fontFamily)}&`;
+    this.params.append("fontFamily", fontFamily);
     return this;
   }
 
   public lineCount(lc: number) {
-    this.url += `lineCount=${lc}&`;
+    this.params.append("lineCount", lc.toString());
     return this;
   }
 
@@ -135,14 +135,14 @@ class CardUrlBuilder {
       return this;
     }
 
-    this.url += `width=${width}&`;
+    this.params.append("width", width.toString());
     return this;
   }
 
   public backgroundColor(backgroundColor: string | undefined = "") {
     if (HEX_COLOR_REGEX.test(backgroundColor)) {
       backgroundColor = backgroundColor.replace("#", "%23");
-      this.url += `bg=${backgroundColor}&`;
+      this.params.append("bg", backgroundColor);
     }
 
     return this;
@@ -151,7 +151,7 @@ class CardUrlBuilder {
   public badgeColor(badgeColor: string | undefined = "") {
     if (HEX_COLOR_REGEX.test(badgeColor)) {
       badgeColor = badgeColor.replace("#", "%23");
-      this.url += `badge=${badgeColor}&`;
+      this.params.append("badge", badgeColor);
     }
 
     return this;
@@ -160,7 +160,7 @@ class CardUrlBuilder {
   public borderColor(borderColor: string | undefined = "") {
     if (HEX_COLOR_REGEX.test(borderColor)) {
       borderColor = borderColor.replace("#", "%23");
-      this.url += `border=${borderColor}&`;
+      this.params.append("border", borderColor);
     }
 
     return this;
@@ -169,7 +169,7 @@ class CardUrlBuilder {
   public titleColor(titleColor: string | undefined = "") {
     if (HEX_COLOR_REGEX.test(titleColor)) {
       titleColor = titleColor.replace("#", "%23");
-      this.url += `titleColor=${titleColor}&`;
+      this.params.append("titleColor", titleColor);
     }
 
     return this;
@@ -182,25 +182,20 @@ class CardUrlBuilder {
         continue;
       }
 
-      let line = `line${l.lineNumber}=`;
+      let line = ``;
       for (const b of l.badges) {
         const color = b.color.replace("#", "");
-        line += `${encodeURI(b.icon)},${encodeURI(b.label)},${color};`;
+        line += `${b.icon},${b.label},${color};`;
       }
 
-      this.url += `${line}&`;
+      this.params.append(`line${l.lineNumber}`, line);
     }
 
     return this;
   }
 
   public build() {
-    const lastChar = this.url.at(-1);
-    if (["?", "&"].includes(lastChar ?? "")) {
-      this.url = this.url.slice(0, -1);
-    }
-
-    return this.url;
+    return `https://github-readme-tech-stack.vercel.app/api/cards?${this.params.toString()}`;
   }
 }
 

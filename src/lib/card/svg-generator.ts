@@ -1,7 +1,7 @@
-import Card from "@/lib/card/card";
-import { Badge, TextAnchor } from "@/types";
 import { badgeWidth, fetchBadge } from "@/lib/card/badge";
+import Card from "@/lib/card/card";
 import { formatHexColor } from "@/lib/utils/format";
+import { Badge, TextAnchor } from "@/types";
 
 export default class SvgGenerator {
   private width: number;
