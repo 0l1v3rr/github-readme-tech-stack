@@ -1,4 +1,5 @@
 import Input from "@/components/ui/Input";
+import { useOuterClick } from "@/hooks/useOuterClick";
 import { cn } from "@/lib/utils/cn";
 import { SelectOption } from "@/types";
 import {
@@ -32,13 +33,13 @@ const Select: FC<SelectProps> = ({
   const [isActive, setIsActive] = useState<boolean>(false);
   const [filterText, setFilterText] = useState<string>("");
   const selectedRef = useRef<HTMLLIElement | null>(null);
+  const mainRef = useOuterClick<HTMLButtonElement>(() => setIsActive(false));
 
   useEffect(
     () =>
       selectedRef.current?.scrollIntoView({
         block: "center",
         inline: "start",
-        behavior: "smooth",
       }),
     [isActive, selected]
   );
@@ -55,11 +56,10 @@ const Select: FC<SelectProps> = ({
 
   return (
     <button
+      ref={mainRef}
       type="button"
       value={selected.value}
-      onBlur={() => setIsActive(false)}
       onClick={(e) => {
-        e.stopPropagation();
         setIsActive(true);
       }}
       className={cn(
