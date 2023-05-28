@@ -71,7 +71,6 @@ const FormWrapper = ({ title, children, className, ...props }: Props) => {
           label="Next"
           variant="success"
           size="small"
-          icon={<CgEnter />}
         />
       </div>
     </form>
