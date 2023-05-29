@@ -24,7 +24,7 @@
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "eslint": "8.41.0",
-    "eslint-config-next": "13.4.3",
+    "eslint-config-next": "13.4.4",
     "next": "^13.4.4",
     "postcss": "8.4.23",
     "prettier": "^2.8.8",
