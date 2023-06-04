@@ -21,8 +21,8 @@ module.exports = {
 
         "gh-blue": "#2f81f7",
         "gh-blue-active": "#58a6ff",
-        "gh-green": "#238636",
-        "gh-green-active": "#2EA043",
+        "gh-green": "#207A31",
+        "gh-green-active": "#248A37",
         "gh-green-disabled-border": "#20702F",
         "gh-green-disabled": "#1A5C27",
         "gh-red": "#DA3633",
