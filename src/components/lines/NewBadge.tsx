@@ -88,7 +88,7 @@ const NewBadge = ({ addBadge }: Props) => {
           disabled={file !== null}
           value={color}
           onChange={(e) => setColor(e.target.value)}
-          setColor={(c) => setColor(c)}
+          onColorChange={(c) => setColor(c)}
           placeholder={file === null ? "#58a6ff" : "auto"}
           canBeAuto={true}
         />

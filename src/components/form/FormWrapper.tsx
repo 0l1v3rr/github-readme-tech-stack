@@ -3,7 +3,7 @@ import { useMultistepContext } from "@/hooks/useMultistepContext";
 import { cn } from "@/lib/utils/cn";
 import { FormHTMLAttributes, ReactNode } from "react";
 import { AiOutlineSetting } from "react-icons/ai";
-import { CgEnter, CgErase } from "react-icons/cg";
+import { CgErase } from "react-icons/cg";
 
 interface Props extends FormHTMLAttributes<HTMLFormElement> {
   title: string;
@@ -50,28 +50,31 @@ const FormWrapper = ({ title, children, className, ...props }: Props) => {
       <div className="flex items-center gap-2 border-t border-gh-border px-4 py-2">
         <Button
           onClick={resetCard}
-          label="Reset"
           variant="danger"
           size="small"
           icon={<CgErase />}
-        />
+        >
+          Reset
+        </Button>
 
         <Button
           onClick={previousPage}
           disabled={isFirstPage}
-          label="Previous"
           variant="secondary"
           size="small"
           className="ml-auto"
-        />
+        >
+          Previous
+        </Button>
 
         <Button
           type="submit"
           disabled={isLastPage}
-          label="Next"
           variant="success"
           size="small"
-        />
+        >
+          Next
+        </Button>
       </div>
     </form>
   );

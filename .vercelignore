@@ -1,6 +1,7 @@
 .github
 .husky
-docs
 node_modules
+**/.gitkeep
+docs
 scripts
 *.md

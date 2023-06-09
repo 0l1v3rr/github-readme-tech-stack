@@ -38,8 +38,8 @@ const Select: FC<SelectProps> = ({
   useEffect(
     () =>
       selectedRef.current?.scrollIntoView({
-        block: "center",
-        inline: "start",
+        block: "nearest",
+        inline: "nearest",
       }),
     [isActive, selected]
   );
@@ -59,9 +59,7 @@ const Select: FC<SelectProps> = ({
       ref={mainRef}
       type="button"
       value={selected.value}
-      onClick={(e) => {
-        setIsActive(true);
-      }}
+      onClick={() => setIsActive(true)}
       className={cn(
         "relative select-none rounded-md border border-gh-border bg-gh-gray leading-none text-gh-text outline-none outline-offset-0 transition-all duration-200 hover:border-gh-border-active hover:bg-gh-gray-active focus:border-gh-border-active focus:bg-gh-gray-active",
         className

@@ -15,11 +15,11 @@ const PageOne = () => {
         alt="Tech Stack"
       />
 
-      <p className="text-center text-gh-text">
+      <P className="text-center">
         This website allows you to easily customize and preview your README card
         in live. You can play around with the different settings so you don't
         have to write the query parameters manually.
-      </p>
+      </P>
 
       <P>
         You can find an example card above. It is in my{" "}

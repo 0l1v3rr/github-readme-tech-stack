@@ -76,12 +76,9 @@ const Upload = ({ closePopup, uploadFile, file, clearIcon }: Props) => {
       </div>
 
       <div className="border-border flex items-stretch gap-2 border-t border-gh-border px-3 py-2">
-        <Button
-          size="small"
-          variant="secondary"
-          onClick={() => closePopup()}
-          label="Cancel"
-        />
+        <Button size="small" variant="secondary" onClick={() => closePopup()}>
+          Cancel
+        </Button>
 
         {file !== null && (
           <Button
@@ -91,8 +88,9 @@ const Upload = ({ closePopup, uploadFile, file, clearIcon }: Props) => {
               clearIcon();
               closePopup();
             }}
-            label="Remove icon"
-          />
+          >
+            Remove icon
+          </Button>
         )}
       </div>
     </>

@@ -66,19 +66,22 @@ const RepositoryLink = async ({ user, repository }: Props) => {
 
         <div className="flex items-center gap-2">
           <Button
-            label="Fork"
             badge={githubStats.forks_count}
             variant="secondary"
             size="small"
             icon={<BiGitRepoForked className="text-gh-text-secondary" />}
-          />
+          >
+            Fork
+          </Button>
+
           <Button
-            label="Starred"
             badge={githubStats.stargazers_count}
             variant="secondary"
             size="small"
             icon={<FaStar className="text-gh-yellow" />}
-          />
+          >
+            Starred
+          </Button>
         </div>
       </div>
 

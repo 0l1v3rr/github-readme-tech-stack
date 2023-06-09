@@ -57,7 +57,7 @@ const PageTwo = () => {
           select={(val) => updateCard({ theme: val.value })}
         />
 
-        <Button label="Load Colors" onClick={loadColors} />
+        <Button onClick={loadColors}>Load Colors</Button>
       </Flex>
 
       <Hr />
@@ -75,7 +75,7 @@ const PageTwo = () => {
             id="bg-color"
             value={card.backgroundColor}
             onChange={(e) => updateCard({ backgroundColor: e.target.value })}
-            setColor={(c) => updateCard({ backgroundColor: c })}
+            onColorChange={(c) => updateCard({ backgroundColor: c })}
           />
         </InputWrapper>
 
@@ -85,7 +85,7 @@ const PageTwo = () => {
             id="border-color"
             value={card.borderColor}
             onChange={(e) => updateCard({ borderColor: e.target.value })}
-            setColor={(c) => updateCard({ borderColor: c })}
+            onColorChange={(c) => updateCard({ borderColor: c })}
           />
         </InputWrapper>
       </Flex>
@@ -97,7 +97,7 @@ const PageTwo = () => {
             id="title-color"
             value={card.titleColor}
             onChange={(e) => updateCard({ titleColor: e.target.value })}
-            setColor={(c) => updateCard({ titleColor: c })}
+            onColorChange={(c) => updateCard({ titleColor: c })}
           />
         </InputWrapper>
 
@@ -107,7 +107,7 @@ const PageTwo = () => {
             id="badge-color"
             value={card.badgeColor}
             onChange={(e) => updateCard({ badgeColor: e.target.value })}
-            setColor={(c) => updateCard({ badgeColor: c })}
+            onColorChange={(c) => updateCard({ badgeColor: c })}
           />
         </InputWrapper>
       </Flex>

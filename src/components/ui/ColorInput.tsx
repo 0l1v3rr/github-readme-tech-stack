@@ -10,7 +10,7 @@ import { IoMdColorFilter } from "react-icons/io";
 
 interface ColorInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
-  setColor: (color: string) => void;
+  onColorChange: (color: string) => void;
   canBeAuto?: boolean;
 }
 
@@ -21,7 +21,7 @@ const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
       required,
       value = "",
       disabled,
-      setColor,
+      onColorChange,
       canBeAuto = false,
       ...props
     },
@@ -79,23 +79,28 @@ const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
               : "pointer-events-none opacity-0"
           )}
         >
-          <HexColorPicker color={value} onChange={setColor} className="m-2" />
+          <HexColorPicker
+            color={value}
+            onChange={onColorChange}
+            className="m-2"
+          />
 
           <div className="flex items-center justify-center border-t border-gh-border px-4 py-1">
             <Button
               onClick={() =>
-                setColor(`#${Math.random().toString(16).slice(2, 8)}`)
+                onColorChange(`#${Math.random().toString(16).slice(2, 8)}`)
               }
               variant="secondary"
               size="small"
-              label="Random Color"
               className="text-[.8rem]"
               style={{
                 color:
                   disabled || !HEX_COLOR_REGEX.test(value) ? "#7d8590" : value,
               }}
               icon={<BsArrowRepeat className="rotate-[30deg] text-base" />}
-            />
+            >
+              Random Color
+            </Button>
           </div>
         </div>
       </div>
