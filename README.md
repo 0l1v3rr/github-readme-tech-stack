@@ -5,7 +5,7 @@
 </div>
 
 <div align="center">
-  Show off your favorite technologies, tools, or the tech stack your project uses with these fully customizable, great-looking cards on your GitHub README!
+  Show off your favorite technologies and tools by using these cards in your GitHub README.
 </div>
 
 <hr>
@@ -15,9 +15,9 @@
 The easiest way to get started is to visit our website, where you can customize and preview your card live.  
 [https://github-readme-tech-stack.vercel.app](https://github-readme-tech-stack.vercel.app)
 
-<p align="center">
+<!-- <p align="center">
   <img src="./docs/README.gif" alt="tutorial">
-</p>
+</p> -->
 
 <hr>
 
@@ -40,13 +40,15 @@ Personally, I've always wanted to show off my skills in a clean and modern way. 
 - **Multiple themes:** These cards come with several pre-made themes that you can use. However, if none of the themes suits your style, you can easily create your **own**!
 - **Badges:** github-readme-tech-stack uses [shields.io](https://shields.io/) badges and [simple-icons](https://simpleicons.org/) under the hood.
 - **Style:** github-readme-tech-stack is designed to match the style of [github-readme-streak-stats](https://github.com/DenverCoder1/github-readme-streak-stats), [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) and many other cool tools.
-- **Open-source:** github-readme-tech-stack is open source and actively maintained, so you can be sure it will continue to be a reliable tool for showcasing your tech stack. Contributions and feature requests are always welcome.
 
 <hr>
 
 ## 🔧 Query parameters
 
 None of the fields are required. Each query parameter has a default value, which is listed below.
+
+<details>
+<summary>What are the available query params?</summary>
 
 | Parameter        | Example                  | Default value | Description                                                                               |
 | ---------------- | ------------------------ | ------------- | ----------------------------------------------------------------------------------------- |
@@ -71,20 +73,18 @@ None of the fields are required. Each query parameter has a default value, which
 | **badge**        | `badge=%2383324c`        | -             | The color of the badges.                                                                  |
 | **titleColor**   | `titleColor=%232da7c7`   | -             | The color of the title.                                                                   |
 
+</details>
+
 <hr>
 
 ## 🪁 Themes
 
 These cards come with several built-in themes that you can use. You can find them all by clicking [here](docs/THEMES.md).  
-If you have a cool new theme in mind, or want to add one for yourself and others, please see [#45](https://github.com/0l1v3rr/github-readme-tech-stack/issues/45).  
 You can also customize the themes. It's easier to do with the [demo website](#⚡-quick-start).
 
 <hr>
 
 ## ⚒️ Building from source
-
-If you don't have NodeJS, [download and install it](https://nodejs.org/en/).  
-Then open a terminal and type the following commands:
 
 ```sh
 # Clone the project:
@@ -97,6 +97,9 @@ npm run prepare
 
 # Run the application:
 npm run dev
+
+# Running the storybook:
+npm run storybook
 ```
 
 <hr>
