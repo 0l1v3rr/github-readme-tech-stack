@@ -35,7 +35,7 @@ const LineItem = ({ line }: Props) => {
                   <BadgeItem
                     lineNumber={line.lineNumber}
                     badge={badge}
-                    removeBadge={(p) => removeBadge(line.lineNumber, p)}
+                    onBadgeRemoval={(p) => removeBadge(line.lineNumber, p)}
                   />
                   <BadgePlaceholder
                     lineNumber={line.lineNumber}
@@ -47,7 +47,7 @@ const LineItem = ({ line }: Props) => {
         )}
 
         <div className="mx-2 border-t border-gh-border pt-2">
-          <NewBadge addBadge={(badge) => addBadge(line.lineNumber, badge)} />
+          <NewBadge onBadgeAdd={(badge) => addBadge(line.lineNumber, badge)} />
         </div>
       </div>
     </article>

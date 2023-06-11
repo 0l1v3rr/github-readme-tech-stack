@@ -3,15 +3,15 @@ import { ReactNode } from "react";
 
 type Props = {
   isOpen: boolean;
-  closePopup: () => void;
+  onCloseBtnClick: () => void;
   children: ReactNode;
 };
 
-const PopupContainer = ({ isOpen, closePopup, children }: Props) => {
+const PopupContainer = ({ isOpen, onCloseBtnClick, children }: Props) => {
   return (
     <>
       <div
-        onClick={closePopup}
+        onClick={onCloseBtnClick}
         className={cn(
           "fixed left-0 top-0 z-40 h-screen w-screen transition-all duration-150",
           isOpen

@@ -4,13 +4,18 @@ import { useCallback, useState } from "react";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 
 type Props = {
-  closePopup: () => void;
+  onPopupCloseBtnClick: () => void;
   file: File | null;
-  uploadFile: (file: File) => void;
-  clearIcon: () => void;
+  onFileUpload: (file: File) => void;
+  onIconClear: () => void;
 };
 
-const Upload = ({ closePopup, uploadFile, file, clearIcon }: Props) => {
+const Upload = ({
+  onPopupCloseBtnClick,
+  onFileUpload,
+  file,
+  onIconClear,
+}: Props) => {
   const [isDraggedOver, setIsDraggedOver] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -30,12 +35,12 @@ const Upload = ({ closePopup, uploadFile, file, clearIcon }: Props) => {
         return;
       }
 
-      uploadFile(file);
+      onFileUpload(file);
       setIsError(false);
       setIsDraggedOver(false);
-      closePopup();
+      onPopupCloseBtnClick();
     },
-    [closePopup, uploadFile]
+    [onPopupCloseBtnClick, onFileUpload]
   );
 
   return (
@@ -76,7 +81,11 @@ const Upload = ({ closePopup, uploadFile, file, clearIcon }: Props) => {
       </div>
 
       <div className="border-border flex items-stretch gap-2 border-t border-gh-border px-3 py-2">
-        <Button size="small" variant="secondary" onClick={() => closePopup()}>
+        <Button
+          size="small"
+          variant="secondary"
+          onClick={() => onPopupCloseBtnClick()}
+        >
           Cancel
         </Button>
 
@@ -85,8 +94,8 @@ const Upload = ({ closePopup, uploadFile, file, clearIcon }: Props) => {
             size="small"
             variant="danger"
             onClick={() => {
-              clearIcon();
-              closePopup();
+              onIconClear();
+              onPopupCloseBtnClick();
             }}
           >
             Remove icon

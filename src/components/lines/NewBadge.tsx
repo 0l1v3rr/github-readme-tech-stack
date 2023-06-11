@@ -5,16 +5,18 @@ import ColorInput from "@/components/ui/ColorInput";
 import Input from "@/components/ui/Input";
 import InputWrapper from "@/components/ui/InputWrapper";
 import PopupContainer from "@/components/ui/PopupContainer";
-import { HEX_COLOR_REGEX, ICON_REGEX } from "@/const/card";
 import { Badge } from "@/types";
 import { useCallback, useState } from "react";
 import { GoPlus } from "react-icons/go";
 
+const ICON_REGEX = /^[a-zA-Z-_. ]{2,32}$/;
+const HEX_COLOR_REGEX = /#[a-fA-F0-9]{6}$/;
+
 type Props = {
-  addBadge: (badge: Omit<Badge, "position">) => void;
+  onBadgeAdd: (badge: Omit<Badge, "position">) => void;
 };
 
-const NewBadge = ({ addBadge }: Props) => {
+const NewBadge = ({ onBadgeAdd }: Props) => {
   const [icon, setIcon] = useState<string>("");
   const [label, setLabel] = useState<string>("");
   const [color, setColor] = useState<string>("");
@@ -26,7 +28,7 @@ const NewBadge = ({ addBadge }: Props) => {
     (file: File) => {
       setFile(file);
 
-      // read the file as data:image...
+      // read the file as data:image
       const fr = new FileReader();
       fr.readAsDataURL(file);
       fr.onload = (e) => setIcon(e.target?.result?.toString() ?? icon);
@@ -35,7 +37,7 @@ const NewBadge = ({ addBadge }: Props) => {
   );
 
   const handleBtnClick = useCallback(() => {
-    addBadge({
+    onBadgeAdd({
       color,
       icon,
       label,
@@ -45,19 +47,19 @@ const NewBadge = ({ addBadge }: Props) => {
     setColor("");
     setIcon("");
     setLabel("");
-  }, [color, icon, label, addBadge]);
+  }, [color, icon, label, onBadgeAdd]);
 
   return (
     <fieldset className="flex items-start gap-4">
       <PopupContainer
-        closePopup={() => setIsPopupActive(false)}
+        onCloseBtnClick={() => setIsPopupActive(false)}
         isOpen={isPopupActive}
       >
         <Upload
           file={file}
-          closePopup={() => setIsPopupActive(false)}
-          uploadFile={uploadFile}
-          clearIcon={() => {
+          onPopupCloseBtnClick={() => setIsPopupActive(false)}
+          onFileUpload={uploadFile}
+          onIconClear={() => {
             setIcon("");
             setFile(null);
           }}

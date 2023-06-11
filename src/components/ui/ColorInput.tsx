@@ -1,12 +1,13 @@
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
-import { HEX_COLOR_REGEX } from "@/const/card";
 import { useOuterClick } from "@/hooks/useOuterClick";
 import { cn } from "@/lib/utils/cn";
 import { InputHTMLAttributes, forwardRef, useState } from "react";
 import { HexColorPicker } from "react-colorful";
 import { BsArrowRepeat } from "react-icons/bs";
 import { IoMdColorFilter } from "react-icons/io";
+
+const HEX_COLOR_REGEX = /#[a-fA-F0-9]{6}$/;
 
 interface ColorInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {

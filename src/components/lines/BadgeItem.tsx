@@ -6,12 +6,12 @@ import { useCallback, useState } from "react";
 type Props = {
   badge: Badge;
   lineNumber: number;
-  removeBadge: (position: number) => void;
+  onBadgeRemoval: (position: number) => void;
 };
 
-const BadgeItem = ({ badge, removeBadge, lineNumber }: Props) => {
+const BadgeItem = ({ badge, onBadgeRemoval, lineNumber }: Props) => {
   const [dragged, setDragged] = useState(false);
-  const { setGrabbedBadge, grabbedBadge } = useMultistepContext();
+  const { grabbedBadge, setGrabbedBadge } = useMultistepContext();
 
   const handleDragStart = useCallback(
     (e: React.DragEvent<HTMLButtonElement>) => {
@@ -51,7 +51,7 @@ const BadgeItem = ({ badge, removeBadge, lineNumber }: Props) => {
       onClick={(e) => {
         // double click
         if (e.detail === 2) {
-          removeBadge(badge.position);
+          onBadgeRemoval(badge.position);
         }
       }}
     >
