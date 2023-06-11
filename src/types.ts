@@ -1,3 +1,28 @@
+/**
+ * card-specific
+ */
+export type Card = {
+  title: string;
+  theme: string;
+  align: string;
+  titleAlign: string;
+  showBorder: boolean;
+  hideBg: boolean;
+  borderRadius: number;
+  fontWeight: string;
+  fontSize: number;
+  fontFamily: string;
+  gap: number;
+  lineHeight: number;
+  hideTitle: boolean;
+  lines: Line[];
+  backgroundColor?: string;
+  borderColor?: string;
+  titleColor?: string;
+  badgeColor?: string;
+  width: number;
+};
+
 export type Theme = {
   backgroundColor: string;
   borderColor: string;
@@ -22,6 +47,9 @@ export const enum FontWeight {
   BOLD = 800,
 }
 
+/**
+ * component-specific
+ */
 export type SelectOption = {
   value: string;
   label: string;
@@ -34,35 +62,25 @@ export type GithubResponse = {
   private: boolean;
 };
 
-export type Card = {
-  title: string;
-  theme: string;
-  align: string;
-  titleAlign: string;
-  showBorder: boolean;
-  hideBg: boolean;
-  borderRadius: number;
-  fontWeight: string;
-  fontSize: number;
-  fontFamily: string;
-  gap: number;
-  lineHeight: number;
-  hideTitle: boolean;
-  lines: Line[];
-  backgroundColor?: string;
-  borderColor?: string;
-  titleColor?: string;
-  badgeColor?: string;
-  width: number;
-};
-
 export type Line = {
   lineNumber: number;
   badges: Badge[];
 };
 
+/**
+ * context-specific
+ */
 export type BadgeDataTransfer = {
   badgeWidth: number;
   badge: Badge;
   lineNumber: number;
+};
+
+/**
+ * utility
+ */
+export type OmitNull<T> = T extends null ? never : T;
+
+export type OmitNullableKeys<T> = {
+  [Key in keyof T]-?: OmitNullableKeys<OmitNull<T[Key]>>;
 };

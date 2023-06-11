@@ -1,4 +1,5 @@
-import { cn } from "@/lib/utils/cn";
+import { cn } from "../../lib/utils/cn";
+import { OmitNullableKeys } from "../../types";
 import { VariantProps, cva } from "class-variance-authority";
 import { ButtonHTMLAttributes, ReactElement, forwardRef } from "react";
 
@@ -39,7 +40,7 @@ const buttonVariants = cva(
 
 interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+    OmitNullableKeys<VariantProps<typeof buttonVariants>> {
   children?: string;
   icon?: ReactElement;
   badge?: string | number;

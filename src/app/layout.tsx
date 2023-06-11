@@ -5,7 +5,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "GitHub Readme Tech Stack",
   description:
-    "Show off your favorite technologies, tools, or the tech stack your project uses with these fully customizable cards on your GitHub README.",
+    "Show off your favorite technologies and tools by using these cards in your GitHub README.",
   keywords: [
     "react",
     "tailwind",
