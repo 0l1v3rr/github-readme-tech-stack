@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils/cn";
+import { cn } from "../../lib/utils/cn";
 import { FC, ReactNode } from "react";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 

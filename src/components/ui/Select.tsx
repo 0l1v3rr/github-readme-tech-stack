@@ -1,7 +1,7 @@
-import Input from "@/components/ui/Input";
-import { useOuterClick } from "@/hooks/useOuterClick";
-import { cn } from "@/lib/utils/cn";
-import { SelectOption } from "@/types";
+import { useOuterClick } from "../../hooks/useOuterClick";
+import { cn } from "../../lib/utils/cn";
+import { SelectOption } from "../../types";
+import Input from "./Input";
 import {
   ButtonHTMLAttributes,
   FC,

@@ -82,5 +82,5 @@ export type BadgeDataTransfer = {
 export type OmitNull<T> = T extends null ? never : T;
 
 export type OmitNullableKeys<T> = {
-  [Key in keyof T]-?: OmitNullableKeys<OmitNull<T[Key]>>;
+  [Key in keyof T]: OmitNullableKeys<OmitNull<T[Key]>>;
 };

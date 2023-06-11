@@ -1,17 +1,20 @@
-import { cn } from "@/lib/utils/cn";
+import { cn } from "../../lib/utils/cn";
 import { useState } from "react";
 import { MdCheck, MdContentCopy } from "react-icons/md";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
+import javascript from "react-syntax-highlighter/dist/esm/languages/hljs/javascript";
 import xml from "react-syntax-highlighter/dist/esm/languages/hljs/xml";
 import theme from "react-syntax-highlighter/dist/esm/styles/hljs/vs2015";
 
 SyntaxHighlighter.registerLanguage("xml", xml);
+SyntaxHighlighter.registerLanguage("javascript", javascript);
 
 type Props = {
   code: string;
+  language: "xml" | "javascript";
 };
 
-const CodeBlock = ({ code }: Props) => {
+const CodeBlock = ({ code, language }: Props) => {
   const [clicked, setClicked] = useState<boolean>(false);
 
   return (
@@ -36,7 +39,7 @@ const CodeBlock = ({ code }: Props) => {
 
       <div className="relative select-text overflow-x-auto overflow-y-hidden whitespace-nowrap rounded-md bg-gh-bg-secondary font-mono text-sm text-gh-text">
         <SyntaxHighlighter
-          language="xml"
+          language={language}
           style={theme}
           showLineNumbers={false}
           wrapLongLines={false}

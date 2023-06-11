@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils/cn";
+import { cn } from "../../lib/utils/cn";
 import { FC, HTMLAttributes } from "react";
 
 interface TrueFalseInputProps extends HTMLAttributes<HTMLDivElement> {

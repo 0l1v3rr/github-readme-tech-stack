@@ -13,15 +13,18 @@ const PageSeven = () => {
       <img className="select-none" src={url} alt={card.title} />
 
       <CodeWrapper title="URL">
-        <CodeBlock code={url} />
+        <CodeBlock language="xml" code={url} />
       </CodeWrapper>
 
       <CodeWrapper title="Markdown">
-        <CodeBlock code={`[![${card.title}](${url})`} />
+        <CodeBlock language="xml" code={`[![${card.title}](${url})`} />
       </CodeWrapper>
 
       <CodeWrapper title="HTML">
-        <CodeBlock code={`<img src="${url}" alt="${card.title}" />`} />
+        <CodeBlock
+          language="xml"
+          code={`<img src="${url}" alt="${card.title}" />`}
+        />
       </CodeWrapper>
     </FormWrapper>
   );

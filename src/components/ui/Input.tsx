@@ -1,4 +1,5 @@
-import { cn } from "@/lib/utils/cn";
+import { cn } from "../../lib/utils/cn";
+import { OmitNullableKeys } from "../../types";
 import { VariantProps, cva } from "class-variance-authority";
 import { InputHTMLAttributes, forwardRef, useCallback, useState } from "react";
 
@@ -20,7 +21,7 @@ const inputVariants = cva(
 
 interface InputProps
   extends InputHTMLAttributes<HTMLInputElement>,
-    VariantProps<typeof inputVariants> {
+    OmitNullableKeys<VariantProps<typeof inputVariants>> {
   label?: string;
 }
 
