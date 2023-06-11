@@ -141,7 +141,6 @@ class CardUrlBuilder {
 
   public backgroundColor(backgroundColor: string | undefined = "") {
     if (HEX_COLOR_REGEX.test(backgroundColor)) {
-      backgroundColor = backgroundColor.replace("#", "%23");
       this.params.append("bg", backgroundColor);
     }
 
@@ -150,7 +149,6 @@ class CardUrlBuilder {
 
   public badgeColor(badgeColor: string | undefined = "") {
     if (HEX_COLOR_REGEX.test(badgeColor)) {
-      badgeColor = badgeColor.replace("#", "%23");
       this.params.append("badge", badgeColor);
     }
 
@@ -159,7 +157,6 @@ class CardUrlBuilder {
 
   public borderColor(borderColor: string | undefined = "") {
     if (HEX_COLOR_REGEX.test(borderColor)) {
-      borderColor = borderColor.replace("#", "%23");
       this.params.append("border", borderColor);
     }
 
@@ -168,7 +165,6 @@ class CardUrlBuilder {
 
   public titleColor(titleColor: string | undefined = "") {
     if (HEX_COLOR_REGEX.test(titleColor)) {
-      titleColor = titleColor.replace("#", "%23");
       this.params.append("titleColor", titleColor);
     }
 
