@@ -79,7 +79,7 @@ const PageFive = () => {
         </InputWrapper>
       </Flex>
 
-      <Quote variant="Warning">
+      <Quote variant="danger">
         If you change the Lines parameter, your previously set lines will be
         reset.
       </Quote>

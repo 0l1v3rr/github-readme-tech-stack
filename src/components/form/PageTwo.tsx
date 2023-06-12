@@ -112,7 +112,7 @@ const PageTwo = () => {
         </InputWrapper>
       </Flex>
 
-      <Quote variant="Warning">
+      <Quote variant="warning">
         These values will override the selected theme's value!
       </Quote>
     </FormWrapper>

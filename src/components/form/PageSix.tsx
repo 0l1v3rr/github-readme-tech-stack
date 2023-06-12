@@ -15,12 +15,9 @@ const PageSix = () => {
         previous page.
       </P>
 
-      <Quote variant="Info">
-        &minus; You can drag and drop the badges to rearrange them or
-        double-click to delete them.
-        <br />
-        &minus; To infer the original icon color, you can type "auto" instead of
-        picking a color from the color picker.
+      <Quote variant="info">
+        You can drag and drop the badges to rearrange them or double-click to
+        delete them.
       </Quote>
 
       {card.lines.map((line) => (
