@@ -29,8 +29,6 @@ export default class SvgGenerator {
   /**
    * Generates the SVG card from the Card
    * variable passed in the constructor.
-   *
-   * @returns {string} The generated raw SVG.
    */
   public toString = async (): Promise<string> => {
     // default values: left title align
@@ -75,15 +73,14 @@ export default class SvgGenerator {
         />
 
         ${
-          this.card.getHideTitle()
-            ? ""
-            : `<g transform="translate(${textTranslateX}, ${
-                17 + this.card.getFontSize()
-              })">
-                <text x="${textXPercent}%" y="0" text-anchor="${textAnchor}" class="header">
-                  ${this.card.getTitle()}
-                </text>
-               </g>`
+          !this.card.getHideTitle() &&
+          `<g transform="translate(${textTranslateX}, ${
+            17 + this.card.getFontSize()
+          })">
+            <text x="${textXPercent}%" y="0" text-anchor="${textAnchor}" class="header">
+              ${this.card.getTitle()}
+            </text>
+          </g>`
         }
 
         ${await this.generateLines()}
@@ -102,8 +99,8 @@ export default class SvgGenerator {
   private generateLines = async (): Promise<string> => {
     const promises: Promise<string>[] = [];
 
-    for (const line of this.card.getLinesMap()) {
-      promises.push(this.createLine(line[1], line[0]));
+    for (const [lineNumber, badge] of this.card.getLinesMap()) {
+      promises.push(this.createLine(badge, lineNumber));
     }
 
     const resolved = await Promise.all(promises);

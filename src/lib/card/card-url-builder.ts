@@ -1,5 +1,7 @@
-import { HEX_COLOR_REGEX, INITIAL_CARD } from "@/const/card";
+import { INITIAL_CARD } from "@/const/card";
 import { Card, Line } from "@/types";
+
+const HEX_COLOR_REGEX = /#[a-fA-F0-9]{6}$/;
 
 class CardUrlBuilder {
   private params: URLSearchParams;
