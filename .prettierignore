@@ -3,3 +3,5 @@ dist
 node_modules
 .next
 out
+package.json
+package-lock.json

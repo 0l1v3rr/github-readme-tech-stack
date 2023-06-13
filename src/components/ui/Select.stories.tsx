@@ -6,14 +6,14 @@ const meta: Meta<typeof Select> = {
   component: Select,
   // tags: ["autodocs"],
   args: {
+    label: "Countries",
+    value: { label: "Hungary", value: "hungary" },
+    onSelect: () => {},
     options: [
       { label: "Hungary", value: "hungary" },
       { label: "UK", value: "uk" },
       { label: "USA", value: "usa" },
     ],
-    select: () => {},
-    selected: { label: "Hungary", value: "hungary" },
-    label: "Countries",
   },
 };
 
