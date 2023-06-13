@@ -14,14 +14,14 @@ const PageFive = () => {
       <Flex>
         <InputWrapper label="Badges Align">
           <Select
+            label="Badges Align"
+            value={{ value: card.align, label: card.align }}
+            onSelect={(val) => updateCard({ align: val.value })}
             options={[
               { label: "left", value: "left" },
               { label: "center", value: "center" },
               { label: "right", value: "right" },
             ]}
-            label="Badges Align"
-            selected={{ value: card.align, label: card.align }}
-            select={(val) => updateCard({ align: val.value })}
           />
         </InputWrapper>
 

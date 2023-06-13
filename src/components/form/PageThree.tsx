@@ -38,28 +38,28 @@ const PageThree = () => {
       <Flex>
         <InputWrapper label="Font Weight">
           <Select
+            value={{ value: card.fontWeight, label: card.fontWeight }}
+            onSelect={(val) => updateCard({ fontWeight: val.value })}
+            label="Font Weight"
             options={[
               { label: "thin", value: "thin" },
               { label: "normal", value: "normal" },
               { label: "semibold", value: "semibold" },
               { label: "bold", value: "bold" },
             ]}
-            label="Font Weight"
-            selected={{ value: card.fontWeight, label: card.fontWeight }}
-            select={(val) => updateCard({ fontWeight: val.value })}
           />
         </InputWrapper>
 
         <InputWrapper label="Text Align">
           <Select
+            value={{ value: card.titleAlign, label: card.titleAlign }}
+            onSelect={(val) => updateCard({ titleAlign: val.value })}
+            label="Text Align"
             options={[
               { label: "left", value: "left" },
               { label: "center", value: "center" },
               { label: "right", value: "right" },
             ]}
-            label="Text Align"
-            selected={{ value: card.titleAlign, label: card.titleAlign }}
-            select={(val) => updateCard({ titleAlign: val.value })}
           />
         </InputWrapper>
 

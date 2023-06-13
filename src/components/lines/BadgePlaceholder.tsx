@@ -61,6 +61,8 @@ const BadgePlaceholder = ({ lineNumber, position }: Props) => {
           : "border-r-[.5rem]"
       )}
       style={{
+        // if there is a currently grabbed badge and this placeholder is hovered,
+        // then we increase its width, otherwise it's set to 0.
         width:
           hovered && grabbedBadge
             ? `calc(${grabbedBadge.badgeWidth}px + 1rem)`

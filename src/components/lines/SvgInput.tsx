@@ -10,7 +10,7 @@ interface SvgInputProps
 }
 
 const SvgInput = forwardRef<HTMLInputElement, SvgInputProps>(
-  ({ className, required, value = "", onBtnClick, ...props }, ref) => {
+  ({ className, required, value = "", onBtnClick, ...rest }, ref) => {
     return (
       <div className={cn("group flex items-stretch", className)}>
         <Input
@@ -19,7 +19,7 @@ const SvgInput = forwardRef<HTMLInputElement, SvgInputProps>(
           type="text"
           required={required}
           className="z-10 rounded-br-none rounded-tr-none transition-none [border-right:none!important]"
-          {...props}
+          {...rest}
         />
 
         <Button

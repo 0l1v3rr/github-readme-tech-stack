@@ -13,18 +13,19 @@ import {
 import { AiFillCaretDown } from "react-icons/ai";
 import { FiCheck } from "react-icons/fi";
 
-interface SelectProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  selected: SelectOption;
+interface SelectProps
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "onSelect" | "value"> {
+  value: SelectOption;
   options: SelectOption[];
-  select: (option: SelectOption) => void;
   label: string;
   filter?: boolean;
+  onSelect: (option: SelectOption) => void;
 }
 
 const Select: FC<SelectProps> = ({
-  selected,
+  value: selected,
   options,
-  select,
+  onSelect,
   className,
   label,
   filter = false,
@@ -101,7 +102,7 @@ const Select: FC<SelectProps> = ({
             filteredOptions.map((option, i) => (
               <li
                 ref={option.value === selected.value ? selectedRef : undefined}
-                onClick={() => select(option)}
+                onClick={() => onSelect(option)}
                 className={cn(
                   "flex items-center gap-4 px-4 py-1.5 text-left text-sm hover:bg-gh-blue",
                   i === 0 ? "" : "border-t border-gh-border"

@@ -9,7 +9,7 @@ import { Badge } from "@/types";
 import { useCallback, useState } from "react";
 import { GoPlus } from "react-icons/go";
 
-const ICON_REGEX = /^[a-zA-Z-_. ]{2,32}$/;
+const ICON_REGEX = /^[a-zA-Z0-9-_. ]{2,32}$/;
 const HEX_COLOR_REGEX = /#[a-fA-F0-9]{6}$/;
 
 type Props = {

@@ -37,6 +37,11 @@ export type Badge = {
   color: string;
 };
 
+export type Line = {
+  lineNumber: number;
+  badges: Badge[];
+};
+
 export type Align = "left" | "center" | "right";
 export type TextAnchor = "start" | "middle" | "end";
 
@@ -60,11 +65,6 @@ export type GithubResponse = {
   forks_count: number;
   description: string;
   private: boolean;
-};
-
-export type Line = {
-  lineNumber: number;
-  badges: Badge[];
 };
 
 /**

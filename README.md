@@ -95,7 +95,7 @@ cd github-readme-tech-stack
 npm i
 npm run prepare
 
-# Run the application:
+# Running the application:
 npm run dev
 
 # Running the storybook:

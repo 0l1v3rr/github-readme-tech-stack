@@ -45,16 +45,16 @@ const PageTwo = () => {
 
       <Flex>
         <Select
+          filter
           id="themes"
           label="Themes"
+          value={{ label: card.theme, value: card.theme }}
+          onSelect={(val) => updateCard({ theme: val.value })}
           className="w-[60%]"
-          filter={true}
-          selected={{ label: card.theme, value: card.theme }}
           options={themes.map((theme) => ({
             label: theme,
             value: theme,
           }))}
-          select={(val) => updateCard({ theme: val.value })}
         />
 
         <Button onClick={loadColors}>Load Colors</Button>

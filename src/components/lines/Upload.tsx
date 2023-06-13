@@ -11,10 +11,10 @@ type Props = {
 };
 
 const Upload = ({
-  onPopupCloseBtnClick,
-  onFileUpload,
   file,
   onIconClear,
+  onFileUpload,
+  onPopupCloseBtnClick,
 }: Props) => {
   const [isDraggedOver, setIsDraggedOver] = useState(false);
   const [isError, setIsError] = useState(false);
