@@ -282,6 +282,12 @@ themes.set("fleet", {
   titleColor: "#83d6c5",
   badgeColor: "#d6d6dd",
 });
+themes.set("jetbrains_new_dark", {
+  backgroundColor: "#181818",
+  borderColor: "#2b2b2b",
+  titleColor: "#cf8e6d",
+  badgeColor: "#1e1f22",
+});
 
 /**
  * Searches for the specified theme in the themes map.
