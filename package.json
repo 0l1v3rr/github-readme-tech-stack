@@ -57,7 +57,7 @@
     "@storybook/builder-webpack5": "^7.0.22",
     "@storybook/nextjs": "^7.0.20",
     "@storybook/react": "^7.0.20",
-    "@storybook/testing-library": "^0.1.0",
+    "@storybook/testing-library": "^0.2.0",
     "eslint-plugin-storybook": "^0.6.12",
     "husky": "^8.0.3",
     "storybook": "^7.0.22",
