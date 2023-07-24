@@ -23,7 +23,7 @@
     "@types/react-syntax-highlighter": "^15.5.7",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
-    "class-variance-authority": "^0.6.1",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.10",
