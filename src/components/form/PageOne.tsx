@@ -1,5 +1,4 @@
 import FormWrapper from "@/components/form/FormWrapper";
-import Link from "@/components/ui/Link";
 import P from "@/components/ui/P";
 
 const PageOne = () => {
@@ -19,12 +18,6 @@ const PageOne = () => {
         This website allows you to easily customize and preview your README card
         in live. You can play around with the different settings so you don't
         have to write the query parameters manually.
-      </P>
-
-      <P>
-        You can find an example card above. It is in my{" "}
-        <Link href="https://github.com/0l1v3rr">profile README</Link>, feel free
-        to check it out as well.
       </P>
     </FormWrapper>
   );
