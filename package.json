@@ -52,7 +52,7 @@
     "@storybook/addon-essentials": "^7.1.1",
     "@storybook/addon-interactions": "^7.0.26",
     "@storybook/addon-links": "^7.1.1",
-    "@storybook/addon-styling": "^1.3.2",
+    "@storybook/addon-styling": "^1.3.5",
     "@storybook/blocks": "^7.1.0",
     "@storybook/builder-webpack5": "^7.1.0",
     "@storybook/nextjs": "^7.1.1",
