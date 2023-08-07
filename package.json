@@ -27,7 +27,7 @@
     "clsx": "^2.0.0",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
-    "next": "^13.4.12",
+    "next": "^13.4.13",
     "postcss": "8.4.27",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.4.1",
