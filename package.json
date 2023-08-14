@@ -60,7 +60,7 @@
     "@storybook/testing-library": "^0.2.0",
     "eslint-plugin-storybook": "^0.6.13",
     "husky": "^8.0.3",
-    "storybook": "^7.2.1",
+    "storybook": "^7.2.3",
     "webpack": "^5.88.1"
   }
 }
