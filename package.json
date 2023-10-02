@@ -21,7 +21,7 @@
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
     "@types/react-syntax-highlighter": "^15.5.7",
-    "autoprefixer": "10.4.15",
+    "autoprefixer": "10.4.16",
     "axios": "^1.5.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
