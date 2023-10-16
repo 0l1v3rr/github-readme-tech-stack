@@ -61,6 +61,6 @@
     "eslint-plugin-storybook": "^0.6.15",
     "husky": "^8.0.3",
     "storybook": "^7.4.6",
-    "webpack": "^5.88.1"
+    "webpack": "^5.89.0"
   }
 }
