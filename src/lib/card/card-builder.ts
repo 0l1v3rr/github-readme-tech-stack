@@ -2,7 +2,7 @@ import { getThemeByName } from "@/const/themes";
 import Card from "@/lib/card/card";
 import { isHexColor } from "@/lib/utils/validator";
 import { Badge } from "@/types";
-import { z } from "zod";
+import * as z from "zod";
 
 const title = z.string();
 const lineCount = z.number().min(1).catch(1);
