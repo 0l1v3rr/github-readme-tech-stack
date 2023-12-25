@@ -57,7 +57,7 @@
     "@storybook/blocks": "^7.6.3",
     "@storybook/builder-webpack5": "^7.6.3",
     "@storybook/nextjs": "^7.6.5",
-    "@storybook/react": "^7.5.3",
+    "@storybook/react": "^7.6.6",
     "@storybook/testing-library": "^0.2.2",
     "eslint-plugin-storybook": "^0.6.15",
     "husky": "^8.0.3",
