@@ -1,6 +1,8 @@
+import LineCountAdjuster from "./LineCountAdjuster";
 import Button from "@/components/ui/Button";
 import { useMultistepContext } from "@/hooks/useMultistepContext";
 import { cn } from "@/lib/utils/cn";
+import React, { useState } from "react";
 import { FormHTMLAttributes, ReactNode } from "react";
 import { AiOutlineSetting } from "react-icons/ai";
 import { CgErase } from "react-icons/cg";
@@ -19,7 +21,10 @@ const FormWrapper = ({ title, children, className, ...rest }: Props) => {
     nextPage,
     totalPages,
     resetCard,
+    card,
+    updateCard,
   } = useMultistepContext();
+  const [showInput, setShowInput] = useState(false);
 
   return (
     <form
@@ -56,6 +61,21 @@ const FormWrapper = ({ title, children, className, ...rest }: Props) => {
         >
           Reset
         </Button>
+
+        {title === "Badges" && (
+          <LineCountAdjuster
+            initialCount={card.lines.length}
+            onChange={(value) =>
+              updateCard({
+                ...card,
+                lines: Array.from({ length: value }).map((_, i) => ({
+                  lineNumber: i + 1,
+                  badges: [],
+                })),
+              })
+            }
+          />
+        )}
 
         <Button
           onClick={previousPage}
