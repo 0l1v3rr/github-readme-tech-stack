@@ -330,4 +330,11 @@ If you have a cool new theme in mind, or want to add one for yourself and others
       <img src="https://github-readme-tech-stack.vercel.app/api/cards?theme=jetbrains_new_dark&title=jetbrains_new_dark&lineCount=1&line1=typescript,typescript,auto;express,express.js,61DAFB">
     </td>
   </tr>
+
+  <tr>
+    <td align="center"><code>dark_minimalist</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?lineCount=1&bg=%23211f27&badge=%233b3a44&border=%23b9b9c0&titleColor=%2385bef7&line1=node.js,node.js,auto;typescript,typescript,auto;express,express.js,auto">
+    </td>
+  </tr>
 </table>

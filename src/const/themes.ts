@@ -288,7 +288,12 @@ themes.set("jetbrains_new_dark", {
   titleColor: "#cf8e6d",
   badgeColor: "#1e1f22",
 });
-
+themes.set("dark_minimalist", {
+  backgroundColor: "#211f27",
+  borderColor: "#b9b9c0",
+  titleColor: "#85bef7",
+  badgeColor: "#3b3a44",
+});
 /**
  * Searches for the specified theme in the themes map.
  * If the theme is not present in the map, then
