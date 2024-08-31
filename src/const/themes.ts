@@ -1,5 +1,6 @@
 import { type Theme } from "@/types";
 
+
 /**
  * This `Map` stores all the themes that are currently available.
  * In order to add a new theme, use the `set` method.
@@ -140,21 +141,21 @@ themes.set("blood_dark", {
 });
 themes.set("hacker", {
   backgroundColor: "#101010",
-  borderColor: "#222",
+  borderColor: "#222222", // this one is creating a bug if we write #222 instead of #222222. 
   titleColor: "#1DDB07",
-  badgeColor: "#222",
+  badgeColor: "#222222",  // this one is creating a bug if we write #222 instead of #222222. 
 });
 themes.set("android", {
   backgroundColor: "#101010",
-  borderColor: "#222",
+  borderColor: "#222222", // this one is creating a bug if we write #222 instead of #222222.
   titleColor: "#3ADD85",
-  badgeColor: "#222",
+  badgeColor: "#222222", // this one is creating a bug if we write #222 instead of #222222.
 });
 themes.set("windows", {
   backgroundColor: "#101010",
-  borderColor: "#222",
+  borderColor: "#222222", // this one is creating a bug if we write #222 instead of #222222.
   titleColor: "#00A3EE",
-  badgeColor: "#222",
+  badgeColor: "#222222", // this one is creating a bug if we write #222 instead of #222222.
 });
 themes.set("halloween", {
   backgroundColor: "#1C1A2B",
