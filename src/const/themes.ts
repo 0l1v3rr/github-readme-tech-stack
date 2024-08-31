@@ -1,6 +1,5 @@
 import { type Theme } from "@/types";
 
-
 /**
  * This `Map` stores all the themes that are currently available.
  * In order to add a new theme, use the `set` method.
