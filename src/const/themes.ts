@@ -1,6 +1,5 @@
 import { type Theme } from "@/types";
 
-
 /**
  * This `Map` stores all the themes that are currently available.
  * In order to add a new theme, use the `set` method.
@@ -141,9 +140,9 @@ themes.set("blood_dark", {
 });
 themes.set("hacker", {
   backgroundColor: "#101010",
-  borderColor: "#222222", // this one is creating a bug if we write #222 instead of #222222. 
+  borderColor: "#222222", // this one is creating a bug if we write #222 instead of #222222.
   titleColor: "#1DDB07",
-  badgeColor: "#222222",  // this one is creating a bug if we write #222 instead of #222222. 
+  badgeColor: "#222222", // this one is creating a bug if we write #222 instead of #222222.
 });
 themes.set("android", {
   backgroundColor: "#101010",
@@ -294,6 +293,12 @@ themes.set("dark_minimalist", {
   borderColor: "#b9b9c0",
   titleColor: "#85bef7",
   badgeColor: "#3b3a44",
+});
+themes.set("slack", {
+  backgroundColor: "#2a072c",
+  borderColor: "#3e1043",
+  titleColor: "#d8e7f8",
+  badgeColor: "#7d3986",
 });
 /**
  * Searches for the specified theme in the themes map.
