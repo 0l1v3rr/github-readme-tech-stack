@@ -299,6 +299,12 @@ themes.set("slack", {
   borderColor: "#3e1043",
   titleColor: "#d8e7f8",
   badgeColor: "#7d3986",
+}); 
+themes.set("postman", {
+  backgroundColor: "#212121",
+  borderColor: "#0265d2",
+  titleColor: "#ffffff",
+  badgeColor: "#e05320",
 });
 /**
  * Searches for the specified theme in the themes map.
