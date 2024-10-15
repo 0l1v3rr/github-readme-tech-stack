@@ -343,4 +343,10 @@ If you have a cool new theme in mind, or want to add one for yourself and others
       <img src="https://github-readme-tech-stack.vercel.app/api/cards?title=slack&lineCount=1&bg=%232a072c&badge=%237d3986&border=%233e1043&titleColor=%23d8e7f8&line1=typescript%2CTYPESCRIPT%2C3178c6%3Bexpress%2CEXPRESS.JS%2C4f9cb6%3B">
     </td>
   </tr>
+   <tr>
+    <td align="center"><code>Postman</code></td>
+    <td>
+      <img src="https://github-readme-tech-stack.vercel.app/api/cards?title=Postman&lineCount=1&bg=%23212121&badge=%23e05320&border=%23e05320&titleColor=%23ffffff&line1=typescript%2Ctypescript%2C3fd6e6%3Bexpress%2CExpress.js%2C3fd6e6%3B">
+    </td>
+  </tr>
 </table>
