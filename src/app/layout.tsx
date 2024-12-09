@@ -48,8 +48,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen w-full overflow-x-hidden bg-gh-bg font-segoe">
+    <html suppressHydrationWarning lang="en">
+      <body
+        suppressHydrationWarning
+        className="min-h-screen w-full overflow-x-hidden bg-gh-bg font-segoe"
+      >
         <MultistepProvider>{children}</MultistepProvider>
       </body>
     </html>

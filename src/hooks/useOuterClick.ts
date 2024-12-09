@@ -2,7 +2,7 @@ import { RefObject, useEffect, useRef } from "react";
 
 export const useOuterClick = <T extends HTMLElement>(
   callback: () => void
-): RefObject<T> => {
+): RefObject<T | null> => {
   // eslint-disable-next-line
   const callbackRef = useRef<() => void>(() => {});
   const ref = useRef<T>(null);

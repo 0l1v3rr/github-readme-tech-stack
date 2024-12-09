@@ -63,9 +63,9 @@ const BadgeItem = ({ badge, onBadgeRemoval, lineNumber }: Props) => {
         src={
           badge.icon.startsWith("data:image")
             ? badge.icon
-            : `https://cdn.simpleicons.org/${encodeURI(badge.icon)}/${
-                badge.color === "auto" ? "" : badge.color.replace("#", "")
-              }`
+            : `https://cdn.simpleicons.org/${encodeURI(
+                badge.icon
+              )}/${badge.color.replace("#", "")}`
         }
       />
 
@@ -79,3 +79,4 @@ const BadgeItem = ({ badge, onBadgeRemoval, lineNumber }: Props) => {
 };
 
 export default BadgeItem;
+

@@ -21,7 +21,7 @@ const InputWrapper: FC<InputWrapperProps> = ({
           className="flex w-fit select-none items-start gap-1 font-semibold text-gh-text"
         >
           {label}{" "}
-          {children.props.required && (
+          {(children.props as any).required && (
             <span className="text-gh-red-active">*</span>
           )}
         </label>
@@ -37,3 +37,4 @@ const InputWrapper: FC<InputWrapperProps> = ({
 };
 
 export default InputWrapper;
+
